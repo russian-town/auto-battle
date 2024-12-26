@@ -1,4 +1,6 @@
-﻿using Code.Infrastructure.Identifiers;
+﻿using Code.Gameplay.Common.Collisions;
+using Code.Infrastructure.Identifiers;
+using Code.Infrastructure.Systems;
 using Zenject;
 
 namespace Code.Infrastructure.Installers
@@ -9,11 +11,13 @@ namespace Code.Infrastructure.Installers
         {
             BindServices();
             BindContexts();
+            BindSystemFactory();
         }
 
         private void BindServices()
         {
-            Container.Bind<IIdentifiersService>().To<IdentifiersService>().AsSingle();
+            Container.Bind<IIdentifierService>().To<IdentifierService>().AsSingle();
+            Container.Bind<ICollisionRegistry>().To<CollisionRegistry>().AsSingle();
         }
 
         private void BindContexts()
@@ -21,6 +25,9 @@ namespace Code.Infrastructure.Installers
             Container.Bind<Contexts>().FromInstance(Contexts.sharedInstance).AsSingle();
             Container.Bind<GameContext>().FromInstance(Contexts.sharedInstance.game).AsSingle();
         }
+
+        private void BindSystemFactory() =>
+            Container.Bind<ISystemFactory>().To<SystemFactory>().AsSingle();
 
         public void Initialize() { }
     }

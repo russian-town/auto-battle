@@ -1,12 +1,13 @@
 ﻿using Code.Gameplay.Features.Hero.Systems;
+using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Hero
 {
     public class HeroFeature : Feature
     {
-        public HeroFeature(GameContext game)
+        public HeroFeature(ISystemFactory systems)
         {
-            Add(new SetHeroDirectionByInputSystem(game));
+            Add(systems.Create<SetHeroDirectionByInputSystem>());
         }
     }
 }

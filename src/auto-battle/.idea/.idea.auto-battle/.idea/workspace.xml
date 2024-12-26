@@ -6,13 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="53a9f07f-eb11-46c2-941e-ed334edf4097" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.auto-battle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.auto-battle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Common/CommonComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Common/CommonComponents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Feature.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Feature/Movement.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameIdComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameIdComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameWorldPositionComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameWorldPositionComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Common/CommonComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Common/CommonComponents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/BattleFeature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/BattleFeature.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Hero/HeroFeature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Hero/HeroFeature.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/MovementFeature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/MovementFeature.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Input/InputFeature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Input/InputFeature.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAxisInputComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAxisInputComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameDirectionComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameDirectionComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameHeroComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameHeroComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameInputComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameInputComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameMovingComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameMovingComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameSpeedComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameSpeedComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameTransformComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameTransformComponent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/GameComponentsLookup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Game/GameComponentsLookup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/EcsRunner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/EcsRunner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/Identifiers/IIdentifiersService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Identifiers/IIdentifierService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/Identifiers/IIdentifiersService.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Identifiers/IIdentifierService.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/Identifiers/IdentifiersService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Identifiers/IdentifierService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/Identifiers/IdentifiersService.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Identifiers/IdentifierService.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/Installers/BootstrapInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Installers/BootstrapInstaller.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,12 +51,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "dev",
+    "last_opened_file_path": "C:/Users/russi/OneDrive/Рабочий стол",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.build.unityPlugin",
+    "settings.editor.selected.configurable": "RiderCSharpLiveTemplatesSettingsId",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -102,6 +115,8 @@
       <option name="presentableId" value="Default" />
       <updated>1735119168083</updated>
       <workItem from="1735119171300" duration="11759000" />
+      <workItem from="1735199006805" duration="5790000" />
+      <workItem from="1735205781244" duration="7221000" />
     </task>
     <servers />
   </component>

@@ -1,13 +1,14 @@
 ﻿using Code.Gameplay.Features.Movement.Systems;
+using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Movement
 {
     public class MovementFeature : Feature
     {
-        public MovementFeature(GameContext game)
+        public MovementFeature(ISystemFactory systems)
         {
-            Add(new DirectionalDeltaMoveSystem(game));
-            Add(new UpdateTransformPositionSystem(game));
+            Add(systems.Create<DirectionalDeltaMoveSystem>());
+            Add(systems.Create<UpdateTransformPositionSystem>());
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using Code.Gameplay;
+using Code.Infrastructure.Systems;
 using UnityEngine;
 using Zenject;
 
@@ -8,15 +9,15 @@ namespace Code.Infrastructure
     public class EcsRunner : MonoBehaviour
     {
         private BattleFeature _battleFeature;
-        private GameContext _game;
+        private ISystemFactory _systemFactory;
 
         [Inject]
-        public void Construct(GameContext game) =>
-            _game = game;
-        
+        public void Construct(ISystemFactory systemFactory) =>
+            _systemFactory = systemFactory;
+
         private void Start()
         {
-            _battleFeature = new BattleFeature(_game);
+            _battleFeature = _systemFactory.Create<BattleFeature>();
             _battleFeature.Initialize();
         }
 
