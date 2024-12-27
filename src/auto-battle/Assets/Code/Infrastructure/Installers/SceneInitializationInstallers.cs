@@ -1,0 +1,20 @@
+using System.Collections.Generic;
+using UnityEngine;
+using Zenject;
+
+namespace Code.Infrastructure.Installers
+{
+    public class SceneInitializationInstallers : MonoInstaller
+    {
+        public List<MonoBehaviour> Initializers;
+
+        public override void InstallBindings()
+        {
+            foreach (var initializer in Initializers)
+                Container
+                    .BindInterfacesTo(initializer.GetType())
+                    .FromInstance(initializer)
+                    .AsSingle();
+        }
+    }
+}

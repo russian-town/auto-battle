@@ -5,26 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53a9f07f-eb11-46c2-941e-ed334edf4097" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Systems/DirectionDeltaMoveSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Systems/DirectionDeltaMoveSystem.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.auto-battle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.auto-battle/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Common/CommonComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Common/CommonComponents.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/BattleFeature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/BattleFeature.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Common/CommonComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Common/CommonComponents.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Hero/HeroFeature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Hero/HeroFeature.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Hero/Registrars/HeroRegistrar.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Hero/Registrars/HeroRegistrar.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/MovementFeature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/MovementFeature.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Input/InputFeature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Input/InputFeature.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAxisInputComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAxisInputComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameDirectionComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameDirectionComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameHeroComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameHeroComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameInputComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameInputComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameMovingComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameMovingComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameSpeedComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameSpeedComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameTransformComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameTransformComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Systems/DirectionalDeltaMoveSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Systems/DirectionalDeltaMoveSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Systems/UpdateTransformPositionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Systems/UpdateTransformPositionSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Systems/UpdateTransformPositionSystem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Systems/UpdateTransformPositionSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Contexts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Contexts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameViewComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameViewComponent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/GameComponentsLookup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Game/GameComponentsLookup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/EcsRunner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/EcsRunner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/Identifiers/IIdentifiersService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Identifiers/IIdentifierService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/Identifiers/IIdentifiersService.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Identifiers/IIdentifierService.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/Identifiers/IdentifiersService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Identifiers/IdentifierService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/Identifiers/IdentifiersService.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Identifiers/IdentifierService.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/Installers/BootstrapInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Installers/BootstrapInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/View.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Views.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/View/EntityBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Views/EntityBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/View/EntityBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Views/EntityBehaviour.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/View/EntityDependant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Views/EntityDependant.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/View/EntityDependant.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Views/EntityDependant.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/View/IEntityView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Views/IEntityView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/View/IEntityView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Views/IEntityView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/View/Registrars.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Views/Registrars.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/View/Registrars/EntityComponentRegistrar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Views/Registrars/EntityComponentRegistrar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/View/Registrars/EntityComponentRegistrar.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Views/Registrars/EntityComponentRegistrar.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/View/Registrars/IEntityComponentRegistrar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Views/Registrars/IEntityComponentRegistrar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/View/Registrars/IEntityComponentRegistrar.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Views/Registrars/IEntityComponentRegistrar.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/View/SelfInitializedEntityView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Views/SelfInitializedEntityView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/View/SelfInitializedEntityView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Views/SelfInitializedEntityView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +48,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Features/Lifetime/LifeCycleComponents.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Features/Lifetime/Systems/MarkDeadSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Levels/LevelDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -51,13 +74,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "dev",
-    "last_opened_file_path": "C:/Users/russi/OneDrive/Рабочий стол",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "E:/UsefulMaterials/Rider",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "RiderCSharpLiveTemplatesSettingsId",
+    "settings.editor.selected.configurable": "editor.preferences.tabs",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -116,7 +140,11 @@
       <updated>1735119168083</updated>
       <workItem from="1735119171300" duration="11759000" />
       <workItem from="1735199006805" duration="5790000" />
-      <workItem from="1735205781244" duration="7221000" />
+      <workItem from="1735205781244" duration="7222000" />
+      <workItem from="1735220858113" duration="5055000" />
+      <workItem from="1735242927003" duration="637000" />
+      <workItem from="1735243637219" duration="1489000" />
+      <workItem from="1735282496079" duration="10975000" />
     </task>
     <servers />
   </component>
@@ -129,7 +157,12 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
+    <expand>
+      <path>
+        <item name="auto-battle" type="b2602c69:ProjectViewProjectNode" />
+        <item name="rider.module" type="47feb1d3:ProjectViewModuleNode" />
+      </path>
+    </expand>
     <select />
   </component>
 </project>

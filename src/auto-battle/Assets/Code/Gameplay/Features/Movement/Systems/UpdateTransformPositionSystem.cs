@@ -1,5 +1,4 @@
 ﻿using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Movement.Systems
 {
@@ -11,17 +10,15 @@ namespace Code.Gameplay.Features.Movement.Systems
         {
             _movers = game.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.Speed,
-                    GameMatcher.Direction,
                     GameMatcher.WorldPosition,
-                    GameMatcher.Moving
-                ));
+                    GameMatcher.Transform
+                    ));
         }
 
         public void Execute()
         {
             foreach (var mover in _movers)
-                mover.ReplaceWorldPosition(mover.WorldPosition + mover.Direction * mover.Speed * Time.deltaTime);
+                mover.Transform.position = mover.WorldPosition;
         }
     }
 }
