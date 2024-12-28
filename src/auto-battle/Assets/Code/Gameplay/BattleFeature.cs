@@ -1,4 +1,5 @@
 ﻿using Code.Common.Destruct;
+using Code.Gameplay.Features;
 using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Rotation;
@@ -19,6 +20,9 @@ namespace Code.Gameplay
             Add(systems.Create<HeroFeature>());
             
             Add(systems.Create<MovementFeature>());
+            
+            Add(systems.Create<AbilityFeature>());
+            
             Add(systems.Create<RotationFeature>());
             
             Add(systems.Create<ProcessDestructedFeature>());

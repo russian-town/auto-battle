@@ -17,18 +17,24 @@ public static class GameComponentsLookup {
     public const int Transform = 6;
     public const int WorldPosition = 7;
     public const int WorldRotation = 8;
-    public const int Hero = 9;
-    public const int CurrentHealth = 10;
-    public const int Dead = 11;
-    public const int MaxHealth = 12;
-    public const int ProcessingDeath = 13;
-    public const int Direction = 14;
-    public const int Moving = 15;
-    public const int Speed = 16;
-    public const int AxisInput = 17;
-    public const int Input = 18;
+    public const int AbilityId = 9;
+    public const int BlockAbility = 10;
+    public const int Armament = 11;
+    public const int Cooldown = 12;
+    public const int CooldownLeft = 13;
+    public const int CooldownUp = 14;
+    public const int Hero = 15;
+    public const int CurrentHealth = 16;
+    public const int Dead = 17;
+    public const int MaxHealth = 18;
+    public const int ProcessingDeath = 19;
+    public const int Direction = 20;
+    public const int Moving = 21;
+    public const int Speed = 22;
+    public const int AxisInput = 23;
+    public const int Input = 24;
 
-    public const int TotalComponents = 19;
+    public const int TotalComponents = 25;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -40,6 +46,12 @@ public static class GameComponentsLookup {
         "Transform",
         "WorldPosition",
         "WorldRotation",
+        "AbilityId",
+        "BlockAbility",
+        "Armament",
+        "Cooldown",
+        "CooldownLeft",
+        "CooldownUp",
         "Hero",
         "CurrentHealth",
         "Dead",
@@ -62,6 +74,12 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.CommonComponents.TransformComponent),
         typeof(Code.Gameplay.Common.CommonComponents.WorldPosition),
         typeof(Code.Gameplay.Common.CommonComponents.WorldRotation),
+        typeof(Code.Gameplay.Features.Abilities.AbilityIdComponent),
+        typeof(Code.Gameplay.Features.Abilities.BlockAbility),
+        typeof(Code.Gameplay.Features.Armaments.Armament),
+        typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
+        typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),
+        typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),
         typeof(Code.Gameplay.Features.Hero.Hero),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHealth),
         typeof(Code.Gameplay.Features.Lifetime.Dead),
