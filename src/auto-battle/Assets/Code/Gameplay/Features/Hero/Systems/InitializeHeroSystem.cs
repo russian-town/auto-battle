@@ -19,11 +19,11 @@ namespace Code.Gameplay.Features.Hero.Systems
 
         public void Initialize()
         {
-            _heroFactory.CreateHero(
+            var hero = _heroFactory.CreateHero(
                 at: _levelDataProvider.HeroStartPoint,
                 _levelDataProvider.HeroStartRotation);
-            
-            _heroFactory.CreateHero(
+
+            var enemy = _heroFactory.CreateHero(
                 at: _levelDataProvider.EnemyStartPoint,
                 _levelDataProvider.EnemyStartRotation);
         }

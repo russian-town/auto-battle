@@ -1,7 +1,9 @@
-﻿namespace Code.Gameplay.Features.Armaments.Factory
+﻿using Code.Gameplay.Features.Abilities;
+
+namespace Code.Gameplay.Features.Armaments.Factory
 {
     public interface IArmamentFactory
     {
-        GameEntity CreateBlock();
+        GameEntity CreateBlock(AbilityId abilityId, int level);
     }
 }

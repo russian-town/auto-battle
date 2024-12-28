@@ -20,21 +20,29 @@ public static class GameComponentsLookup {
     public const int AbilityId = 9;
     public const int BlockAbility = 10;
     public const int Armament = 11;
-    public const int Cooldown = 12;
-    public const int CooldownLeft = 13;
-    public const int CooldownUp = 14;
-    public const int Hero = 15;
-    public const int CurrentHealth = 16;
-    public const int Dead = 17;
-    public const int MaxHealth = 18;
-    public const int ProcessingDeath = 19;
-    public const int Direction = 20;
-    public const int Moving = 21;
-    public const int Speed = 22;
-    public const int AxisInput = 23;
-    public const int Input = 24;
+    public const int EffectSetups = 12;
+    public const int Cooldown = 13;
+    public const int CooldownLeft = 14;
+    public const int CooldownUp = 15;
+    public const int DamageEffect = 16;
+    public const int Effect = 17;
+    public const int EffectTypeID = 18;
+    public const int EffectValue = 19;
+    public const int Processed = 20;
+    public const int ProducerId = 21;
+    public const int TargetId = 22;
+    public const int Hero = 23;
+    public const int CurrentHealth = 24;
+    public const int Dead = 25;
+    public const int MaxHealth = 26;
+    public const int ProcessingDeath = 27;
+    public const int Direction = 28;
+    public const int Moving = 29;
+    public const int Speed = 30;
+    public const int AxisInput = 31;
+    public const int Input = 32;
 
-    public const int TotalComponents = 25;
+    public const int TotalComponents = 33;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -49,9 +57,17 @@ public static class GameComponentsLookup {
         "AbilityId",
         "BlockAbility",
         "Armament",
+        "EffectSetups",
         "Cooldown",
         "CooldownLeft",
         "CooldownUp",
+        "DamageEffect",
+        "Effect",
+        "EffectTypeID",
+        "EffectValue",
+        "Processed",
+        "ProducerId",
+        "TargetId",
         "Hero",
         "CurrentHealth",
         "Dead",
@@ -77,9 +93,17 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Abilities.AbilityIdComponent),
         typeof(Code.Gameplay.Features.Abilities.BlockAbility),
         typeof(Code.Gameplay.Features.Armaments.Armament),
+        typeof(Code.Gameplay.Features.Armaments.EffectSetups),
         typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),
+        typeof(Code.Gameplay.Features.Effect.DamageEffect),
+        typeof(Code.Gameplay.Features.Effect.Effect),
+        typeof(Code.Gameplay.Features.Effect.EffectTypeIDComponent),
+        typeof(Code.Gameplay.Features.Effect.EffectValue),
+        typeof(Code.Gameplay.Features.Effect.Processed),
+        typeof(Code.Gameplay.Features.Effect.ProducerId),
+        typeof(Code.Gameplay.Features.Effect.TargetId),
         typeof(Code.Gameplay.Features.Hero.Hero),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHealth),
         typeof(Code.Gameplay.Features.Lifetime.Dead),

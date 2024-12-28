@@ -32,7 +32,7 @@ namespace Code.Gameplay.Features.Abilities.System
         {
             foreach (var ability in _abilities.GetEntities(_buffer))
             {
-                _armamentFactory.CreateBlock();
+                _armamentFactory.CreateBlock(ability.AbilityId, 1);
                 ability.PutOnCooldown(_staticDataService.GetAbilityConfig(AbilityId.Block).Cooldown);
             }
         }
