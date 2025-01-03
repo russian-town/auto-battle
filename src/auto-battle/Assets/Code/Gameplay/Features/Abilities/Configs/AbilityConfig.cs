@@ -1,13 +1,16 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Effect.Configs;
+using Code.Gameplay.Features.Statuses.Configs;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Abilities.Configs
 {
-    [CreateAssetMenu(fileName = "AbilityConfig", menuName = "auto-battle/Ability", order = 59)]
+    [CreateAssetMenu(fileName = "AbilityConfig", menuName = "auto-battle/Abilities", order = 59)]
     public class AbilityConfig : ScriptableObject
     {
-        public AbilityId Id;
-        public List<AbilityLevel> Levels;
-        public float Cooldown;
+        [Range(0f, 1f)] public float Chance;
+        public AbilityTypeId AbilityTypeId;
+        public List<EffectSetup> EffectSetups;
+        public List<StatusSetup> StatusSetups;
     }
 }

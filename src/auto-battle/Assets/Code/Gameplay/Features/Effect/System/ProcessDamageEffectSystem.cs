@@ -5,6 +5,7 @@ namespace Code.Gameplay.Features.Effect.System
     public class ProcessDamageEffectSystem : IExecuteSystem
     {
         private readonly IGroup<GameEntity> _effects;
+        private readonly IGroup<GameEntity> _fighters;
 
         public ProcessDamageEffectSystem(GameContext game)
         {
@@ -15,19 +16,24 @@ namespace Code.Gameplay.Features.Effect.System
                         GameMatcher.EffectValue,
                         GameMatcher.TargetId
                     ));
+
+            _fighters = game.GetGroup(
+                GameMatcher
+                    .AllOf(
+                        GameMatcher.Fighter,
+                        GameMatcher.Id));
         }
 
         public void Execute()
         {
             foreach (var effect in _effects)
+            foreach (var fighter in _fighters)
             {
-                var target = effect.Target();
-                effect.isProcessed = true;
-                
-                if (target.isDead)
+                if (fighter.Id != effect.TargetId)
                     continue;
 
-                target.ReplaceCurrentHealth(target.CurrentHealth - effect.EffectValue);
+                effect.isProcessed = true;
+                fighter.ReplaceCurrentHealth(fighter.CurrentHealth - effect.EffectValue);
             }
         }
     }

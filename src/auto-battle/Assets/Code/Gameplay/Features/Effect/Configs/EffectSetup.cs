@@ -7,5 +7,11 @@ namespace Code.Gameplay.Features.Effect.Configs
     {
         public EffectTypeId EffectTypeId;
         public float Value;
+
+        public EffectSetup(EffectTypeId effectTypeId, float value)
+        {
+            EffectTypeId = effectTypeId;
+            Value = value;
+        }
     }
 }

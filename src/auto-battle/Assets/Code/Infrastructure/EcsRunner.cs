@@ -1,5 +1,4 @@
-﻿using System;
-using Code.Gameplay;
+﻿using Code.Gameplay;
 using Code.Infrastructure.Systems;
 using UnityEngine;
 using Zenject;

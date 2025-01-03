@@ -6,24 +6,14 @@ namespace Code.Gameplay.Features.Effect.System
     {
         private readonly IGroup<GameEntity> _effects;
 
-        public RemoveEffectsWithoutTargetSystem(GameContext game)
-        {
-            _effects = game.GetGroup(GameMatcher
-                .AllOf(
-                    GameMatcher.Effect,
-                    GameMatcher.TargetId
-                    ));
-        }
+        public RemoveEffectsWithoutTargetSystem(GameContext game) =>
+            _effects = game.GetGroup(GameMatcher.Effect);
 
         public void Execute()
         {
             foreach (var effect in _effects)
-            {
-                var target = effect.Target();
-                
-                if(target == null)
+                if(effect.hasTargetId == false)
                     effect.Destroy();
-            }
         }
     }
 }

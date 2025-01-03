@@ -10,5 +10,7 @@ namespace Code.Gameplay.Common
         [Game] public class WorldPosition : IComponent { public Vector3 Value; }
         [Game] public class WorldRotation : IComponent { public Quaternion Value; }
         [Game] public class TransformComponent : IComponent { public Transform Value; }
+        [Game] public class HeroComponent : IComponent { }
+        [Game] public class EnemyComponent : IComponent { }
     }
 }

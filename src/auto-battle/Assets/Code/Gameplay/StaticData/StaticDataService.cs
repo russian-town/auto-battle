@@ -9,36 +9,36 @@ namespace Code.Gameplay.StaticData
 {
     public class StaticDataService : IStaticDataService
     {
-        private Dictionary<AbilityId, AbilityConfig> _abilityById;
+        private Dictionary<AbilityTypeId, AbilityConfig> _abilityById = new();
 
         public void LoadAll()
         {
             LoadAbilities();
         }
 
-        public AbilityConfig GetAbilityConfig(AbilityId abilityId)
+        public AbilityConfig GetAbilityConfig(AbilityTypeId abilityTypeId)
         {
-            if (_abilityById.TryGetValue(abilityId, out AbilityConfig config))
+            if (_abilityById.TryGetValue(abilityTypeId, out AbilityConfig config))
                 return config;
 
-            throw new Exception($"Ability config for {abilityId} was not found.");
+            throw new Exception($"Ability config for {abilityTypeId} was not found.");
         }
 
-        public AbilityLevel GetAbilityLevel(AbilityId abilityId, int level)
+        /*public AbilityLevel GetAbilityLevel(AbilityTypeId abilityTypeId, int level)
         {
-            var config = GetAbilityConfig(abilityId);
+            var config = GetAbilityConfig(abilityTypeId);
 
             if (level > config.Levels.Count)
                 level = config.Levels.Count;
 
             return config.Levels[level - 1];
-        }
+        }*/
 
         private void LoadAbilities()
         {
             _abilityById = Resources
                 .LoadAll<AbilityConfig>("Configs/Abilities")
-                .ToDictionary(x => x.Id, x => x);
+                .ToDictionary(x => x.AbilityTypeId, x => x);
         }
     }
 }

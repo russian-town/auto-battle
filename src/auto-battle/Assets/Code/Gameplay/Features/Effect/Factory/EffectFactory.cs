@@ -22,11 +22,7 @@ namespace Code.Gameplay.Features.Effect.Factory
                 case EffectTypeId.Damage:
                     return CreateDamage(setup.Value, producerId, targetId);
                 case EffectTypeId.Heal:
-                    return CreateDamage(setup.Value, producerId, targetId);
-                case EffectTypeId.Block:
-                    return CreateDamage(setup.Value, producerId, targetId);
-                case EffectTypeId.Dodge:
-                    return CreateDamage(setup.Value, producerId, targetId);
+                    return CreateHeal(setup.Value, producerId, targetId);
             }
 
             throw new Exception($"Effect with type id {setup.EffectTypeId} does not exist.");
@@ -38,6 +34,18 @@ namespace Code.Gameplay.Features.Effect.Factory
                     .AddId(_identifiers.Next())
                     .With(x => x.isEffect = true)
                     .With(x => x.isDamageEffect = true)
+                    .AddEffectValue(value)
+                    .AddProducerId(producerId)
+                    .AddTargetId(targetId)
+                ;
+        }
+        
+        private GameEntity CreateHeal(float value, int producerId, int targetId)
+        {
+            return CreateEntity.Empty()
+                    .AddId(_identifiers.Next())
+                    .With(x => x.isEffect = true)
+                    .With(x => x.isHealEffect = true)
                     .AddEffectValue(value)
                     .AddProducerId(producerId)
                     .AddTargetId(targetId)

@@ -1,5 +1,4 @@
-﻿using Code.Gameplay.Features.Abilities.System;
-using Code.Gameplay.Features.Cooldowns.Systems;
+﻿using Code.Gameplay.Features.Abilities.Systems;
 using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Abilities
@@ -8,8 +7,12 @@ namespace Code.Gameplay.Features.Abilities
     {
         public AbilityFeature(ISystemFactory systems)
         {
-            Add(systems.Create<CooldownSystem>());
             Add(systems.Create<BlockAbilitySystem>());
+            Add(systems.Create<CounterattackAbilitySystem>());
+            Add(systems.Create<DodgeAbilitySystem>());
+            Add(systems.Create<DoubleStrikeAbilitySystem>());
+            
+            Add(systems.Create<CleanupAbilitySystem>());
         }
     }
 }

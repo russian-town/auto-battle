@@ -1,7 +1,9 @@
-﻿namespace Code.Gameplay.Features.Abilities.Factory
+﻿using Code.Gameplay.Features.Abilities.Configs;
+
+namespace Code.Gameplay.Features.Abilities.Factory
 {
     public interface IAbilityFactory
     {
-        GameEntity CreateBlock();
+        GameEntity CreateAbility(AbilityConfig config, int producerId, int targetId);
     }
 }
