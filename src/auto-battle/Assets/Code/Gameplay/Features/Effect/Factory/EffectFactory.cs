@@ -20,7 +20,7 @@ namespace Code.Gameplay.Features.Effect.Factory
             switch (setup.EffectTypeId)
             {
                 case EffectTypeId.Damage:
-                    return CreateDamage(setup.Value, producerId, targetId);
+                    return CreateDamage(setup.Value, producerId, targetId, setup.Cooldown);
                 case EffectTypeId.Heal:
                     return CreateHeal(setup.Value, producerId, targetId);
             }
@@ -28,7 +28,7 @@ namespace Code.Gameplay.Features.Effect.Factory
             throw new Exception($"Effect with type id {setup.EffectTypeId} does not exist.");
         }
 
-        private GameEntity CreateDamage(float value, int producerId, int targetId)
+        private GameEntity CreateDamage(float value, int producerId, int targetId, float cooldown)
         {
             return CreateEntity.Empty()
                     .AddId(_identifiers.Next())
@@ -37,6 +37,7 @@ namespace Code.Gameplay.Features.Effect.Factory
                     .AddEffectValue(value)
                     .AddProducerId(producerId)
                     .AddTargetId(targetId)
+                    .AddCooldownLeft(cooldown)
                 ;
         }
         

@@ -12,7 +12,7 @@ namespace Code.Gameplay.Features.Effect.System
         public void Execute()
         {
             foreach (var effect in _effects)
-                if(effect.hasTargetId == false)
+                if (effect.hasTargetId == false)
                     effect.Destroy();
         }
     }

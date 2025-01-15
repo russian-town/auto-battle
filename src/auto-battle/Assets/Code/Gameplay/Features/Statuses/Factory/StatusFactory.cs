@@ -23,6 +23,8 @@ namespace Code.Gameplay.Features.Statuses.Factory
                     break;
                 case StatusTypeId.Stun:
                     break;
+                case StatusTypeId.Dodge:
+                    break;
                 case StatusTypeId.Block:
                     return CreateBlockStatus(setup, producerId, targetId);
             }
@@ -36,10 +38,11 @@ namespace Code.Gameplay.Features.Statuses.Factory
                 .AddId(_identifiers.Next())
                 .AddStatusTypeId(StatusTypeId.Block)
                 .AddEffectValue(setup.Value)
-                .AddPeriod(setup.Period)
+                .AddLifetime(setup.Lifetime)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
                 .With(x => x.isStatus = true)
+                .With(x => x.isBlock = true)
                 ;
         }
     }

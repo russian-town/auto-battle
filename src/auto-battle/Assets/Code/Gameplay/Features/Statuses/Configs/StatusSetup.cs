@@ -7,6 +7,6 @@ namespace Code.Gameplay.Features.Statuses.Configs
     {
         public StatusTypeId TypeId;
         public float Value;
-        public float Period;
+        public int Lifetime;
     }
 }

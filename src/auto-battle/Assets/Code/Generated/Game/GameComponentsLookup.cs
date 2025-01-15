@@ -22,40 +22,49 @@ public static class GameComponentsLookup {
     public const int Ability = 11;
     public const int Active = 12;
     public const int Block = 13;
-    public const int Counterattack = 14;
-    public const int Dodge = 15;
-    public const int DoubleStrike = 16;
-    public const int EffectSetups = 17;
-    public const int StatusSetups = 18;
-    public const int DamageEffect = 19;
-    public const int Effect = 20;
-    public const int EffectValue = 21;
-    public const int HealEffect = 22;
-    public const int Processed = 23;
-    public const int ProducerId = 24;
-    public const int TargetId = 25;
-    public const int Damage = 26;
-    public const int Fighter = 27;
-    public const int CurrentHealth = 28;
-    public const int Dead = 29;
-    public const int MaxHealth = 30;
-    public const int ProcessingDeath = 31;
-    public const int Direction = 32;
-    public const int Moving = 33;
-    public const int Speed = 34;
-    public const int Applied = 35;
-    public const int Duration = 36;
-    public const int Period = 37;
-    public const int Status = 38;
-    public const int StatusTypeId = 39;
-    public const int TimeLeft = 40;
-    public const int TimeSinceLastTick = 41;
-    public const int Unapplied = 42;
-    public const int Turn = 43;
-    public const int AxisInput = 44;
-    public const int Input = 45;
+    public const int Chance = 14;
+    public const int Counterattack = 15;
+    public const int DefaultAttack = 16;
+    public const int Dodge = 17;
+    public const int DoubleStrike = 18;
+    public const int EffectSetups = 19;
+    public const int StatusSetups = 20;
+    public const int BaseStats = 21;
+    public const int StatChange = 22;
+    public const int StatsModifiers = 23;
+    public const int CooldownLeft = 24;
+    public const int CooldownUp = 25;
+    public const int DamageEffect = 26;
+    public const int Effect = 27;
+    public const int EffectValue = 28;
+    public const int HealEffect = 29;
+    public const int Processed = 30;
+    public const int ProducerId = 31;
+    public const int TargetId = 32;
+    public const int Blocked = 33;
+    public const int Damage = 34;
+    public const int DistanceToStartPoint = 35;
+    public const int DistanceToTarget = 36;
+    public const int Fighter = 37;
+    public const int StartPointPosition = 38;
+    public const int CurrentHealth = 39;
+    public const int Dead = 40;
+    public const int MaxHealth = 41;
+    public const int ProcessingDeath = 42;
+    public const int Direction = 43;
+    public const int Moving = 44;
+    public const int Speed = 45;
+    public const int Affected = 46;
+    public const int Applied = 47;
+    public const int ApplierStatusLink = 48;
+    public const int Lifetime = 49;
+    public const int Status = 50;
+    public const int StatusTypeId = 51;
+    public const int Unapplied = 52;
+    public const int AxisInput = 53;
+    public const int Input = 54;
 
-    public const int TotalComponents = 46;
+    public const int TotalComponents = 55;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -72,11 +81,18 @@ public static class GameComponentsLookup {
         "Ability",
         "Active",
         "Block",
+        "Chance",
         "Counterattack",
+        "DefaultAttack",
         "Dodge",
         "DoubleStrike",
         "EffectSetups",
         "StatusSetups",
+        "BaseStats",
+        "StatChange",
+        "StatsModifiers",
+        "CooldownLeft",
+        "CooldownUp",
         "DamageEffect",
         "Effect",
         "EffectValue",
@@ -84,8 +100,12 @@ public static class GameComponentsLookup {
         "Processed",
         "ProducerId",
         "TargetId",
+        "Blocked",
         "Damage",
+        "DistanceToStartPoint",
+        "DistanceToTarget",
         "Fighter",
+        "StartPointPosition",
         "CurrentHealth",
         "Dead",
         "MaxHealth",
@@ -93,15 +113,13 @@ public static class GameComponentsLookup {
         "Direction",
         "Moving",
         "Speed",
+        "Affected",
         "Applied",
-        "Duration",
-        "Period",
+        "ApplierStatusLink",
+        "Lifetime",
         "Status",
         "StatusTypeId",
-        "TimeLeft",
-        "TimeSinceLastTick",
         "Unapplied",
-        "Turn",
         "AxisInput",
         "Input"
     };
@@ -121,11 +139,18 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Abilities.Ability),
         typeof(Code.Gameplay.Features.Abilities.Active),
         typeof(Code.Gameplay.Features.Abilities.Block),
+        typeof(Code.Gameplay.Features.Abilities.Chance),
         typeof(Code.Gameplay.Features.Abilities.Counterattack),
+        typeof(Code.Gameplay.Features.Abilities.DefaultAttack),
         typeof(Code.Gameplay.Features.Abilities.Dodge),
         typeof(Code.Gameplay.Features.Abilities.DoubleStrike),
         typeof(Code.Gameplay.Features.Abilities.EffectSetups),
         typeof(Code.Gameplay.Features.Abilities.StatusSetups),
+        typeof(Code.Gameplay.Features.CharacterStats.BaseStats),
+        typeof(Code.Gameplay.Features.CharacterStats.StatChange),
+        typeof(Code.Gameplay.Features.CharacterStats.StatsModifiers),
+        typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),
+        typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),
         typeof(Code.Gameplay.Features.Effect.DamageEffect),
         typeof(Code.Gameplay.Features.Effect.Effect),
         typeof(Code.Gameplay.Features.Effect.EffectValue),
@@ -133,8 +158,12 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Effect.Processed),
         typeof(Code.Gameplay.Features.Effect.ProducerId),
         typeof(Code.Gameplay.Features.Effect.TargetId),
+        typeof(Code.Gameplay.Features.Fighter.Blocked),
         typeof(Code.Gameplay.Features.Fighter.Damage),
+        typeof(Code.Gameplay.Features.Fighter.DistanceToStartPoint),
+        typeof(Code.Gameplay.Features.Fighter.DistanceToTarget),
         typeof(Code.Gameplay.Features.Fighter.FighterComponent),
+        typeof(Code.Gameplay.Features.Fighter.StartPointPosition),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHealth),
         typeof(Code.Gameplay.Features.Lifetime.Dead),
         typeof(Code.Gameplay.Features.Lifetime.MaxHealth),
@@ -142,15 +171,13 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.Direction),
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Speed),
+        typeof(Code.Gameplay.Features.Statuses.Affected),
         typeof(Code.Gameplay.Features.Statuses.Applied),
-        typeof(Code.Gameplay.Features.Statuses.Duration),
-        typeof(Code.Gameplay.Features.Statuses.Period),
+        typeof(Code.Gameplay.Features.Statuses.ApplierStatusLink),
+        typeof(Code.Gameplay.Features.Statuses.Lifetime),
         typeof(Code.Gameplay.Features.Statuses.Status),
         typeof(Code.Gameplay.Features.Statuses.StatusTypeIdComponent),
-        typeof(Code.Gameplay.Features.Statuses.TimeLeft),
-        typeof(Code.Gameplay.Features.Statuses.TimeSinceLastTick),
         typeof(Code.Gameplay.Features.Statuses.Unapplied),
-        typeof(Code.Gameplay.Features.Turn.TurnComponent),
         typeof(Code.Gameplay.Input.AxisInput),
         typeof(Code.Gameplay.Input.Input)
     };

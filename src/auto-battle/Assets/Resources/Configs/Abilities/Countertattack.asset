@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab6c6ff62cf47fa8138d44e0c9cbef0, type: 3}
   m_Name: Countertattack
   m_EditorClassIdentifier: 
-  Chance: 1
-  AbilityTypeId: 1
+  Chance: 0.3
+  AbilityTypeId: 2
   EffectSetups:
   - EffectTypeId: 1
-    Value: 20
-  StatusSetups: []
+    Value: 35
+  StatusSetups:
+  - TypeId: 3
+    Value: 0
+    Period: 0

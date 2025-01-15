@@ -1,7 +1,6 @@
 ﻿using System;
 using Code.Common.Entity;
 using Code.Common.Extensions;
-using Code.Gameplay.Features.Abilities.Configs;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 
@@ -18,19 +17,25 @@ namespace Code.Gameplay.Features.Abilities.Factory
             _staticDataService = staticDataService;
         }
 
-        public GameEntity CreateAbility(AbilityConfig config, int producerId, int targetId)
+        public GameEntity CreateAbility(AbilityTypeId typeId, int producerId, int targetId)
         {
-            //var config = _staticDataService.GetAbilityConfig(typeId);
+            var config = _staticDataService.GetAbilityConfig(typeId);
+            
             var ability = CreateEntity.Empty()
                 .AddId(_identifiers.Next())
                 .With(x => x.isAbility = true)
+                .AddChance(config.Chance)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
                 .AddStatusSetups(config.StatusSetups)
-                .AddEffectSetups(config.EffectSetups);
+                .AddEffectSetups(config.EffectSetups)
+                .AddCooldownLeft(config.Cooldown())
+                ;
             
             switch (config.AbilityTypeId)
             {
+                case AbilityTypeId.DefaultAttack:
+                    return CreateDefaultAttack(ability);
                 case AbilityTypeId.Counterattack:
                     return CreateCounterattack(ability);
                 case AbilityTypeId.Block:
@@ -43,6 +48,9 @@ namespace Code.Gameplay.Features.Abilities.Factory
 
             throw new ArgumentException($"{config.AbilityTypeId}");
         }
+
+        private GameEntity CreateDefaultAttack(GameEntity entity) =>
+            entity.With(x => x.isDefaultAttack = true);
 
         private GameEntity CreateCounterattack(GameEntity entity) =>
             entity.With(x => x.isCounterattack = true);

@@ -1,7 +1,14 @@
-﻿namespace Code.Gameplay.Features.Fighter
+﻿using Code.Gameplay.Features.Fighter.Systems;
+using Code.Infrastructure.Systems;
+
+namespace Code.Gameplay.Features.Fighter
 {
-    public class FighterFeature
+    public class FighterFeature : Feature
     {
-        
+        public FighterFeature(ISystemFactory systems)
+        {
+            Add(systems.Create<CalculateDistanceToStartPointSystem>());
+            Add(systems.Create<CalculateDistanceToTargetSystem>());
+        }
     }
 }

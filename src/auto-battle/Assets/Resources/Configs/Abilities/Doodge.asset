@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Doodge
   m_EditorClassIdentifier: 
   Chance: 0.2
-  AbilityTypeId: 3
+  AbilityTypeId: 4
   EffectSetups: []
   StatusSetups:
-  - TypeId: 4
+  - TypeId: 3
     Value: 0
     Period: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DoubleStrike
   m_EditorClassIdentifier: 
   Chance: 0.2
-  AbilityTypeId: 4
+  AbilityTypeId: 5
   EffectSetups:
   - EffectTypeId: 1
     Value: 10

@@ -8,9 +8,6 @@ namespace Code.Gameplay.Features.Fight
         public FightFeature(ISystemFactory systems)
         {
             Add(systems.Create<InitializeFightSystem>());
-            Add(systems.Create<ProcessFightSystem>());
-            
-            Add(systems.Create<CleanupTurnSystem>());
         }
     }
 }

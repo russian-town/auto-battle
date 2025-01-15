@@ -1,7 +1,11 @@
-﻿using Code.Common.Entity;
+﻿using System.Collections.Generic;
+using Code.Common.Entity;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.CharacterStats;
+using Code.Gameplay.Levels;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Fighter.Factory
 {
@@ -15,15 +19,29 @@ namespace Code.Gameplay.Features.Fighter.Factory
             _identifiers = identifiers;
             _staticDataService = staticDataService;
         }
-        
-        public GameEntity CreateFighter()
+
+        public GameEntity CreateFighter(Vector3 at, Quaternion rotation)
         {
+            var config = _staticDataService.GetFighterConfig();
+            var statByType = config.GetStats();
+
             return CreateEntity.Empty()
-                .AddId(_identifiers.Next())
-                .AddDamage(1)
-                .AddCurrentHealth(100)
-                .AddMaxHealth(100)
-                .With(x => x.isFighter = true);
+                    .AddId(_identifiers.Next())
+                    .With(x => x.isFighter = true)
+                    .AddWorldPosition(at)
+                    .AddWorldRotation(rotation)
+                    .AddDirection(Vector3.zero)
+                    .AddSpeed(config.Speed)
+                    .AddDamage(statByType[Stats.Damage])
+                    .AddCurrentHealth(statByType[Stats.MaxHealth])
+                    .AddMaxHealth(statByType[Stats.MaxHealth])
+                    .AddBaseStats(statByType)
+                    .AddStatsModifiers(new Dictionary<Stats, float>())
+                    .AddDistanceToTarget(0f)
+                    .AddDistanceToStartPoint(0f)
+                    .AddStartPointPosition(at)
+                    .AddViewPrefab(config.View)
+                ;
         }
     }
 }

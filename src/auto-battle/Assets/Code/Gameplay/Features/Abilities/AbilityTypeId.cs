@@ -3,9 +3,10 @@
     public enum AbilityTypeId
     {
         Unknown = 0,
-        Counterattack = 1,
-        Block = 2,
-        Dodge = 3,
-        DoubleStrike = 4,
+        DefaultAttack = 1,
+        Counterattack = 2,
+        Block = 3,
+        Dodge = 4,
+        DoubleStrike = 5,
     }
 }
