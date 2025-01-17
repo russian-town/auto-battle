@@ -6,6 +6,7 @@ using Entitas;
 namespace Code.Gameplay.Features.Abilities
 {
     [Game] public class Ability : IComponent { }
+    [Game] public class AbilityTypeIdComponent : IComponent { public AbilityTypeId Value; }
     [Game] public class Active : IComponent { }
     [Game] public class Chance : IComponent { public float Value; }
     

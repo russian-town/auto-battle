@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Levels;
+﻿using System.Collections.Generic;
+using Code.Gameplay.Levels;
 using UnityEngine;
 using Zenject;
 
@@ -6,8 +7,8 @@ namespace Code.Infrastructure.Installers
 {
     public class LevelInitializer : MonoBehaviour, IInitializable
     {
-        public Transform HeroStartPoint;
-        public Transform EnemyStartPoint;
+        [SerializeField] private List<PositionSetup> _positionSetups = new();
+        [SerializeField] private Transform _uiRoot;
         
         private ILevelDataProvider _levelDataProvider;
 
@@ -17,13 +18,10 @@ namespace Code.Infrastructure.Installers
 
         public void Initialize()
         {
-         _levelDataProvider.SetStartPoints(
-             HeroStartPoint.position,
-             EnemyStartPoint.position);
-         
-         _levelDataProvider.SetStartRotation(
-             HeroStartPoint.rotation,
-             EnemyStartPoint.rotation);
+            _levelDataProvider.SetUIRoot(_uiRoot);
+            
+            foreach (var positionSetup in _positionSetups)
+                _levelDataProvider.RegisterPositionSetup(positionSetup);
         }
     }
 }

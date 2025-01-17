@@ -2,6 +2,7 @@
 using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Cooldowns;
+using Code.Gameplay.Features.Damage;
 using Code.Gameplay.Features.Effect;
 using Code.Gameplay.Features.Fight;
 using Code.Gameplay.Features.Fighter;
@@ -23,6 +24,8 @@ namespace Code.Gameplay
             Add(systems.Create<BindViewFeature>());
             
             Add(systems.Create<FighterFeature>());
+
+            Add(systems.Create<DamageFeature>());
 
             Add(systems.Create<AbilityFeature>());
             

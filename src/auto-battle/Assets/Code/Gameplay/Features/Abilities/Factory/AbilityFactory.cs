@@ -20,7 +20,8 @@ namespace Code.Gameplay.Features.Abilities.Factory
         public GameEntity CreateAbility(AbilityTypeId typeId, int producerId, int targetId)
         {
             var config = _staticDataService.GetAbilityConfig(typeId);
-            
+            var cooldown = config.Cooldown();
+
             var ability = CreateEntity.Empty()
                 .AddId(_identifiers.Next())
                 .With(x => x.isAbility = true)
@@ -29,7 +30,8 @@ namespace Code.Gameplay.Features.Abilities.Factory
                 .AddTargetId(targetId)
                 .AddStatusSetups(config.StatusSetups)
                 .AddEffectSetups(config.EffectSetups)
-                .AddCooldownLeft(config.Cooldown())
+                .AddCooldown(cooldown)
+                .AddCooldownLeft(cooldown)
                 ;
             
             switch (config.AbilityTypeId)

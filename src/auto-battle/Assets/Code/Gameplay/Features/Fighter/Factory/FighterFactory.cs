@@ -20,7 +20,7 @@ namespace Code.Gameplay.Features.Fighter.Factory
             _staticDataService = staticDataService;
         }
 
-        public GameEntity CreateFighter(Vector3 at, Quaternion rotation)
+        public GameEntity CreateFighter(Vector3 at, Quaternion rotation, FighterTypeId fighterTypeId)
         {
             var config = _staticDataService.GetFighterConfig();
             var statByType = config.GetStats();
@@ -38,6 +38,7 @@ namespace Code.Gameplay.Features.Fighter.Factory
                     .AddBaseStats(statByType)
                     .AddStatsModifiers(new Dictionary<Stats, float>())
                     .AddDistanceToTarget(0f)
+                    .AddFighterTypeId(fighterTypeId)
                     .AddDistanceToStartPoint(0f)
                     .AddStartPointPosition(at)
                     .AddViewPrefab(config.View)

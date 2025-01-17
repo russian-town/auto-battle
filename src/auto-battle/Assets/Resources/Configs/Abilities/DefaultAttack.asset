@@ -18,7 +18,6 @@ MonoBehaviour:
   EffectSetups:
   - EffectTypeId: 1
     Value: 20
-    Duration: 5
+    Cooldown: 5
   StatusSetups: []
   TargetDistance: 2
-  Cooldowns: []

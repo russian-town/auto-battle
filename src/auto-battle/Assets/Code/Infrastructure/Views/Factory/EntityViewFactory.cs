@@ -24,6 +24,7 @@ namespace Code.Infrastructure.Views.Factory
                 position: _farAway,
                 Quaternion.identity,
                 parentTransform: null);
+            
             view.SetEntity(entity);
             
             return view;

@@ -3,7 +3,9 @@ using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Abilities.Factory;
+using Code.Gameplay.Features.Damage.Factory;
 using Code.Gameplay.Features.Effect.Factory;
+using Code.Gameplay.Features.Fight.Factory;
 using Code.Gameplay.Features.Fighter.Factory;
 using Code.Gameplay.Features.Statuses.Factory;
 using Code.Gameplay.Levels;
@@ -57,6 +59,8 @@ namespace Code.Infrastructure.Installers
             Container.Bind<IStatusFactory>().To<StatusFactory>().AsSingle();
             Container.Bind<IFighterFactory>().To<FighterFactory>().AsSingle();
             Container.Bind<IAbilityFactory>().To<AbilityFactory>().AsSingle();
+            Container.Bind<IHealthBarFactory>().To<HealthBarFactory>().AsSingle();
+            Container.Bind<IFightFactory>().To<FightFactory>().AsSingle();
         }
 
         public void Initialize() { }
