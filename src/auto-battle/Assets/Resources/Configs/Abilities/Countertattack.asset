@@ -14,10 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Chance: 0.3
   AbilityTypeId: 2
+  FightTypeId: 2
   EffectSetups:
   - EffectTypeId: 1
     Value: 35
+    Cooldown: 0
   StatusSetups:
   - TypeId: 3
     Value: 0
-    Period: 0
+    Lifetime: 0
+  TargetDistance: 0

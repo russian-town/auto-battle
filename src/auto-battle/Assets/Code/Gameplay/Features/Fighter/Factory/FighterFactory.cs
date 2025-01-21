@@ -42,6 +42,7 @@ namespace Code.Gameplay.Features.Fighter.Factory
                     .AddDistanceToStartPoint(0f)
                     .AddStartPointPosition(at)
                     .AddViewPrefab(config.View)
+                    .AddBaseAbilities(config.BaseAbilities)
                 ;
         }
     }

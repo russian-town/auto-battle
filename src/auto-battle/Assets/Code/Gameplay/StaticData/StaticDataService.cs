@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.Abilities.Configs;
+using Code.Gameplay.Features.Buffs;
+using Code.Gameplay.Features.Buffs.Configs;
 using Code.Gameplay.Features.Fighter.Configs;
 using UnityEngine;
 
@@ -12,6 +14,7 @@ namespace Code.Gameplay.StaticData
     {
         private Dictionary<AbilityTypeId, AbilityConfig> _abilityById = new();
         private List<FighterConfig> _fighterConfigs = new();
+        private Dictionary<BuffTypeId, BuffConfig> _buffById = new();
 
         public StaticDataService()
         {
@@ -24,12 +27,6 @@ namespace Code.Gameplay.StaticData
             LoadFighters();
         }
 
-        public float GetFirstDuration(AbilityTypeId abilityTypeId) =>
-            GetAbilityConfig(abilityTypeId)
-                .EffectSetups
-                .FirstOrDefault()
-                !.Cooldown;
-
         public AbilityConfig GetAbilityConfig(AbilityTypeId abilityTypeId)
         {
             if (_abilityById.TryGetValue(abilityTypeId, out var config))
@@ -40,6 +37,8 @@ namespace Code.Gameplay.StaticData
 
         public FighterConfig GetFighterConfig() =>
             _fighterConfigs.FirstOrDefault();
+        
+        public BuffConfig GetBuffConfig(BuffTypeId typeId) => throw new NotImplementedException();
 
         /*public AbilityLevel GetAbilityLevel(AbilityTypeId abilityTypeId, int level)
         {
@@ -60,5 +59,10 @@ namespace Code.Gameplay.StaticData
             _fighterConfigs = Resources
                 .LoadAll<FighterConfig>("Configs/Fighters")
                 .ToList();
+        
+        private void LoadBuffs() =>
+            _buffById = Resources
+                .LoadAll<BuffConfig>("Configs/Abilities")
+                .ToDictionary(x => x.TypeId, x => x);
     }
 }

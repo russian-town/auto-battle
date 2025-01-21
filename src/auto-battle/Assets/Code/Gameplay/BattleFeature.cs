@@ -1,5 +1,6 @@
 ﻿using Code.Common.Destruct;
 using Code.Gameplay.Features.Abilities;
+using Code.Gameplay.Features.Buffs;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.Features.Damage;
@@ -28,6 +29,7 @@ namespace Code.Gameplay
             Add(systems.Create<DamageFeature>());
 
             Add(systems.Create<AbilityFeature>());
+            Add(systems.Create<BuffFeature>());
             
             Add(systems.Create<StatusFeature>());
             Add(systems.Create<EffectFeature>());

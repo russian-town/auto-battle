@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab6c6ff62cf47fa8138d44e0c9cbef0, type: 3}
   m_Name: Doodge
   m_EditorClassIdentifier: 
-  Chance: 0.2
+  Chance: 0.5
   AbilityTypeId: 4
-  EffectSetups: []
-  StatusSetups:
-  - TypeId: 3
-    Value: 0
-    Period: 0
+  FightTypeId: 2
+  AbilityAnimationSetups: []
+  TargetDistance: 0

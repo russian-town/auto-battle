@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Code.Gameplay.Features.Abilities.Configs;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.CharacterStats.Configs;
 using Code.Infrastructure.Views;
@@ -11,6 +12,7 @@ namespace Code.Gameplay.Features.Fighter.Configs
     {
         public EntityBehaviour View;
         public List<StatsSetup> StatsSetups;
+        public List<AbilityConfig> BaseAbilities;
         public float Speed = 3f;
 
         public Dictionary<Stats, float> GetStats()

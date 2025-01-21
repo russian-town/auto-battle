@@ -3,6 +3,7 @@ using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Abilities.Factory;
+using Code.Gameplay.Features.Buffs.Factory;
 using Code.Gameplay.Features.Damage.Factory;
 using Code.Gameplay.Features.Effect.Factory;
 using Code.Gameplay.Features.Fight.Factory;
@@ -23,6 +24,7 @@ namespace Code.Infrastructure.Installers
         public override void InstallBindings()
         {
             BindServices();
+            BindGameplayServices();
             BindContexts();
             BindEntityIndices();
             BindSystemFactory();
@@ -39,6 +41,8 @@ namespace Code.Infrastructure.Installers
             Container.Bind<ITimeService>().To<TimeService>().AsSingle();
             Container.Bind<IRandomService>().To<RandomService>().AsSingle();
         }
+
+        private void BindGameplayServices() { }
 
         private void BindContexts()
         {
@@ -61,6 +65,7 @@ namespace Code.Infrastructure.Installers
             Container.Bind<IAbilityFactory>().To<AbilityFactory>().AsSingle();
             Container.Bind<IHealthBarFactory>().To<HealthBarFactory>().AsSingle();
             Container.Bind<IFightFactory>().To<FightFactory>().AsSingle();
+            Container.Bind<IBuffFactory>().To<BuffFactory>().AsSingle();
         }
 
         public void Initialize() { }

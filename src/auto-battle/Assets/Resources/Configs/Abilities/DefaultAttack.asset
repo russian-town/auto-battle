@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Chance: 1
   AbilityTypeId: 1
-  FightTypeId: 0
-  EffectSetups:
-  - EffectTypeId: 1
-    Value: 20
-    Cooldown: 5
-  StatusSetups: []
+  FightTypeId: 1
+  AbilityAnimationSetups:
+  - Duration: 0.08
+    EffectSetups:
+    - EffectTypeId: 1
+      PercentOfDamage: 1
+    StatusSetups: []
   TargetDistance: 2
