@@ -15,10 +15,9 @@ MonoBehaviour:
   Chance: 1
   AbilityTypeId: 1
   FightTypeId: 1
-  AbilityAnimationSetups:
-  - Duration: 0.08
-    EffectSetups:
-    - EffectTypeId: 1
-      PercentOfDamage: 1
-    StatusSetups: []
+  EffectSetups:
+  - EffectTypeId: 1
+    Value: 20
+    Cooldown: 2
+  StatusSetups: []
   TargetDistance: 2

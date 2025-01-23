@@ -5,7 +5,6 @@ namespace Code.Gameplay.Features.Statuses
 {
     [Game] public class Status : IComponent { }
     
-    [Game] public class Lifetime : IComponent { public int Value; }
     [Game] public class ApplierStatusLink : IComponent { [EntityIndex] public int Value; }
     
     [Game] public class Applied : IComponent { }

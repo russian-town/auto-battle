@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Code.Gameplay.Features.Effect.Configs;
-using Code.Gameplay.Features.Fight;
 using Code.Gameplay.Features.Statuses.Configs;
 using UnityEngine;
 
@@ -12,7 +11,6 @@ namespace Code.Gameplay.Features.Abilities.Configs
     {
         [Range(0f, 1f)] public float Chance;
         public AbilityTypeId AbilityTypeId;
-        public FightTypeId FightTypeId;
         public List<EffectSetup> EffectSetups;
         public List<StatusSetup> StatusSetups;
         public float TargetDistance;

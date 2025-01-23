@@ -38,7 +38,6 @@ namespace Code.Gameplay.Features.Statuses.Factory
                 .AddId(_identifiers.Next())
                 .AddStatusTypeId(StatusTypeId.Block)
                 .AddEffectValue(setup.Value)
-                .AddLifetime(setup.Lifetime)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
                 .With(x => x.isStatus = true)

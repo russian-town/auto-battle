@@ -5,7 +5,6 @@ using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.Features.Damage;
 using Code.Gameplay.Features.Effect;
-using Code.Gameplay.Features.Fight;
 using Code.Gameplay.Features.Fighter;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Rotation;
@@ -21,7 +20,6 @@ namespace Code.Gameplay
         { 
             Add(systems.Create<CooldownsFeature>());
             
-            Add(systems.Create<FightFeature>());
             Add(systems.Create<BindViewFeature>());
             
             Add(systems.Create<FighterFeature>());

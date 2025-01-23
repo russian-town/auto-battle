@@ -1,6 +1,5 @@
 ﻿using Entitas;
 using Entitas.CodeGeneration.Attributes;
-using TMPro;
 using UnityEngine;
 
 namespace Code.Gameplay.Common
@@ -14,7 +13,5 @@ namespace Code.Gameplay.Common
         [Game] public class WorldRotation : IComponent { public Quaternion Value; }
         [Game] public class TransformComponent : IComponent { public Transform Value; }
         [Game] public class RectTransformComponent : IComponent { public RectTransform Value; }
-        [Game] public class HeroComponent : IComponent { }
-        [Game] public class EnemyComponent : IComponent { }
     }
 }
