@@ -7,13 +7,11 @@ namespace Code.Gameplay.Features.Effect.Configs
     {
         public EffectTypeId EffectTypeId;
         public float Value;
-        public float Cooldown;
 
-        public EffectSetup(EffectTypeId effectTypeId, float value, float cooldown)
+        public EffectSetup(EffectTypeId effectTypeId, float value)
         {
             EffectTypeId = effectTypeId;
             Value = value;
-            Cooldown = cooldown;
         }
     }
 }

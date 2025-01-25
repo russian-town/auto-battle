@@ -13,8 +13,7 @@ namespace Code.Gameplay.Features.Abilities.Systems
             _abilities = game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Ability,
-                    GameMatcher.Active,
-                    GameMatcher.CooldownUp
+                    GameMatcher.Active
                     ));
         }
 

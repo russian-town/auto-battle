@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Animations.Factory;
 using Code.Gameplay.Features.Effect.Factory;
 using Entitas;
 
@@ -6,20 +7,22 @@ namespace Code.Gameplay.Features.Abilities.Systems
 {
     public class DefaultAttackAbilitySystem : IExecuteSystem
     {
+        private readonly IAnimationFactory _animationFactory;
         private readonly IEffectFactory _effectFactory;
         private readonly IGroup<GameEntity> _abilities;
-        private readonly List<GameEntity> _buffer = new(24);
+        private readonly List<GameEntity> _buffer = new(32);
 
-        public DefaultAttackAbilitySystem(GameContext game, IEffectFactory effectFactory)
+        public DefaultAttackAbilitySystem(GameContext game, IAnimationFactory animationFactory)
         {
-            _effectFactory = effectFactory;
+            _animationFactory = animationFactory;
 
-            _abilities = game.GetGroup(GameMatcher
+            _abilities = game.GetGroup(
+                GameMatcher
                     .AllOf(
                         GameMatcher.DefaultAttack,
                         GameMatcher.ProducerId,
                         GameMatcher.TargetId,
-                        GameMatcher.StatusSetups
+                        GameMatcher.AnimationSetups
                     )
                     .NoneOf(GameMatcher.Active));
         }
@@ -28,9 +31,9 @@ namespace Code.Gameplay.Features.Abilities.Systems
         {
             foreach (var ability in _abilities.GetEntities(_buffer))
             {
-                foreach (var effectSetup in ability.EffectSetups)
-                    _effectFactory.CreateEffect(effectSetup, ability.ProducerId, ability.TargetId);
-                
+                foreach (var animationSetup in ability.AnimationSetups)
+                    _animationFactory.CreateAnimation(animationSetup, ability.ProducerId, ability.TargetId);
+
                 ability.isActive = true;
             }
         }

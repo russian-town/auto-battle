@@ -1,4 +1,5 @@
-﻿using Entitas;
+﻿using System.Collections.Generic;
+using Entitas;
 
 namespace Code.Gameplay.Features.Effect.System
 {
@@ -6,7 +7,8 @@ namespace Code.Gameplay.Features.Effect.System
     {
         private readonly GameContext _game;
         private readonly IGroup<GameEntity> _effects;
-        
+        private readonly List<GameEntity> _buffer = new(64);
+
         public ProcessHealEffectSystem(GameContext game)
         {
             _game = game;
@@ -16,16 +18,17 @@ namespace Code.Gameplay.Features.Effect.System
                         GameMatcher.HealEffect,
                         GameMatcher.EffectValue,
                         GameMatcher.TargetId
-                    ));
+                    )
+                    .NoneOf(GameMatcher.Processed));
         }
 
         public void Execute()
         {
-            foreach (var effect in _effects)
+            foreach (var effect in _effects.GetEntities(_buffer))
             {
                 var target = _game.GetEntityWithId(effect.TargetId);
-                effect.isProcessed = true;
                 target.ReplaceCurrentHealth(target.CurrentHealth + effect.EffectValue);
+                effect.isProcessed = true;
             }
         }
     }

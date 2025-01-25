@@ -1,8 +1,8 @@
 ﻿using Code.Common.Destruct;
 using Code.Gameplay.Features.Abilities;
+using Code.Gameplay.Features.Animations;
 using Code.Gameplay.Features.Buffs;
 using Code.Gameplay.Features.CharacterStats;
-using Code.Gameplay.Features.Cooldowns;
 using Code.Gameplay.Features.Damage;
 using Code.Gameplay.Features.Effect;
 using Code.Gameplay.Features.Fighter;
@@ -18,7 +18,6 @@ namespace Code.Gameplay
     {
         public BattleFeature(ISystemFactory systems)
         { 
-            Add(systems.Create<CooldownsFeature>());
             
             Add(systems.Create<BindViewFeature>());
             
@@ -28,6 +27,7 @@ namespace Code.Gameplay
 
             Add(systems.Create<AbilityFeature>());
             Add(systems.Create<BuffFeature>());
+            Add(systems.Create<AnimationsFeature>());
             
             Add(systems.Create<StatusFeature>());
             Add(systems.Create<EffectFeature>());

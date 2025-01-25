@@ -1,0 +1,10 @@
+﻿namespace Code.Gameplay.Features.Animations
+{
+    public enum AnimationTypeId
+    {
+        Unknown = 0,
+        DefaultAttack = 1,
+        Hit = 2,
+        DoubleStrike = 3,
+    }
+}

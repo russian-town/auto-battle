@@ -5,7 +5,7 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
     public class FighterAnimator : MonoBehaviour
     {
         private readonly int _defaultAttackToHash = Animator.StringToHash("DefaultAttack");
-        private readonly int _doublePunchToHash = Animator.StringToHash("DoublePunch");
+        private readonly int _doubleStrikeToHash = Animator.StringToHash("DoubleStrike");
         private readonly int _hitToHash = Animator.StringToHash("Hit");
         private readonly int _blockToHash = Animator.StringToHash("Block");
         private readonly int _dodgeToHash = Animator.StringToHash("Dodge");
@@ -22,6 +22,12 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
         
         public Animator Animator;
 
+        public float GetCurrentAnimationLength()
+        {
+            var currentAnimatorClipInfo = Animator.GetCurrentAnimatorClipInfo(0);
+            return currentAnimatorClipInfo[0].clip.length;
+        }
+        
         public void PlayIdle()
         {
             Animator.SetBool(_moveForwardToHash, false);
@@ -29,7 +35,7 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
         }
         
         public void PlayDefaultAttack() => Animator.SetTrigger(_defaultAttackToHash);
-        public void PlayDoublePunch() => Animator.SetTrigger(_doublePunchToHash);
+        public void PlayDoubleStrike() => Animator.SetTrigger(_doubleStrikeToHash);
         public void PlayHit() => Animator.SetTrigger(_hitToHash);
         public void PlayBlock() => Animator.SetTrigger(_blockToHash);
         public void PlayDodge() => Animator.SetTrigger(_dodgeToHash);
