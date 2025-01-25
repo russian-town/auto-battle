@@ -23,6 +23,7 @@ namespace Code.Gameplay.Features.Abilities.Factory
 
             var ability = CreateEntity.Empty()
                 .AddId(_identifiers.Next())
+                .AddAbilityTypeId(config.AbilityTypeId)
                 .With(x => x.isAbility = true)
                 .AddChance(config.Chance)
                 .AddProducerId(producerId)

@@ -10,5 +10,6 @@ namespace Code.Gameplay.Features.Abilities.Configs
         [Range(0f, 1f)] public float Chance;
         public AbilityTypeId AbilityTypeId;
         public List<AnimationSetup> AnimationSetups;
+        public List<EventSetup> EventSetups;
     }
 }
