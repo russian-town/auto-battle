@@ -43,52 +43,53 @@ public static class GameComponentsLookup {
     public const int DoubleStrikeAnimation = 32;
     public const int Event = 33;
     public const int EventSetups = 34;
-    public const int Invoked = 35;
-    public const int ParentAnimationId = 36;
-    public const int TargetDistance = 37;
-    public const int Analgesic = 38;
-    public const int Buff = 39;
-    public const int Vitamins = 40;
-    public const int BaseStats = 41;
-    public const int StatChange = 42;
-    public const int StatsModifiers = 43;
-    public const int HealthBar = 44;
-    public const int DamageEffect = 45;
-    public const int Effect = 46;
-    public const int EffectValue = 47;
-    public const int HealEffect = 48;
-    public const int Processed = 49;
-    public const int ProducerId = 50;
-    public const int TargetId = 51;
-    public const int BaseAbilities = 52;
-    public const int Blocked = 53;
-    public const int Damage = 54;
-    public const int Defense = 55;
-    public const int DistanceToStartPoint = 56;
-    public const int DistanceToTarget = 57;
-    public const int FighterAnimator = 58;
-    public const int Fighter = 59;
-    public const int FighterTypeId = 60;
-    public const int Offensive = 61;
-    public const int StartPointPosition = 62;
-    public const int CurrentHealth = 63;
-    public const int Dead = 64;
-    public const int MaxHealth = 65;
-    public const int ProcessingDeath = 66;
-    public const int Direction = 67;
-    public const int Moving = 68;
-    public const int ParentInitialized = 69;
-    public const int Speed = 70;
-    public const int Affected = 71;
-    public const int Applied = 72;
-    public const int ApplierStatusLink = 73;
-    public const int Status = 74;
-    public const int StatusTypeId = 75;
-    public const int Unapplied = 76;
-    public const int AxisInput = 77;
-    public const int Input = 78;
+    public const int HitAnimation = 35;
+    public const int Invoked = 36;
+    public const int ParentAnimationId = 37;
+    public const int TargetDistance = 38;
+    public const int Analgesic = 39;
+    public const int Buff = 40;
+    public const int Vitamins = 41;
+    public const int BaseStats = 42;
+    public const int StatChange = 43;
+    public const int StatsModifiers = 44;
+    public const int HealthBar = 45;
+    public const int DamageEffect = 46;
+    public const int Effect = 47;
+    public const int EffectValue = 48;
+    public const int HealEffect = 49;
+    public const int Processed = 50;
+    public const int ProducerId = 51;
+    public const int TargetId = 52;
+    public const int BaseAbilities = 53;
+    public const int Blocked = 54;
+    public const int Damage = 55;
+    public const int Defense = 56;
+    public const int DistanceToStartPoint = 57;
+    public const int DistanceToTarget = 58;
+    public const int FighterAnimator = 59;
+    public const int Fighter = 60;
+    public const int FighterTypeId = 61;
+    public const int Offensive = 62;
+    public const int StartPointPosition = 63;
+    public const int CurrentHealth = 64;
+    public const int Dead = 65;
+    public const int MaxHealth = 66;
+    public const int ProcessingDeath = 67;
+    public const int Direction = 68;
+    public const int Moving = 69;
+    public const int ParentInitialized = 70;
+    public const int Speed = 71;
+    public const int Affected = 72;
+    public const int Applied = 73;
+    public const int ApplierStatusLink = 74;
+    public const int Status = 75;
+    public const int StatusTypeId = 76;
+    public const int Unapplied = 77;
+    public const int AxisInput = 78;
+    public const int Input = 79;
 
-    public const int TotalComponents = 79;
+    public const int TotalComponents = 80;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -126,6 +127,7 @@ public static class GameComponentsLookup {
         "DoubleStrikeAnimation",
         "Event",
         "EventSetups",
+        "HitAnimation",
         "Invoked",
         "ParentAnimationId",
         "TargetDistance",
@@ -208,6 +210,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Animations.DoubleStrikeAnimation),
         typeof(Code.Gameplay.Features.Animations.EventComponent),
         typeof(Code.Gameplay.Features.Animations.EventSetups),
+        typeof(Code.Gameplay.Features.Animations.HitAnimation),
         typeof(Code.Gameplay.Features.Animations.Invoked),
         typeof(Code.Gameplay.Features.Animations.ParentAnimationId),
         typeof(Code.Gameplay.Features.Animations.TargetDistance),

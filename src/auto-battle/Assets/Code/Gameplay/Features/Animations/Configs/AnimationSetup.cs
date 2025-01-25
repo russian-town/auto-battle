@@ -9,14 +9,13 @@ namespace Code.Gameplay.Features.Animations.Configs
     public class AnimationSetup
     {
         public AnimationTypeId TypeId;
-        public List<AnimationClip> Clips;
         public float TargetDistance;
+        public float AnimationTime;
         
-        public float AnimationTime => Clips.Sum(x => x.length);
-
-        public AnimationSetup(AnimationTypeId typeId, float targetDistance)
+        public AnimationSetup(AnimationTypeId typeId, float animationTime, float targetDistance)
         {
             TypeId = typeId;
+            AnimationTime = animationTime;
             TargetDistance = targetDistance;
         }
     }

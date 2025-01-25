@@ -19,7 +19,7 @@ namespace Code.Gameplay.Features.Animations.Factory
                 case AnimationTypeId.DefaultAttack:
                     return CreateDefaultAttackAnimation(setup, producerId, targetId);
                 case AnimationTypeId.Hit:
-                    break;
+                    return CreateHitAnimation(setup, producerId, targetId);
                 case AnimationTypeId.DoubleStrike:
                     return CreateDoubleStrikeAnimation(setup, producerId, targetId);
             }
@@ -33,26 +33,36 @@ namespace Code.Gameplay.Features.Animations.Factory
                     .AddId(_identifiers.Next())
                     .AddProducerId(producerId)
                     .AddTargetId(targetId)
-                    //.AddEventSetups(setup.EventSetups)
                     .With(x => x.isAnimation = true)
                     .With(x => x.isDefaultAttackAnimation = true)
-                    .AddAnimationTime(setup.AnimationTime)
                     .AddAnimationCurrentTime(0f)
                     .With(x => x.AddTargetDistance(setup.TargetDistance), when: setup.TargetDistance > 0f)
                 ;
         }
-        
+
         private GameEntity CreateDoubleStrikeAnimation(AnimationSetup setup, int producerId, int targetId)
         {
             return CreateEntity.Empty()
                     .AddId(_identifiers.Next())
                     .AddProducerId(producerId)
                     .AddTargetId(targetId)
-                    //.AddEventSetups(setup.EventSetups)
                     .With(x => x.isAnimation = true)
                     .With(x => x.isDoubleStrikeAnimation = true)
-                    .AddAnimationTime(setup.AnimationTime)
                     .AddAnimationCurrentTime(0f)
+                    .With(x => x.AddTargetDistance(setup.TargetDistance), when: setup.TargetDistance > 0f)
+                ;
+        }
+        
+        private GameEntity CreateHitAnimation(AnimationSetup setup, int producerId, int targetId)
+        {
+            return CreateEntity.Empty()
+                    .AddId(_identifiers.Next())
+                    .AddProducerId(producerId)
+                    .AddTargetId(targetId)
+                    .With(x => x.isAnimation = true)
+                    .With(x => x.isHitAnimation = true)
+                    .AddAnimationCurrentTime(0f)
+                    .AddAnimationTime(setup.AnimationTime)
                     .With(x => x.AddTargetDistance(setup.TargetDistance), when: setup.TargetDistance > 0f)
                 ;
         }

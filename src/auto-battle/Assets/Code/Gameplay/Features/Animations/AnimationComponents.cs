@@ -20,4 +20,5 @@ namespace Code.Gameplay.Features.Animations
     
     [Game] public class DefaultAttackAnimation : IComponent { }
     [Game] public class DoubleStrikeAnimation : IComponent { }
+    [Game] public class HitAnimation : IComponent { }
 }

@@ -9,6 +9,7 @@ namespace Code.Gameplay.Features.Animations.Systems
         private readonly GameContext _game;
         private readonly IEffectFactory _effectFactory;
         private readonly IGroup<GameEntity> _events;
+        private readonly IGroup<GameEntity> _animations;
         private readonly List<GameEntity> _buffer = new(32);
 
         public InvokeAnimationEventSystem(GameContext game, IEffectFactory effectFactory)
@@ -25,15 +26,24 @@ namespace Code.Gameplay.Features.Animations.Systems
                         GameMatcher.CaptureOnTimeline
                     )
                     .NoneOf(GameMatcher.Invoked));
+            
+            _animations = game.GetGroup(GameMatcher
+                    .AllOf(
+                        GameMatcher.Animation,
+                        GameMatcher.Id,
+                        GameMatcher.AnimationCurrentTime
+                    ));
         }
 
         public void Execute()
         {
             foreach (var eventComponent in _events.GetEntities(_buffer))
+            foreach (var animation in _animations)
             {
-                var parentAnimation = _game.GetEntityWithId(eventComponent.ParentAnimationId);
+                if(animation.Id != eventComponent.ParentAnimationId)
+                    continue;
 
-                if (parentAnimation.AnimationCurrentTime < eventComponent.CaptureOnTimeline)
+                if (animation.AnimationCurrentTime < eventComponent.CaptureOnTimeline)
                     continue;
 
                 foreach (var effectSetup in eventComponent.EffectSetups)
