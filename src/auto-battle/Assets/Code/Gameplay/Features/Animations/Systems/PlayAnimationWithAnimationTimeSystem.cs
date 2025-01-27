@@ -4,13 +4,13 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Animations.Systems
 {
-    public class PlayAnimationWithDurationSystem : IExecuteSystem
+    public class PlayAnimationWithAnimationTimeSystem : IExecuteSystem
     {
         private readonly ITimeService _time;
         private readonly IGroup<GameEntity> _animation;
         private readonly List<GameEntity> _buffer = new(32);
 
-        public PlayAnimationWithDurationSystem(GameContext game, ITimeService time)
+        public PlayAnimationWithAnimationTimeSystem(GameContext game, ITimeService time)
         {
             _time = time;
 

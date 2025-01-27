@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Animations.Configs
 {
@@ -9,14 +7,12 @@ namespace Code.Gameplay.Features.Animations.Configs
     public class AnimationSetup
     {
         public AnimationTypeId TypeId;
-        public float TargetDistance;
-        public float AnimationTime;
-        
-        public AnimationSetup(AnimationTypeId typeId, float animationTime, float targetDistance)
+        public List<EventSetup> EventSetups;
+
+        public AnimationSetup(AnimationTypeId typeId, List<EventSetup> eventSetups = null)
         {
             TypeId = typeId;
-            AnimationTime = animationTime;
-            TargetDistance = targetDistance;
+            EventSetups = eventSetups;
         }
     }
 }

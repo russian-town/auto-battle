@@ -61,35 +61,37 @@ public static class GameComponentsLookup {
     public const int Processed = 50;
     public const int ProducerId = 51;
     public const int TargetId = 52;
-    public const int BaseAbilities = 53;
-    public const int Blocked = 54;
-    public const int Damage = 55;
-    public const int Defense = 56;
-    public const int DistanceToStartPoint = 57;
-    public const int DistanceToTarget = 58;
-    public const int FighterAnimator = 59;
-    public const int Fighter = 60;
-    public const int FighterTypeId = 61;
-    public const int Offensive = 62;
-    public const int StartPointPosition = 63;
-    public const int CurrentHealth = 64;
-    public const int Dead = 65;
-    public const int MaxHealth = 66;
-    public const int ProcessingDeath = 67;
-    public const int Direction = 68;
-    public const int Moving = 69;
-    public const int ParentInitialized = 70;
-    public const int Speed = 71;
-    public const int Affected = 72;
-    public const int Applied = 73;
-    public const int ApplierStatusLink = 74;
-    public const int Status = 75;
-    public const int StatusTypeId = 76;
-    public const int Unapplied = 77;
-    public const int AxisInput = 78;
-    public const int Input = 79;
+    public const int Changed = 53;
+    public const int Turn = 54;
+    public const int BaseAbilities = 55;
+    public const int Blocked = 56;
+    public const int Damage = 57;
+    public const int Defense = 58;
+    public const int DistanceToStartPoint = 59;
+    public const int DistanceToTarget = 60;
+    public const int FighterAnimator = 61;
+    public const int Fighter = 62;
+    public const int FighterTypeId = 63;
+    public const int Offensive = 64;
+    public const int StartPointPosition = 65;
+    public const int CurrentHealth = 66;
+    public const int Dead = 67;
+    public const int MaxHealth = 68;
+    public const int ProcessingDeath = 69;
+    public const int Direction = 70;
+    public const int Moving = 71;
+    public const int ParentInitialized = 72;
+    public const int Speed = 73;
+    public const int Affected = 74;
+    public const int Applied = 75;
+    public const int ApplierStatusLink = 76;
+    public const int Status = 77;
+    public const int StatusTypeId = 78;
+    public const int Unapplied = 79;
+    public const int AxisInput = 80;
+    public const int Input = 81;
 
-    public const int TotalComponents = 80;
+    public const int TotalComponents = 82;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -145,6 +147,8 @@ public static class GameComponentsLookup {
         "Processed",
         "ProducerId",
         "TargetId",
+        "Changed",
+        "Turn",
         "BaseAbilities",
         "Blocked",
         "Damage",
@@ -228,6 +232,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Effect.Processed),
         typeof(Code.Gameplay.Features.Effect.ProducerId),
         typeof(Code.Gameplay.Features.Effect.TargetId),
+        typeof(Code.Gameplay.Features.Fight.Changed),
+        typeof(Code.Gameplay.Features.Fight.Turn),
         typeof(Code.Gameplay.Features.Fighter.BaseAbilities),
         typeof(Code.Gameplay.Features.Fighter.Blocked),
         typeof(Code.Gameplay.Features.Fighter.Damage),

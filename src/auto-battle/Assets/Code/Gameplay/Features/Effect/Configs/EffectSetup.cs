@@ -13,5 +13,7 @@ namespace Code.Gameplay.Features.Effect.Configs
             EffectTypeId = effectTypeId;
             Value = value;
         }
+
+        public static EffectSetup CreateEffectById(EffectTypeId typeId, float value) => new(typeId, value);
     }
 }

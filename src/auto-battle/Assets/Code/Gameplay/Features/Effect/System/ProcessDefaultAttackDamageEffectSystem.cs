@@ -36,7 +36,7 @@ namespace Code.Gameplay.Features.Effect.System
                 var target = _game.GetEntityWithId(effect.TargetId);
                 
                 _animationFactory.CreateAnimation(
-                    new AnimationSetup(AnimationTypeId.Hit, .36f, 0f),
+                    new AnimationSetup(AnimationTypeId.Hit),
                     effect.TargetId,
                     effect.TargetId);
                 

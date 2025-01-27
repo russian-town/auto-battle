@@ -22,21 +22,28 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
         
         public Animator Animator;
 
-        public float GetCurrentAnimationLength()
-        {
-            var currentAnimatorClipInfo = Animator.GetCurrentAnimatorClipInfo(0);
-            return currentAnimatorClipInfo[0].clip.length;
-        }
-        
         public void PlayIdle()
         {
             Animator.SetBool(_moveForwardToHash, false);
             Animator.SetBool(_moveBackwardToHash, false);
         }
-        
-        public void PlayDefaultAttack() => Animator.SetTrigger(_defaultAttackToHash);
+
+        public float PlayDefaultAttack()
+        {
+            Animator.SetTrigger(_defaultAttackToHash);
+            var clipInfo = Animator.GetCurrentAnimatorClipInfo(0);
+            return clipInfo[0].clip.length;
+        }
+
         public void PlayDoubleStrike() => Animator.SetTrigger(_doubleStrikeToHash);
-        public void PlayHit() => Animator.SetTrigger(_hitToHash);
+
+        public float PlayHit()
+        {
+            Animator.SetTrigger(_hitToHash);
+            var clipInfo = Animator.GetCurrentAnimatorClipInfo(0);
+            return clipInfo[0].clip.length;
+        }
+        
         public void PlayBlock() => Animator.SetTrigger(_blockToHash);
         public void PlayDodge() => Animator.SetTrigger(_dodgeToHash);
         public void PlayCounterattack() => Animator.SetTrigger(_counterattackToHash);

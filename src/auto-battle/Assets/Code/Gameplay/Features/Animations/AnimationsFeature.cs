@@ -11,7 +11,8 @@ namespace Code.Gameplay.Features.Animations
             Add(systems.Create<PlayDoubleStrikeAnimationSystem>());
             Add(systems.Create<PlayHitAnimationSystem>());
             
-            Add(systems.Create<PlayAnimationWithDurationSystem>());
+            Add(systems.Create<StartAnimationWithAnimationTimeSystem>());
+            Add(systems.Create<PlayAnimationWithAnimationTimeSystem>());
             
             Add(systems.Create<CreateAnimationEventsSystem>());
             Add(systems.Create<InvokeAnimationEventSystem>());

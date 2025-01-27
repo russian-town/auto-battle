@@ -26,7 +26,8 @@ namespace Code.Gameplay.Features.Fighter.Systems
             foreach (var fighter in _fighters)
             {
                 var target = _game.GetEntityWithId(fighter.TargetId);
-                fighter.ReplaceDistanceToTarget(Vector3.Distance(target.WorldPosition, fighter.WorldPosition));
+                var distance = Vector3.Distance(target.WorldPosition, fighter.WorldPosition);
+                fighter.ReplaceDistanceToTarget(distance);
             }
         }
     }

@@ -15,12 +15,9 @@ MonoBehaviour:
   Chance: 1
   AbilityTypeId: 1
   AnimationSetups:
-  - TypeId: 1
-    EventSetups:
-    - EffectSetups:
-      - EffectTypeId: 1
-        Value: 20
-      StatusSetups: []
-      CaptureOnTimeline: 0.1
-    TargetDistance: 0
+  - TypeId: 4
     AnimationTime: 0.4
+  EventSetups: []
+  Clips:
+  - {fileID: 7400000, guid: 58e0d0f58c6dafd40aa0501200fd2626, type: 2}
+  TargetDistance: 1.64

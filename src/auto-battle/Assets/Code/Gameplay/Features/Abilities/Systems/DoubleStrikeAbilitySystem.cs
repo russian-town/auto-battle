@@ -39,9 +39,7 @@ namespace Code.Gameplay.Features.Abilities.Systems
 
                 foreach (var animationSetup in ability.AnimationSetups)
                     _animationFactory
-                        .CreateAnimation(animationSetup, ability.ProducerId, ability.TargetId)
-                        .AddEventSetups(config.EventSetups)
-                        .AddAnimationTime(config.AnimationTime);
+                        .CreateAnimation(animationSetup, ability.ProducerId, ability.TargetId);
 
                 ability.isActive = true;
             }

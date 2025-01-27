@@ -1,4 +1,6 @@
-﻿using Code.Gameplay.Features.Abilities;
+﻿using Code.Common.Entity;
+using Code.Common.Extensions;
+using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.Abilities.Factory;
 using Code.Gameplay.Features.Fighter.Factory;
 using Code.Gameplay.Levels;
@@ -35,7 +37,13 @@ namespace Code.Gameplay.Features.Fighter.Systems
                 GetTransformByPositionTypeIdFor(FighterTypeId.Enemy).rotation,
                 FighterTypeId.Enemy);
 
-            _abilityFactory.CreateAbility(AbilityTypeId.DoubleStrike, hero.Id, enemy.Id);
+            hero.AddTargetId(enemy.Id);
+            enemy.AddTargetId(hero.Id);
+
+            _abilityFactory.CreateAbility(AbilityTypeId.DefaultAttack, hero.Id, enemy.Id);
+            
+            CreateEntity.Empty()
+                .With(x => x.isTurn = true);
         }
 
         private Transform GetTransformByPositionTypeIdFor(FighterTypeId typeId) =>

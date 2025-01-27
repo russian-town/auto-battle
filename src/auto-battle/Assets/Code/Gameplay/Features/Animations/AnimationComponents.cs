@@ -8,6 +8,7 @@ namespace Code.Gameplay.Features.Animations
     [Game] public class AnimationTypeIdComponent : IComponent { public AnimationTypeId Value; }
     [Game] public class AnimationTime : IComponent { public float Value; }
     [Game] public class AnimationCurrentTime : IComponent { public float Value; }
+
     [Game] public class EventSetups : IComponent { public List<EventSetup> Value; }
     [Game] public class TargetDistance : IComponent { public float Value; }
     [Game] public class AnimationStarted : IComponent { }
@@ -15,6 +16,7 @@ namespace Code.Gameplay.Features.Animations
     
     [Game] public class EventComponent : IComponent { }
     [Game] public class ParentAnimationId : IComponent { public int Value; }
+
     [Game] public class CaptureOnTimeline : IComponent { public float Value; }
     [Game] public class Invoked : IComponent { }
     

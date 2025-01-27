@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Animations.Configs;
 using Code.Gameplay.Features.Animations.Factory;
 using Code.Gameplay.Features.Effect.Factory;
 using Code.Gameplay.StaticData;
@@ -37,12 +38,11 @@ namespace Code.Gameplay.Features.Abilities.Systems
             foreach (var ability in _abilities.GetEntities(_buffer))
             {
                 var config = _staticDataService.GetAbilityConfig(ability.AbilityTypeId);
-
+                
                 foreach (var animationSetup in ability.AnimationSetups)
                     _animationFactory
                         .CreateAnimation(animationSetup, ability.ProducerId, ability.TargetId)
-                        .AddEventSetups(config.EventSetups)
-                        .AddAnimationTime(config.AnimationTime);
+                        .AddTargetDistance(config.TargetDistance);
 
                 ability.isActive = true;
             }

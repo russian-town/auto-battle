@@ -9,8 +9,8 @@ namespace Code.Gameplay.Features.Fighter
         {
             Add(systems.Create<InitializeFighterSystem>());
             
-            Add(systems.Create<CalculateDistanceToStartPointSystem>());
             Add(systems.Create<CalculateDistanceToTargetSystem>());
+            Add(systems.Create<CalculateDistanceToStartPointSystem>());
         }
     }
 }

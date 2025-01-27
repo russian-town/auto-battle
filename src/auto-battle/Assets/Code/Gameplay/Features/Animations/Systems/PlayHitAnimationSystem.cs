@@ -33,10 +33,7 @@ namespace Code.Gameplay.Features.Animations.Systems
             foreach (var fighter in _fighters)
             {
                 if (animation.ProducerId == fighter.Id)
-                {
-                    fighter.FighterAnimator.PlayHit();
-                    animation.isAnimationStarted = true;
-                }
+                    animation.AddAnimationTime(fighter.FighterAnimator.PlayHit());
             }
         }
     }
