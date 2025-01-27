@@ -44,7 +44,13 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
             return clipInfo[0].clip.length;
         }
         
-        public void PlayBlock() => Animator.SetTrigger(_blockToHash);
+        public float PlayBlock()
+        {
+            Animator.SetTrigger(_blockToHash);
+            var clipInfo = Animator.GetCurrentAnimatorClipInfo(0);
+            return clipInfo[0].clip.length;
+        }
+
         public void PlayDodge() => Animator.SetTrigger(_dodgeToHash);
         public void PlayCounterattack() => Animator.SetTrigger(_counterattackToHash);
         public void PlayFall() => Animator.SetTrigger(_fallToHash);

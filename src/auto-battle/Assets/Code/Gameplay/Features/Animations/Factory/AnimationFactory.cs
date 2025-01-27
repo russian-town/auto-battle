@@ -28,9 +28,11 @@ namespace Code.Gameplay.Features.Animations.Factory
                 case AnimationTypeId.DefaultAttack:
                     return CreateDefaultAttackAnimation(ability);
                 case AnimationTypeId.Hit:
-                    return CreateHitAnimation(ability, setup);
+                    return CreateHitAnimation(ability);
                 case AnimationTypeId.DoubleStrike:
                     return CreateDoubleStrikeAnimation(ability);
+                case AnimationTypeId.Block:
+                    return CreateBlockAnimation(ability);
             }
 
             throw new ArgumentException($"Animation with type id {setup.TypeId} not found.");
@@ -42,7 +44,10 @@ namespace Code.Gameplay.Features.Animations.Factory
         private GameEntity CreateDoubleStrikeAnimation(GameEntity entity) =>
             entity.With(x => x.isDoubleStrikeAnimation = true);
 
-        private GameEntity CreateHitAnimation(GameEntity entity, AnimationSetup setup) =>
+        private GameEntity CreateHitAnimation(GameEntity entity) =>
             entity.With(x => x.isHitAnimation = true);
+        
+        private GameEntity CreateBlockAnimation(GameEntity entity) =>
+            entity.With(x => x.isBlockAnimation = true);
     }
 }

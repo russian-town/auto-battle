@@ -20,9 +20,7 @@ namespace Code.Gameplay.Features.CharacterStats.Systems
         public void Execute()
         {
             foreach (var statOwner in _statOwners)
-            {
                 statOwner.ReplaceDamage(Damage(statOwner).ZeroIfNegative());
-            }
         }
 
         private static float Damage(GameEntity statOwner) =>

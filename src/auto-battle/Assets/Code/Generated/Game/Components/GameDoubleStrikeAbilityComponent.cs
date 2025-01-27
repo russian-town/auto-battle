@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherBlock;
+    static Entitas.IMatcher<GameEntity> _matcherDoubleStrikeAbility;
 
-    public static Entitas.IMatcher<GameEntity> Block {
+    public static Entitas.IMatcher<GameEntity> DoubleStrikeAbility {
         get {
-            if (_matcherBlock == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Block);
+            if (_matcherDoubleStrikeAbility == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.DoubleStrikeAbility);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherBlock = matcher;
+                _matcherDoubleStrikeAbility = matcher;
             }
 
-            return _matcherBlock;
+            return _matcherDoubleStrikeAbility;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Abilities.Block blockComponent = new Code.Gameplay.Features.Abilities.Block();
+    static readonly Code.Gameplay.Features.Abilities.DoubleStrikeAbility doubleStrikeAbilityComponent = new Code.Gameplay.Features.Abilities.DoubleStrikeAbility();
 
-    public bool isBlock {
-        get { return HasComponent(GameComponentsLookup.Block); }
+    public bool isDoubleStrikeAbility {
+        get { return HasComponent(GameComponentsLookup.DoubleStrikeAbility); }
         set {
-            if (value != isBlock) {
-                var index = GameComponentsLookup.Block;
+            if (value != isDoubleStrikeAbility) {
+                var index = GameComponentsLookup.DoubleStrikeAbility;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : blockComponent;
+                            : doubleStrikeAbilityComponent;
 
                     AddComponent(index, component);
                 } else {

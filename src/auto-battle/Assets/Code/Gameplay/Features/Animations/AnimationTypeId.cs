@@ -6,5 +6,6 @@
         DefaultAttack = 1,
         Hit = 2,
         DoubleStrike = 3,
+        Block = 4,
     }
 }

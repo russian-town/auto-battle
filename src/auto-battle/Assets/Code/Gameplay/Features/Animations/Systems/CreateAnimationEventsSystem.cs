@@ -35,7 +35,7 @@ namespace Code.Gameplay.Features.Animations.Systems
                     CreateEntity.Empty()
                         .AddProducerId(animation.ProducerId)
                         .AddTargetId(animation.TargetId)
-                        .AddEffectSetups(eventSetup.EffectSetups)
+                        .With(x => x.AddEffectSetups(eventSetup.EffectSetups), when: !eventSetup.EffectSetups.IsNullOrEmpty())
                         .AddCaptureOnTimeline(eventSetup.CaptureOnTimeline)
                         .With(x => x.isEvent = true)
                         .AddParentAnimationId(animation.Id);

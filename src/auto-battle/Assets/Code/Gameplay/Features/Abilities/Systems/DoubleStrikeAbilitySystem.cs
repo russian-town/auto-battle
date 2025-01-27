@@ -22,7 +22,7 @@ namespace Code.Gameplay.Features.Abilities.Systems
 
             _abilities = game.GetGroup(GameMatcher
                     .AllOf(
-                        GameMatcher.DoubleStrike,
+                        GameMatcher.DoubleStrikeAbility,
                         GameMatcher.AbilityTypeId,
                         GameMatcher.ProducerId,
                         GameMatcher.TargetId,

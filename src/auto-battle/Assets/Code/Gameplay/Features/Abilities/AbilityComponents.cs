@@ -15,9 +15,9 @@ namespace Code.Gameplay.Features.Abilities
     [Game] public class EffectSetups : IComponent { public List<EffectSetup> Value; }
     [Game] public class AnimationSetups : IComponent { public List<AnimationSetup> Value; }
     
-    [Game] public class DefaultAttack : IComponent { }
-    [Game] public class Block : IComponent { }
-    [Game] public class Counterattack : IComponent { }
-    [Game] public class DoubleStrike : IComponent { }
-    [Game] public class Dodge : IComponent { }
+    [Game] public class DefaultAttackAbility : IComponent { }
+    [Game] public class BlockAbility : IComponent { }
+    [Game] public class CounterattackAbility : IComponent { }
+    [Game] public class DoubleStrikeAbility : IComponent { }
+    [Game] public class DodgeAbility : IComponent { }
 }

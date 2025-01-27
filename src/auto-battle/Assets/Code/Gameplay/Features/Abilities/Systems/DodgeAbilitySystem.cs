@@ -17,7 +17,7 @@ namespace Code.Gameplay.Features.Abilities.Systems
             _abilities = game.GetGroup(
                 GameMatcher
                     .AllOf(
-                        GameMatcher.Dodge,
+                        GameMatcher.DodgeAbility,
                         GameMatcher.ProducerId,
                         GameMatcher.TargetId,
                         GameMatcher.StatusSetups

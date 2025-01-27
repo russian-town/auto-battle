@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherCounterattack;
+    static Entitas.IMatcher<GameEntity> _matcherDodgeAbility;
 
-    public static Entitas.IMatcher<GameEntity> Counterattack {
+    public static Entitas.IMatcher<GameEntity> DodgeAbility {
         get {
-            if (_matcherCounterattack == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Counterattack);
+            if (_matcherDodgeAbility == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.DodgeAbility);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherCounterattack = matcher;
+                _matcherDodgeAbility = matcher;
             }
 
-            return _matcherCounterattack;
+            return _matcherDodgeAbility;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Abilities.Counterattack counterattackComponent = new Code.Gameplay.Features.Abilities.Counterattack();
+    static readonly Code.Gameplay.Features.Abilities.DodgeAbility dodgeAbilityComponent = new Code.Gameplay.Features.Abilities.DodgeAbility();
 
-    public bool isCounterattack {
-        get { return HasComponent(GameComponentsLookup.Counterattack); }
+    public bool isDodgeAbility {
+        get { return HasComponent(GameComponentsLookup.DodgeAbility); }
         set {
-            if (value != isCounterattack) {
-                var index = GameComponentsLookup.Counterattack;
+            if (value != isDodgeAbility) {
+                var index = GameComponentsLookup.DodgeAbility;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : counterattackComponent;
+                            : dodgeAbilityComponent;
 
                     AddComponent(index, component);
                 } else {

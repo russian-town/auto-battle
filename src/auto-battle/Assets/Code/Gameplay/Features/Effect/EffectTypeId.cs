@@ -3,7 +3,7 @@
     public enum EffectTypeId
     {
         Unknown = 0,
-        DefaultAttack = 1,
+        Damage = 1,
         Heal = 2,
     }
 }

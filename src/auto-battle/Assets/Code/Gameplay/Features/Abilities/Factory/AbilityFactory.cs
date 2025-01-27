@@ -25,6 +25,7 @@ namespace Code.Gameplay.Features.Abilities.Factory
                 .AddId(_identifiers.Next())
                 .AddAbilityTypeId(config.AbilityTypeId)
                 .With(x => x.isAbility = true)
+                .With(x => x.AddStatusSetups(config.StatusSetups), when: !config.StatusSetups.IsNullOrEmpty())
                 .AddChance(config.Chance)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
@@ -49,18 +50,18 @@ namespace Code.Gameplay.Features.Abilities.Factory
         }
 
         private GameEntity CreateDefaultAttack(GameEntity entity) =>
-            entity.With(x => x.isDefaultAttack = true);
+            entity.With(x => x.isDefaultAttackAbility = true);
 
         private GameEntity CreateCounterattack(GameEntity entity) =>
-            entity.With(x => x.isCounterattack = true);
+            entity.With(x => x.isCounterattackAbility = true);
 
         private GameEntity CreateBlock(GameEntity entity) =>
-            entity.With(x => x.isBlock = true);
+            entity.With(x => x.isBlockAbility = true);
 
         private GameEntity CreateDodge(GameEntity entity) =>
-            entity.With(x => x.isDodge = true);
+            entity.With(x => x.isDodgeAbility = true);
 
         private GameEntity CreateDoubleStrike(GameEntity entity) =>
-            entity.With(x => x.isDoubleStrike = true);
+            entity.With(x => x.isDoubleStrikeAbility = true);
     }
 }

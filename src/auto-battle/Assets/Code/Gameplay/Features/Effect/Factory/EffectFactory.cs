@@ -15,41 +15,28 @@ namespace Code.Gameplay.Features.Effect.Factory
             _identifiers = identifiers;
         }
 
-        public GameEntity CreateEffect(EffectSetup setup, int producerId, int targetId)
+        public GameEntity CreateEffect(EffectSetup setup, float fighterDamage, int producerId, int targetId)
         {
+            var effect = CreateEntity.Empty()
+                .AddId(_identifiers.Next())
+                .With(x => x.isEffect = true)
+                .AddEffectValue(fighterDamage * setup.Percent)
+                .AddProducerId(producerId)
+                .AddTargetId(targetId);
+
             switch (setup.EffectTypeId)
             {
-                case EffectTypeId.DefaultAttack:
-                    return CreateDamage(setup.Value, producerId, targetId);
+                case EffectTypeId.Damage:
+                    return CreateDamage(effect);
                 case EffectTypeId.Heal:
-                    return CreateHeal(setup.Value, producerId, targetId);
+                    return CreateHeal(effect);
             }
 
             throw new Exception($"Effect with type id {setup.EffectTypeId} does not exist.");
         }
 
-        private GameEntity CreateDamage(float value, int producerId, int targetId)
-        {
-            return CreateEntity.Empty()
-                    .AddId(_identifiers.Next())
-                    .With(x => x.isEffect = true)
-                    .With(x => x.isDamageEffect = true)
-                    .AddEffectValue(value)
-                    .AddProducerId(producerId)
-                    .AddTargetId(targetId)
-                ;
-        }
-        
-        private GameEntity CreateHeal(float value, int producerId, int targetId)
-        {
-            return CreateEntity.Empty()
-                    .AddId(_identifiers.Next())
-                    .With(x => x.isEffect = true)
-                    .With(x => x.isHealEffect = true)
-                    .AddEffectValue(value)
-                    .AddProducerId(producerId)
-                    .AddTargetId(targetId)
-                ;
-        }
+        private GameEntity CreateDamage(GameEntity effect) => effect.With(x => x.isDamageEffect = true);
+
+        private GameEntity CreateHeal(GameEntity effect) => effect.With(x => x.isHealEffect = true);
     }
 }

@@ -6,7 +6,6 @@ namespace Code.Gameplay.Features.CharacterStats.Systems
     public class StatChangeSystem : IExecuteSystem
     {
         private readonly IGroup<GameEntity> _statOwners;
-
         private readonly GameContext _game;
 
         public StatChangeSystem(GameContext game)

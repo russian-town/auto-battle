@@ -3,6 +3,7 @@ using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Statuses.Configs;
 using Code.Infrastructure.Identifiers;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Statuses.Factory
 {
@@ -10,10 +11,7 @@ namespace Code.Gameplay.Features.Statuses.Factory
     {
         private readonly IIdentifierService _identifiers;
 
-        public StatusFactory(IIdentifierService identifiers)
-        {
-            _identifiers = identifiers;
-        }
+        public StatusFactory(IIdentifierService identifiers) => _identifiers = identifiers;
 
         public GameEntity CreateStatus(StatusSetup setup, int producerId, int targetId)
         {
@@ -41,7 +39,7 @@ namespace Code.Gameplay.Features.Statuses.Factory
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
                 .With(x => x.isStatus = true)
-                .With(x => x.isBlock = true)
+                .With(x => x.isBlockStatus = true)
                 ;
         }
     }

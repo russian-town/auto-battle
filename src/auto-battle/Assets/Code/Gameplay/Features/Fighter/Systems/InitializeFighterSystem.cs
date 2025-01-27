@@ -41,6 +41,7 @@ namespace Code.Gameplay.Features.Fighter.Systems
             enemy.AddTargetId(hero.Id);
 
             _abilityFactory.CreateAbility(AbilityTypeId.DefaultAttack, hero.Id, enemy.Id);
+            _abilityFactory.CreateAbility(AbilityTypeId.Block, enemy.Id, hero.Id);
             
             CreateEntity.Empty()
                 .With(x => x.isTurn = true);

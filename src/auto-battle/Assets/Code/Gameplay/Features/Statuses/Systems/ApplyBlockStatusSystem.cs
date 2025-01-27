@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Code.Common.Entity;
-using Code.Common.Extensions;
 using Code.Gameplay.Features.CharacterStats;
 using Entitas;
 
@@ -15,12 +14,11 @@ namespace Code.Gameplay.Features.Statuses.Systems
         public ApplyBlockStatusSystem(GameContext game)
         {
             _game = game;
-            
-            _statuses = game.GetGroup(
-                GameMatcher
+
+            _statuses = game.GetGroup(GameMatcher
                     .AllOf(
                         GameMatcher.Status,
-                        GameMatcher.Block,
+                        GameMatcher.BlockStatus,
                         GameMatcher.TargetId,
                         GameMatcher.ProducerId
                     )
@@ -32,7 +30,14 @@ namespace Code.Gameplay.Features.Statuses.Systems
             foreach (var status in _statuses.GetEntities(_buffer))
             {
                 var target = _game.GetEntityWithId(status.TargetId);
-                target.isBlocked = true;
+                
+                CreateEntity.Empty()
+                    .AddStatChange(Stats.Damage)
+                    .AddTargetId(status.TargetId)
+                    .AddProducerId(status.ProducerId)
+                    .AddEffectValue(-target.Damage)
+                    .AddApplierStatusLink(status.Id);
+                
                 status.isAffected = true;
             }
         }

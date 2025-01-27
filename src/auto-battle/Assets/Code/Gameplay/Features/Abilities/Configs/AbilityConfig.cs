@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Animations.Configs;
+using Code.Gameplay.Features.Statuses.Configs;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Abilities.Configs
@@ -10,6 +11,7 @@ namespace Code.Gameplay.Features.Abilities.Configs
         [Range(0f, 1f)] public float Chance;
         public AbilityTypeId AbilityTypeId;
         public List<AnimationSetup> AnimationSetups;
+        public List<StatusSetup> StatusSetups;
         public float TargetDistance;
     }
 }

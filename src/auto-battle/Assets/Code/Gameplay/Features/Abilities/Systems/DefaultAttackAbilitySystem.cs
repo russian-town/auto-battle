@@ -25,7 +25,7 @@ namespace Code.Gameplay.Features.Abilities.Systems
 
             _abilities = game.GetGroup(GameMatcher
                     .AllOf(
-                        GameMatcher.DefaultAttack,
+                        GameMatcher.DefaultAttackAbility,
                         GameMatcher.ProducerId,
                         GameMatcher.TargetId,
                         GameMatcher.AnimationSetups

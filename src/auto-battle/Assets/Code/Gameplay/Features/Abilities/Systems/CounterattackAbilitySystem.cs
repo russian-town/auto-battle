@@ -18,18 +18,16 @@ namespace Code.Gameplay.Features.Abilities.Systems
             _effectFactory = effectFactory;
             _statusFactory = statusFactory;
 
-            _defaultAttacks = game.GetGroup(
-                GameMatcher
+            _defaultAttacks = game.GetGroup(GameMatcher
                     .AllOf(
-                        GameMatcher.DefaultAttack,
+                        GameMatcher.DefaultAttackAbility,
                         GameMatcher.TargetId,
                         GameMatcher.ProducerId
-                        ));
-            
-            _abilities = game.GetGroup(
-                GameMatcher
+                    ));
+
+            _abilities = game.GetGroup(GameMatcher
                     .AllOf(
-                        GameMatcher.Counterattack,
+                        GameMatcher.CounterattackAbility,
                         GameMatcher.ProducerId,
                         GameMatcher.TargetId,
                         GameMatcher.StatusSetups
@@ -39,15 +37,7 @@ namespace Code.Gameplay.Features.Abilities.Systems
 
         public void Execute()
         {
-            foreach (var defaultAttack in _defaultAttacks)
-            foreach (var ability in _abilities.GetEntities(_buffer))
-            foreach (var statusSetup in ability.StatusSetups)
-            foreach (var effectSetup in ability.EffectSetups)
-            {
-                _statusFactory.CreateStatus(statusSetup, ability.ProducerId, ability.ProducerId);
-                _effectFactory.CreateEffect(effectSetup, ability.ProducerId, ability.TargetId);
-                ability.isActive = true;
-            }
+            foreach (var ability in _abilities.GetEntities(_buffer)) { }
         }
     }
 }

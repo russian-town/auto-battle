@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherDefaultAttack;
+    static Entitas.IMatcher<GameEntity> _matcherBlockStatus;
 
-    public static Entitas.IMatcher<GameEntity> DefaultAttack {
+    public static Entitas.IMatcher<GameEntity> BlockStatus {
         get {
-            if (_matcherDefaultAttack == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.DefaultAttack);
+            if (_matcherBlockStatus == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.BlockStatus);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherDefaultAttack = matcher;
+                _matcherBlockStatus = matcher;
             }
 
-            return _matcherDefaultAttack;
+            return _matcherBlockStatus;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Abilities.DefaultAttack defaultAttackComponent = new Code.Gameplay.Features.Abilities.DefaultAttack();
+    static readonly Code.Gameplay.Features.Statuses.BlockStatus blockStatusComponent = new Code.Gameplay.Features.Statuses.BlockStatus();
 
-    public bool isDefaultAttack {
-        get { return HasComponent(GameComponentsLookup.DefaultAttack); }
+    public bool isBlockStatus {
+        get { return HasComponent(GameComponentsLookup.BlockStatus); }
         set {
-            if (value != isDefaultAttack) {
-                var index = GameComponentsLookup.DefaultAttack;
+            if (value != isBlockStatus) {
+                var index = GameComponentsLookup.BlockStatus;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : defaultAttackComponent;
+                            : blockStatusComponent;
 
                     AddComponent(index, component);
                 } else {

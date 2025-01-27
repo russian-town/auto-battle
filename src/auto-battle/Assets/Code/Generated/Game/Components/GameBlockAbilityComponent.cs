@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherBlocked;
+    static Entitas.IMatcher<GameEntity> _matcherBlockAbility;
 
-    public static Entitas.IMatcher<GameEntity> Blocked {
+    public static Entitas.IMatcher<GameEntity> BlockAbility {
         get {
-            if (_matcherBlocked == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Blocked);
+            if (_matcherBlockAbility == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.BlockAbility);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherBlocked = matcher;
+                _matcherBlockAbility = matcher;
             }
 
-            return _matcherBlocked;
+            return _matcherBlockAbility;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Fighter.Blocked blockedComponent = new Code.Gameplay.Features.Fighter.Blocked();
+    static readonly Code.Gameplay.Features.Abilities.BlockAbility blockAbilityComponent = new Code.Gameplay.Features.Abilities.BlockAbility();
 
-    public bool isBlocked {
-        get { return HasComponent(GameComponentsLookup.Blocked); }
+    public bool isBlockAbility {
+        get { return HasComponent(GameComponentsLookup.BlockAbility); }
         set {
-            if (value != isBlocked) {
-                var index = GameComponentsLookup.Blocked;
+            if (value != isBlockAbility) {
+                var index = GameComponentsLookup.BlockAbility;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : blockedComponent;
+                            : blockAbilityComponent;
 
                     AddComponent(index, component);
                 } else {

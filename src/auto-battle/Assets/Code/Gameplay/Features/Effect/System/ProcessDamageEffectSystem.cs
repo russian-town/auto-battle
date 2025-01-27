@@ -6,14 +6,14 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Effect.System
 {
-    public class ProcessDefaultAttackDamageEffectSystem : IExecuteSystem
+    public class ProcessDamageEffectSystem : IExecuteSystem
     {
         private readonly GameContext _game;
         private readonly IAnimationFactory _animationFactory;
         private readonly IGroup<GameEntity> _effects;
         private readonly List<GameEntity> _buffer = new(64);
 
-        public ProcessDefaultAttackDamageEffectSystem(GameContext game, IAnimationFactory animationFactory)
+        public ProcessDamageEffectSystem(GameContext game, IAnimationFactory animationFactory)
         {
             _game = game;
             _animationFactory = animationFactory;

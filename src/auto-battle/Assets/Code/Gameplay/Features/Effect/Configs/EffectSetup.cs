@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Effect.Configs
 {
@@ -6,14 +7,14 @@ namespace Code.Gameplay.Features.Effect.Configs
     public class EffectSetup
     {
         public EffectTypeId EffectTypeId;
-        public float Value;
+        [Range(0f, 1f)] public float Percent;
 
-        public EffectSetup(EffectTypeId effectTypeId, float value)
+        public EffectSetup(EffectTypeId effectTypeId, float percent)
         {
             EffectTypeId = effectTypeId;
-            Value = value;
+            Percent = percent;
         }
 
-        public static EffectSetup CreateEffectById(EffectTypeId typeId, float value) => new(typeId, value);
+        public static EffectSetup CreateEffectById(EffectTypeId typeId, float percent) => new(typeId, percent);
     }
 }

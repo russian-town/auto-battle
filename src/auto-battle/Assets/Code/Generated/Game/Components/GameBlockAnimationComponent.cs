@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherDoubleStrike;
+    static Entitas.IMatcher<GameEntity> _matcherBlockAnimation;
 
-    public static Entitas.IMatcher<GameEntity> DoubleStrike {
+    public static Entitas.IMatcher<GameEntity> BlockAnimation {
         get {
-            if (_matcherDoubleStrike == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.DoubleStrike);
+            if (_matcherBlockAnimation == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.BlockAnimation);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherDoubleStrike = matcher;
+                _matcherBlockAnimation = matcher;
             }
 
-            return _matcherDoubleStrike;
+            return _matcherBlockAnimation;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Abilities.DoubleStrike doubleStrikeComponent = new Code.Gameplay.Features.Abilities.DoubleStrike();
+    static readonly Code.Gameplay.Features.Animations.BlockAnimation blockAnimationComponent = new Code.Gameplay.Features.Animations.BlockAnimation();
 
-    public bool isDoubleStrike {
-        get { return HasComponent(GameComponentsLookup.DoubleStrike); }
+    public bool isBlockAnimation {
+        get { return HasComponent(GameComponentsLookup.BlockAnimation); }
         set {
-            if (value != isDoubleStrike) {
-                var index = GameComponentsLookup.DoubleStrike;
+            if (value != isBlockAnimation) {
+                var index = GameComponentsLookup.BlockAnimation;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : doubleStrikeComponent;
+                            : blockAnimationComponent;
 
                     AddComponent(index, component);
                 } else {

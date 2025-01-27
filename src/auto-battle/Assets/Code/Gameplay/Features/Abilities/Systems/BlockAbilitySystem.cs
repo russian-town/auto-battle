@@ -14,10 +14,10 @@ namespace Code.Gameplay.Features.Abilities.Systems
         {
             _statusFactory = statusFactory;
 
-            _abilities = game.GetGroup(
-                GameMatcher
+            _abilities = game.GetGroup(GameMatcher
                     .AllOf(
-                        GameMatcher.Block,
+                        GameMatcher.Ability,
+                        GameMatcher.BlockAbility,
                         GameMatcher.ProducerId,
                         GameMatcher.TargetId,
                         GameMatcher.StatusSetups
@@ -28,9 +28,10 @@ namespace Code.Gameplay.Features.Abilities.Systems
         public void Execute()
         {
             foreach (var ability in _abilities.GetEntities(_buffer))
-            foreach (var statusSetup in ability.StatusSetups)
             {
-                _statusFactory.CreateStatus(statusSetup, ability.ProducerId, ability.TargetId);
+                foreach (var statusSetup in ability.StatusSetups)
+                    _statusFactory.CreateStatus(statusSetup, ability.ProducerId, ability.TargetId);
+
                 ability.isActive = true;
             }
         }

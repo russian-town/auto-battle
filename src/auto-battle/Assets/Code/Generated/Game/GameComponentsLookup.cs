@@ -24,12 +24,12 @@ public static class GameComponentsLookup {
     public const int AbilityTypeId = 13;
     public const int Active = 14;
     public const int AnimationSetups = 15;
-    public const int Block = 16;
+    public const int BlockAbility = 16;
     public const int Chance = 17;
-    public const int Counterattack = 18;
-    public const int DefaultAttack = 19;
-    public const int Dodge = 20;
-    public const int DoubleStrike = 21;
+    public const int CounterattackAbility = 18;
+    public const int DefaultAttackAbility = 19;
+    public const int DodgeAbility = 20;
+    public const int DoubleStrikeAbility = 21;
     public const int EffectSetups = 22;
     public const int StatusSetups = 23;
     public const int Animation = 24;
@@ -38,33 +38,33 @@ public static class GameComponentsLookup {
     public const int AnimationStarted = 27;
     public const int AnimationTime = 28;
     public const int AnimationTypeId = 29;
-    public const int CaptureOnTimeline = 30;
-    public const int DefaultAttackAnimation = 31;
-    public const int DoubleStrikeAnimation = 32;
-    public const int Event = 33;
-    public const int EventSetups = 34;
-    public const int HitAnimation = 35;
-    public const int Invoked = 36;
-    public const int ParentAnimationId = 37;
-    public const int TargetDistance = 38;
-    public const int Analgesic = 39;
-    public const int Buff = 40;
-    public const int Vitamins = 41;
-    public const int BaseStats = 42;
-    public const int StatChange = 43;
-    public const int StatsModifiers = 44;
-    public const int HealthBar = 45;
-    public const int DamageEffect = 46;
-    public const int Effect = 47;
-    public const int EffectValue = 48;
-    public const int HealEffect = 49;
-    public const int Processed = 50;
-    public const int ProducerId = 51;
-    public const int TargetId = 52;
-    public const int Changed = 53;
-    public const int Turn = 54;
-    public const int BaseAbilities = 55;
-    public const int Blocked = 56;
+    public const int BlockAnimation = 30;
+    public const int CaptureOnTimeline = 31;
+    public const int DefaultAttackAnimation = 32;
+    public const int DoubleStrikeAnimation = 33;
+    public const int Event = 34;
+    public const int EventSetups = 35;
+    public const int HitAnimation = 36;
+    public const int Invoked = 37;
+    public const int ParentAnimationId = 38;
+    public const int TargetDistance = 39;
+    public const int Analgesic = 40;
+    public const int Buff = 41;
+    public const int Vitamins = 42;
+    public const int BaseStats = 43;
+    public const int StatChange = 44;
+    public const int StatsModifiers = 45;
+    public const int HealthBar = 46;
+    public const int DamageEffect = 47;
+    public const int Effect = 48;
+    public const int EffectValue = 49;
+    public const int HealEffect = 50;
+    public const int Processed = 51;
+    public const int ProducerId = 52;
+    public const int TargetId = 53;
+    public const int Changed = 54;
+    public const int Turn = 55;
+    public const int BaseAbilities = 56;
     public const int Damage = 57;
     public const int Defense = 58;
     public const int DistanceToStartPoint = 59;
@@ -85,13 +85,14 @@ public static class GameComponentsLookup {
     public const int Affected = 74;
     public const int Applied = 75;
     public const int ApplierStatusLink = 76;
-    public const int Status = 77;
-    public const int StatusTypeId = 78;
-    public const int Unapplied = 79;
-    public const int AxisInput = 80;
-    public const int Input = 81;
+    public const int BlockStatus = 77;
+    public const int Status = 78;
+    public const int StatusTypeId = 79;
+    public const int Unapplied = 80;
+    public const int AxisInput = 81;
+    public const int Input = 82;
 
-    public const int TotalComponents = 82;
+    public const int TotalComponents = 83;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -110,12 +111,12 @@ public static class GameComponentsLookup {
         "AbilityTypeId",
         "Active",
         "AnimationSetups",
-        "Block",
+        "BlockAbility",
         "Chance",
-        "Counterattack",
-        "DefaultAttack",
-        "Dodge",
-        "DoubleStrike",
+        "CounterattackAbility",
+        "DefaultAttackAbility",
+        "DodgeAbility",
+        "DoubleStrikeAbility",
         "EffectSetups",
         "StatusSetups",
         "Animation",
@@ -124,6 +125,7 @@ public static class GameComponentsLookup {
         "AnimationStarted",
         "AnimationTime",
         "AnimationTypeId",
+        "BlockAnimation",
         "CaptureOnTimeline",
         "DefaultAttackAnimation",
         "DoubleStrikeAnimation",
@@ -150,7 +152,6 @@ public static class GameComponentsLookup {
         "Changed",
         "Turn",
         "BaseAbilities",
-        "Blocked",
         "Damage",
         "Defense",
         "DistanceToStartPoint",
@@ -171,6 +172,7 @@ public static class GameComponentsLookup {
         "Affected",
         "Applied",
         "ApplierStatusLink",
+        "BlockStatus",
         "Status",
         "StatusTypeId",
         "Unapplied",
@@ -195,12 +197,12 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Abilities.AbilityTypeIdComponent),
         typeof(Code.Gameplay.Features.Abilities.Active),
         typeof(Code.Gameplay.Features.Abilities.AnimationSetups),
-        typeof(Code.Gameplay.Features.Abilities.Block),
+        typeof(Code.Gameplay.Features.Abilities.BlockAbility),
         typeof(Code.Gameplay.Features.Abilities.Chance),
-        typeof(Code.Gameplay.Features.Abilities.Counterattack),
-        typeof(Code.Gameplay.Features.Abilities.DefaultAttack),
-        typeof(Code.Gameplay.Features.Abilities.Dodge),
-        typeof(Code.Gameplay.Features.Abilities.DoubleStrike),
+        typeof(Code.Gameplay.Features.Abilities.CounterattackAbility),
+        typeof(Code.Gameplay.Features.Abilities.DefaultAttackAbility),
+        typeof(Code.Gameplay.Features.Abilities.DodgeAbility),
+        typeof(Code.Gameplay.Features.Abilities.DoubleStrikeAbility),
         typeof(Code.Gameplay.Features.Abilities.EffectSetups),
         typeof(Code.Gameplay.Features.Abilities.StatusSetups),
         typeof(Code.Gameplay.Features.Animations.Animation),
@@ -209,6 +211,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Animations.AnimationStarted),
         typeof(Code.Gameplay.Features.Animations.AnimationTime),
         typeof(Code.Gameplay.Features.Animations.AnimationTypeIdComponent),
+        typeof(Code.Gameplay.Features.Animations.BlockAnimation),
         typeof(Code.Gameplay.Features.Animations.CaptureOnTimeline),
         typeof(Code.Gameplay.Features.Animations.DefaultAttackAnimation),
         typeof(Code.Gameplay.Features.Animations.DoubleStrikeAnimation),
@@ -235,7 +238,6 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Fight.Changed),
         typeof(Code.Gameplay.Features.Fight.Turn),
         typeof(Code.Gameplay.Features.Fighter.BaseAbilities),
-        typeof(Code.Gameplay.Features.Fighter.Blocked),
         typeof(Code.Gameplay.Features.Fighter.Damage),
         typeof(Code.Gameplay.Features.Fighter.Defense),
         typeof(Code.Gameplay.Features.Fighter.DistanceToStartPoint),
@@ -256,6 +258,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Statuses.Affected),
         typeof(Code.Gameplay.Features.Statuses.Applied),
         typeof(Code.Gameplay.Features.Statuses.ApplierStatusLink),
+        typeof(Code.Gameplay.Features.Statuses.BlockStatus),
         typeof(Code.Gameplay.Features.Statuses.Status),
         typeof(Code.Gameplay.Features.Statuses.StatusTypeIdComponent),
         typeof(Code.Gameplay.Features.Statuses.Unapplied),
