@@ -7,6 +7,8 @@ namespace Code.Gameplay.Features.Statuses
     {
         public StatusFeature(ISystemFactory systems)
         {
+            Add(systems.Create<RemoveTargetAbilityByCounterattackStatusSystem>());
+            Add(systems.Create<RemoveTargetAnimationByCounterattackStatusSystem>());
             Add(systems.Create<ApplyDamageAbsorptionStatusSystem>());
             
             Add(systems.Create<CleanupUnappliedStatusLinkedChangesSystem>());

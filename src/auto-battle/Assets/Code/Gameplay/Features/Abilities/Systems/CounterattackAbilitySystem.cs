@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Effect.Factory;
+using Code.Gameplay.Features.Animations.Factory;
 using Code.Gameplay.Features.Statuses.Factory;
 using Entitas;
 
@@ -7,23 +7,15 @@ namespace Code.Gameplay.Features.Abilities.Systems
 {
     public class CounterattackAbilitySystem : IExecuteSystem
     {
-        private readonly IEffectFactory _effectFactory;
         private readonly IStatusFactory _statusFactory;
+        private readonly IAnimationFactory _animationFactory;
         private readonly IGroup<GameEntity> _abilities;
         private readonly List<GameEntity> _buffer = new(24);
-        private readonly IGroup<GameEntity> _defaultAttacks;
 
-        public CounterattackAbilitySystem(GameContext game, IEffectFactory effectFactory, IStatusFactory statusFactory)
+        public CounterattackAbilitySystem(GameContext game, IStatusFactory statusFactory, IAnimationFactory animationFactory)
         {
-            _effectFactory = effectFactory;
             _statusFactory = statusFactory;
-
-            _defaultAttacks = game.GetGroup(GameMatcher
-                    .AllOf(
-                        GameMatcher.DefaultAttackAbility,
-                        GameMatcher.TargetId,
-                        GameMatcher.ProducerId
-                    ));
+            _animationFactory = animationFactory;
 
             _abilities = game.GetGroup(GameMatcher
                     .AllOf(
@@ -37,7 +29,16 @@ namespace Code.Gameplay.Features.Abilities.Systems
 
         public void Execute()
         {
-            foreach (var ability in _abilities.GetEntities(_buffer)) { }
+            foreach (var ability in _abilities.GetEntities(_buffer))
+            {
+                foreach (var statusSetup in ability.StatusSetups)
+                    _statusFactory.CreateStatus(statusSetup, ability.ProducerId, ability.TargetId);
+
+                foreach (var animationSetup in ability.AnimationSetups)
+                    _animationFactory.CreateAnimation(animationSetup, ability.ProducerId, ability.TargetId);
+                
+                ability.isActive = true;
+            }
         }
     }
 }

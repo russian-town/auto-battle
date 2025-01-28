@@ -61,7 +61,13 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
             return length;
         }
 
-        public void PlayCounterattack() => Animator.SetTrigger(_counterattackToHash);
+        public float PlayCounterattack()
+        {
+            Animator.SetTrigger(_counterattackToHash);
+            var clipInfo = Animator.GetCurrentAnimatorClipInfo(0);
+            return clipInfo[0].clip.length;
+        }
+
         public void PlayFall() => Animator.SetTrigger(_fallToHash);
         public void PlayStandUp() => Animator.SetTrigger(_standUpToHash);
         public void PlayMoveForward() => Animator.SetBool(_moveForwardToHash, true);

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Animations.Configs;
 using Code.Gameplay.Features.Animations.Factory;
 using Code.Gameplay.Features.Effect.Factory;
 using Code.Gameplay.StaticData;
@@ -13,6 +12,7 @@ namespace Code.Gameplay.Features.Abilities.Systems
         private readonly IStaticDataService _staticDataService;
         private readonly IEffectFactory _effectFactory;
         private readonly IGroup<GameEntity> _abilities;
+        private readonly IGroup<GameEntity> _counterattacks;
         private readonly List<GameEntity> _buffer = new(32);
 
         public DefaultAttackAbilitySystem(

@@ -40,63 +40,65 @@ public static class GameComponentsLookup {
     public const int AnimationTypeId = 29;
     public const int BlockAnimation = 30;
     public const int CaptureOnTimeline = 31;
-    public const int DefaultAttackAnimation = 32;
-    public const int DodgeAnimation = 33;
-    public const int DoubleStrikeAnimation = 34;
-    public const int Event = 35;
-    public const int EventSetups = 36;
-    public const int HitAnimation = 37;
-    public const int Invoked = 38;
-    public const int ParentAnimationId = 39;
-    public const int TargetDistance = 40;
-    public const int Analgesic = 41;
-    public const int Buff = 42;
-    public const int Vitamins = 43;
-    public const int BaseStats = 44;
-    public const int StatChange = 45;
-    public const int StatsModifiers = 46;
-    public const int HealthBar = 47;
-    public const int DamageEffect = 48;
-    public const int Effect = 49;
-    public const int EffectValue = 50;
-    public const int HealEffect = 51;
-    public const int Processed = 52;
-    public const int ProducerId = 53;
-    public const int TargetId = 54;
-    public const int Changed = 55;
-    public const int Turn = 56;
-    public const int BaseAbilities = 57;
-    public const int Damage = 58;
-    public const int Defense = 59;
-    public const int DistanceToStartPoint = 60;
-    public const int DistanceToTarget = 61;
-    public const int FighterAnimator = 62;
-    public const int Fighter = 63;
-    public const int FighterTypeId = 64;
-    public const int Offensive = 65;
-    public const int StartPointPosition = 66;
-    public const int CurrentHealth = 67;
-    public const int Dead = 68;
-    public const int MaxHealth = 69;
-    public const int ProcessingDeath = 70;
-    public const int Direction = 71;
-    public const int Moving = 72;
-    public const int ParentInitialized = 73;
-    public const int Speed = 74;
-    public const int Affected = 75;
-    public const int Applied = 76;
-    public const int ApplierStatusLink = 77;
-    public const int BlockStatus = 78;
-    public const int DamageAbsorption = 79;
-    public const int DodgeStatus = 80;
-    public const int PoisonStatus = 81;
-    public const int Status = 82;
-    public const int StunStatus = 83;
-    public const int Unapplied = 84;
-    public const int AxisInput = 85;
-    public const int Input = 86;
+    public const int CounterattackAnimation = 32;
+    public const int DefaultAttackAnimation = 33;
+    public const int DodgeAnimation = 34;
+    public const int DoubleStrikeAnimation = 35;
+    public const int Event = 36;
+    public const int EventSetups = 37;
+    public const int HitAnimation = 38;
+    public const int Invoked = 39;
+    public const int ParentAnimationId = 40;
+    public const int TargetDistance = 41;
+    public const int Analgesic = 42;
+    public const int Buff = 43;
+    public const int Vitamins = 44;
+    public const int BaseStats = 45;
+    public const int StatChange = 46;
+    public const int StatsModifiers = 47;
+    public const int HealthBar = 48;
+    public const int DamageEffect = 49;
+    public const int Effect = 50;
+    public const int EffectValue = 51;
+    public const int HealEffect = 52;
+    public const int Processed = 53;
+    public const int ProducerId = 54;
+    public const int TargetId = 55;
+    public const int Changed = 56;
+    public const int Turn = 57;
+    public const int BaseAbilities = 58;
+    public const int Damage = 59;
+    public const int Defense = 60;
+    public const int DistanceToStartPoint = 61;
+    public const int DistanceToTarget = 62;
+    public const int FighterAnimator = 63;
+    public const int Fighter = 64;
+    public const int FighterTypeId = 65;
+    public const int Offensive = 66;
+    public const int StartPointPosition = 67;
+    public const int CurrentHealth = 68;
+    public const int Dead = 69;
+    public const int MaxHealth = 70;
+    public const int ProcessingDeath = 71;
+    public const int Direction = 72;
+    public const int Moving = 73;
+    public const int ParentInitialized = 74;
+    public const int Speed = 75;
+    public const int Affected = 76;
+    public const int Applied = 77;
+    public const int ApplierStatusLink = 78;
+    public const int BlockStatus = 79;
+    public const int CounterattackStatus = 80;
+    public const int DamageAbsorption = 81;
+    public const int DodgeStatus = 82;
+    public const int PoisonStatus = 83;
+    public const int Status = 84;
+    public const int StunStatus = 85;
+    public const int Unapplied = 86;
+    public const int AxisInput = 87;
+    public const int Input = 88;
 
-    public const int TotalComponents = 87;
+    public const int TotalComponents = 89;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -131,6 +133,7 @@ public static class GameComponentsLookup {
         "AnimationTypeId",
         "BlockAnimation",
         "CaptureOnTimeline",
+        "CounterattackAnimation",
         "DefaultAttackAnimation",
         "DodgeAnimation",
         "DoubleStrikeAnimation",
@@ -178,6 +181,7 @@ public static class GameComponentsLookup {
         "Applied",
         "ApplierStatusLink",
         "BlockStatus",
+        "CounterattackStatus",
         "DamageAbsorption",
         "DodgeStatus",
         "PoisonStatus",
@@ -221,6 +225,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Animations.AnimationTypeIdComponent),
         typeof(Code.Gameplay.Features.Animations.BlockAnimation),
         typeof(Code.Gameplay.Features.Animations.CaptureOnTimeline),
+        typeof(Code.Gameplay.Features.Animations.CounterattackAnimation),
         typeof(Code.Gameplay.Features.Animations.DefaultAttackAnimation),
         typeof(Code.Gameplay.Features.Animations.DodgeAnimation),
         typeof(Code.Gameplay.Features.Animations.DoubleStrikeAnimation),
@@ -268,6 +273,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Statuses.Applied),
         typeof(Code.Gameplay.Features.Statuses.ApplierStatusLink),
         typeof(Code.Gameplay.Features.Statuses.BlockStatus),
+        typeof(Code.Gameplay.Features.Statuses.CounterattackStatus),
         typeof(Code.Gameplay.Features.Statuses.DamageAbsorption),
         typeof(Code.Gameplay.Features.Statuses.DodgeStatus),
         typeof(Code.Gameplay.Features.Statuses.PoisonStatus),

@@ -19,7 +19,7 @@ MonoBehaviour:
     EventSetups:
     - EffectSetups:
       - EffectTypeId: 1
-        Value: 20
-      StatusSetups: []
-      CaptureOnTimeline: 0.1
+        Percent: 1
+      CaptureOnTimeline: 0.07
+  StatusSetups: []
   TargetDistance: 2.2

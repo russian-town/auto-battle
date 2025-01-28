@@ -18,9 +18,9 @@ MonoBehaviour:
   - TypeId: 4
     EventSetups:
     - EffectSetups: []
-      StatusSetups:
-      - TypeId: 3
-        Value: 0
-        Lifetime: 0
       CaptureOnTimeline: 0
+  StatusSetups:
+  - TypeId: 3
+    Value: 0
+    Lifetime: 0
   TargetDistance: 0

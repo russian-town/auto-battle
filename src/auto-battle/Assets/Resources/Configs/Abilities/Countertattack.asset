@@ -14,13 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Chance: 0.3
   AbilityTypeId: 2
-  FightTypeId: 2
-  EffectSetups:
-  - EffectTypeId: 1
-    Value: 35
-    Cooldown: 0
+  AnimationSetups:
+  - TypeId: 6
+    EventSetups:
+    - EffectSetups:
+      - EffectTypeId: 1
+        Percent: 1
+      CaptureOnTimeline: 0.07
   StatusSetups:
-  - TypeId: 3
+  - TypeId: 5
     Value: 0
     Lifetime: 0
   TargetDistance: 0

@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Features.Animations;
+﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Animations;
 using Code.Gameplay.Features.Animations.Configs;
 using Code.Gameplay.Features.Animations.Factory;
 using Entitas;

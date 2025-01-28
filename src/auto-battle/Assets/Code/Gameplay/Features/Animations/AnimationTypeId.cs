@@ -8,5 +8,6 @@
         DoubleStrike = 3,
         Block = 4,
         Dodge = 5,
+        Counterattack = 6,
     }
 }

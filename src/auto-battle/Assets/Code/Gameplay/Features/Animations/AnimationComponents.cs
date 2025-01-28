@@ -25,4 +25,5 @@ namespace Code.Gameplay.Features.Animations
     [Game] public class DodgeAnimation : IComponent { }
     [Game] public class HitAnimation : IComponent { }
     [Game] public class BlockAnimation : IComponent { }
+    [Game] public class CounterattackAnimation : IComponent { }
 }

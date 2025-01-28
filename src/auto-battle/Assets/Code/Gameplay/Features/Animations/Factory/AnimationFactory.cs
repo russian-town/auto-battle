@@ -14,7 +14,7 @@ namespace Code.Gameplay.Features.Animations.Factory
 
         public GameEntity CreateAnimation(AnimationSetup setup, int producerId, int targetId)
         {
-            var ability = CreateEntity.Empty()
+            var animation = CreateEntity.Empty()
                 .AddId(_identifiers.Next())
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
@@ -26,15 +26,17 @@ namespace Code.Gameplay.Features.Animations.Factory
             switch (setup.TypeId)
             {
                 case AnimationTypeId.DefaultAttack:
-                    return CreateDefaultAttackAnimation(ability);
+                    return CreateDefaultAttackAnimation(animation);
                 case AnimationTypeId.Hit:
-                    return CreateHitAnimation(ability);
+                    return CreateHitAnimation(animation);
                 case AnimationTypeId.DoubleStrike:
-                    return CreateDoubleStrikeAnimation(ability);
+                    return CreateDoubleStrikeAnimation(animation);
                 case AnimationTypeId.Block:
-                    return CreateBlockAnimation(ability);
+                    return CreateBlockAnimation(animation);
                 case AnimationTypeId.Dodge:
-                    return CreateDodgeAnimation(ability);
+                    return CreateDodgeAnimation(animation);
+                case AnimationTypeId.Counterattack:
+                    return CreateCounterattackAnimation(animation);
             }
 
             throw new ArgumentException($"Animation with type id {setup.TypeId} not found.");
@@ -54,5 +56,8 @@ namespace Code.Gameplay.Features.Animations.Factory
         
         private GameEntity CreateDodgeAnimation(GameEntity entity) =>
             entity.With(x => x.isDodgeAnimation = true);
+        
+        private GameEntity CreateCounterattackAnimation(GameEntity entity) =>
+            entity.With(x => x.isCounterattackAnimation = true);
     }
 }

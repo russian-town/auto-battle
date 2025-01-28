@@ -8,6 +8,7 @@ namespace Code.Gameplay.Features.Animations
         public AnimationsFeature(ISystemFactory systems)
         {
             Add(systems.Create<PlayDefaultAttackAnimationSystem>());
+            Add(systems.Create<PlayCounterattackAnimationSystem>());
             Add(systems.Create<PlayDoubleStrikeAnimationSystem>());
             Add(systems.Create<PlayDodgeAnimationSystem>());
             Add(systems.Create<PlayHitAnimationSystem>());
