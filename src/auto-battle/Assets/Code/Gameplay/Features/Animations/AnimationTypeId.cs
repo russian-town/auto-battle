@@ -7,5 +7,6 @@
         Hit = 2,
         DoubleStrike = 3,
         Block = 4,
+        Dodge = 5,
     }
 }

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using Code.Common.Extensions;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Fighter.Behaviours
 {
@@ -51,7 +53,14 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
             return clipInfo[0].clip.length;
         }
 
-        public void PlayDodge() => Animator.SetTrigger(_dodgeToHash);
+        public float PlayDodge()
+        {
+            Animator.SetTrigger(_dodgeToHash);
+            var clipInfo = Animator.GetCurrentAnimatorClipInfo(0);
+            var length = clipInfo[0].clip.length;
+            return length;
+        }
+
         public void PlayCounterattack() => Animator.SetTrigger(_counterattackToHash);
         public void PlayFall() => Animator.SetTrigger(_fallToHash);
         public void PlayStandUp() => Animator.SetTrigger(_standUpToHash);

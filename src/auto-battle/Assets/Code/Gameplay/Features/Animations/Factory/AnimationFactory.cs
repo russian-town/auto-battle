@@ -33,6 +33,8 @@ namespace Code.Gameplay.Features.Animations.Factory
                     return CreateDoubleStrikeAnimation(ability);
                 case AnimationTypeId.Block:
                     return CreateBlockAnimation(ability);
+                case AnimationTypeId.Dodge:
+                    return CreateDodgeAnimation(ability);
             }
 
             throw new ArgumentException($"Animation with type id {setup.TypeId} not found.");
@@ -49,5 +51,8 @@ namespace Code.Gameplay.Features.Animations.Factory
         
         private GameEntity CreateBlockAnimation(GameEntity entity) =>
             entity.With(x => x.isBlockAnimation = true);
+        
+        private GameEntity CreateDodgeAnimation(GameEntity entity) =>
+            entity.With(x => x.isDodgeAnimation = true);
     }
 }

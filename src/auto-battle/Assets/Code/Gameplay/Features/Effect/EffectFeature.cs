@@ -8,7 +8,11 @@ namespace Code.Gameplay.Features.Effect
         public EffectFeature(ISystemFactory systems)
         {
             Add(systems.Create<RemoveEffectsWithoutTargetSystem>());
-            Add(systems.Create<RemoveEffectsForBlockedTargetSystem>());
+            
+            Add(systems.Create<CreateAnimationForBlockStatusSystem>());
+            Add(systems.Create<CreateAnimationForDodgeStatusSystem>());
+            
+            Add(systems.Create<RemoveEffectDamageAbsorptionStatusSystem>());
             
             Add(systems.Create<ProcessDamageEffectSystem>());
             Add(systems.Create<ProcessHealEffectSystem>());

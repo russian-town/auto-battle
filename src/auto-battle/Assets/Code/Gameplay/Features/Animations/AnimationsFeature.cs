@@ -9,6 +9,7 @@ namespace Code.Gameplay.Features.Animations
         {
             Add(systems.Create<PlayDefaultAttackAnimationSystem>());
             Add(systems.Create<PlayDoubleStrikeAnimationSystem>());
+            Add(systems.Create<PlayDodgeAnimationSystem>());
             Add(systems.Create<PlayHitAnimationSystem>());
             Add(systems.Create<PlayBlockAnimationSystem>());
             

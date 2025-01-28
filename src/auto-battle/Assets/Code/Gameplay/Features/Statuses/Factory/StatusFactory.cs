@@ -15,32 +15,48 @@ namespace Code.Gameplay.Features.Statuses.Factory
 
         public GameEntity CreateStatus(StatusSetup setup, int producerId, int targetId)
         {
+            var status = CreateEntity.Empty()
+                .AddId(_identifiers.Next())
+                .AddEffectValue(setup.Value)
+                .AddProducerId(producerId)
+                .AddTargetId(targetId)
+                .With(x => x.isStatus = true);
+
             switch (setup.TypeId)
             {
                 case StatusTypeId.Poison:
-                    break;
+                    return CreatePoisonStatus(status);
                 case StatusTypeId.Stun:
-                    break;
+                    return CreateStanStatus(status);
                 case StatusTypeId.Dodge:
-                    break;
+                    return CreateDodgeStatus(status);
                 case StatusTypeId.Block:
-                    return CreateBlockStatus(setup, producerId, targetId);
+                    return CreateBlockStatus(status);
             }
             
             throw new Exception($"Status with type id {setup.TypeId} does not exist.");
         }
 
-        private GameEntity CreateBlockStatus(StatusSetup setup, int producerId, int targetId)
+        private GameEntity CreateBlockStatus(GameEntity status)
         {
-            return CreateEntity.Empty()
-                .AddId(_identifiers.Next())
-                .AddStatusTypeId(StatusTypeId.Block)
-                .AddEffectValue(setup.Value)
-                .AddProducerId(producerId)
-                .AddTargetId(targetId)
-                .With(x => x.isStatus = true)
-                .With(x => x.isBlockStatus = true)
+            return status
+                    .With(x => x.isBlockStatus = true)
+                    .With(x => x.isDamageAbsorption = true)
                 ;
         }
+
+        private GameEntity CreateDodgeStatus(GameEntity status)
+        {
+            return status
+                    .With(x => x.isDodgeStatus = true)
+                    .With(x => x.isDamageAbsorption = true)
+                ;
+        }
+        
+        private GameEntity CreateStanStatus(GameEntity status) =>
+            status.With(x => x.isStunStatus = true);
+        
+        private GameEntity CreatePoisonStatus(GameEntity status) =>
+            status.With(x => x.isPoisonStatus = true);
     }
 }

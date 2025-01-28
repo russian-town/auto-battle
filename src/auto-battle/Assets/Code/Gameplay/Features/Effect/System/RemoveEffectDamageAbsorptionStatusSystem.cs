@@ -6,14 +6,14 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Effect.System
 {
-    public class RemoveEffectsForBlockedTargetSystem : IExecuteSystem
+    public class RemoveEffectDamageAbsorptionStatusSystem : IExecuteSystem
     {
         private readonly IAnimationFactory _animationFactory;
         private readonly IGroup<GameEntity> _effects;
         private readonly IGroup<GameEntity> _statuses;
         private readonly List<GameEntity> _buffer = new(32);
 
-        public RemoveEffectsForBlockedTargetSystem(GameContext game, IAnimationFactory animationFactory)
+        public RemoveEffectDamageAbsorptionStatusSystem(GameContext game, IAnimationFactory animationFactory)
         {
             _animationFactory = animationFactory;
 
@@ -28,7 +28,7 @@ namespace Code.Gameplay.Features.Effect.System
             _statuses = game.GetGroup(GameMatcher
                     .AllOf(
                         GameMatcher.Status,
-                        GameMatcher.BlockStatus,
+                        GameMatcher.DamageAbsorption,
                         GameMatcher.ProducerId
                     ));
         }
@@ -40,11 +40,6 @@ namespace Code.Gameplay.Features.Effect.System
             {
                 if (effect.TargetId != status.ProducerId)
                     continue;
-
-                _animationFactory.CreateAnimation(
-                    new AnimationSetup(AnimationTypeId.Block),
-                    effect.TargetId,
-                    effect.ProducerId);
 
                 effect.Destroy();
             }

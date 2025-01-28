@@ -5,20 +5,20 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Statuses.Systems
 {
-    public class ApplyBlockStatusSystem : IExecuteSystem
+    public class ApplyDamageAbsorptionStatusSystem : IExecuteSystem
     {
         private readonly GameContext _game;
         private readonly IGroup<GameEntity> _statuses;
         private readonly List<GameEntity> _buffer = new(32);
 
-        public ApplyBlockStatusSystem(GameContext game)
+        public ApplyDamageAbsorptionStatusSystem(GameContext game)
         {
             _game = game;
 
             _statuses = game.GetGroup(GameMatcher
                     .AllOf(
                         GameMatcher.Status,
-                        GameMatcher.BlockStatus,
+                        GameMatcher.DamageAbsorption,
                         GameMatcher.TargetId,
                         GameMatcher.ProducerId
                     )
