@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Effect.Factory;
-using Code.Gameplay.Features.Statuses.Factory;
 using Entitas;
 
 namespace Code.Gameplay.Features.Animations.Systems
@@ -9,16 +8,14 @@ namespace Code.Gameplay.Features.Animations.Systems
     {
         private readonly GameContext _game;
         private readonly IEffectFactory _effectFactory;
-        private readonly IStatusFactory _statusFactory;
         private readonly IGroup<GameEntity> _events;
         private readonly IGroup<GameEntity> _animations;
         private readonly List<GameEntity> _buffer = new(32);
 
-        public InvokeAnimationEventSystem(GameContext game, IEffectFactory effectFactory, IStatusFactory statusFactory)
+        public InvokeAnimationEventSystem(GameContext game, IEffectFactory effectFactory)
         {
             _game = game;
             _effectFactory = effectFactory;
-            _statusFactory = statusFactory;
 
             _events = game.GetGroup(GameMatcher
                     .AllOf(
@@ -32,6 +29,7 @@ namespace Code.Gameplay.Features.Animations.Systems
             _animations = game.GetGroup(GameMatcher
                     .AllOf(
                         GameMatcher.Animation,
+                        GameMatcher.AnimationStarted,
                         GameMatcher.Id,
                         GameMatcher.ProducerId,
                         GameMatcher.AnimationCurrentTime

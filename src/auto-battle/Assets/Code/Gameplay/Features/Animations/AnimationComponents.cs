@@ -20,14 +20,4 @@ namespace Code.Gameplay.Features.Animations
 
     [Game] public class CaptureOnTimeline : IComponent { public float Value; }
     [Game] public class Invoked : IComponent { }
-    
-    [Game] public class DefaultAttackAnimation : IComponent { }
-    [Game] public class DoubleStrikeAnimation : IComponent { }
-    [Game] public class DodgeAnimation : IComponent { }
-    [Game] public class HitAnimation : IComponent { }
-    [Game] public class BlockAnimation : IComponent { }
-    [Game] public class CounterattackAnimation : IComponent { }
-    [Game] public class FallAnimation : IComponent { }
-    [Game] public class MoveToTargetAnimation : IComponent { }
-    [Game] public class MoveToStartPointAnimation : IComponent { }
 }

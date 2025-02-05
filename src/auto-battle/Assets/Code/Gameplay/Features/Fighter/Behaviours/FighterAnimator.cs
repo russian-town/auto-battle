@@ -1,5 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.Animations;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Fighter.Behaviours
@@ -24,6 +26,29 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
         
         public Animator Animator;
 
+        public float PlayAnimationWithTypeId(AnimationTypeId typeId)
+        {
+            switch (typeId)
+            {
+                case AnimationTypeId.DefaultAttack:
+                    return PlayDefaultAttack();
+                case AnimationTypeId.Hit:
+                    return PlayHit();
+                case AnimationTypeId.DoubleStrike:
+                    return PlayDoubleStrike();
+                case AnimationTypeId.Block:
+                    return PlayBlock();
+                case AnimationTypeId.Dodge:
+                    return PlayDodge();
+                case AnimationTypeId.Counterattack:
+                    return PlayCounterattack();
+                case AnimationTypeId.Fall:
+                    return PlayFall();
+            }
+
+            throw new ArgumentException($"Animation for type id {typeId} not found.");
+        }
+        
         public void PlayIdle()
         {
             Animator.SetBool(_moveForwardToHash, false);
@@ -37,7 +62,12 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
             return clipInfo[0].clip.length;
         }
 
-        public void PlayDoubleStrike() => Animator.SetTrigger(_doubleStrikeToHash);
+        public float PlayDoubleStrike()
+        {
+            Animator.SetTrigger(_doubleStrikeToHash);
+            var clipInfo = Animator.GetCurrentAnimatorClipInfo(0);
+            return clipInfo[0].clip.length;
+        }
 
         public float PlayHit()
         {
@@ -78,5 +108,7 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
         public void PlayStandUp() => Animator.SetTrigger(_standUpToHash);
         public void PlayMoveForward() => Animator.SetBool(_moveForwardToHash, true);
         public void PlayMoveBackward() => Animator.SetBool(_moveBackwardToHash, true);
+
+        public void Cleanup() => Animator.ResetTrigger(_defaultAttackToHash);
     }
 }

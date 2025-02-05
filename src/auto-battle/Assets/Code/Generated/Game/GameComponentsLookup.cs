@@ -38,69 +38,57 @@ public static class GameComponentsLookup {
     public const int AnimationStarted = 27;
     public const int AnimationTime = 28;
     public const int AnimationTypeId = 29;
-    public const int BlockAnimation = 30;
-    public const int CaptureOnTimeline = 31;
-    public const int CounterattackAnimation = 32;
-    public const int DefaultAttackAnimation = 33;
-    public const int DodgeAnimation = 34;
-    public const int DoubleStrikeAnimation = 35;
-    public const int Event = 36;
-    public const int EventSetups = 37;
-    public const int FallAnimation = 38;
-    public const int HitAnimation = 39;
-    public const int Invoked = 40;
-    public const int MoveToStartPointAnimation = 41;
-    public const int MoveToTargetAnimation = 42;
-    public const int ParentAnimationId = 43;
-    public const int TargetDistance = 44;
-    public const int Analgesic = 45;
-    public const int Buff = 46;
-    public const int Vitamins = 47;
-    public const int BaseStats = 48;
-    public const int StatChange = 49;
-    public const int StatsModifiers = 50;
-    public const int HealthBar = 51;
-    public const int DamageEffect = 52;
-    public const int Effect = 53;
-    public const int EffectValue = 54;
-    public const int HealEffect = 55;
-    public const int Processed = 56;
-    public const int ProducerId = 57;
-    public const int PushEffect = 58;
-    public const int TargetId = 59;
-    public const int Changed = 60;
-    public const int Turn = 61;
-    public const int BaseAbilities = 62;
-    public const int Damage = 63;
-    public const int Defense = 64;
-    public const int DistanceToStartPoint = 65;
-    public const int DistanceToTarget = 66;
-    public const int FighterAnimator = 67;
-    public const int Fighter = 68;
-    public const int FighterTypeId = 69;
-    public const int Offensive = 70;
-    public const int StartPointPosition = 71;
-    public const int CurrentHealth = 72;
-    public const int Dead = 73;
-    public const int MaxHealth = 74;
-    public const int ProcessingDeath = 75;
-    public const int Direction = 76;
-    public const int Moving = 77;
-    public const int ParentInitialized = 78;
-    public const int Speed = 79;
-    public const int Affected = 80;
-    public const int Applied = 81;
-    public const int ApplierStatusLink = 82;
-    public const int BlockStatus = 83;
-    public const int DodgeStatus = 84;
-    public const int PoisonStatus = 85;
-    public const int Status = 86;
-    public const int StunStatus = 87;
-    public const int Unapplied = 88;
-    public const int AxisInput = 89;
-    public const int Input = 90;
+    public const int CaptureOnTimeline = 30;
+    public const int Event = 31;
+    public const int EventSetups = 32;
+    public const int Invoked = 33;
+    public const int ParentAnimationId = 34;
+    public const int TargetDistance = 35;
+    public const int Analgesic = 36;
+    public const int Buff = 37;
+    public const int Vitamins = 38;
+    public const int BaseStats = 39;
+    public const int StatChange = 40;
+    public const int StatsModifiers = 41;
+    public const int HealthBar = 42;
+    public const int DamageEffect = 43;
+    public const int Effect = 44;
+    public const int EffectValue = 45;
+    public const int HealEffect = 46;
+    public const int Processed = 47;
+    public const int ProducerId = 48;
+    public const int PushEffect = 49;
+    public const int TargetId = 50;
+    public const int Changed = 51;
+    public const int Turn = 52;
+    public const int BaseAbilities = 53;
+    public const int Damage = 54;
+    public const int Defense = 55;
+    public const int FighterAnimator = 56;
+    public const int Fighter = 57;
+    public const int FighterTypeId = 58;
+    public const int Offensive = 59;
+    public const int StartPointPosition = 60;
+    public const int CurrentHealth = 61;
+    public const int Dead = 62;
+    public const int MaxHealth = 63;
+    public const int ProcessingDeath = 64;
+    public const int Direction = 65;
+    public const int Moving = 66;
+    public const int Speed = 67;
+    public const int Affected = 68;
+    public const int Applied = 69;
+    public const int ApplierStatusLink = 70;
+    public const int BlockStatus = 71;
+    public const int DodgeStatus = 72;
+    public const int PoisonStatus = 73;
+    public const int Status = 74;
+    public const int StunStatus = 75;
+    public const int Unapplied = 76;
+    public const int AxisInput = 77;
+    public const int Input = 78;
 
-    public const int TotalComponents = 91;
+    public const int TotalComponents = 79;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -133,19 +121,10 @@ public static class GameComponentsLookup {
         "AnimationStarted",
         "AnimationTime",
         "AnimationTypeId",
-        "BlockAnimation",
         "CaptureOnTimeline",
-        "CounterattackAnimation",
-        "DefaultAttackAnimation",
-        "DodgeAnimation",
-        "DoubleStrikeAnimation",
         "Event",
         "EventSetups",
-        "FallAnimation",
-        "HitAnimation",
         "Invoked",
-        "MoveToStartPointAnimation",
-        "MoveToTargetAnimation",
         "ParentAnimationId",
         "TargetDistance",
         "Analgesic",
@@ -168,8 +147,6 @@ public static class GameComponentsLookup {
         "BaseAbilities",
         "Damage",
         "Defense",
-        "DistanceToStartPoint",
-        "DistanceToTarget",
         "FighterAnimator",
         "Fighter",
         "FighterTypeId",
@@ -181,7 +158,6 @@ public static class GameComponentsLookup {
         "ProcessingDeath",
         "Direction",
         "Moving",
-        "ParentInitialized",
         "Speed",
         "Affected",
         "Applied",
@@ -227,19 +203,10 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Animations.AnimationStarted),
         typeof(Code.Gameplay.Features.Animations.AnimationTime),
         typeof(Code.Gameplay.Features.Animations.AnimationTypeIdComponent),
-        typeof(Code.Gameplay.Features.Animations.BlockAnimation),
         typeof(Code.Gameplay.Features.Animations.CaptureOnTimeline),
-        typeof(Code.Gameplay.Features.Animations.CounterattackAnimation),
-        typeof(Code.Gameplay.Features.Animations.DefaultAttackAnimation),
-        typeof(Code.Gameplay.Features.Animations.DodgeAnimation),
-        typeof(Code.Gameplay.Features.Animations.DoubleStrikeAnimation),
         typeof(Code.Gameplay.Features.Animations.EventComponent),
         typeof(Code.Gameplay.Features.Animations.EventSetups),
-        typeof(Code.Gameplay.Features.Animations.FallAnimation),
-        typeof(Code.Gameplay.Features.Animations.HitAnimation),
         typeof(Code.Gameplay.Features.Animations.Invoked),
-        typeof(Code.Gameplay.Features.Animations.MoveToStartPointAnimation),
-        typeof(Code.Gameplay.Features.Animations.MoveToTargetAnimation),
         typeof(Code.Gameplay.Features.Animations.ParentAnimationId),
         typeof(Code.Gameplay.Features.Animations.TargetDistance),
         typeof(Code.Gameplay.Features.Buffs.AnalgesicComponent),
@@ -262,8 +229,6 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Fighter.BaseAbilities),
         typeof(Code.Gameplay.Features.Fighter.Damage),
         typeof(Code.Gameplay.Features.Fighter.Defense),
-        typeof(Code.Gameplay.Features.Fighter.DistanceToStartPoint),
-        typeof(Code.Gameplay.Features.Fighter.DistanceToTarget),
         typeof(Code.Gameplay.Features.Fighter.FighterAnimatorComponent),
         typeof(Code.Gameplay.Features.Fighter.FighterComponent),
         typeof(Code.Gameplay.Features.Fighter.FighterTypeIdComponent),
@@ -275,7 +240,6 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
         typeof(Code.Gameplay.Features.Movement.Direction),
         typeof(Code.Gameplay.Features.Movement.Moving),
-        typeof(Code.Gameplay.Features.Movement.ParentInitialized),
         typeof(Code.Gameplay.Features.Movement.Speed),
         typeof(Code.Gameplay.Features.Statuses.Affected),
         typeof(Code.Gameplay.Features.Statuses.Applied),

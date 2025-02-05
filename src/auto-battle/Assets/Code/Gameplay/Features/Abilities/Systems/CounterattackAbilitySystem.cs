@@ -6,12 +6,14 @@ namespace Code.Gameplay.Features.Abilities.Systems
 {
     public class CounterattackAbilitySystem : IExecuteSystem
     {
+        private readonly GameContext _game;
         private readonly IAnimationFactory _animationFactory;
         private readonly IGroup<GameEntity> _abilities;
         private readonly List<GameEntity> _buffer = new(24);
 
         public CounterattackAbilitySystem(GameContext game, IAnimationFactory animationFactory)
         {
+            _game = game;
             _animationFactory = animationFactory;
 
             _abilities = game.GetGroup(GameMatcher
@@ -28,6 +30,8 @@ namespace Code.Gameplay.Features.Abilities.Systems
         {
             foreach (var ability in _abilities.GetEntities(_buffer))
             {
+                var target = _game.GetEntityWithId(ability.TargetId);
+                
                 foreach (var animationSetup in ability.AnimationSetups)
                     _animationFactory.CreateAnimation(animationSetup, ability.ProducerId, ability.TargetId);
 

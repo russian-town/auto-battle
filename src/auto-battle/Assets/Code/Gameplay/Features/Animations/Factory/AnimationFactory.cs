@@ -1,5 +1,4 @@
-﻿using System;
-using Code.Common.Entity;
+﻿using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Animations.Configs;
 using Code.Infrastructure.Identifiers;
@@ -14,69 +13,16 @@ namespace Code.Gameplay.Features.Animations.Factory
 
         public GameEntity CreateAnimation(AnimationSetup setup, int producerId, int targetId)
         {
-            var animation = CreateEntity.Empty()
+            return CreateEntity.Empty()
                 .AddId(_identifiers.Next())
+                .AddAnimationTypeId(setup.TypeId)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
                 .AddAnimationCurrentTime(0f)
                 .With(x => x.isAnimation = true)
                 .With(x => x.AddEventSetups(setup.EventSetups), when: !setup.EventSetups.IsNullOrEmpty())
+                .With(x => x.AddTargetDistance(setup.TargetDistance), when: setup.TargetDistance > 0f)
                 ;
-
-            switch (setup.TypeId)
-            {
-                case AnimationTypeId.DefaultAttack:
-                    return CreateDefaultAttackAnimation(animation);
-                case AnimationTypeId.Hit:
-                    return CreateHitAnimation(animation);
-                case AnimationTypeId.DoubleStrike:
-                    return CreateDoubleStrikeAnimation(animation);
-                case AnimationTypeId.Block:
-                    return CreateBlockAnimation(animation);
-                case AnimationTypeId.Dodge:
-                    return CreateDodgeAnimation(animation);
-                case AnimationTypeId.Counterattack:
-                    return CreateCounterattackAnimation(animation);
-                case AnimationTypeId.Fall:
-                    return CreateFallAnimation(animation);
-                case AnimationTypeId.MoveToTarget:
-                    return CreateMoveToTargetAnimation(animation, setup);
-                case AnimationTypeId.MoveToStartPoint:
-                    return CreateMoveToStartPointAnimation(animation, setup);
-            }
-
-            throw new ArgumentException($"Animation with type id {setup.TypeId} not found.");
         }
-
-        private GameEntity CreateDefaultAttackAnimation(GameEntity entity) =>
-            entity.With(x => x.isDefaultAttackAnimation = true);
-
-        private GameEntity CreateDoubleStrikeAnimation(GameEntity entity) =>
-            entity.With(x => x.isDoubleStrikeAnimation = true);
-
-        private GameEntity CreateHitAnimation(GameEntity entity) =>
-            entity.With(x => x.isHitAnimation = true);
-        
-        private GameEntity CreateBlockAnimation(GameEntity entity) =>
-            entity.With(x => x.isBlockAnimation = true);
-        
-        private GameEntity CreateDodgeAnimation(GameEntity entity) =>
-            entity.With(x => x.isDodgeAnimation = true);
-        
-        private GameEntity CreateCounterattackAnimation(GameEntity entity) =>
-            entity.With(x => x.isCounterattackAnimation = true);
-        
-        private GameEntity CreateFallAnimation(GameEntity entity) =>
-            entity.With(x => x.isFallAnimation = true);
-
-        private GameEntity CreateMoveToTargetAnimation(GameEntity entity, AnimationSetup setup) =>
-            entity
-                .With(x => x.isMoveToTargetAnimation = true)
-                .AddTargetDistance(setup.TargetDistance);
-        
-        private GameEntity CreateMoveToStartPointAnimation(GameEntity entity, AnimationSetup setup) =>
-            entity
-                .With(x => x.isMoveToStartPointAnimation = true)
-                .AddTargetDistance(setup.TargetDistance);
     }
 }
