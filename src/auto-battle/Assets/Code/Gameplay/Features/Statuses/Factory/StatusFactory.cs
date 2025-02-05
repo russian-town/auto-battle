@@ -32,41 +32,20 @@ namespace Code.Gameplay.Features.Statuses.Factory
                     return CreateDodgeStatus(status);
                 case StatusTypeId.Block:
                     return CreateBlockStatus(status);
-                case StatusTypeId.Counterattack:
-                    return CreateCounterattackStatus(status);
             }
             
             throw new Exception($"Status with type id {setup.TypeId} does not exist.");
         }
 
-        private GameEntity CreateBlockStatus(GameEntity status)
-        {
-            return status
-                    .With(x => x.isBlockStatus = true)
-                    .With(x => x.isDamageAbsorption = true)
-                ;
-        }
+        private GameEntity CreateBlockStatus(GameEntity status) => status.With(x => x.isBlockStatus = true);
 
-        private GameEntity CreateDodgeStatus(GameEntity status)
-        {
-            return status
-                    .With(x => x.isDodgeStatus = true)
-                    .With(x => x.isDamageAbsorption = true)
-                ;
-        }
-        
+        private GameEntity CreateDodgeStatus(GameEntity status) =>
+            status.With(x => x.isDodgeStatus = true);
+
         private GameEntity CreateStanStatus(GameEntity status) =>
             status.With(x => x.isStunStatus = true);
         
         private GameEntity CreatePoisonStatus(GameEntity status) =>
             status.With(x => x.isPoisonStatus = true);
-        
-        private GameEntity CreateCounterattackStatus(GameEntity status)
-        {
-            return status
-                .With(x => x.isCounterattackStatus = true)
-                .With(x => x.isDamageAbsorption = true)
-                ;
-        }
     }
 }

@@ -37,6 +37,12 @@ namespace Code.Gameplay.Features.Animations.Factory
                     return CreateDodgeAnimation(animation);
                 case AnimationTypeId.Counterattack:
                     return CreateCounterattackAnimation(animation);
+                case AnimationTypeId.Fall:
+                    return CreateFallAnimation(animation);
+                case AnimationTypeId.MoveToTarget:
+                    return CreateMoveToTargetAnimation(animation, setup);
+                case AnimationTypeId.MoveToStartPoint:
+                    return CreateMoveToStartPointAnimation(animation, setup);
             }
 
             throw new ArgumentException($"Animation with type id {setup.TypeId} not found.");
@@ -59,5 +65,18 @@ namespace Code.Gameplay.Features.Animations.Factory
         
         private GameEntity CreateCounterattackAnimation(GameEntity entity) =>
             entity.With(x => x.isCounterattackAnimation = true);
+        
+        private GameEntity CreateFallAnimation(GameEntity entity) =>
+            entity.With(x => x.isFallAnimation = true);
+
+        private GameEntity CreateMoveToTargetAnimation(GameEntity entity, AnimationSetup setup) =>
+            entity
+                .With(x => x.isMoveToTargetAnimation = true)
+                .AddTargetDistance(setup.TargetDistance);
+        
+        private GameEntity CreateMoveToStartPointAnimation(GameEntity entity, AnimationSetup setup) =>
+            entity
+                .With(x => x.isMoveToStartPointAnimation = true)
+                .AddTargetDistance(setup.TargetDistance);
     }
 }

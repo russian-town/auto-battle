@@ -8,6 +8,7 @@ namespace Code.Gameplay.Features.Animations.Configs
     {
         public AnimationTypeId TypeId;
         public List<EventSetup> EventSetups;
+        public float TargetDistance;
 
         public AnimationSetup(AnimationTypeId typeId, List<EventSetup> eventSetups = null)
         {

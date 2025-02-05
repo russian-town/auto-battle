@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherCounterattackStatus;
+    static Entitas.IMatcher<GameEntity> _matcherPushEffect;
 
-    public static Entitas.IMatcher<GameEntity> CounterattackStatus {
+    public static Entitas.IMatcher<GameEntity> PushEffect {
         get {
-            if (_matcherCounterattackStatus == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.CounterattackStatus);
+            if (_matcherPushEffect == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.PushEffect);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherCounterattackStatus = matcher;
+                _matcherPushEffect = matcher;
             }
 
-            return _matcherCounterattackStatus;
+            return _matcherPushEffect;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Statuses.CounterattackStatus counterattackStatusComponent = new Code.Gameplay.Features.Statuses.CounterattackStatus();
+    static readonly Code.Gameplay.Features.Effect.PushEffect pushEffectComponent = new Code.Gameplay.Features.Effect.PushEffect();
 
-    public bool isCounterattackStatus {
-        get { return HasComponent(GameComponentsLookup.CounterattackStatus); }
+    public bool isPushEffect {
+        get { return HasComponent(GameComponentsLookup.PushEffect); }
         set {
-            if (value != isCounterattackStatus) {
-                var index = GameComponentsLookup.CounterattackStatus;
+            if (value != isPushEffect) {
+                var index = GameComponentsLookup.PushEffect;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : counterattackStatusComponent;
+                            : pushEffectComponent;
 
                     AddComponent(index, component);
                 } else {

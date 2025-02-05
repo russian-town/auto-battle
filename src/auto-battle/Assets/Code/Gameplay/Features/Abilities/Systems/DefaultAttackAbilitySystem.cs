@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Animations.Factory;
 using Code.Gameplay.Features.Effect.Factory;
-using Code.Gameplay.StaticData;
 using Entitas;
 
 namespace Code.Gameplay.Features.Abilities.Systems
@@ -9,19 +8,15 @@ namespace Code.Gameplay.Features.Abilities.Systems
     public class DefaultAttackAbilitySystem : IExecuteSystem
     {
         private readonly IAnimationFactory _animationFactory;
-        private readonly IStaticDataService _staticDataService;
         private readonly IEffectFactory _effectFactory;
         private readonly IGroup<GameEntity> _abilities;
         private readonly IGroup<GameEntity> _counterattacks;
+        private readonly IGroup<GameEntity> _animations;
         private readonly List<GameEntity> _buffer = new(32);
 
-        public DefaultAttackAbilitySystem(
-            GameContext game,
-            IAnimationFactory animationFactory,
-            IStaticDataService staticDataService)
+        public DefaultAttackAbilitySystem(GameContext game, IAnimationFactory animationFactory)
         {
             _animationFactory = animationFactory;
-            _staticDataService = staticDataService;
 
             _abilities = game.GetGroup(GameMatcher
                     .AllOf(
@@ -37,13 +32,10 @@ namespace Code.Gameplay.Features.Abilities.Systems
         {
             foreach (var ability in _abilities.GetEntities(_buffer))
             {
-                var config = _staticDataService.GetAbilityConfig(ability.AbilityTypeId);
-                
                 foreach (var animationSetup in ability.AnimationSetups)
                     _animationFactory
-                        .CreateAnimation(animationSetup, ability.ProducerId, ability.TargetId)
-                        .AddTargetDistance(config.TargetDistance);
-
+                        .CreateAnimation(animationSetup, ability.ProducerId, ability.TargetId);
+                
                 ability.isActive = true;
             }
         }

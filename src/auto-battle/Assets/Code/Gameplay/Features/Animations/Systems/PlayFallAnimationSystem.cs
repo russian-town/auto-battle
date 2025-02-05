@@ -3,27 +3,27 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Animations.Systems
 {
-    public class PlayDefaultAttackAnimationSystem : IExecuteSystem
+    public class PlayFallAnimationSystem : IExecuteSystem
     {
         private readonly IGroup<GameEntity> _animations;
         private readonly IGroup<GameEntity> _fighters;
         private readonly List<GameEntity> _buffer = new(32);
 
-        public PlayDefaultAttackAnimationSystem(GameContext game)
+        public PlayFallAnimationSystem(GameContext game)
         {
             _animations = game.GetGroup(GameMatcher
                 .AllOf(
-                GameMatcher.Animation,
-                GameMatcher.DefaultAttackAnimation,
-                GameMatcher.ProducerId
+                    GameMatcher.Animation,
+                    GameMatcher.FallAnimation,
+                    GameMatcher.ProducerId
                 )
                 .NoneOf(GameMatcher.AnimationStarted));
             
             _fighters = game.GetGroup(GameMatcher
                 .AllOf(
-                GameMatcher.Fighter,
-                GameMatcher.Id,
-                GameMatcher.FighterAnimator
+                    GameMatcher.Fighter,
+                    GameMatcher.Id,
+                    GameMatcher.FighterAnimator
                 ));
         }
 
@@ -33,7 +33,7 @@ namespace Code.Gameplay.Features.Animations.Systems
             foreach (var fighter in _fighters)
             {
                 if (animation.ProducerId == fighter.Id)
-                    animation.AddAnimationTime(fighter.FighterAnimator.PlayDefaultAttack());
+                    animation.AddAnimationTime(fighter.FighterAnimator.PlayFall());
             }
         }
     }

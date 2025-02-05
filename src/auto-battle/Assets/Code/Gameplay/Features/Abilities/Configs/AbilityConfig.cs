@@ -12,6 +12,5 @@ namespace Code.Gameplay.Features.Abilities.Configs
         public AbilityTypeId AbilityTypeId;
         public List<AnimationSetup> AnimationSetups;
         public List<StatusSetup> StatusSetups;
-        public float TargetDistance;
     }
 }

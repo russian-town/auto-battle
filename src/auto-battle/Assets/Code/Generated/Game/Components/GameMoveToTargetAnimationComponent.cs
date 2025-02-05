@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherDamageAbsorption;
+    static Entitas.IMatcher<GameEntity> _matcherMoveToTargetAnimation;
 
-    public static Entitas.IMatcher<GameEntity> DamageAbsorption {
+    public static Entitas.IMatcher<GameEntity> MoveToTargetAnimation {
         get {
-            if (_matcherDamageAbsorption == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.DamageAbsorption);
+            if (_matcherMoveToTargetAnimation == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.MoveToTargetAnimation);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherDamageAbsorption = matcher;
+                _matcherMoveToTargetAnimation = matcher;
             }
 
-            return _matcherDamageAbsorption;
+            return _matcherMoveToTargetAnimation;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Statuses.DamageAbsorption damageAbsorptionComponent = new Code.Gameplay.Features.Statuses.DamageAbsorption();
+    static readonly Code.Gameplay.Features.Animations.MoveToTargetAnimation moveToTargetAnimationComponent = new Code.Gameplay.Features.Animations.MoveToTargetAnimation();
 
-    public bool isDamageAbsorption {
-        get { return HasComponent(GameComponentsLookup.DamageAbsorption); }
+    public bool isMoveToTargetAnimation {
+        get { return HasComponent(GameComponentsLookup.MoveToTargetAnimation); }
         set {
-            if (value != isDamageAbsorption) {
-                var index = GameComponentsLookup.DamageAbsorption;
+            if (value != isMoveToTargetAnimation) {
+                var index = GameComponentsLookup.MoveToTargetAnimation;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : damageAbsorptionComponent;
+                            : moveToTargetAnimationComponent;
 
                     AddComponent(index, component);
                 } else {

@@ -30,6 +30,8 @@ namespace Code.Gameplay.Features.Effect.Factory
                     return CreateDamage(effect);
                 case EffectTypeId.Heal:
                     return CreateHeal(effect);
+                case EffectTypeId.Push:
+                    return CreatePush(effect);
             }
 
             throw new Exception($"Effect with type id {setup.EffectTypeId} does not exist.");
@@ -38,5 +40,7 @@ namespace Code.Gameplay.Features.Effect.Factory
         private GameEntity CreateDamage(GameEntity effect) => effect.With(x => x.isDamageEffect = true);
 
         private GameEntity CreateHeal(GameEntity effect) => effect.With(x => x.isHealEffect = true);
+        
+        private GameEntity CreatePush(GameEntity effect) => effect.With(x => x.isPushEffect = true);
     }
 }

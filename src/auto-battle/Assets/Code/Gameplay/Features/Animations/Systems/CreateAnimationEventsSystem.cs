@@ -22,8 +22,7 @@ namespace Code.Gameplay.Features.Animations.Systems
                         GameMatcher.ProducerId,
                         GameMatcher.TargetId,
                         GameMatcher.EventSetups
-                    )
-                    .NoneOf(GameMatcher.Processed));
+                    ));
         }
 
         public void Execute()
@@ -41,7 +40,7 @@ namespace Code.Gameplay.Features.Animations.Systems
                         .AddParentAnimationId(animation.Id);
                 }
 
-                animation.isProcessed = true;
+                animation.RemoveEventSetups();
             }
         }
     }

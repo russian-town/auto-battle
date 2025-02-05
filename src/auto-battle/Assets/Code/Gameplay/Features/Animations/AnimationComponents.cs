@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Animations.Configs;
 using Entitas;
+using Entitas.CodeGeneration.Attributes;
 
 namespace Code.Gameplay.Features.Animations
 {
@@ -15,7 +16,7 @@ namespace Code.Gameplay.Features.Animations
     [Game] public class AnimationEnded : IComponent { }
     
     [Game] public class EventComponent : IComponent { }
-    [Game] public class ParentAnimationId : IComponent { public int Value; }
+    [Game] public class ParentAnimationId : IComponent { [EntityIndex] public int Value; }
 
     [Game] public class CaptureOnTimeline : IComponent { public float Value; }
     [Game] public class Invoked : IComponent { }
@@ -26,4 +27,7 @@ namespace Code.Gameplay.Features.Animations
     [Game] public class HitAnimation : IComponent { }
     [Game] public class BlockAnimation : IComponent { }
     [Game] public class CounterattackAnimation : IComponent { }
+    [Game] public class FallAnimation : IComponent { }
+    [Game] public class MoveToTargetAnimation : IComponent { }
+    [Game] public class MoveToStartPointAnimation : IComponent { }
 }

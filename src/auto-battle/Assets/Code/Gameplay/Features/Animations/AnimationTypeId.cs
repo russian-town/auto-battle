@@ -9,5 +9,8 @@
         Block = 4,
         Dodge = 5,
         Counterattack = 6,
+        MoveToTarget = 7,
+        MoveToStartPoint = 8,
+        Fall = 9,
     }
 }
