@@ -20,6 +20,6 @@ MonoBehaviour:
     - EffectSetups:
       - EffectTypeId: 1
         Percent: 1
-      CaptureOnTimeline: 0.1
+      CaptureOnTimeline: 0.18
     TargetDistance: 2.2
   StatusSetups: []
