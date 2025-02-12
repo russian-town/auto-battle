@@ -1,6 +1,4 @@
-﻿using Code.Common.Entity;
-using Code.Common.Extensions;
-using Code.Gameplay.Features.Abilities;
+﻿using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.Abilities.Factory;
 using Code.Gameplay.Features.Fighter.Factory;
 using Code.Gameplay.Levels;
@@ -42,9 +40,6 @@ namespace Code.Gameplay.Features.Fighter.Systems
 
             _abilityFactory.CreateAbility(AbilityTypeId.DefaultAttack, hero.Id, enemy.Id);
             _abilityFactory.CreateAbility(AbilityTypeId.Counterattack, enemy.Id, hero.Id);
-            
-            CreateEntity.Empty()
-                .With(x => x.isTurn = true);
         }
 
         private Transform GetTransformByPositionTypeIdFor(FighterTypeId typeId) =>

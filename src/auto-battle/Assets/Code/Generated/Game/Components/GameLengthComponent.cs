@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherChance;
+    static Entitas.IMatcher<GameEntity> _matcherLength;
 
-    public static Entitas.IMatcher<GameEntity> Chance {
+    public static Entitas.IMatcher<GameEntity> Length {
         get {
-            if (_matcherChance == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Chance);
+            if (_matcherLength == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Length);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherChance = matcher;
+                _matcherLength = matcher;
             }
 
-            return _matcherChance;
+            return _matcherLength;
         }
     }
 }
@@ -33,28 +33,28 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Abilities.Chance chance { get { return (Code.Gameplay.Features.Abilities.Chance)GetComponent(GameComponentsLookup.Chance); } }
-    public float Chance { get { return chance.Value; } }
-    public bool hasChance { get { return HasComponent(GameComponentsLookup.Chance); } }
+    public Code.Gameplay.Features.Animations.Length length { get { return (Code.Gameplay.Features.Animations.Length)GetComponent(GameComponentsLookup.Length); } }
+    public float Length { get { return length.Value; } }
+    public bool hasLength { get { return HasComponent(GameComponentsLookup.Length); } }
 
-    public GameEntity AddChance(float newValue) {
-        var index = GameComponentsLookup.Chance;
-        var component = (Code.Gameplay.Features.Abilities.Chance)CreateComponent(index, typeof(Code.Gameplay.Features.Abilities.Chance));
+    public GameEntity AddLength(float newValue) {
+        var index = GameComponentsLookup.Length;
+        var component = (Code.Gameplay.Features.Animations.Length)CreateComponent(index, typeof(Code.Gameplay.Features.Animations.Length));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceChance(float newValue) {
-        var index = GameComponentsLookup.Chance;
-        var component = (Code.Gameplay.Features.Abilities.Chance)CreateComponent(index, typeof(Code.Gameplay.Features.Abilities.Chance));
+    public GameEntity ReplaceLength(float newValue) {
+        var index = GameComponentsLookup.Length;
+        var component = (Code.Gameplay.Features.Animations.Length)CreateComponent(index, typeof(Code.Gameplay.Features.Animations.Length));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
     }
 
-    public GameEntity RemoveChance() {
-        RemoveComponent(GameComponentsLookup.Chance);
+    public GameEntity RemoveLength() {
+        RemoveComponent(GameComponentsLookup.Length);
         return this;
     }
 }

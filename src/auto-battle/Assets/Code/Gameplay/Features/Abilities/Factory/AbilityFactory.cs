@@ -25,11 +25,10 @@ namespace Code.Gameplay.Features.Abilities.Factory
                 .AddId(_identifiers.Next())
                 .AddAbilityTypeId(config.AbilityTypeId)
                 .With(x => x.isAbility = true)
+                .With(x => x.AddEffectSetups(config.EffectSetups), when: !config.EffectSetups.IsNullOrEmpty())
                 .With(x => x.AddStatusSetups(config.StatusSetups), when: !config.StatusSetups.IsNullOrEmpty())
-                .AddChance(config.Chance)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
-                .AddAnimationSetups(config.AnimationSetups)
                 ;
             
             switch (config.AbilityTypeId)

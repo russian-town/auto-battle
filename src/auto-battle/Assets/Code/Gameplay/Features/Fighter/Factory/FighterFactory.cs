@@ -29,7 +29,6 @@ namespace Code.Gameplay.Features.Fighter.Factory
                     .AddId(_identifiers.Next())
                     .With(x => x.isFighter = true)
                     .AddWorldPosition(at)
-                    .AddTargetDistance(0f)
                     .AddWorldRotation(rotation)
                     .AddDirection(Vector3.zero)
                     .AddSpeed(config.Speed)

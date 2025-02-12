@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Animations;
-using Code.Gameplay.Features.Animations.Configs;
 using Code.Gameplay.Features.Animations.Factory;
 using Entitas;
 
@@ -11,12 +9,11 @@ namespace Code.Gameplay.Features.Statuses.Systems
         private readonly IAnimationFactory _animationFactory;
         private readonly IGroup<GameEntity> _statuses;
         private readonly IGroup<GameEntity> _effects;
+        private readonly IGroup<GameEntity> _producers;
         private readonly List<GameEntity> _buffer = new(32);
 
-        public ApplyBlockStatusSystem(GameContext game, IAnimationFactory animationFactory)
+        public ApplyBlockStatusSystem(GameContext game)
         {
-            _animationFactory = animationFactory;
-            
             _statuses = game.GetGroup(
                 GameMatcher
                     .AllOf(
@@ -33,6 +30,13 @@ namespace Code.Gameplay.Features.Statuses.Systems
                         GameMatcher.EffectValue,
                         GameMatcher.TargetId
                     ));
+            
+            _producers = game.GetGroup(GameMatcher
+                    .AllOf(
+                        GameMatcher.Fighter,
+                        GameMatcher.Id,
+                        GameMatcher.FighterAnimator
+                    ));
         }
 
         public void Execute()
@@ -44,11 +48,12 @@ namespace Code.Gameplay.Features.Statuses.Systems
                     continue;
                 
                 effect.ReplaceEffectValue(0);
-                
-                _animationFactory.CreateAnimation(
-                    new AnimationSetup(AnimationTypeId.Block),
-                    status.ProducerId,
-                    status.TargetId);
+
+                foreach (var producer in _producers)
+                {
+                    if(producer.Id == status.ProducerId)
+                        producer.FighterAnimator.PlayBlock();
+                }
                 
                 status.isAffected = true;
             }

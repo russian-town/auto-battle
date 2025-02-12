@@ -12,5 +12,6 @@
         MoveToTarget = 7,
         MoveToStartPoint = 8,
         Fall = 9,
+        Getup = 10,
     }
 }

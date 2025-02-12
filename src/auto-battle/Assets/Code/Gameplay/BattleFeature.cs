@@ -5,7 +5,6 @@ using Code.Gameplay.Features.Buffs;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Damage;
 using Code.Gameplay.Features.Effect;
-using Code.Gameplay.Features.Fight;
 using Code.Gameplay.Features.Fighter;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Rotation;
@@ -35,8 +34,6 @@ namespace Code.Gameplay
             
             Add(systems.Create<MovementFeature>());
             Add(systems.Create<RotationFeature>());
-            
-            Add(systems.Create<FightFeature>());
             
             Add(systems.Create<ProcessDestructedFeature>());
         }
