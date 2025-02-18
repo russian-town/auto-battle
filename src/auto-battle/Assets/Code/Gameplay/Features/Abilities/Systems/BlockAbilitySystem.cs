@@ -36,7 +36,7 @@ namespace Code.Gameplay.Features.Abilities.Systems
                         ability.ProducerId,
                         ability.TargetId);
                 }
-
+                
                 ability.isActive = true;
             }
         }

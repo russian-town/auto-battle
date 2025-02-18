@@ -1,38 +1,65 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Effect.Factory;
+using Code.Gameplay.Features.AnimationEvents.Factory;
 using Entitas;
 
 namespace Code.Gameplay.Features.Abilities.Systems
 {
     public class CounterattackAbilitySystem : IExecuteSystem
     {
-        private readonly GameContext _game;
-        private readonly IEffectFactory _effectFactory;
+        private readonly IAnimationEventFactory _animationEventFactory;
         private readonly IGroup<GameEntity> _abilities;
-        private readonly List<GameEntity> _buffer = new(24);
+        private readonly IGroup<GameEntity> _producers;
+        private readonly IGroup<GameEntity> _targetAbilities;
+        private readonly List<GameEntity> _buffer = new(16);
 
-        public CounterattackAbilitySystem(GameContext game, IEffectFactory effectFactory)
+        public CounterattackAbilitySystem(GameContext game, IAnimationEventFactory animationEventFactory)
         {
-            _game = game;
-            _effectFactory = effectFactory;
+            _animationEventFactory = animationEventFactory;
 
             _abilities = game.GetGroup(GameMatcher
                     .AllOf(
                         GameMatcher.CounterattackAbility,
+                        GameMatcher.AnimationEventSetups,
                         GameMatcher.ProducerId,
                         GameMatcher.TargetId
                     )
                     .NoneOf(GameMatcher.Active));
+
+            _producers = game.GetGroup(GameMatcher
+                    .AllOf(
+                        GameMatcher.Id,
+                        GameMatcher.FighterAnimator
+                    ));
+            
+            _targetAbilities = game.GetGroup(GameMatcher
+                    .AllOf(
+                        GameMatcher.Ability,
+                        GameMatcher.TargetId,
+                        GameMatcher.AttackAvailable
+                    ));
         }
 
         public void Execute()
         {
             foreach (var ability in _abilities.GetEntities(_buffer))
-            foreach (var effectSetup in ability.EffectSetups)
+            foreach (var producer in _producers)
+            foreach (var targetAbility in _targetAbilities)
             {
-                var producer = _game.GetEntityWithId(ability.ProducerId);
+                if (ability.ProducerId != producer.Id)
+                    continue;
+
+                if(targetAbility.TargetId != producer.Id)
+                    continue;
+                
+                foreach (var animationEventSetup in ability.AnimationEventSetups)
+                {
+                    _animationEventFactory.CreateAnimationEvent(
+                        animationEventSetup,
+                        ability.ProducerId,
+                        ability.TargetId);
+                }
+
                 producer.FighterAnimator.PlayCounterattack();
-                _effectFactory.CreateEffect(effectSetup, producer.Damage, ability.ProducerId, ability.TargetId);
                 ability.isActive = true;
             }
         }

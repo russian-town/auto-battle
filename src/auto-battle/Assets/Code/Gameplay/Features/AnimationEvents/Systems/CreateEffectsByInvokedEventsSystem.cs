@@ -1,5 +1,4 @@
-﻿using Code.Gameplay.Features.CharacterStats;
-using Code.Gameplay.Features.Effect.Factory;
+﻿using Code.Gameplay.Features.Effect.Factory;
 using Entitas;
 
 namespace Code.Gameplay.Features.AnimationEvents.Systems

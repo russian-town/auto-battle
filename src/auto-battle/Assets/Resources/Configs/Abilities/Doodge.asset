@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: Doodge
   m_EditorClassIdentifier: 
   Chance: 0.5
+  TargetDistance: 0
   AbilityTypeId: 4
-  EffectSetups: []
-  StatusSetups:
-  - TypeId: 4
-    Value: 0
+  AnimationEventSetups:
+  - TargetAnimation: {fileID: 0}
+    EffectSetups: []
+    StatusSetups:
+    - TypeId: 4
+      Value: -1
+      Lifetime: 1
     Delay: 0
-    Lifetime: 1

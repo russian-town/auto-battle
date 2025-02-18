@@ -24,6 +24,6 @@ namespace Code.Gameplay.Features.CharacterStats.Systems
 
         private static float AttackPower(GameEntity statOwner) =>
             statOwner.BaseStats[Stats.AttackPower]
-            * statOwner.StatsModifiers[Stats.AttackPower];
+            + statOwner.StatsModifiers[Stats.AttackPower];
     }
 }

@@ -13,7 +13,7 @@ namespace Code.Gameplay.Features.AnimationEvents
             Add(systems.Create<CreateEffectsByInvokedEventsSystem>());
             Add(systems.Create<CreateStatusesByInvokedEventsSystem>());
             
-            Add(systems.Create<CleanupInvokedAnimationEventsSystem>());
+            Add(systems.Create<CleanupProcessedAnimationEventsSystem>());
         }
     }
 }

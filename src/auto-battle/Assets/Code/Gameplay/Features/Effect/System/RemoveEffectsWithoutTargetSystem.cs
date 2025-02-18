@@ -14,8 +14,10 @@ namespace Code.Gameplay.Features.Effect.System
         public void Execute()
         {
             foreach (var effect in _effects.GetEntities(_buffer))
+            {
                 if (effect.hasTargetId == false)
                     effect.Destroy();
+            }
         }
     }
 }

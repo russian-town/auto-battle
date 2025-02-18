@@ -1,40 +1,42 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Statuses.Factory;
+using Code.Gameplay.Features.AnimationEvents.Factory;
 using Entitas;
 
 namespace Code.Gameplay.Features.Abilities.Systems
 {
     public class DodgeAbilitySystem : IExecuteSystem
     {
-        private readonly GameContext _game;
-        private readonly IStatusFactory _statusFactory;
+        private readonly IAnimationEventFactory _animationEventFactory;
         private readonly IGroup<GameEntity> _abilities;
         private readonly List<GameEntity> _buffer = new(32);
 
-        public DodgeAbilitySystem(GameContext game, IStatusFactory statusFactory)
+        public DodgeAbilitySystem(GameContext game, IAnimationEventFactory animationEventFactory)
         {
-            _game = game;
-            _statusFactory = statusFactory;
-
-            _abilities = game.GetGroup(
-                GameMatcher
-                    .AllOf(
-                        GameMatcher.DodgeAbility,
-                        GameMatcher.ProducerId,
-                        GameMatcher.TargetId,
-                        GameMatcher.StatusSetups
-                    )
-                    .NoneOf(GameMatcher.Active));
+            _animationEventFactory = animationEventFactory;
+            
+            _abilities = game.GetGroup(GameMatcher
+                .AllOf(
+                    GameMatcher.Ability,
+                    GameMatcher.DodgeAbility,
+                    GameMatcher.ProducerId,
+                    GameMatcher.TargetId,
+                    GameMatcher.AnimationEventSetups
+                )
+                .NoneOf(GameMatcher.Active));
         }
 
         public void Execute()
         {
             foreach (var ability in _abilities.GetEntities(_buffer))
-            foreach (var statusSetup in ability.StatusSetups)
             {
-                var producer = _game.GetEntityWithId(ability.ProducerId);
-                producer.FighterAnimator.PlayDodge();
-                _statusFactory.CreateStatus(statusSetup, ability.ProducerId, ability.TargetId);
+                foreach (var animationEventSetup in ability.AnimationEventSetups)
+                {
+                    _animationEventFactory.CreateAnimationEvent(
+                        animationEventSetup,
+                        ability.ProducerId,
+                        ability.TargetId);
+                }
+                
                 ability.isActive = true;
             }
         }

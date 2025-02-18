@@ -13,8 +13,7 @@ namespace Code.Gameplay.Features.Effect.System
         {
             _game = game;
             
-            _effects = game.GetGroup(
-                GameMatcher
+            _effects = game.GetGroup(GameMatcher
                     .AllOf(
                         GameMatcher.DamageEffect,
                         GameMatcher.EffectValue,
@@ -28,10 +27,14 @@ namespace Code.Gameplay.Features.Effect.System
         {
             foreach (var effect in _effects.GetEntities(_buffer))
             {
+                effect.isProcessed = true;
+
+                if (effect.EffectValue <= 0f)
+                    continue;
+
                 var target = _game.GetEntityWithId(effect.TargetId);
                 target.FighterAnimator.PlayHit();
                 target.ReplaceCurrentHealth(target.CurrentHealth - effect.EffectValue);
-                effect.isProcessed = true;
             }
         }
     }

@@ -39,7 +39,7 @@ namespace Code.Gameplay.Features.Fighter.Systems
             enemy.AddTargetId(hero.Id);
 
             _abilityFactory.CreateAbility(AbilityTypeId.DefaultAttack, hero.Id, enemy.Id);
-            _abilityFactory.CreateAbility(AbilityTypeId.Block, enemy.Id, hero.Id);
+            _abilityFactory.CreateAbility(AbilityTypeId.Counterattack, enemy.Id, hero.Id);
         }
 
         private Transform GetTransformByPositionTypeIdFor(FighterTypeId typeId) =>

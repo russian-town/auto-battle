@@ -3,12 +3,12 @@ using Entitas;
 
 namespace Code.Gameplay.Features.AnimationEvents.Systems
 {
-    public class CleanupInvokedAnimationEventsSystem : ICleanupSystem
+    public class CleanupProcessedAnimationEventsSystem : ICleanupSystem
     {
         private readonly IGroup<GameEntity> _animationEvents;
         private readonly List<GameEntity> _buffer = new(64);
 
-        public CleanupInvokedAnimationEventsSystem(GameContext game)
+        public CleanupProcessedAnimationEventsSystem(GameContext game)
         {
             _animationEvents = game.GetGroup(GameMatcher
                 .AllOf(
