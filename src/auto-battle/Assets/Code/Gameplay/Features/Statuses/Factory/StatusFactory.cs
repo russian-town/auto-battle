@@ -3,7 +3,6 @@ using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Statuses.Configs;
 using Code.Infrastructure.Identifiers;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Statuses.Factory
 {
@@ -20,7 +19,9 @@ namespace Code.Gameplay.Features.Statuses.Factory
                 .AddEffectValue(setup.Value)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
-                .With(x => x.isStatus = true);
+                .With(x => x.isStatus = true)
+                .With(x => x.isApplied = true)
+                ;
 
             switch (setup.TypeId)
             {
@@ -37,7 +38,8 @@ namespace Code.Gameplay.Features.Statuses.Factory
             throw new Exception($"Status with type id {setup.TypeId} does not exist.");
         }
 
-        private GameEntity CreateBlockStatus(GameEntity status) => status.With(x => x.isBlockStatus = true);
+        private GameEntity CreateBlockStatus(GameEntity status) =>
+            status.With(x => x.isBlockStatus = true);
 
         private GameEntity CreateDodgeStatus(GameEntity status) =>
             status.With(x => x.isDodgeStatus = true);

@@ -13,13 +13,11 @@ MonoBehaviour:
   m_Name: DefaultAttack
   m_EditorClassIdentifier: 
   Chance: 1
+  TargetDistance: 2.4
   AbilityTypeId: 1
-  AnimationSetups:
-  - TypeId: 1
-    EventSetups:
-    - EffectSetups:
-      - EffectTypeId: 1
-        Percent: 1
-      CaptureOnTimeline: 0.18
-    TargetDistance: 2.2
+  EffectSetups:
+  - EffectTypeId: 1
+    Percent: 1
+    Delay: 0.01
   StatusSetups: []
+  AnimationClip: {fileID: 7400000, guid: 58e0d0f58c6dafd40aa0501200fd2626, type: 2}

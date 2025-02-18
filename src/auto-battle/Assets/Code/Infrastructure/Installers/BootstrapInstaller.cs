@@ -3,6 +3,7 @@ using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Abilities.Factory;
+using Code.Gameplay.Features.AnimationEvents.Factory;
 using Code.Gameplay.Features.Animations.Factory;
 using Code.Gameplay.Features.Buffs.Factory;
 using Code.Gameplay.Features.Damage.Factory;
@@ -66,6 +67,7 @@ namespace Code.Infrastructure.Installers
             Container.Bind<IHealthBarFactory>().To<HealthBarFactory>().AsSingle();
             Container.Bind<IBuffFactory>().To<BuffFactory>().AsSingle();
             Container.Bind<IAnimationFactory>().To<AnimationFactory>().AsSingle();
+            Container.Bind<IAnimationEventFactory>().To<AnimationEventFactory>().AsSingle();
         }
 
         public void Initialize() { }

@@ -13,7 +13,7 @@ namespace Code.Gameplay.Features.Abilities
             Add(systems.Create<DodgeAbilitySystem>());
             Add(systems.Create<DoubleStrikeAbilitySystem>());
             
-            Add(systems.Create<CleanupAbilitySystem>());
+            //Add(systems.Create<CleanupAbilitySystem>());
         }
     }
 }

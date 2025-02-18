@@ -7,7 +7,8 @@ namespace Code.Gameplay.Features.Animations
     {
         public AnimationsFeature(ISystemFactory systems)
         {
-            Add(systems.Create<TimeAnimationsSystem>());
+            Add(systems.Create<PlayAnimationsSystem>());
+            Add(systems.Create<CleanupCompletedAnimationsSystem>());
         }
     }
 }

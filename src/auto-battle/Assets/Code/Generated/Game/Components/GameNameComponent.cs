@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherLength;
+    static Entitas.IMatcher<GameEntity> _matcherName;
 
-    public static Entitas.IMatcher<GameEntity> Length {
+    public static Entitas.IMatcher<GameEntity> Name {
         get {
-            if (_matcherLength == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Length);
+            if (_matcherName == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Name);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherLength = matcher;
+                _matcherName = matcher;
             }
 
-            return _matcherLength;
+            return _matcherName;
         }
     }
 }
@@ -33,28 +33,28 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Animations.Length length { get { return (Code.Gameplay.Features.Animations.Length)GetComponent(GameComponentsLookup.Length); } }
-    public float Length { get { return length.Value; } }
-    public bool hasLength { get { return HasComponent(GameComponentsLookup.Length); } }
+    public Code.Gameplay.Common.CommonComponents.Name name { get { return (Code.Gameplay.Common.CommonComponents.Name)GetComponent(GameComponentsLookup.Name); } }
+    public string Name { get { return name.Value; } }
+    public bool hasName { get { return HasComponent(GameComponentsLookup.Name); } }
 
-    public GameEntity AddLength(float newValue) {
-        var index = GameComponentsLookup.Length;
-        var component = (Code.Gameplay.Features.Animations.Length)CreateComponent(index, typeof(Code.Gameplay.Features.Animations.Length));
+    public GameEntity AddName(string newValue) {
+        var index = GameComponentsLookup.Name;
+        var component = (Code.Gameplay.Common.CommonComponents.Name)CreateComponent(index, typeof(Code.Gameplay.Common.CommonComponents.Name));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceLength(float newValue) {
-        var index = GameComponentsLookup.Length;
-        var component = (Code.Gameplay.Features.Animations.Length)CreateComponent(index, typeof(Code.Gameplay.Features.Animations.Length));
+    public GameEntity ReplaceName(string newValue) {
+        var index = GameComponentsLookup.Name;
+        var component = (Code.Gameplay.Common.CommonComponents.Name)CreateComponent(index, typeof(Code.Gameplay.Common.CommonComponents.Name));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
     }
 
-    public GameEntity RemoveLength() {
-        RemoveComponent(GameComponentsLookup.Length);
+    public GameEntity RemoveName() {
+        RemoveComponent(GameComponentsLookup.Name);
         return this;
     }
 }

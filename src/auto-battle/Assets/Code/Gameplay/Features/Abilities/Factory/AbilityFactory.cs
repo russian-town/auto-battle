@@ -25,10 +25,10 @@ namespace Code.Gameplay.Features.Abilities.Factory
                 .AddId(_identifiers.Next())
                 .AddAbilityTypeId(config.AbilityTypeId)
                 .With(x => x.isAbility = true)
-                .With(x => x.AddEffectSetups(config.EffectSetups), when: !config.EffectSetups.IsNullOrEmpty())
-                .With(x => x.AddStatusSetups(config.StatusSetups), when: !config.StatusSetups.IsNullOrEmpty())
+                .With(x => x.AddTargetDistance(config.TargetDistance), when: config.TargetDistance > 0f)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
+                .AddAnimationEventSetups(config.AnimationEventSetups)
                 ;
             
             switch (config.AbilityTypeId)

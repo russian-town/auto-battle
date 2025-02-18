@@ -33,6 +33,7 @@ namespace Code.Gameplay.Features.Fighter.Factory
                     .AddDirection(Vector3.zero)
                     .AddSpeed(config.Speed)
                     .AddDamage(statByType[Stats.Damage])
+                    .AddAttackPower(statByType[Stats.AttackPower])
                     .AddCurrentHealth(statByType[Stats.MaxHealth])
                     .AddMaxHealth(statByType[Stats.MaxHealth])
                     .AddBaseStats(statByType)

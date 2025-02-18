@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using Code.Common.Entity;
 using Code.Gameplay.Features.Animations.Factory;
+using Code.Gameplay.Features.CharacterStats;
 using Entitas;
 
 namespace Code.Gameplay.Features.Statuses.Systems
@@ -18,42 +20,25 @@ namespace Code.Gameplay.Features.Statuses.Systems
                 GameMatcher
                     .AllOf(
                         GameMatcher.Status,
+                        GameMatcher.Id,
                         GameMatcher.BlockStatus,
-                        GameMatcher.ProducerId
+                        GameMatcher.EffectValue,
+                        GameMatcher.ProducerId,
+                        GameMatcher.TargetId
                     )
                     .NoneOf(GameMatcher.Affected));
-            
-            _effects = game.GetGroup(GameMatcher
-                    .AllOf(
-                        GameMatcher.Effect,
-                        GameMatcher.DamageEffect,
-                        GameMatcher.EffectValue,
-                        GameMatcher.TargetId
-                    ));
-            
-            _producers = game.GetGroup(GameMatcher
-                    .AllOf(
-                        GameMatcher.Fighter,
-                        GameMatcher.Id,
-                        GameMatcher.FighterAnimator
-                    ));
         }
 
         public void Execute()
         {
             foreach (var status in _statuses.GetEntities(_buffer))
-            foreach (var effect in _effects)
             {
-                if (status.ProducerId != effect.TargetId)
-                    continue;
-                
-                effect.ReplaceEffectValue(0);
-
-                foreach (var producer in _producers)
-                {
-                    if(producer.Id == status.ProducerId)
-                        producer.FighterAnimator.PlayBlock();
-                }
+                CreateEntity.Empty()
+                    .AddStatChange(Stats.AttackPower)
+                    .AddEffectValue(status.EffectValue)
+                    .AddProducerId(status.ProducerId)
+                    .AddTargetId(status.TargetId)
+                    .AddApplierStatusLink(status.Id);
                 
                 status.isAffected = true;
             }

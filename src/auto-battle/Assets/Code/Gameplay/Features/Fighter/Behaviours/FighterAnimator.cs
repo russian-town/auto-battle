@@ -27,6 +27,7 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
         private IAnimationFactory _animationFactory;
 
         public Animator Animator;
+        public int AnimatorId => Animator.GetInstanceID();
 
         public AnimationTypeId AnimationTypeId { get; private set; }
 
@@ -52,11 +53,13 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
         public void PlayMoveBackward() => Animator.SetBool(_moveBackwardToHash, true);
         public void Cleanup() => Animator.ResetTrigger(_defaultAttackToHash);
 
-        public void EnteredState(int stateHash, float length)
+        public void EnteredState(float length, int layer)
         {
-            _animationFactory.CreateAnimation(stateHash, length);
+            var clipInfos = Animator.GetCurrentAnimatorClipInfo(layer);
+            var clip = clipInfos[0].clip;
+            _animationFactory.CreateAnimation(clip.GetHashCode(), length);
         }
 
-        public void ExitedState(int stateHash) { }
+        public void ExitedState(int stateHash) => Cleanup();
     }
 }

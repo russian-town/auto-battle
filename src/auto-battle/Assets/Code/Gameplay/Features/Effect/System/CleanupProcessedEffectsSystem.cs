@@ -10,8 +10,7 @@ namespace Code.Gameplay.Features.Effect.System
 
         public CleanupProcessedEffectsSystem(GameContext game)
         {
-            _effects = game.GetGroup(
-                GameMatcher
+            _effects = game.GetGroup(GameMatcher
                     .AllOf(
                         GameMatcher.Effect,
                         GameMatcher.Processed

@@ -4,7 +4,7 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
 {
   public interface IAnimationStateReader
   {
-    void EnteredState(int stateHash, float length);
+    void EnteredState(float length, int layer);
     void ExitedState(int stateHash);
     AnimationTypeId AnimationTypeId { get; }
   }

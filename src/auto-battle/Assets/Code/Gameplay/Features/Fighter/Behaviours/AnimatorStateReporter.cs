@@ -11,7 +11,7 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
             base.OnStateEnter(animator, stateInfo, layerIndex);
             FindReader(animator);
 
-            _stateReader.EnteredState(stateInfo.shortNameHash, stateInfo.length);
+            _stateReader.EnteredState(stateInfo.length, layerIndex);
         }
 
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

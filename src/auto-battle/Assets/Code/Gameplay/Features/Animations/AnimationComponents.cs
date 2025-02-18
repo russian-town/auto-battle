@@ -2,8 +2,6 @@
 
 namespace Code.Gameplay.Features.Animations
 {
-    [Game] public class AnimationHash : IComponent { public int Value; }
-    [Game] public class CurrentTime : IComponent { public float Value; }
-    [Game] public class Length : IComponent { public float Value; }
-    [Game] public class AnimationEnded : IComponent { }
+    [Game] public class AnimationComponent : IComponent { }
+    [Game] public class AnimationComplete : IComponent { }
 }

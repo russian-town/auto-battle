@@ -1,38 +1,54 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Effect.Factory;
+using Code.Gameplay.Features.AnimationEvents.Factory;
 using Entitas;
 
 namespace Code.Gameplay.Features.Abilities.Systems
 {
     public class DefaultAttackAbilitySystem : IExecuteSystem
     {
-        private readonly GameContext _game;
-        private readonly IEffectFactory _effectFactory;
+        private readonly IAnimationEventFactory _animationEventFactory;
         private readonly IGroup<GameEntity> _abilities;
-        private readonly List<GameEntity> _buffer = new(32);
+        private readonly IGroup<GameEntity> _producers;
+        private readonly List<GameEntity> _buffer = new(16);
 
-        public DefaultAttackAbilitySystem(GameContext game, IEffectFactory effectFactory)
+        public DefaultAttackAbilitySystem(GameContext game, IAnimationEventFactory animationEventFactory)
         {
-            _game = game;
-            _effectFactory = effectFactory;
+            _animationEventFactory = animationEventFactory;
 
             _abilities = game.GetGroup(GameMatcher
                     .AllOf(
                         GameMatcher.DefaultAttackAbility,
+                        GameMatcher.AnimationEventSetups,
                         GameMatcher.ProducerId,
-                        GameMatcher.TargetId
+                        GameMatcher.TargetId,
+                        GameMatcher.AttackAvailable
                     )
                     .NoneOf(GameMatcher.Active));
+
+            _producers = game.GetGroup(GameMatcher
+                    .AllOf(
+                        GameMatcher.Id,
+                        GameMatcher.FighterAnimator
+                    ));
         }
 
         public void Execute()
         {
             foreach (var ability in _abilities.GetEntities(_buffer))
-            foreach (var effectSetup in ability.EffectSetups)
+            foreach (var producer in _producers)
             {
-                var producer = _game.GetEntityWithId(ability.ProducerId);
+                if (ability.ProducerId != producer.Id)
+                    continue;
+
+                foreach (var animationEventSetup in ability.AnimationEventSetups)
+                {
+                    _animationEventFactory.CreateAnimationEvent(
+                        animationEventSetup,
+                        ability.ProducerId,
+                        ability.TargetId);
+                }
+                
                 producer.FighterAnimator.PlayDefaultAttack();
-                _effectFactory.CreateEffect(effectSetup, producer.Damage, ability.ProducerId, ability.TargetId);
                 ability.isActive = true;
             }
         }

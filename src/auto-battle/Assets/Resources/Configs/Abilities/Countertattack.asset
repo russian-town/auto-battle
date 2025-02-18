@@ -14,15 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Chance: 0.3
   AbilityTypeId: 2
-  AnimationSetups:
-  - TypeId: 6
-    EventSetups:
-    - EffectSetups:
-      - EffectTypeId: 3
-        Percent: 1
-      CaptureOnTimeline: 0.07
-    TargetDistance: 0
-  StatusSetups:
-  - TypeId: 5
-    Value: 0
-    Lifetime: 0
+  EffectSetups:
+  - EffectTypeId: 3
+    Percent: 0.1
+    Delay: 0
+  StatusSetups: []

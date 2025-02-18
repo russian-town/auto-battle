@@ -2,6 +2,6 @@
 {
     public interface IAnimationFactory
     {
-        public GameEntity CreateAnimation(int hash, float length);
+        public GameEntity CreateAnimation(int hashCode, float length);
     }
 }

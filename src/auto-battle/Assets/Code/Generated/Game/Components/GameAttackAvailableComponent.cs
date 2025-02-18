@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherAnimationEnded;
+    static Entitas.IMatcher<GameEntity> _matcherAttackAvailable;
 
-    public static Entitas.IMatcher<GameEntity> AnimationEnded {
+    public static Entitas.IMatcher<GameEntity> AttackAvailable {
         get {
-            if (_matcherAnimationEnded == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.AnimationEnded);
+            if (_matcherAttackAvailable == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.AttackAvailable);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherAnimationEnded = matcher;
+                _matcherAttackAvailable = matcher;
             }
 
-            return _matcherAnimationEnded;
+            return _matcherAttackAvailable;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Animations.AnimationEnded animationEndedComponent = new Code.Gameplay.Features.Animations.AnimationEnded();
+    static readonly Code.Gameplay.Features.Abilities.AttackAvailable attackAvailableComponent = new Code.Gameplay.Features.Abilities.AttackAvailable();
 
-    public bool isAnimationEnded {
-        get { return HasComponent(GameComponentsLookup.AnimationEnded); }
+    public bool isAttackAvailable {
+        get { return HasComponent(GameComponentsLookup.AttackAvailable); }
         set {
-            if (value != isAnimationEnded) {
-                var index = GameComponentsLookup.AnimationEnded;
+            if (value != isAttackAvailable) {
+                var index = GameComponentsLookup.AttackAvailable;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : animationEndedComponent;
+                            : attackAvailableComponent;
 
                     AddComponent(index, component);
                 } else {

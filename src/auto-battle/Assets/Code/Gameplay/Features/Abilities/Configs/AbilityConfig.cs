@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Effect.Configs;
-using Code.Gameplay.Features.Statuses.Configs;
+using Code.Gameplay.Features.AnimationEvents.Configs;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Abilities.Configs
@@ -9,8 +8,9 @@ namespace Code.Gameplay.Features.Abilities.Configs
     public class AbilityConfig : ScriptableObject
     {
         [Range(0f, 1f)] public float Chance;
+        
+        public float TargetDistance;
         public AbilityTypeId AbilityTypeId;
-        public List<EffectSetup> EffectSetups;
-        public List<StatusSetup> StatusSetups;
+        public List<AnimationEventSetup> AnimationEventSetups;
     }
 }

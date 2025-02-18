@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab6c6ff62cf47fa8138d44e0c9cbef0, type: 3}
   m_Name: AK47
   m_EditorClassIdentifier: 
-  Chance: 0
-  AbilityTypeId: 6
-  FightTypeId: 1
-  AbilityAnimationSetups: []
+  Chance: 0.53
   TargetDistance: 0
+  AbilityTypeId: 0
+  EffectSetups: []
+  StatusSetups: []
+  AnimationClip: {fileID: 0}
