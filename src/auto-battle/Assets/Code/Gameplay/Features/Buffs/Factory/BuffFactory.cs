@@ -35,7 +35,7 @@ namespace Code.Gameplay.Features.Buffs.Factory
 
         private GameEntity CreateAnalgesic(BuffConfig config)
         {
-            return CreateEntity.Empty()
+            return CreateEntity.Empty("Analgesic")
                     .AddId(_identifiers.Next())
                     .With(x => x.isBuff = true)
                     .With(x => x.isAnalgesic = true)
@@ -44,7 +44,7 @@ namespace Code.Gameplay.Features.Buffs.Factory
 
         private GameEntity CreateVitamins(BuffConfig config)
         {
-            return CreateEntity.Empty()
+            return CreateEntity.Empty("Vitamins")
                     .AddId(_identifiers.Next())
                     .With(x => x.isBuff = true)
                     .With(x => x.isVitamins = true)

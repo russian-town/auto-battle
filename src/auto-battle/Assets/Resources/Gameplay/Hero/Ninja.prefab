@@ -736,6 +736,8 @@ GameObject:
   - component: {fileID: 8003138901826981698}
   - component: {fileID: 6916258245786868638}
   - component: {fileID: 5461523641554713701}
+  - component: {fileID: 7863438367577272152}
+  - component: {fileID: 9119012613159773685}
   m_Layer: 0
   m_Name: Ninja
   m_TagString: Untagged
@@ -833,6 +835,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityView: {fileID: 8003138901826981698}
   FighterAnimator: {fileID: 3431414604617553957}
+--- !u!114 &7863438367577272152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3819862158874133374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf51e36d4d744234a8839faae4803cc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 8003138901826981698}
+  Animator: {fileID: 307442945973724964}
+--- !u!114 &9119012613159773685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3819862158874133374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3473d66025ab4533a6e6d3ab3e81d72d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 8003138901826981698}
+  Animator: {fileID: 307442945973724964}
 --- !u!1 &4184119940122212468
 GameObject:
   m_ObjectHideFlags: 0

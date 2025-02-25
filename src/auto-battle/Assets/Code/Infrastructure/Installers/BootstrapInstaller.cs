@@ -1,9 +1,11 @@
 ﻿using Code.Common;
+using Code.Gameplay.Common.Animations;
+using Code.Gameplay.Common.Animations.Registry;
+using Code.Gameplay.Common.Animations.Services;
 using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Abilities.Factory;
-using Code.Gameplay.Features.AnimationEvents.Factory;
 using Code.Gameplay.Features.Animations.Factory;
 using Code.Gameplay.Features.Buffs.Factory;
 using Code.Gameplay.Features.Damage.Factory;
@@ -20,7 +22,7 @@ using Zenject;
 
 namespace Code.Infrastructure.Installers
 {
-    public class BootstrapInstaller : MonoInstaller, IInitializable
+    public class BootstrapInstaller : MonoInstaller, ICoroutineRunner, IInitializable
     {
         public override void InstallBindings()
         {
@@ -37,10 +39,12 @@ namespace Code.Infrastructure.Installers
             Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
             Container.Bind<IIdentifierService>().To<IdentifierService>().AsSingle();
             Container.Bind<ICollisionRegistry>().To<CollisionRegistry>().AsSingle();
+            Container.Bind<IAnimatorRegistry>().To<AnimatorRegistry>().AsSingle();
             Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
             Container.Bind<IAssetProvider>().To<AssetProvider>().AsSingle();
             Container.Bind<ITimeService>().To<TimeService>().AsSingle();
             Container.Bind<IRandomService>().To<RandomService>().AsSingle();
+            Container.Bind<IAnimationService>().To<AnimationService>().AsSingle();
         }
 
         private void BindGameplayServices() { }
@@ -66,8 +70,7 @@ namespace Code.Infrastructure.Installers
             Container.Bind<IAbilityFactory>().To<AbilityFactory>().AsSingle();
             Container.Bind<IHealthBarFactory>().To<HealthBarFactory>().AsSingle();
             Container.Bind<IBuffFactory>().To<BuffFactory>().AsSingle();
-            Container.Bind<IAnimationFactory>().To<AnimationFactory>().AsSingle();
-            Container.Bind<IAnimationEventFactory>().To<AnimationEventFactory>().AsSingle();
+            Container.Bind<IAnimationEventFactory>().To<AnimationEventEventFactory>().AsSingle();
         }
 
         public void Initialize() { }

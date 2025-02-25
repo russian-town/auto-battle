@@ -22,3 +22,10 @@ MonoBehaviour:
       Percent: 0.1
     StatusSetups: []
     Delay: 0.1
+  - TargetAnimation: {fileID: 0}
+    EffectSetups: []
+    StatusSetups:
+    - TypeId: 3
+      Value: -1
+      Lifetime: 1
+    Delay: 0

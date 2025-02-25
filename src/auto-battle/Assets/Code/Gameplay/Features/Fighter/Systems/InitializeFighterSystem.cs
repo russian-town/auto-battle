@@ -1,9 +1,9 @@
-﻿using Code.Gameplay.Features.Abilities;
+﻿using Code.Common.Entity;
+using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.Abilities.Factory;
 using Code.Gameplay.Features.Fighter.Factory;
 using Code.Gameplay.Levels;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Fighter.Systems
 {
@@ -25,24 +25,26 @@ namespace Code.Gameplay.Features.Fighter.Systems
 
         public void Initialize()
         {
-            var hero = _fighterFactory.CreateFighter(
-                GetTransformByPositionTypeIdFor(FighterTypeId.Hero).position,
-                GetTransformByPositionTypeIdFor(FighterTypeId.Hero).rotation,
-                FighterTypeId.Hero);
+            var heroStartPosition = _levelDataProvider.HeroStartPoint.position;
+            var heroStartRotation = _levelDataProvider.HeroStartPoint.rotation;
 
-            var enemy = _fighterFactory.CreateFighter(
-                GetTransformByPositionTypeIdFor(FighterTypeId.Enemy).position,
-                GetTransformByPositionTypeIdFor(FighterTypeId.Enemy).rotation,
-                FighterTypeId.Enemy);
+            var hero = _fighterFactory
+                .CreateFighter(heroStartPosition, heroStartRotation, FighterTypeId.Hero);
+
+            var enemyStartPosition = _levelDataProvider.EnemyStartPoint.position;
+            var enemyStartRotation = _levelDataProvider.EnemyStartPoint.rotation;
+
+            var enemy = _fighterFactory
+                .CreateFighter(enemyStartPosition, enemyStartRotation, FighterTypeId.Enemy);
 
             hero.AddTargetId(enemy.Id);
             enemy.AddTargetId(hero.Id);
 
-            _abilityFactory.CreateAbility(AbilityTypeId.DefaultAttack, hero.Id, enemy.Id);
-            _abilityFactory.CreateAbility(AbilityTypeId.Counterattack, enemy.Id, hero.Id);
-        }
+            hero.ReplaceTargetPosition(enemy.WorldPosition);
+            hero.isMoving = true;
 
-        private Transform GetTransformByPositionTypeIdFor(FighterTypeId typeId) =>
-            _levelDataProvider.GetTransformByPositionTypeIdFor(typeId, PositionTypeId.StartPoint);
+            _abilityFactory.CreateAbility(AbilityTypeId.DoubleStrike, hero.Id, enemy.Id);
+            //_abilityFactory.CreateAbility(AbilityTypeId.Counterattack, enemy.Id, hero.Id);
+        }
     }
 }

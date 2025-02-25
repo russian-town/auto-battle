@@ -27,4 +27,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 643d4dc98a9c49d48b26b9742f3d02af, type: 2}
   - {fileID: 11400000, guid: 72082aaa7a9aeab4c9194dec7a326bde, type: 2}
   - {fileID: 11400000, guid: 9e7e5a19793d55d40b478ccb930ad87f, type: 2}
-  Speed: 4
+  Speed: 0.84

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.AnimationEvents.Factory;
+using Code.Gameplay.Features.Animations.Factory;
 using Entitas;
 
 namespace Code.Gameplay.Features.Abilities.Systems
@@ -14,42 +14,44 @@ namespace Code.Gameplay.Features.Abilities.Systems
         public DefaultAttackAbilitySystem(GameContext game, IAnimationEventFactory animationEventFactory)
         {
             _animationEventFactory = animationEventFactory;
-
+            
             _abilities = game.GetGroup(GameMatcher
                     .AllOf(
                         GameMatcher.DefaultAttackAbility,
-                        GameMatcher.AnimationEventSetups,
                         GameMatcher.ProducerId,
                         GameMatcher.TargetId,
-                        GameMatcher.AttackAvailable
+                        GameMatcher.AnimationSetups
                     )
                     .NoneOf(GameMatcher.Active));
-
+            
             _producers = game.GetGroup(GameMatcher
                     .AllOf(
-                        GameMatcher.Id,
-                        GameMatcher.FighterAnimator
+                        GameMatcher.FighterAnimator,
+                        GameMatcher.Id
                     ));
         }
 
         public void Execute()
         {
             foreach (var ability in _abilities.GetEntities(_buffer))
-            foreach (var producer in _producers)
             {
-                if (ability.ProducerId != producer.Id)
-                    continue;
-
-                foreach (var animationEventSetup in ability.AnimationEventSetups)
+                foreach (var producer in _producers)
                 {
-                    _animationEventFactory.CreateAnimationEvent(
-                        animationEventSetup,
-                        ability.ProducerId,
-                        ability.TargetId);
+                    if (producer.Id != ability.ProducerId)
+                        continue;
+
+                    producer.FighterAnimator.PlayDefaultAttack();
+                    
+                    foreach (var animationSetup in ability.AnimationSetups)
+                    foreach (var eventSetup in animationSetup.EventSetups)
+                    {
+                        _animationEventFactory.CreateAnimation(
+                            eventSetup, ability.ProducerId, ability.TargetId, animationSetup.Clip);
+
+                    }
+
+                    ability.isActive = true;
                 }
-                
-                producer.FighterAnimator.PlayDefaultAttack();
-                ability.isActive = true;
             }
         }
     }

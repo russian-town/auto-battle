@@ -1,6 +1,5 @@
 ﻿using Code.Gameplay.Features.Movement.Systems;
 using Code.Infrastructure.Systems;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Movement
 {
@@ -11,10 +10,9 @@ namespace Code.Gameplay.Features.Movement
             Add(systems.Create<UpdateTransformPositionSystem>());
             Add(systems.Create<UpdateAnchoredPositionSystem>());
             
-            Add(systems.Create<MoveProducerForDistanceAbilitySystem>());
             Add(systems.Create<DirectionDeltaMoveSystem>());
             
-            Add(systems.Create<AnimateFighterMovementSystem>());
+            //Add(systems.Create<AnimateFighterMovementSystem>());
         }
     }
 }

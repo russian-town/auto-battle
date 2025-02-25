@@ -7,8 +7,9 @@ namespace Code.Infrastructure.Installers
 {
     public class LevelInitializer : MonoBehaviour, IInitializable
     {
-        [SerializeField] private List<PositionSetup> _positionSetups = new();
         [SerializeField] private Transform _uiRoot;
+        [SerializeField] private Transform _heroStartPoint;
+        [SerializeField] private Transform _enemyStartPoint;
         
         private ILevelDataProvider _levelDataProvider;
 
@@ -19,9 +20,8 @@ namespace Code.Infrastructure.Installers
         public void Initialize()
         {
             _levelDataProvider.SetUIRoot(_uiRoot);
-            
-            foreach (var positionSetup in _positionSetups)
-                _levelDataProvider.RegisterPositionSetup(positionSetup);
+            _levelDataProvider.SetHeroStartPoint(_heroStartPoint);
+            _levelDataProvider.SetEnemyStartPoint(_enemyStartPoint);
         }
     }
 }

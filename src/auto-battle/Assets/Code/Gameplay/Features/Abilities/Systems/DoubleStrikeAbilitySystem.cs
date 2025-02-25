@@ -1,34 +1,59 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Animations.Factory;
 using Entitas;
 
 namespace Code.Gameplay.Features.Abilities.Systems
 {
     public class DoubleStrikeAbilitySystem : IExecuteSystem
     {
-        private readonly GameContext _game;
+        private readonly IAnimationEventFactory _animationEventFactory;
         private readonly IGroup<GameEntity> _abilities;
-        private readonly List<GameEntity> _buffer = new(32);
+        private readonly IGroup<GameEntity> _producers;
+        private readonly IGroup<GameEntity> _targets;
+        private readonly List<GameEntity> _buffer = new(16);
 
-        public DoubleStrikeAbilitySystem(GameContext game)
+        public DoubleStrikeAbilitySystem(GameContext game, IAnimationEventFactory animationEventFactory)
         {
-            _game = game;
+            _animationEventFactory = animationEventFactory;
 
-            _abilities = game.GetGroup(GameMatcher
+            _abilities = game.GetGroup(
+                GameMatcher
                     .AllOf(
                         GameMatcher.DoubleStrikeAbility,
-                        GameMatcher.AbilityTypeId,
                         GameMatcher.ProducerId,
-                        GameMatcher.TargetId
+                        GameMatcher.TargetId,
+                        GameMatcher.AnimationSetups
                     )
                     .NoneOf(GameMatcher.Active));
+
+            _producers = game.GetGroup(
+                GameMatcher
+                    .AllOf(
+                        GameMatcher.FighterAnimator,
+                        GameMatcher.Id
+                    ));
         }
 
         public void Execute()
         {
             foreach (var ability in _abilities.GetEntities(_buffer))
             {
-                var producer = _game.GetEntityWithId(ability.ProducerId);
-                producer.FighterAnimator.PlayDoubleStrike();
+                foreach (var producer in _producers)
+                {
+                    if (producer.Id != ability.ProducerId)
+                        continue;
+
+                    producer.FighterAnimator.PlayDoubleStrike();
+                    
+                    foreach (var animationSetup in ability.AnimationSetups)
+                    foreach (var eventSetup in animationSetup.EventSetups)
+                    {
+                        _animationEventFactory.CreateAnimation(
+                            eventSetup, ability.ProducerId, ability.TargetId, animationSetup.Clip);
+
+                    }
+                }
+
                 ability.isActive = true;
             }
         }

@@ -13,25 +13,20 @@ MonoBehaviour:
   m_Name: DoubleStrike
   m_EditorClassIdentifier: 
   Chance: 0.2
+  TargetDistance: 0
   AbilityTypeId: 5
   AnimationSetups:
-  - TypeId: 3
-    TargetDistance: 0
-    AnimationTime: 0
-  - TypeId: 3
-    TargetDistance: 0
-    AnimationTime: 0
-  EventSetups:
-  - EffectSetups:
-    - EffectTypeId: 1
-      Value: 20
-    StatusSetups: []
-    CaptureOnTimeline: 0.1
-  - EffectSetups:
-    - EffectTypeId: 1
-      Value: 20
-    StatusSetups: []
-    CaptureOnTimeline: 0.55
-  Clips:
-  - {fileID: 7400000, guid: 052e118cbcf21e44588084c16370755d, type: 2}
-  - {fileID: 7400000, guid: 8d8334ce4b7bb7247a9d511f79a05b07, type: 2}
+  - Clip: {fileID: 7400000, guid: 052e118cbcf21e44588084c16370755d, type: 2}
+    EventSetups:
+    - AnimationPercent: 0.37
+      EffectSetups:
+      - EffectTypeId: 1
+        Percent: 1
+      StatusSetups: []
+  - Clip: {fileID: 7400000, guid: 8d8334ce4b7bb7247a9d511f79a05b07, type: 2}
+    EventSetups:
+    - AnimationPercent: 0.36
+      EffectSetups:
+      - EffectTypeId: 1
+        Percent: 1
+      StatusSetups: []

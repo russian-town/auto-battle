@@ -6,8 +6,10 @@ namespace Code.Gameplay.Levels
     public interface ILevelDataProvider
     {
         public Transform UIRoot { get; }
-        void RegisterPositionSetup(PositionSetup positionSetup);
-        Transform GetTransformByPositionTypeIdFor(FighterTypeId fighterTypeId, PositionTypeId positionTypeId);
-        void SetUIRoot(Transform uiRoot);
+        public Transform HeroStartPoint { get; }
+        public Transform EnemyStartPoint { get; }
+        public void SetUIRoot(Transform uiRoot);
+        public void SetHeroStartPoint(Transform heroStartPoint);
+        public void SetEnemyStartPoint(Transform enemyStartPoint);
     }
 }

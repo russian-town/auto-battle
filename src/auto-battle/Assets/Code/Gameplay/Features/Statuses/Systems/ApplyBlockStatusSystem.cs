@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Code.Common.Entity;
-using Code.Gameplay.Features.Animations.Factory;
 using Code.Gameplay.Features.CharacterStats;
 using Entitas;
 
@@ -8,7 +7,6 @@ namespace Code.Gameplay.Features.Statuses.Systems
 {
     public class ApplyBlockStatusSystem : IExecuteSystem
     {
-        private readonly IAnimationFactory _animationFactory;
         private readonly IGroup<GameEntity> _statuses;
         private readonly IGroup<GameEntity> _effects;
         private readonly IGroup<GameEntity> _producers;
@@ -33,7 +31,7 @@ namespace Code.Gameplay.Features.Statuses.Systems
         {
             foreach (var status in _statuses.GetEntities(_buffer))
             {
-                CreateEntity.Empty()
+                CreateEntity.Empty($"Change stat {Stats.AttackPower}")
                     .AddStatChange(Stats.AttackPower)
                     .AddEffectValue(status.EffectValue)
                     .AddProducerId(status.ProducerId)

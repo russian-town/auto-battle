@@ -14,14 +14,13 @@ namespace Code.Gameplay.Features.Statuses.Factory
 
         public GameEntity CreateStatus(StatusSetup setup, int producerId, int targetId)
         {
-            var status = CreateEntity.Empty()
+            var status = CreateEntity.Empty($"{setup.TypeId.ToString()} status")
                 .AddId(_identifiers.Next())
                 .AddEffectValue(setup.Value)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
                 .With(x => x.isStatus = true)
-                .With(x => x.isApplied = true)
-                ;
+                .With(x => x.isApplied = true);
 
             switch (setup.TypeId)
             {

@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.AnimationEvents.Invoked invokedComponent = new Code.Gameplay.Features.AnimationEvents.Invoked();
+    static readonly Code.Gameplay.Features.Animations.Invoked invokedComponent = new Code.Gameplay.Features.Animations.Invoked();
 
     public bool isInvoked {
         get { return HasComponent(GameComponentsLookup.Invoked); }

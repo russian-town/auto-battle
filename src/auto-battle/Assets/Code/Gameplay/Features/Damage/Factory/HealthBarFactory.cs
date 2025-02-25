@@ -13,7 +13,7 @@ namespace Code.Gameplay.Features.Damage.Factory
 
         public GameEntity CreateHealthBar(int targetId, Transform parent)
         {
-            return CreateEntity.Empty()
+            return CreateEntity.Empty("HealthBar")
                     .AddId(_identifiers.Next())
                     .AddTargetId(targetId)
                     .AddAnchoredPosition(Vector2.zero)

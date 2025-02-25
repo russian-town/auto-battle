@@ -15,75 +15,79 @@ public static class GameComponentsLookup {
     public const int ViewPrefab = 4;
     public const int Active = 5;
     public const int AnchoredPosition = 6;
-    public const int HashCode = 7;
-    public const int Id = 8;
-    public const int Name = 9;
-    public const int Parent = 10;
-    public const int RectTransform = 11;
-    public const int Transform = 12;
-    public const int WorldPosition = 13;
-    public const int WorldRotation = 14;
-    public const int Ability = 15;
-    public const int AbilityTypeId = 16;
-    public const int AnimationEventSetups = 17;
-    public const int AttackAvailable = 18;
-    public const int BlockAbility = 19;
-    public const int CounterattackAbility = 20;
-    public const int DefaultAttackAbility = 21;
-    public const int DodgeAbility = 22;
-    public const int DoubleStrikeAbility = 23;
-    public const int EffectSetups = 24;
+    public const int Id = 7;
+    public const int Name = 8;
+    public const int Parent = 9;
+    public const int RectTransform = 10;
+    public const int Transform = 11;
+    public const int WorldPosition = 12;
+    public const int WorldRotation = 13;
+    public const int Ability = 14;
+    public const int AbilityTypeId = 15;
+    public const int AnimationSetups = 16;
+    public const int AttackAvailable = 17;
+    public const int BlockAbility = 18;
+    public const int CounterattackAbility = 19;
+    public const int DefaultAttackAbility = 20;
+    public const int DodgeAbility = 21;
+    public const int DoubleStrikeAbility = 22;
+    public const int EffectSetups = 23;
+    public const int MoveAnimationClip = 24;
     public const int StatusSetups = 25;
-    public const int TargetDistance = 26;
-    public const int AnimationEvent = 27;
-    public const int Invoked = 28;
-    public const int TimeLeft = 29;
-    public const int AnimationComplete = 30;
-    public const int Animation = 31;
-    public const int Analgesic = 32;
-    public const int Buff = 33;
-    public const int Vitamins = 34;
-    public const int BaseStats = 35;
-    public const int StatChange = 36;
-    public const int StatsModifiers = 37;
-    public const int HealthBar = 38;
-    public const int DamageEffect = 39;
-    public const int Effect = 40;
-    public const int EffectValue = 41;
-    public const int HealEffect = 42;
-    public const int Processed = 43;
-    public const int ProducerId = 44;
-    public const int PushEffect = 45;
-    public const int TargetId = 46;
-    public const int AttackPower = 47;
-    public const int BaseAbilities = 48;
-    public const int Damage = 49;
-    public const int Defense = 50;
-    public const int FighterAnimator = 51;
-    public const int Fighter = 52;
-    public const int FighterTypeId = 53;
-    public const int Offensive = 54;
-    public const int StartPointPosition = 55;
-    public const int CurrentHealth = 56;
-    public const int Dead = 57;
-    public const int MaxHealth = 58;
-    public const int ProcessingDeath = 59;
-    public const int Direction = 60;
-    public const int Moving = 61;
-    public const int Speed = 62;
-    public const int Affected = 63;
-    public const int Applied = 64;
-    public const int ApplierStatusLink = 65;
-    public const int BlockStatus = 66;
-    public const int DodgeStatus = 67;
-    public const int PoisonStatus = 68;
-    public const int Status = 69;
-    public const int StunStatus = 70;
-    public const int Unapplied = 71;
-    public const int AxisInput = 72;
-    public const int Input = 73;
+    public const int StepsToTarget = 26;
+    public const int TargetDistance = 27;
+    public const int AnimationClip = 28;
+    public const int AnimationComplete = 29;
+    public const int AnimationHash = 30;
+    public const int AnimationPercent = 31;
+    public const int AnimationPercentLeft = 32;
+    public const int AnimatorClipInfo = 33;
+    public const int AnimatorStateInfo = 34;
+    public const int Invoked = 35;
+    public const int Analgesic = 36;
+    public const int Buff = 37;
+    public const int Vitamins = 38;
+    public const int BaseStats = 39;
+    public const int StatChange = 40;
+    public const int StatsModifiers = 41;
+    public const int HealthBar = 42;
+    public const int DamageEffect = 43;
+    public const int Effect = 44;
+    public const int EffectValue = 45;
+    public const int HealEffect = 46;
+    public const int Processed = 47;
+    public const int ProducerId = 48;
+    public const int PushEffect = 49;
+    public const int TargetId = 50;
+    public const int AttackPower = 51;
+    public const int BaseAbilities = 52;
+    public const int Damage = 53;
+    public const int Defense = 54;
+    public const int FighterAnimator = 55;
+    public const int Fighter = 56;
+    public const int FighterTypeId = 57;
+    public const int Offensive = 58;
+    public const int StartPointPosition = 59;
+    public const int CurrentHealth = 60;
+    public const int Dead = 61;
+    public const int MaxHealth = 62;
+    public const int ProcessingDeath = 63;
+    public const int Direction = 64;
+    public const int Moving = 65;
+    public const int Speed = 66;
+    public const int TargetPosition = 67;
+    public const int TimeLeft = 68;
+    public const int Affected = 69;
+    public const int Applied = 70;
+    public const int ApplierStatusLink = 71;
+    public const int BlockStatus = 72;
+    public const int DodgeStatus = 73;
+    public const int PoisonStatus = 74;
+    public const int Status = 75;
+    public const int StunStatus = 76;
+    public const int Unapplied = 77;
 
-    public const int TotalComponents = 74;
+    public const int TotalComponents = 78;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -93,7 +97,6 @@ public static class GameComponentsLookup {
         "ViewPrefab",
         "Active",
         "AnchoredPosition",
-        "HashCode",
         "Id",
         "Name",
         "Parent",
@@ -103,7 +106,7 @@ public static class GameComponentsLookup {
         "WorldRotation",
         "Ability",
         "AbilityTypeId",
-        "AnimationEventSetups",
+        "AnimationSetups",
         "AttackAvailable",
         "BlockAbility",
         "CounterattackAbility",
@@ -111,13 +114,18 @@ public static class GameComponentsLookup {
         "DodgeAbility",
         "DoubleStrikeAbility",
         "EffectSetups",
+        "MoveAnimationClip",
         "StatusSetups",
+        "StepsToTarget",
         "TargetDistance",
-        "AnimationEvent",
-        "Invoked",
-        "TimeLeft",
+        "AnimationClip",
         "AnimationComplete",
-        "Animation",
+        "AnimationHash",
+        "AnimationPercent",
+        "AnimationPercentLeft",
+        "AnimatorClipInfo",
+        "AnimatorStateInfo",
+        "Invoked",
         "Analgesic",
         "Buff",
         "Vitamins",
@@ -149,6 +157,8 @@ public static class GameComponentsLookup {
         "Direction",
         "Moving",
         "Speed",
+        "TargetPosition",
+        "TimeLeft",
         "Affected",
         "Applied",
         "ApplierStatusLink",
@@ -157,9 +167,7 @@ public static class GameComponentsLookup {
         "PoisonStatus",
         "Status",
         "StunStatus",
-        "Unapplied",
-        "AxisInput",
-        "Input"
+        "Unapplied"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -170,7 +178,6 @@ public static class GameComponentsLookup {
         typeof(Code.Common.ViewPrefab),
         typeof(Code.Gameplay.Common.CommonComponents.Active),
         typeof(Code.Gameplay.Common.CommonComponents.AnchoredPositionComponent),
-        typeof(Code.Gameplay.Common.CommonComponents.HashCode),
         typeof(Code.Gameplay.Common.CommonComponents.Id),
         typeof(Code.Gameplay.Common.CommonComponents.Name),
         typeof(Code.Gameplay.Common.CommonComponents.Parent),
@@ -180,7 +187,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.CommonComponents.WorldRotation),
         typeof(Code.Gameplay.Features.Abilities.Ability),
         typeof(Code.Gameplay.Features.Abilities.AbilityTypeIdComponent),
-        typeof(Code.Gameplay.Features.Abilities.AnimationEventSetups),
+        typeof(Code.Gameplay.Features.Abilities.AnimationSetups),
         typeof(Code.Gameplay.Features.Abilities.AttackAvailable),
         typeof(Code.Gameplay.Features.Abilities.BlockAbility),
         typeof(Code.Gameplay.Features.Abilities.CounterattackAbility),
@@ -188,13 +195,18 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Abilities.DodgeAbility),
         typeof(Code.Gameplay.Features.Abilities.DoubleStrikeAbility),
         typeof(Code.Gameplay.Features.Abilities.EffectSetups),
+        typeof(Code.Gameplay.Features.Abilities.MoveAnimationClip),
         typeof(Code.Gameplay.Features.Abilities.StatusSetups),
+        typeof(Code.Gameplay.Features.Abilities.StepsToTarget),
         typeof(Code.Gameplay.Features.Abilities.TargetDistance),
-        typeof(Code.Gameplay.Features.AnimationEvents.AnimationEvent),
-        typeof(Code.Gameplay.Features.AnimationEvents.Invoked),
-        typeof(Code.Gameplay.Features.AnimationEvents.TimeLeft),
+        typeof(Code.Gameplay.Features.Animations.AnimationClipComponent),
         typeof(Code.Gameplay.Features.Animations.AnimationComplete),
-        typeof(Code.Gameplay.Features.Animations.AnimationComponent),
+        typeof(Code.Gameplay.Features.Animations.AnimationHash),
+        typeof(Code.Gameplay.Features.Animations.AnimationPercent),
+        typeof(Code.Gameplay.Features.Animations.AnimationPercentLeft),
+        typeof(Code.Gameplay.Features.Animations.AnimatorClipInfoComponent),
+        typeof(Code.Gameplay.Features.Animations.AnimatorStateInfoComponent),
+        typeof(Code.Gameplay.Features.Animations.Invoked),
         typeof(Code.Gameplay.Features.Buffs.AnalgesicComponent),
         typeof(Code.Gameplay.Features.Buffs.BuffComponent),
         typeof(Code.Gameplay.Features.Buffs.VitaminsComponent),
@@ -226,6 +238,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.Direction),
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Speed),
+        typeof(Code.Gameplay.Features.Movement.TargetPosition),
+        typeof(Code.Gameplay.Features.Movement.TimeLeft),
         typeof(Code.Gameplay.Features.Statuses.Affected),
         typeof(Code.Gameplay.Features.Statuses.Applied),
         typeof(Code.Gameplay.Features.Statuses.ApplierStatusLink),
@@ -234,8 +248,6 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Statuses.PoisonStatus),
         typeof(Code.Gameplay.Features.Statuses.Status),
         typeof(Code.Gameplay.Features.Statuses.StunStatus),
-        typeof(Code.Gameplay.Features.Statuses.Unapplied),
-        typeof(Code.Gameplay.Input.AxisInput),
-        typeof(Code.Gameplay.Input.Input)
+        typeof(Code.Gameplay.Features.Statuses.Unapplied)
     };
 }

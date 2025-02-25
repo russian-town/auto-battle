@@ -2088,14 +2088,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df4f9b1b27244e74b7b95f0c17eb7bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _positionSetups:
-  - {fileID: 1461607839}
-  - {fileID: 5832549}
-  - {fileID: 1445185698}
-  - {fileID: 1580259435}
-  - {fileID: 746490018}
-  - {fileID: 170332633}
   _uiRoot: {fileID: 1502943000}
+  _heroStartPoint: {fileID: 1461607838}
+  _enemyStartPoint: {fileID: 5832548}
 --- !u!4 &1515567650
 Transform:
   m_ObjectHideFlags: 0

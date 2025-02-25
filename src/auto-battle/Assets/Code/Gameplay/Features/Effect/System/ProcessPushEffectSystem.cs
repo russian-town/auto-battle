@@ -5,16 +5,13 @@ namespace Code.Gameplay.Features.Effect.System
 {
     public class ProcessPushEffectSystem : IExecuteSystem
     {
-        private readonly GameContext _game;
         private readonly IGroup<GameEntity> _effects;
+        private readonly IGroup<GameEntity> _targets;
         private readonly List<GameEntity> _buffer = new(64);
 
         public ProcessPushEffectSystem(GameContext game)
         {
-            _game = game;
-
-            _effects = game.GetGroup(
-                GameMatcher
+            _effects = game.GetGroup(GameMatcher
                     .AllOf(
                         GameMatcher.PushEffect,
                         GameMatcher.EffectValue,
@@ -22,13 +19,25 @@ namespace Code.Gameplay.Features.Effect.System
                         GameMatcher.ProducerId
                     )
                     .NoneOf(GameMatcher.Processed));
+            
+            _targets = game.GetGroup(GameMatcher
+                    .AllOf(
+                        GameMatcher.Fighter,
+                        GameMatcher.Id,
+                        GameMatcher.FighterAnimator,
+                        GameMatcher.CurrentHealth
+                    ));
         }
 
         public void Execute()
         {
             foreach (var effect in _effects.GetEntities(_buffer))
+            foreach (var target in _targets)
             {
-                var target = _game.GetEntityWithId(effect.TargetId);
+                if(target.Id != effect.TargetId)
+                    continue;
+                
+                target.FighterAnimator.Cleanup();
                 target.FighterAnimator.PlayFall();
                 target.ReplaceCurrentHealth(target.CurrentHealth - effect.EffectValue);
                 effect.isProcessed = true;

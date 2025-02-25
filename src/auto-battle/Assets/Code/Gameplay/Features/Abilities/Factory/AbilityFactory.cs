@@ -21,14 +21,16 @@ namespace Code.Gameplay.Features.Abilities.Factory
         {
             var config = _staticDataService.GetAbilityConfig(typeId);
 
-            var ability = CreateEntity.Empty()
+            var ability = CreateEntity.Empty($"{typeId.ToString()} Ability")
                 .AddId(_identifiers.Next())
                 .AddAbilityTypeId(config.AbilityTypeId)
                 .With(x => x.isAbility = true)
+                .With(x => x.AddMoveAnimationClip(config.MoveAnimationClip), when: config.MoveAnimationClip != null)
                 .With(x => x.AddTargetDistance(config.TargetDistance), when: config.TargetDistance > 0f)
+                .With(x => x.AddStepsToTarget(config.StepsToTarget), when: config.StepsToTarget != 0)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
-                .AddAnimationEventSetups(config.AnimationEventSetups)
+                .With(x => x.AddAnimationSetups(config.AnimationSetups), when: !config.AnimationSetups.IsNullOrEmpty())
                 ;
             
             switch (config.AbilityTypeId)

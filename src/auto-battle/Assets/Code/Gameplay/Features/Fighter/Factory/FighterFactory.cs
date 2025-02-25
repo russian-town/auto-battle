@@ -25,12 +25,13 @@ namespace Code.Gameplay.Features.Fighter.Factory
             var config = _staticDataService.GetFighterConfig();
             var statByType = config.GetStats();
 
-            return CreateEntity.Empty()
+            return CreateEntity.Empty("Fighter")
                     .AddId(_identifiers.Next())
                     .With(x => x.isFighter = true)
                     .AddWorldPosition(at)
                     .AddWorldRotation(rotation)
-                    .AddDirection(Vector3.zero)
+                    .AddTargetPosition(Vector3.zero)
+                    .AddTimeLeft(0f)
                     .AddSpeed(config.Speed)
                     .AddDamage(statByType[Stats.Damage])
                     .AddAttackPower(statByType[Stats.AttackPower])
@@ -41,7 +42,7 @@ namespace Code.Gameplay.Features.Fighter.Factory
                     .AddFighterTypeId(fighterTypeId)
                     .AddStartPointPosition(at)
                     .AddViewPrefab(config.View)
-                    .AddBaseAbilities(config.BaseAbilities)
+                    .AddBaseAbilities(config.BaseAbilities) 
                 ;
         }
     }

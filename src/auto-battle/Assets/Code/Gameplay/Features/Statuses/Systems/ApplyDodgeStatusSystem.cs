@@ -31,7 +31,7 @@ namespace Code.Gameplay.Features.Statuses.Systems
         {
             foreach (var status in _statuses.GetEntities(_buffer))
             {
-                CreateEntity.Empty()
+                CreateEntity.Empty($"Change stat {Stats.AttackPower}")
                     .AddStatChange(Stats.AttackPower)
                     .AddEffectValue(status.EffectValue)
                     .AddProducerId(status.ProducerId)

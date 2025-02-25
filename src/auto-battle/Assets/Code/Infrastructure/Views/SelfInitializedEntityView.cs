@@ -17,7 +17,7 @@ namespace Code.Infrastructure.Views
 
         private void Awake()
         {
-            var entity = CreateEntity.Empty()
+            var entity = CreateEntity.Empty("Entity")
                 .AddId(_identifiers.Next());
 
             EntityBehaviour.SetEntity(entity);

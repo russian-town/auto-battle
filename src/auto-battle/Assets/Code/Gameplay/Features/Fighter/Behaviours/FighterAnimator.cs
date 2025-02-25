@@ -1,12 +1,11 @@
-﻿using Code.Gameplay.Features.Animations;
-using Code.Gameplay.Features.Animations.Factory;
-using UnityEngine;
-using Zenject;
+﻿using UnityEngine;
 
 namespace Code.Gameplay.Features.Fighter.Behaviours
 {
-    public class FighterAnimator : MonoBehaviour, IAnimationStateReader
+    public class FighterAnimator : MonoBehaviour
     {
+        public Animator Animator;
+
         private readonly int _defaultAttackToHash = Animator.StringToHash("DefaultAttack");
         private readonly int _doubleStrikeToHash = Animator.StringToHash("DoubleStrike");
         private readonly int _hitToHash = Animator.StringToHash("Hit");
@@ -23,17 +22,6 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
         private readonly int _pistolShootToHash = Animator.StringToHash("PistolShoot");
         private readonly int _getKnifeToHash = Animator.StringToHash("GetKnife");
         private readonly int _knifeAttackToHash = Animator.StringToHash("KnifeAttack");
-
-        private IAnimationFactory _animationFactory;
-
-        public Animator Animator;
-        public int AnimatorId => Animator.GetInstanceID();
-
-        public AnimationTypeId AnimationTypeId { get; private set; }
-
-        [Inject]
-        public void Construct(IAnimationFactory animationFactory) =>
-            _animationFactory = animationFactory;
 
         public void PlayIdle()
         {
@@ -52,14 +40,5 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
         public void PlayMoveForward() => Animator.SetBool(_moveForwardToHash, true);
         public void PlayMoveBackward() => Animator.SetBool(_moveBackwardToHash, true);
         public void Cleanup() => Animator.ResetTrigger(_defaultAttackToHash);
-
-        public void EnteredState(float length, int layer)
-        {
-            var clipInfos = Animator.GetCurrentAnimatorClipInfo(layer);
-            var clip = clipInfos[0].clip;
-            _animationFactory.CreateAnimation(clip.GetHashCode(), length);
-        }
-
-        public void ExitedState(int stateHash) => Cleanup();
     }
 }

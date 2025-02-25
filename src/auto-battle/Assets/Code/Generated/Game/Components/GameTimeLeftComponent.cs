@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.AnimationEvents.TimeLeft timeLeft { get { return (Code.Gameplay.Features.AnimationEvents.TimeLeft)GetComponent(GameComponentsLookup.TimeLeft); } }
+    public Code.Gameplay.Features.Movement.TimeLeft timeLeft { get { return (Code.Gameplay.Features.Movement.TimeLeft)GetComponent(GameComponentsLookup.TimeLeft); } }
     public float TimeLeft { get { return timeLeft.Value; } }
     public bool hasTimeLeft { get { return HasComponent(GameComponentsLookup.TimeLeft); } }
 
     public GameEntity AddTimeLeft(float newValue) {
         var index = GameComponentsLookup.TimeLeft;
-        var component = (Code.Gameplay.Features.AnimationEvents.TimeLeft)CreateComponent(index, typeof(Code.Gameplay.Features.AnimationEvents.TimeLeft));
+        var component = (Code.Gameplay.Features.Movement.TimeLeft)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.TimeLeft));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceTimeLeft(float newValue) {
         var index = GameComponentsLookup.TimeLeft;
-        var component = (Code.Gameplay.Features.AnimationEvents.TimeLeft)CreateComponent(index, typeof(Code.Gameplay.Features.AnimationEvents.TimeLeft));
+        var component = (Code.Gameplay.Features.Movement.TimeLeft)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.TimeLeft));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -1,6 +1,5 @@
 ﻿using Code.Common.Destruct;
 using Code.Gameplay.Features.Abilities;
-using Code.Gameplay.Features.AnimationEvents;
 using Code.Gameplay.Features.Animations;
 using Code.Gameplay.Features.Buffs;
 using Code.Gameplay.Features.CharacterStats;
@@ -28,15 +27,14 @@ namespace Code.Gameplay
             Add(systems.Create<AbilityFeature>());
             Add(systems.Create<BuffFeature>());
             
-            Add(systems.Create<AnimationsFeature>());
-            Add(systems.Create<AnimationEventsFeature>());
-            
             Add(systems.Create<StatusFeature>());
             Add(systems.Create<EffectFeature>());
             Add(systems.Create<StatsFeature>());
             
             Add(systems.Create<MovementFeature>());
             Add(systems.Create<RotationFeature>());
+            
+            Add(systems.Create<AnimationsFeature>());
             
             Add(systems.Create<ProcessDestructedFeature>());
         }

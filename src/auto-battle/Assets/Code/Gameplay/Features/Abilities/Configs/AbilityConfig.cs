@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.AnimationEvents.Configs;
+using Code.Gameplay.Features.Animations.Configs;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Abilities.Configs
@@ -8,9 +8,11 @@ namespace Code.Gameplay.Features.Abilities.Configs
     public class AbilityConfig : ScriptableObject
     {
         [Range(0f, 1f)] public float Chance;
-        
+
+        public AnimationClip MoveAnimationClip;
+        public int StepsToTarget;
         public float TargetDistance;
         public AbilityTypeId AbilityTypeId;
-        public List<AnimationEventSetup> AnimationEventSetups;
+        public List<AnimationSetup> AnimationSetups;
     }
 }
