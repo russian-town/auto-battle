@@ -2,7 +2,6 @@
 using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.CharacterStats;
-using Code.Gameplay.Levels;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;
@@ -30,9 +29,6 @@ namespace Code.Gameplay.Features.Fighter.Factory
                     .With(x => x.isFighter = true)
                     .AddWorldPosition(at)
                     .AddWorldRotation(rotation)
-                    .AddTargetPosition(Vector3.zero)
-                    .AddTimeLeft(0f)
-                    .AddSpeed(config.Speed)
                     .AddDamage(statByType[Stats.Damage])
                     .AddAttackPower(statByType[Stats.AttackPower])
                     .AddCurrentHealth(statByType[Stats.MaxHealth])

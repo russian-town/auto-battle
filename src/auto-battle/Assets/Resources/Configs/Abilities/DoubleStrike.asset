@@ -13,6 +13,28 @@ MonoBehaviour:
   m_Name: DoubleStrike
   m_EditorClassIdentifier: 
   Chance: 0.2
+  MovementSetup:
+    HorizontalGraph:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    VerticalGraph:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    SpeedGraph:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    MoveForwardClip: {fileID: 0}
+    MoveBackwardClip: {fileID: 0}
+  StepsToTarget: 2
   TargetDistance: 0
   AbilityTypeId: 5
   AnimationSetups:

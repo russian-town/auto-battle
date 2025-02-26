@@ -11,6 +11,7 @@ using Code.Gameplay.Features.Buffs.Factory;
 using Code.Gameplay.Features.Damage.Factory;
 using Code.Gameplay.Features.Effect.Factory;
 using Code.Gameplay.Features.Fighter.Factory;
+using Code.Gameplay.Features.Movement.Factory;
 using Code.Gameplay.Features.Statuses.Factory;
 using Code.Gameplay.Levels;
 using Code.Gameplay.StaticData;
@@ -71,6 +72,7 @@ namespace Code.Infrastructure.Installers
             Container.Bind<IHealthBarFactory>().To<HealthBarFactory>().AsSingle();
             Container.Bind<IBuffFactory>().To<BuffFactory>().AsSingle();
             Container.Bind<IAnimationEventFactory>().To<AnimationEventEventFactory>().AsSingle();
+            Container.Bind<IMovementFactory>().To<MovementFactory>().AsSingle();
         }
 
         public void Initialize() { }

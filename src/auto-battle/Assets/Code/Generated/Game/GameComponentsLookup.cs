@@ -32,7 +32,7 @@ public static class GameComponentsLookup {
     public const int DodgeAbility = 21;
     public const int DoubleStrikeAbility = 22;
     public const int EffectSetups = 23;
-    public const int MoveAnimationClip = 24;
+    public const int MovementSetup = 24;
     public const int StatusSetups = 25;
     public const int StepsToTarget = 26;
     public const int TargetDistance = 27;
@@ -72,22 +72,26 @@ public static class GameComponentsLookup {
     public const int Dead = 61;
     public const int MaxHealth = 62;
     public const int ProcessingDeath = 63;
-    public const int Direction = 64;
-    public const int Moving = 65;
-    public const int Speed = 66;
-    public const int TargetPosition = 67;
-    public const int TimeLeft = 68;
-    public const int Affected = 69;
-    public const int Applied = 70;
-    public const int ApplierStatusLink = 71;
-    public const int BlockStatus = 72;
-    public const int DodgeStatus = 73;
-    public const int PoisonStatus = 74;
-    public const int Status = 75;
-    public const int StunStatus = 76;
-    public const int Unapplied = 77;
+    public const int HorizontalGraph = 64;
+    public const int MoveBackwardClip = 65;
+    public const int MoveForwardClip = 66;
+    public const int Movement = 67;
+    public const int Moving = 68;
+    public const int Reached = 69;
+    public const int SpeedGraph = 70;
+    public const int TimeLeft = 71;
+    public const int VerticalGraph = 72;
+    public const int Affected = 73;
+    public const int Applied = 74;
+    public const int ApplierStatusLink = 75;
+    public const int BlockStatus = 76;
+    public const int DodgeStatus = 77;
+    public const int PoisonStatus = 78;
+    public const int Status = 79;
+    public const int StunStatus = 80;
+    public const int Unapplied = 81;
 
-    public const int TotalComponents = 78;
+    public const int TotalComponents = 82;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -114,7 +118,7 @@ public static class GameComponentsLookup {
         "DodgeAbility",
         "DoubleStrikeAbility",
         "EffectSetups",
-        "MoveAnimationClip",
+        "MovementSetup",
         "StatusSetups",
         "StepsToTarget",
         "TargetDistance",
@@ -154,11 +158,15 @@ public static class GameComponentsLookup {
         "Dead",
         "MaxHealth",
         "ProcessingDeath",
-        "Direction",
+        "HorizontalGraph",
+        "MoveBackwardClip",
+        "MoveForwardClip",
+        "Movement",
         "Moving",
-        "Speed",
-        "TargetPosition",
+        "Reached",
+        "SpeedGraph",
         "TimeLeft",
+        "VerticalGraph",
         "Affected",
         "Applied",
         "ApplierStatusLink",
@@ -195,7 +203,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Abilities.DodgeAbility),
         typeof(Code.Gameplay.Features.Abilities.DoubleStrikeAbility),
         typeof(Code.Gameplay.Features.Abilities.EffectSetups),
-        typeof(Code.Gameplay.Features.Abilities.MoveAnimationClip),
+        typeof(Code.Gameplay.Features.Abilities.MovementSetupComponent),
         typeof(Code.Gameplay.Features.Abilities.StatusSetups),
         typeof(Code.Gameplay.Features.Abilities.StepsToTarget),
         typeof(Code.Gameplay.Features.Abilities.TargetDistance),
@@ -235,11 +243,15 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Lifetime.Dead),
         typeof(Code.Gameplay.Features.Lifetime.MaxHealth),
         typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
-        typeof(Code.Gameplay.Features.Movement.Direction),
+        typeof(Code.Gameplay.Features.Movement.HorizontalGraph),
+        typeof(Code.Gameplay.Features.Movement.MoveBackwardClip),
+        typeof(Code.Gameplay.Features.Movement.MoveForwardClip),
+        typeof(Code.Gameplay.Features.Movement.Movement),
         typeof(Code.Gameplay.Features.Movement.Moving),
-        typeof(Code.Gameplay.Features.Movement.Speed),
-        typeof(Code.Gameplay.Features.Movement.TargetPosition),
+        typeof(Code.Gameplay.Features.Movement.Reached),
+        typeof(Code.Gameplay.Features.Movement.SpeedGraph),
         typeof(Code.Gameplay.Features.Movement.TimeLeft),
+        typeof(Code.Gameplay.Features.Movement.VerticalGraph),
         typeof(Code.Gameplay.Features.Statuses.Affected),
         typeof(Code.Gameplay.Features.Statuses.Applied),
         typeof(Code.Gameplay.Features.Statuses.ApplierStatusLink),

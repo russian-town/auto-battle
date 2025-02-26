@@ -40,10 +40,7 @@ namespace Code.Gameplay.Features.Fighter.Systems
             hero.AddTargetId(enemy.Id);
             enemy.AddTargetId(hero.Id);
 
-            hero.ReplaceTargetPosition(enemy.WorldPosition);
-            hero.isMoving = true;
-
-            _abilityFactory.CreateAbility(AbilityTypeId.DoubleStrike, hero.Id, enemy.Id);
+            _abilityFactory.CreateAbility(AbilityTypeId.DefaultAttack, hero.Id, enemy.Id);
             //_abilityFactory.CreateAbility(AbilityTypeId.Counterattack, enemy.Id, hero.Id);
         }
     }
