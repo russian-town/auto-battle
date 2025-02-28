@@ -1,6 +1,4 @@
 ﻿using Code.Common;
-using Code.Gameplay.Common.Animations.Registry;
-using Code.Gameplay.Common.Animations.Services;
 using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
@@ -8,6 +6,7 @@ using Code.Gameplay.Features.Abilities.Factory;
 using Code.Gameplay.Features.Buffs.Factory;
 using Code.Gameplay.Features.Effect.Factory;
 using Code.Gameplay.Features.Fighter.Factory;
+using Code.Gameplay.Features.HealthBar.Factory;
 using Code.Gameplay.Features.Statuses.Factory;
 using Code.Gameplay.Levels;
 using Code.Gameplay.StaticData;
@@ -36,12 +35,10 @@ namespace Code.Infrastructure.Installers
             Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
             Container.Bind<IIdentifierService>().To<IdentifierService>().AsSingle();
             Container.Bind<ICollisionRegistry>().To<CollisionRegistry>().AsSingle();
-            Container.Bind<IAnimatorRegistry>().To<AnimatorRegistry>().AsSingle();
             Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
             Container.Bind<IAssetProvider>().To<AssetProvider>().AsSingle();
             Container.Bind<ITimeService>().To<TimeService>().AsSingle();
             Container.Bind<IRandomService>().To<RandomService>().AsSingle();
-            Container.Bind<IAnimationService>().To<AnimationService>().AsSingle();
         }
 
         private void BindGameplayServices() { }
@@ -66,6 +63,7 @@ namespace Code.Infrastructure.Installers
             Container.Bind<IFighterFactory>().To<FighterFactory>().AsSingle();
             Container.Bind<IAbilityFactory>().To<AbilityFactory>().AsSingle();
             Container.Bind<IBuffFactory>().To<BuffFactory>().AsSingle();
+            Container.Bind<IHealthBarFactory>().To<HealthBarFactory>().AsSingle();
         }
 
         public void Initialize() { }

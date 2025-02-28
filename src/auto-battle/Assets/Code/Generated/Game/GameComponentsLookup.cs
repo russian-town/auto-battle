@@ -15,60 +15,61 @@ public static class GameComponentsLookup {
     public const int ViewPrefab = 4;
     public const int Active = 5;
     public const int AnchoredPosition = 6;
-    public const int Id = 7;
-    public const int Name = 8;
-    public const int Parent = 9;
-    public const int RectTransform = 10;
+    public const int Container = 7;
+    public const int Id = 8;
+    public const int Name = 9;
+    public const int Parent = 10;
     public const int Transform = 11;
-    public const int TurnUpdatable = 12;
-    public const int WorldPosition = 13;
-    public const int WorldRotation = 14;
-    public const int Ability = 15;
-    public const int AbilityTypeId = 16;
-    public const int AttackAvailable = 17;
-    public const int BlockAbility = 18;
-    public const int CounterattackAbility = 19;
-    public const int DefaultAttackAbility = 20;
-    public const int DodgeAbility = 21;
-    public const int DoubleStrikeAbility = 22;
-    public const int EffectSetups = 23;
-    public const int StatusSetups = 24;
-    public const int StepsToTarget = 25;
-    public const int TargetDistance = 26;
-    public const int Analgesic = 27;
-    public const int Buff = 28;
-    public const int Vitamins = 29;
-    public const int BaseStats = 30;
-    public const int StatChange = 31;
-    public const int StatsModifiers = 32;
-    public const int DamageEffect = 33;
-    public const int Effect = 34;
-    public const int EffectValue = 35;
-    public const int HealEffect = 36;
-    public const int Processed = 37;
-    public const int ProducerId = 38;
-    public const int PushEffect = 39;
-    public const int TargetId = 40;
-    public const int BaseAbilities = 41;
-    public const int Damage = 42;
-    public const int FighterAnimator = 43;
-    public const int Fighter = 44;
-    public const int StartPointPosition = 45;
+    public const int WorldPosition = 12;
+    public const int WorldRotation = 13;
+    public const int Ability = 14;
+    public const int AbilityTypeId = 15;
+    public const int AttackAvailable = 16;
+    public const int BlockAbility = 17;
+    public const int CounterattackAbility = 18;
+    public const int DefaultAttackAbility = 19;
+    public const int DodgeAbility = 20;
+    public const int DoubleStrikeAbility = 21;
+    public const int EffectSetups = 22;
+    public const int StatusSetups = 23;
+    public const int StepsToTarget = 24;
+    public const int TargetDistance = 25;
+    public const int Analgesic = 26;
+    public const int Buff = 27;
+    public const int Vitamins = 28;
+    public const int BaseStats = 29;
+    public const int StatChange = 30;
+    public const int StatsModifiers = 31;
+    public const int DamageEffect = 32;
+    public const int Effect = 33;
+    public const int EffectValue = 34;
+    public const int HealEffect = 35;
+    public const int Processed = 36;
+    public const int ProducerId = 37;
+    public const int PushEffect = 38;
+    public const int TargetId = 39;
+    public const int BaseAbilities = 40;
+    public const int Damage = 41;
+    public const int FighterAnimator = 42;
+    public const int Fighter = 43;
+    public const int StartPointPosition = 44;
+    public const int FighterHealthBar = 45;
     public const int CurrentHealth = 46;
     public const int Dead = 47;
     public const int MaxHealth = 48;
     public const int ProcessingDeath = 49;
-    public const int Affected = 50;
-    public const int Applied = 51;
-    public const int ApplierStatusLink = 52;
-    public const int BlockStatus = 53;
-    public const int DodgeStatus = 54;
-    public const int PoisonStatus = 55;
-    public const int Status = 56;
-    public const int StunStatus = 57;
-    public const int Unapplied = 58;
+    public const int HasContainer = 50;
+    public const int Affected = 51;
+    public const int Applied = 52;
+    public const int ApplierStatusLink = 53;
+    public const int BlockStatus = 54;
+    public const int DodgeStatus = 55;
+    public const int PoisonStatus = 56;
+    public const int Status = 57;
+    public const int StunStatus = 58;
+    public const int Unapplied = 59;
 
-    public const int TotalComponents = 59;
+    public const int TotalComponents = 60;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -78,12 +79,11 @@ public static class GameComponentsLookup {
         "ViewPrefab",
         "Active",
         "AnchoredPosition",
+        "Container",
         "Id",
         "Name",
         "Parent",
-        "RectTransform",
         "Transform",
-        "TurnUpdatable",
         "WorldPosition",
         "WorldRotation",
         "Ability",
@@ -117,10 +117,12 @@ public static class GameComponentsLookup {
         "FighterAnimator",
         "Fighter",
         "StartPointPosition",
+        "FighterHealthBar",
         "CurrentHealth",
         "Dead",
         "MaxHealth",
         "ProcessingDeath",
+        "HasContainer",
         "Affected",
         "Applied",
         "ApplierStatusLink",
@@ -140,12 +142,11 @@ public static class GameComponentsLookup {
         typeof(Code.Common.ViewPrefab),
         typeof(Code.Gameplay.Common.CommonComponents.Active),
         typeof(Code.Gameplay.Common.CommonComponents.AnchoredPositionComponent),
+        typeof(Code.Gameplay.Common.CommonComponents.Container),
         typeof(Code.Gameplay.Common.CommonComponents.Id),
         typeof(Code.Gameplay.Common.CommonComponents.Name),
         typeof(Code.Gameplay.Common.CommonComponents.Parent),
-        typeof(Code.Gameplay.Common.CommonComponents.RectTransformComponent),
         typeof(Code.Gameplay.Common.CommonComponents.TransformComponent),
-        typeof(Code.Gameplay.Common.CommonComponents.TurnUpdatable),
         typeof(Code.Gameplay.Common.CommonComponents.WorldPosition),
         typeof(Code.Gameplay.Common.CommonComponents.WorldRotation),
         typeof(Code.Gameplay.Features.Abilities.Ability),
@@ -179,10 +180,12 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Fighter.FighterAnimatorComponent),
         typeof(Code.Gameplay.Features.Fighter.FighterComponent),
         typeof(Code.Gameplay.Features.Fighter.StartPointPosition),
+        typeof(Code.Gameplay.Features.HealthBar.FighterHealthBarComponent),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHealth),
         typeof(Code.Gameplay.Features.Lifetime.Dead),
         typeof(Code.Gameplay.Features.Lifetime.MaxHealth),
         typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
+        typeof(Code.Gameplay.Features.Movement.HasContainer),
         typeof(Code.Gameplay.Features.Statuses.Affected),
         typeof(Code.Gameplay.Features.Statuses.Applied),
         typeof(Code.Gameplay.Features.Statuses.ApplierStatusLink),

@@ -4,6 +4,7 @@ using Code.Gameplay.Features.Buffs;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Effect;
 using Code.Gameplay.Features.Fighter;
+using Code.Gameplay.Features.HealthBar;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Rotation;
 using Code.Gameplay.Features.Statuses;
@@ -17,7 +18,9 @@ namespace Code.Gameplay
         public BattleFeature(ISystemFactory systems)
         { 
             Add(systems.Create<BindViewFeature>());
+            
             Add(systems.Create<MovementFeature>());
+            Add(systems.Create<RotationFeature>());
             
             Add(systems.Create<FighterFeature>());
             Add(systems.Create<AbilityFeature>());
@@ -27,7 +30,7 @@ namespace Code.Gameplay
             Add(systems.Create<EffectFeature>());
             Add(systems.Create<StatsFeature>());
             
-            Add(systems.Create<RotationFeature>());
+            Add(systems.Create<HealthBarFeature>());
             
             Add(systems.Create<ProcessDestructedFeature>());
         }
