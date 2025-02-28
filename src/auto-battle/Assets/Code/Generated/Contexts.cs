@@ -56,17 +56,11 @@ public partial class Contexts : Entitas.IContexts {
 //------------------------------------------------------------------------------
 public partial class Contexts {
 
-    public const string AnimationHash = "AnimationHash";
     public const string ApplierStatusLink = "ApplierStatusLink";
     public const string Id = "Id";
 
     [Entitas.CodeGeneration.Attributes.PostConstructor]
     public void InitializeEntityIndices() {
-        game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
-            AnimationHash,
-            game.GetGroup(GameMatcher.AnimationHash),
-            (e, c) => ((Code.Gameplay.Features.Animations.AnimationHash)c).Value));
-
         game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
             ApplierStatusLink,
             game.GetGroup(GameMatcher.ApplierStatusLink),
@@ -80,10 +74,6 @@ public partial class Contexts {
 }
 
 public static class ContextsExtensions {
-
-    public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithAnimationHash(this GameContext context, int Value) {
-        return ((Entitas.EntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.AnimationHash)).GetEntities(Value);
-    }
 
     public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithApplierStatusLink(this GameContext context, int Value) {
         return ((Entitas.EntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.ApplierStatusLink)).GetEntities(Value);

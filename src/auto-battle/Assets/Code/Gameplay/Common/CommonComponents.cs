@@ -15,5 +15,6 @@ namespace Code.Gameplay.Common
         [Game] public class WorldRotation : IComponent { public Quaternion Value; }
         [Game] public class TransformComponent : IComponent { public Transform Value; }
         [Game] public class RectTransformComponent : IComponent { public RectTransform Value; }
+        [Game] public class TurnUpdatable : IComponent { public int Value; }
     }
 }

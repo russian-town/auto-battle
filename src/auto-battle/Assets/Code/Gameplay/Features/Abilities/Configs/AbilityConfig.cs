@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Animations.Configs;
-using Code.Gameplay.Features.Movement.Config;
+using Code.Gameplay.Features.Effect.Configs;
+using Code.Gameplay.Features.Statuses.Configs;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Abilities.Configs
@@ -10,10 +10,10 @@ namespace Code.Gameplay.Features.Abilities.Configs
     {
         [Range(0f, 1f)] public float Chance;
 
-        public MovementSetup MovementSetup;
         public int StepsToTarget;
         public float TargetDistance;
         public AbilityTypeId AbilityTypeId;
-        public List<AnimationSetup> AnimationSetups;
+        public List<EffectSetup> EffectSetups;
+        public List<StatusSetup> StatusSetups;
     }
 }

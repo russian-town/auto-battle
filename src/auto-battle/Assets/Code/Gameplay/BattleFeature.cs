@@ -1,12 +1,9 @@
 ﻿using Code.Common.Destruct;
 using Code.Gameplay.Features.Abilities;
-using Code.Gameplay.Features.Animations;
 using Code.Gameplay.Features.Buffs;
 using Code.Gameplay.Features.CharacterStats;
-using Code.Gameplay.Features.Damage;
 using Code.Gameplay.Features.Effect;
 using Code.Gameplay.Features.Fighter;
-using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Rotation;
 using Code.Gameplay.Features.Statuses;
 using Code.Infrastructure.Systems;
@@ -21,9 +18,6 @@ namespace Code.Gameplay
             Add(systems.Create<BindViewFeature>());
             
             Add(systems.Create<FighterFeature>());
-
-            Add(systems.Create<DamageFeature>());
-
             Add(systems.Create<AbilityFeature>());
             Add(systems.Create<BuffFeature>());
             
@@ -31,10 +25,7 @@ namespace Code.Gameplay
             Add(systems.Create<EffectFeature>());
             Add(systems.Create<StatsFeature>());
             
-            Add(systems.Create<MovementFeature>());
             Add(systems.Create<RotationFeature>());
-            
-            Add(systems.Create<AnimationsFeature>());
             
             Add(systems.Create<ProcessDestructedFeature>());
         }

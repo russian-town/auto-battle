@@ -8,8 +8,6 @@ namespace Code.Gameplay.Features.Fighter
         public FighterFeature(ISystemFactory systems)
         {
             Add(systems.Create<InitializeFighterSystem>());
-            Add(systems.Create<UpdateAnimatorStateInfoByFightersSystem>());
-            Add(systems.Create<UpdateAnimatorClipInfoByFightersSystem>());
         }
     }
 }

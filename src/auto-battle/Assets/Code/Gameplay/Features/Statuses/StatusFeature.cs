@@ -7,7 +7,6 @@ namespace Code.Gameplay.Features.Statuses
     {
         public StatusFeature(ISystemFactory systems)
         {
-            Add(systems.Create<ApplyBlockStatusSystem>());
             Add(systems.Create<ApplyDodgeStatusSystem>());
             
             Add(systems.Create<CleanupUnappliedStatusLinkedChangesSystem>());

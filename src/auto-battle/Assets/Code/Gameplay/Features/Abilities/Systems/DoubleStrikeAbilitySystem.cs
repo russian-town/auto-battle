@@ -1,28 +1,23 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Animations.Factory;
 using Entitas;
 
 namespace Code.Gameplay.Features.Abilities.Systems
 {
     public class DoubleStrikeAbilitySystem : IExecuteSystem
     {
-        private readonly IAnimationEventFactory _animationEventFactory;
         private readonly IGroup<GameEntity> _abilities;
         private readonly IGroup<GameEntity> _producers;
         private readonly IGroup<GameEntity> _targets;
         private readonly List<GameEntity> _buffer = new(16);
 
-        public DoubleStrikeAbilitySystem(GameContext game, IAnimationEventFactory animationEventFactory)
+        public DoubleStrikeAbilitySystem(GameContext game)
         {
-            _animationEventFactory = animationEventFactory;
-
             _abilities = game.GetGroup(
                 GameMatcher
                     .AllOf(
                         GameMatcher.DoubleStrikeAbility,
                         GameMatcher.ProducerId,
-                        GameMatcher.TargetId,
-                        GameMatcher.AnimationSetups
+                        GameMatcher.TargetId
                     )
                     .NoneOf(GameMatcher.Active));
 
@@ -44,14 +39,6 @@ namespace Code.Gameplay.Features.Abilities.Systems
                         continue;
 
                     producer.FighterAnimator.PlayDoubleStrike();
-                    
-                    foreach (var animationSetup in ability.AnimationSetups)
-                    foreach (var eventSetup in animationSetup.EventSetups)
-                    {
-                        _animationEventFactory.CreateAnimation(
-                            eventSetup, ability.ProducerId, ability.TargetId, animationSetup.Clip);
-
-                    }
                 }
 
                 ability.isActive = true;

@@ -30,15 +30,13 @@ namespace Code.Gameplay.Features.Fighter.Factory
                     .AddWorldPosition(at)
                     .AddWorldRotation(rotation)
                     .AddDamage(statByType[Stats.Damage])
-                    .AddAttackPower(statByType[Stats.AttackPower])
                     .AddCurrentHealth(statByType[Stats.MaxHealth])
                     .AddMaxHealth(statByType[Stats.MaxHealth])
                     .AddBaseStats(statByType)
                     .AddStatsModifiers(new Dictionary<Stats, float>())
-                    .AddFighterTypeId(fighterTypeId)
                     .AddStartPointPosition(at)
                     .AddViewPrefab(config.View)
-                    .AddBaseAbilities(config.BaseAbilities) 
+                    .AddBaseAbilities(config.BaseAbilities)
                 ;
         }
     }

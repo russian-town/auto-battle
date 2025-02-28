@@ -1,10 +1,7 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Animations.Configs;
 using Code.Gameplay.Features.Effect.Configs;
-using Code.Gameplay.Features.Movement.Config;
 using Code.Gameplay.Features.Statuses.Configs;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Abilities
 {
@@ -16,8 +13,6 @@ namespace Code.Gameplay.Features.Abilities
 
     [Game] public class StatusSetups : IComponent { public List<StatusSetup> Value; }
     [Game] public class EffectSetups : IComponent { public List<EffectSetup> Value; }
-    [Game] public class AnimationSetups : IComponent { public List<AnimationSetup> Value; }
-    [Game] public class MovementSetupComponent : IComponent { public MovementSetup Value; }
     
     [Game] public class DefaultAttackAbility : IComponent { }
     [Game] public class BlockAbility : IComponent { }

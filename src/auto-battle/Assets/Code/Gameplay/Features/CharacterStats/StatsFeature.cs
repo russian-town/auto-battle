@@ -9,7 +9,6 @@ namespace Code.Gameplay.Features.CharacterStats
         {
             Add(systems.Create<StatChangeSystem>());
             Add(systems.Create<ApplyDamageFromStats>());
-            Add(systems.Create<ApplyAttackPowerFromStats>());
         }
     }
 }
