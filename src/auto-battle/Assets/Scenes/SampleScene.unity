@@ -2043,8 +2043,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Initializers:
-  - {fileID: 1515567649}
   - {fileID: 2005588106}
+  - {fileID: 1515567649}
 --- !u!4 &1502943000
 Transform:
   m_ObjectHideFlags: 0

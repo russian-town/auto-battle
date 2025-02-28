@@ -7,149 +7,12 @@
     <list default="true" id="53a9f07f-eb11-46c2-941e-ed334edf4097" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.auto-battle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.auto-battle/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/BattleFeature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/BattleFeature.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Common/CommonComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Common/CommonComponents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/AbilityComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/AbilityComponents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Configs/AbilityConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Configs/AbilityConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Factory/AbilityFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Factory/AbilityFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/DefaultAttackAbilitySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/DefaultAttackAbilitySystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/DoubleStrikeAbilitySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/DoubleStrikeAbilitySystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/AnimationComponents.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/AnimationComponents.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/AnimationsFeature.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/AnimationsFeature.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Configs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Configs/AnimationSetup.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Configs/AnimationSetup.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Configs/EventSetup.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Configs/EventSetup.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Factory.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Factory/AnimationEventEventFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Factory/AnimationEventEventFactory.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Factory/IAnimationEventFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Factory/IAnimationEventFactory.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Registrars.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Registrars/AnimatorClipInfoRegistrar.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Registrars/AnimatorClipInfoRegistrar.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Registrars/AnimatorStateInfoRegistrar.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Registrars/AnimatorStateInfoRegistrar.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Systems.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Systems/CleanupProcessedAnimationEventsSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Systems/CleanupProcessedAnimationEventsSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Systems/CreateEffectsByAnimationEventsSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Systems/CreateEffectsByAnimationEventsSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Systems/CreateStatusesByAnimationEventsSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Systems/CreateStatusesByAnimationEventsSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Systems/UpdatePercentByAnimationEventsSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Systems/UpdatePercentByAnimationEventsSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/CharacterStats/StatsFeature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/CharacterStats/StatsFeature.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/CharacterStats/Systems/ApplyAttackPowerFromStats.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/CharacterStats/Systems/ApplyAttackPowerFromStats.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Damage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Damage/Behaviours.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Damage/Behaviours/HealthBar.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Damage/Behaviours/HealthBar.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Damage/DamageComponents.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Damage/DamageComponents.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Damage/DamageFeature.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Damage/DamageFeature.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Damage/Factory.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Damage/Factory/HealthBarFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Damage/Factory/HealthBarFactory.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Damage/Factory/IHealthBarFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Damage/Factory/IHealthBarFactory.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Damage/Registrars.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Damage/Registrars/HealthBarRegistrar.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Damage/Registrars/HealthBarRegistrar.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Damage/Registrars/RectTransformRegistrar.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Damage/Registrars/RectTransformRegistrar.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Damage/Systems.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Damage/Systems/UpdateHealthBarSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Damage/Systems/UpdateHealthBarSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Effect/EffectFeature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Effect/EffectFeature.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Fighter/Factory/FighterFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Fighter/Factory/FighterFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Fighter/FighterComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Fighter/FighterComponents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Fighter/FighterFeature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Fighter/FighterFeature.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Fighter/Systems/UpdateAnimatorClipInfoByFightersSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Fighter/Systems/UpdateAnimatorClipInfoByFightersSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Fighter/Systems/UpdateAnimatorStateInfoByFightersSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Fighter/Systems/UpdateAnimatorStateInfoByFightersSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Config.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Config/MovementSetup.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Config/MovementSetup.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Factory.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Factory/IMovementFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Factory/IMovementFactory.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Factory/MovementFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Factory/MovementFactory.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/MovementComponents.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/MovementComponents.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/MovementFeature.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/MovementFeature.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Systems.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Systems/UpdateAnchoredPositionSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Systems/UpdateAnchoredPositionSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Systems/UpdatePositionByGraphSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Systems/UpdatePositionByGraphSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Systems/UpdateTimeLeftByMovementsSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Systems/UpdateTimeLeftByMovementsSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Systems/UpdateTransformPositionSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Movement/Systems/UpdateTransformPositionSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Statuses/StatusFeature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Statuses/StatusFeature.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Statuses/Systems/ApplyBlockStatusSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Statuses/Systems/ApplyBlockStatusSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Contexts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Contexts.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAnimationClipComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAnimationClipComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAnimationCompleteComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAnimationCompleteComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAnimationHashComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAnimationHashComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAnimationPercentComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAnimationPercentComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAnimationPercentLeftComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAnimationPercentLeftComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAnimationSetupsComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAnimationSetupsComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAnimatorClipInfoComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAnimatorClipInfoComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAnimatorStateInfoComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAnimatorStateInfoComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAttackPowerComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameAttackPowerComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameDefenseComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameDefenseComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameFighterTypeIdComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameFighterTypeIdComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameHealthBarComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameHealthBarComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameHorizontalGraphComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameHorizontalGraphComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameInvokedComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameInvokedComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameMoveBackwardClipComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameMoveBackwardClipComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameMoveForwardClipComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameMoveForwardClipComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameMovementComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameMovementComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameMovementSetupComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameMovementSetupComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameMovingComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameMovingComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameOffensiveComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameOffensiveComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameReachedComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameReachedComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameSpeedGraphComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameSpeedGraphComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameTimeLeftComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameTimeLeftComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameVerticalGraphComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameVerticalGraphComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/GameComponentsLookup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Game/GameComponentsLookup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/Installers/BootstrapInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/Installers/BootstrapInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Gameplay/Damage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Gameplay/Damage/HealthBar.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Gameplay/Damage/HealthBar/HP_Bar.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Gameplay/Damage/HealthBar/HP_Bar.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Gameplay/Hero/Ninja.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Gameplay/Hero/Ninja.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,11 +27,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Common/Animations/Registry/AnimatorRegistry.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Common/Extensions/NumericExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Configs/AbilityConfig.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/AnimationTypeId.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Features/Lifetime/LifeCycleComponents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Features/Lifetime/Systems/MarkDeadSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Levels/LevelDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/StaticData/StaticDataService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Code/Infrastructure/Installers/UIInitializer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.33/UnityEditor.TestRunner/TestLaunchers/PlaymodeLauncher.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CanvasScalerWithChildTextObjectDoesNotCrash.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -323,7 +186,7 @@
       <workItem from="1740393249298" duration="5726000" />
       <workItem from="1740410821045" duration="2634000" />
       <workItem from="1740453917199" duration="22213000" />
-      <workItem from="1740740706314" duration="2004000" />
+      <workItem from="1740740706314" duration="3480000" />
     </task>
     <servers />
   </component>
