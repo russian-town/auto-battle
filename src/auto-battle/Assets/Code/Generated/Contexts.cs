@@ -56,11 +56,18 @@ public partial class Contexts : Entitas.IContexts {
 //------------------------------------------------------------------------------
 public partial class Contexts {
 
+    public const string AnimationLinkedId = "AnimationLinkedId";
     public const string ApplierStatusLink = "ApplierStatusLink";
     public const string Id = "Id";
+    public const string ParentAbilityId = "ParentAbilityId";
 
     [Entitas.CodeGeneration.Attributes.PostConstructor]
     public void InitializeEntityIndices() {
+        game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
+            AnimationLinkedId,
+            game.GetGroup(GameMatcher.AnimationLinkedId),
+            (e, c) => ((Code.Gameplay.Features.Animations.AnimationLinkedId)c).Value));
+
         game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
             ApplierStatusLink,
             game.GetGroup(GameMatcher.ApplierStatusLink),
@@ -70,10 +77,19 @@ public partial class Contexts {
             Id,
             game.GetGroup(GameMatcher.Id),
             (e, c) => ((Code.Gameplay.Common.CommonComponents.Id)c).Value));
+
+        game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
+            ParentAbilityId,
+            game.GetGroup(GameMatcher.ParentAbilityId),
+            (e, c) => ((Code.Gameplay.Features.Abilities.ParentAbilityId)c).Value));
     }
 }
 
 public static class ContextsExtensions {
+
+    public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithAnimationLinkedId(this GameContext context, int Value) {
+        return ((Entitas.EntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.AnimationLinkedId)).GetEntities(Value);
+    }
 
     public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithApplierStatusLink(this GameContext context, int Value) {
         return ((Entitas.EntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.ApplierStatusLink)).GetEntities(Value);
@@ -81,6 +97,10 @@ public static class ContextsExtensions {
 
     public static GameEntity GetEntityWithId(this GameContext context, int Value) {
         return ((Entitas.PrimaryEntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.Id)).GetEntity(Value);
+    }
+
+    public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithParentAbilityId(this GameContext context, int Value) {
+        return ((Entitas.EntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.ParentAbilityId)).GetEntities(Value);
     }
 }
 //------------------------------------------------------------------------------

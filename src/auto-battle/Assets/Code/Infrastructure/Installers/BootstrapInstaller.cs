@@ -4,6 +4,7 @@ using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Abilities.Factory;
 using Code.Gameplay.Features.Abilities.Services;
+using Code.Gameplay.Features.Animations.Factory;
 using Code.Gameplay.Features.Buffs.Factory;
 using Code.Gameplay.Features.Effect.Factory;
 using Code.Gameplay.Features.Fighter.Factory;
@@ -66,6 +67,7 @@ namespace Code.Infrastructure.Installers
             Container.Bind<IAbilityFactory>().To<AbilityFactory>().AsSingle();
             Container.Bind<IBuffFactory>().To<BuffFactory>().AsSingle();
             Container.Bind<IHealthBarFactory>().To<HealthBarFactory>().AsSingle();
+            Container.Bind<IAnimationFactory>().To<AnimationFactory>().AsSingle();
         }
 
         public void Initialize() { }

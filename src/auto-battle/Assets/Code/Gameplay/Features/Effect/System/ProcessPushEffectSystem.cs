@@ -37,8 +37,7 @@ namespace Code.Gameplay.Features.Effect.System
                 if(target.Id != effect.TargetId)
                     continue;
                 
-                target.FighterAnimator.Cleanup();
-                target.FighterAnimator.PlayFall();
+                //TODO: CreateDamageEventByTarget
                 target.ReplaceCurrentHealth(target.CurrentHealth - effect.EffectValue);
                 effect.isProcessed = true;
             }

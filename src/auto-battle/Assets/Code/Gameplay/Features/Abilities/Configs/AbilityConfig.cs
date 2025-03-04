@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Effect.Configs;
-using Code.Gameplay.Features.Statuses.Configs;
+using Code.Common.Extensions;
+using Code.Gameplay.Features.Animations.Configs;
+using UnityEditor.Animations;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Abilities.Configs
@@ -9,19 +10,22 @@ namespace Code.Gameplay.Features.Abilities.Configs
     public class AbilityConfig : ScriptableObject
     {
         [Range(0f, 1f)] public float Chance;
-
-        public float BaseDuration = 1f;
+        public AnimatorController AnimatorController;
         
         public int ManaCost;
         public AbilityTypeId AbilityTypeId;
-        public List<EffectSetup> EffectSetups;
-        public List<StatusSetup> StatusSetups;
-        public AnimationClip AnimationClip;
+        public List<AnimationSetup> AnimationSetups;
 
         private void OnValidate()
         {
-            if (AnimationClip != null)
-                BaseDuration = 1f + AnimationClip.length;
+            if(AnimatorController == null)
+                AnimationSetups.Clear();
+            
+            if (AnimationSetups.IsNullOrEmpty())
+                return;
+
+            foreach (var animationSetup in AnimationSetups)
+                animationSetup.OnValidate(AnimatorController);
         }
     }
 }

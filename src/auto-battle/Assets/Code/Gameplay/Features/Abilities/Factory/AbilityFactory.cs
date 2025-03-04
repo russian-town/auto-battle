@@ -27,11 +27,10 @@ namespace Code.Gameplay.Features.Abilities.Factory
                 .With(x => x.isAbility = true)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
+                .AddCurrentAnimationIndex(0)
+                .With(x => x.AddLastAnimationIndex(config.AnimationSetups.Count), when: config.AnimationSetups.Count > 1)
                 .AddManaCost(config.ManaCost)
-                .AddCooldown(config.BaseDuration)
-                .AddCooldownLeft(0f)
-                .With(x => x.AddEffectSetups(config.EffectSetups), when: !config.EffectSetups.IsNullOrEmpty())
-                .With(x => x.AddStatusSetups(config.StatusSetups), when: !config.StatusSetups.IsNullOrEmpty())
+                .With(x => x.AddAnimationSetups(config.AnimationSetups), when: !config.AnimationSetups.IsNullOrEmpty())
                 ;
             
             switch (config.AbilityTypeId)

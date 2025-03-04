@@ -48,7 +48,7 @@ namespace Code.Gameplay.Features.Effect.System
                     if(target.Id != effect.TargetId)
                         continue;
                     
-                    target.FighterAnimator.PlayHit();
+                    //TODO: CreateHitEventByTarget
                     target.ReplaceCurrentHealth(target.CurrentHealth - AffectedDamage(producer, effect));
                 }
                 
