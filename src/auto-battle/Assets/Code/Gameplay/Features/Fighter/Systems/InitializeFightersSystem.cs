@@ -40,6 +40,8 @@ namespace Code.Gameplay.Features.Fighter.Systems
             
             _healthBarFactory.CreateHealthBar(hero.Id, _levelDataProvider.HeroHealthBarPoint.position, _levelDataProvider.UIRoot);
             _healthBarFactory.CreateHealthBar(enemy.Id, _levelDataProvider.EnemyHealthBarPoint.position, _levelDataProvider.UIRoot);
+
+            hero.ReplaceMana(1);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Code.Gameplay.Features.Statuses.Factory
         {
             var status = CreateEntity.Empty($"{setup.TypeId.ToString()} status")
                 .AddId(_identifiers.Next())
-                .AddEffectValue(setup.Value)
+                .AddStatusEffectValue(setup.Value)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
                 .With(x => x.isStatus = true)
@@ -33,7 +33,7 @@ namespace Code.Gameplay.Features.Statuses.Factory
                 case StatusTypeId.Block:
                     return CreateBlockStatus(status);
             }
-            
+
             throw new Exception($"Status with type id {setup.TypeId} does not exist.");
         }
 
@@ -45,7 +45,7 @@ namespace Code.Gameplay.Features.Statuses.Factory
 
         private GameEntity CreateStanStatus(GameEntity status) =>
             status.With(x => x.isStunStatus = true);
-        
+
         private GameEntity CreatePoisonStatus(GameEntity status) =>
             status.With(x => x.isPoisonStatus = true);
     }

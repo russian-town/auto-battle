@@ -13,98 +13,11 @@ MonoBehaviour:
   m_Name: DefaultAttack
   m_EditorClassIdentifier: 
   Chance: 1
-  MovementSetup:
-    HorizontalGraph:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.5
-        value: -6
-        inSlope: 12
-        outSlope: 12
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 12
-        outSlope: 12
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    VerticalGraph:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 12.695835
-        outSlope: 12.695835
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.03562603
-      - serializedVersion: 3
-        time: 0.49353027
-        value: 1.4619598
-        inSlope: 4.7250004
-        outSlope: 4.7250004
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.14961828
-        outWeight: 0.122750066
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: -9.272683
-        outSlope: -9.272683
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.04284489
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    SpeedGraph:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 2
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 2
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    MoveForwardClip: {fileID: 7400000, guid: 920c49a804ceb31409d9733b4f4fc94b, type: 2}
-    MoveBackwardClip: {fileID: 7400000, guid: 2ccad95fd9c05f74885b7abd7b035f1e, type: 2}
-  StepsToTarget: 0
-  TargetDistance: 2.4
+  BaseDuration: 1.4000001
+  ManaCost: 3
   AbilityTypeId: 1
-  AnimationSetups:
-  - Clip: {fileID: 7400000, guid: 58e0d0f58c6dafd40aa0501200fd2626, type: 2}
-    EventSetups:
-    - AnimationPercent: 0.26
-      EffectSetups:
-      - EffectTypeId: 1
-        Percent: 1
-      StatusSetups: []
+  EffectSetups:
+  - EffectValue: 0
+    EffectTypeId: 1
+  StatusSetups: []
+  AnimationClip: {fileID: 7400000, guid: 58e0d0f58c6dafd40aa0501200fd2626, type: 2}

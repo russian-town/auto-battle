@@ -13,42 +13,7 @@ MonoBehaviour:
   m_Name: DoubleStrike
   m_EditorClassIdentifier: 
   Chance: 0.2
-  MovementSetup:
-    HorizontalGraph:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    VerticalGraph:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    SpeedGraph:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    MoveForwardClip: {fileID: 0}
-    MoveBackwardClip: {fileID: 0}
-  StepsToTarget: 2
-  TargetDistance: 0
+  ManaCost: 1
   AbilityTypeId: 5
-  AnimationSetups:
-  - Clip: {fileID: 7400000, guid: 052e118cbcf21e44588084c16370755d, type: 2}
-    EventSetups:
-    - AnimationPercent: 0.37
-      EffectSetups:
-      - EffectTypeId: 1
-        Percent: 1
-      StatusSetups: []
-  - Clip: {fileID: 7400000, guid: 8d8334ce4b7bb7247a9d511f79a05b07, type: 2}
-    EventSetups:
-    - AnimationPercent: 0.36
-      EffectSetups:
-      - EffectTypeId: 1
-        Percent: 1
-      StatusSetups: []
+  EffectSetups: []
+  StatusSetups: []

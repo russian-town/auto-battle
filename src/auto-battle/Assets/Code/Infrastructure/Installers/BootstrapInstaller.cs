@@ -3,6 +3,7 @@ using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Abilities.Factory;
+using Code.Gameplay.Features.Abilities.Services;
 using Code.Gameplay.Features.Buffs.Factory;
 using Code.Gameplay.Features.Effect.Factory;
 using Code.Gameplay.Features.Fighter.Factory;
@@ -39,6 +40,7 @@ namespace Code.Infrastructure.Installers
             Container.Bind<IAssetProvider>().To<AssetProvider>().AsSingle();
             Container.Bind<ITimeService>().To<TimeService>().AsSingle();
             Container.Bind<IRandomService>().To<RandomService>().AsSingle();
+            Container.Bind<IAbilityRandomService>().To<AbilityRandomService>().AsSingle();
         }
 
         private void BindGameplayServices() { }

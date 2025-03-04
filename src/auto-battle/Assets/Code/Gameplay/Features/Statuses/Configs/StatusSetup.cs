@@ -6,7 +6,7 @@ namespace Code.Gameplay.Features.Statuses.Configs
     public class StatusSetup
     {
         public StatusTypeId TypeId;
-        public float Value;
+        public int Value;
         public int Lifetime;
     }
 }

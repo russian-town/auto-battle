@@ -24,52 +24,57 @@ public static class GameComponentsLookup {
     public const int WorldRotation = 13;
     public const int Ability = 14;
     public const int AbilityTypeId = 15;
-    public const int AttackAvailable = 16;
-    public const int BlockAbility = 17;
-    public const int CounterattackAbility = 18;
-    public const int DefaultAttackAbility = 19;
-    public const int DodgeAbility = 20;
-    public const int DoubleStrikeAbility = 21;
-    public const int EffectSetups = 22;
+    public const int BlockAbility = 16;
+    public const int CounterattackAbility = 17;
+    public const int DefaultAttackAbility = 18;
+    public const int DodgeAbility = 19;
+    public const int DoubleStrikeAbility = 20;
+    public const int EffectSetups = 21;
+    public const int ManaCost = 22;
     public const int StatusSetups = 23;
-    public const int StepsToTarget = 24;
-    public const int TargetDistance = 25;
-    public const int Analgesic = 26;
-    public const int Buff = 27;
-    public const int Vitamins = 28;
-    public const int BaseStats = 29;
-    public const int StatChange = 30;
-    public const int StatsModifiers = 31;
-    public const int DamageEffect = 32;
-    public const int Effect = 33;
-    public const int EffectValue = 34;
-    public const int HealEffect = 35;
-    public const int Processed = 36;
-    public const int ProducerId = 37;
-    public const int PushEffect = 38;
-    public const int TargetId = 39;
-    public const int BaseAbilities = 40;
-    public const int Damage = 41;
-    public const int FighterAnimator = 42;
-    public const int Fighter = 43;
-    public const int StartPointPosition = 44;
-    public const int FighterHealthBar = 45;
-    public const int CurrentHealth = 46;
-    public const int Dead = 47;
-    public const int MaxHealth = 48;
-    public const int ProcessingDeath = 49;
-    public const int HasContainer = 50;
-    public const int Affected = 51;
-    public const int Applied = 52;
-    public const int ApplierStatusLink = 53;
-    public const int BlockStatus = 54;
-    public const int DodgeStatus = 55;
-    public const int PoisonStatus = 56;
-    public const int Status = 57;
-    public const int StunStatus = 58;
-    public const int Unapplied = 59;
+    public const int Analgesic = 24;
+    public const int Buff = 25;
+    public const int Vitamins = 26;
+    public const int BaseStats = 27;
+    public const int StatChange = 28;
+    public const int StatsModifiers = 29;
+    public const int Cooldown = 30;
+    public const int Cooldownable = 31;
+    public const int CooldownLeft = 32;
+    public const int CooldownUp = 33;
+    public const int DamageEffect = 34;
+    public const int Effect = 35;
+    public const int EffectValue = 36;
+    public const int EffectWindow = 37;
+    public const int HealEffect = 38;
+    public const int Processed = 39;
+    public const int ProducerId = 40;
+    public const int PushEffect = 41;
+    public const int TargetId = 42;
+    public const int BaseAbilities = 43;
+    public const int Damage = 44;
+    public const int FighterAnimator = 45;
+    public const int Fighter = 46;
+    public const int Mana = 47;
+    public const int StartPointPosition = 48;
+    public const int FighterHealthBar = 49;
+    public const int CurrentHealth = 50;
+    public const int Dead = 51;
+    public const int MaxHealth = 52;
+    public const int ProcessingDeath = 53;
+    public const int HasContainer = 54;
+    public const int Affected = 55;
+    public const int Applied = 56;
+    public const int ApplierStatusLink = 57;
+    public const int BlockStatus = 58;
+    public const int DodgeStatus = 59;
+    public const int PoisonStatus = 60;
+    public const int Status = 61;
+    public const int StatusEffectValue = 62;
+    public const int StunStatus = 63;
+    public const int Unapplied = 64;
 
-    public const int TotalComponents = 60;
+    public const int TotalComponents = 65;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -88,25 +93,28 @@ public static class GameComponentsLookup {
         "WorldRotation",
         "Ability",
         "AbilityTypeId",
-        "AttackAvailable",
         "BlockAbility",
         "CounterattackAbility",
         "DefaultAttackAbility",
         "DodgeAbility",
         "DoubleStrikeAbility",
         "EffectSetups",
+        "ManaCost",
         "StatusSetups",
-        "StepsToTarget",
-        "TargetDistance",
         "Analgesic",
         "Buff",
         "Vitamins",
         "BaseStats",
         "StatChange",
         "StatsModifiers",
+        "Cooldown",
+        "Cooldownable",
+        "CooldownLeft",
+        "CooldownUp",
         "DamageEffect",
         "Effect",
         "EffectValue",
+        "EffectWindow",
         "HealEffect",
         "Processed",
         "ProducerId",
@@ -116,6 +124,7 @@ public static class GameComponentsLookup {
         "Damage",
         "FighterAnimator",
         "Fighter",
+        "Mana",
         "StartPointPosition",
         "FighterHealthBar",
         "CurrentHealth",
@@ -130,6 +139,7 @@ public static class GameComponentsLookup {
         "DodgeStatus",
         "PoisonStatus",
         "Status",
+        "StatusEffectValue",
         "StunStatus",
         "Unapplied"
     };
@@ -151,25 +161,28 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.CommonComponents.WorldRotation),
         typeof(Code.Gameplay.Features.Abilities.Ability),
         typeof(Code.Gameplay.Features.Abilities.AbilityTypeIdComponent),
-        typeof(Code.Gameplay.Features.Abilities.AttackAvailable),
         typeof(Code.Gameplay.Features.Abilities.BlockAbility),
         typeof(Code.Gameplay.Features.Abilities.CounterattackAbility),
         typeof(Code.Gameplay.Features.Abilities.DefaultAttackAbility),
         typeof(Code.Gameplay.Features.Abilities.DodgeAbility),
         typeof(Code.Gameplay.Features.Abilities.DoubleStrikeAbility),
         typeof(Code.Gameplay.Features.Abilities.EffectSetups),
+        typeof(Code.Gameplay.Features.Abilities.ManaCost),
         typeof(Code.Gameplay.Features.Abilities.StatusSetups),
-        typeof(Code.Gameplay.Features.Abilities.StepsToTarget),
-        typeof(Code.Gameplay.Features.Abilities.TargetDistance),
         typeof(Code.Gameplay.Features.Buffs.AnalgesicComponent),
         typeof(Code.Gameplay.Features.Buffs.BuffComponent),
         typeof(Code.Gameplay.Features.Buffs.VitaminsComponent),
         typeof(Code.Gameplay.Features.CharacterStats.BaseStats),
         typeof(Code.Gameplay.Features.CharacterStats.StatChange),
         typeof(Code.Gameplay.Features.CharacterStats.StatsModifiers),
+        typeof(Code.Gameplay.Features.Cooldown.Cooldown),
+        typeof(Code.Gameplay.Features.Cooldown.Cooldownable),
+        typeof(Code.Gameplay.Features.Cooldown.CooldownLeft),
+        typeof(Code.Gameplay.Features.Cooldown.CooldownUp),
         typeof(Code.Gameplay.Features.Effect.DamageEffect),
         typeof(Code.Gameplay.Features.Effect.Effect),
         typeof(Code.Gameplay.Features.Effect.EffectValue),
+        typeof(Code.Gameplay.Features.Effect.EffectWindowComponent),
         typeof(Code.Gameplay.Features.Effect.HealEffect),
         typeof(Code.Gameplay.Features.Effect.Processed),
         typeof(Code.Gameplay.Features.Effect.ProducerId),
@@ -179,6 +192,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Fighter.Damage),
         typeof(Code.Gameplay.Features.Fighter.FighterAnimatorComponent),
         typeof(Code.Gameplay.Features.Fighter.FighterComponent),
+        typeof(Code.Gameplay.Features.Fighter.Mana),
         typeof(Code.Gameplay.Features.Fighter.StartPointPosition),
         typeof(Code.Gameplay.Features.HealthBar.FighterHealthBarComponent),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHealth),
@@ -193,6 +207,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Statuses.DodgeStatus),
         typeof(Code.Gameplay.Features.Statuses.PoisonStatus),
         typeof(Code.Gameplay.Features.Statuses.Status),
+        typeof(Code.Gameplay.Features.Statuses.StatusEffectValue),
         typeof(Code.Gameplay.Features.Statuses.StunStatus),
         typeof(Code.Gameplay.Features.Statuses.Unapplied)
     };

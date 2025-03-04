@@ -7,9 +7,7 @@ namespace Code.Gameplay.Features.Abilities
 {
     [Game] public class Ability : IComponent { }
     [Game] public class AbilityTypeIdComponent : IComponent { public AbilityTypeId Value; }
-    [Game] public class TargetDistance : IComponent { public float Value; }
-    [Game] public class StepsToTarget : IComponent { public int Value; }
-    [Game] public class AttackAvailable : IComponent { }
+    [Game] public class ManaCost : IComponent { public int Value; }
 
     [Game] public class StatusSetups : IComponent { public List<StatusSetup> Value; }
     [Game] public class EffectSetups : IComponent { public List<EffectSetup> Value; }

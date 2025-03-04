@@ -13,19 +13,7 @@ MonoBehaviour:
   m_Name: Countertattack
   m_EditorClassIdentifier: 
   Chance: 0.3
-  TargetDistance: 0
+  ManaCost: 1
   AbilityTypeId: 2
-  AnimationEventSetups:
-  - TargetAnimation: {fileID: 7400000, guid: 4e51c69c35a289445a42ceb5698e0ce5, type: 2}
-    EffectSetups:
-    - EffectTypeId: 3
-      Percent: 0.1
-    StatusSetups: []
-    Delay: 0.1
-  - TargetAnimation: {fileID: 0}
-    EffectSetups: []
-    StatusSetups:
-    - TypeId: 3
-      Value: -1
-      Lifetime: 1
-    Delay: 0
+  EffectSetups: []
+  StatusSetups: []

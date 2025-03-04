@@ -1,4 +1,5 @@
-﻿using Entitas;
+﻿using Code.Gameplay.Features.Effect.Behaviours;
+using Entitas;
 
 namespace Code.Gameplay.Features.Effect
 {
@@ -7,6 +8,7 @@ namespace Code.Gameplay.Features.Effect
     
     [Game] public class Effect : IComponent { }
     [Game] public class EffectValue : IComponent { public float Value; }
+    [Game] public class EffectWindowComponent : IComponent { public EffectWindow Value; }
     
     [Game] public class DamageEffect : IComponent { }
     [Game] public class HealEffect : IComponent { }

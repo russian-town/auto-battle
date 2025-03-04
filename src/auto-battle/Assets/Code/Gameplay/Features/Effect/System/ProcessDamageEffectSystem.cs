@@ -5,14 +5,13 @@ namespace Code.Gameplay.Features.Effect.System
 {
     public class ProcessDamageEffectSystem : IExecuteSystem
     {
-        private readonly GameContext _game;
         private readonly IGroup<GameEntity> _effects;
+        private readonly IGroup<GameEntity> _producers;
+        private readonly IGroup<GameEntity> _targets;
         private readonly List<GameEntity> _buffer = new(64);
 
         public ProcessDamageEffectSystem(GameContext game)
         {
-            _game = game;
-            
             _effects = game.GetGroup(GameMatcher
                     .AllOf(
                         GameMatcher.DamageEffect,
@@ -21,21 +20,43 @@ namespace Code.Gameplay.Features.Effect.System
                         GameMatcher.ProducerId
                     )
                     .NoneOf(GameMatcher.Processed));
+            
+            _producers = game.GetGroup(GameMatcher
+                    .AllOf(
+                        GameMatcher.Id,
+                        GameMatcher.Damage
+                    ));
+            
+            _targets = game.GetGroup(GameMatcher
+                    .AllOf(
+                        GameMatcher.Id,
+                        GameMatcher.CurrentHealth,
+                        GameMatcher.FighterAnimator
+                    ));
         }
 
         public void Execute()
         {
             foreach (var effect in _effects.GetEntities(_buffer))
+            foreach (var producer in _producers)
             {
-                effect.isProcessed = true;
-
-                if (effect.EffectValue <= 0f)
+                if(effect.ProducerId != producer.Id)
                     continue;
-
-                var target = _game.GetEntityWithId(effect.TargetId);
-                target.FighterAnimator.PlayHit();
-                target.ReplaceCurrentHealth(target.CurrentHealth - effect.EffectValue);
+                
+                foreach (var target in _targets)
+                {
+                    if(target.Id != effect.TargetId)
+                        continue;
+                    
+                    target.FighterAnimator.PlayHit();
+                    target.ReplaceCurrentHealth(target.CurrentHealth - AffectedDamage(producer, effect));
+                }
+                
+                effect.isProcessed = true;
             }
         }
+
+        private static float AffectedDamage(GameEntity producer, GameEntity effect) =>
+            producer.Damage * effect.EffectValue;
     }
 }

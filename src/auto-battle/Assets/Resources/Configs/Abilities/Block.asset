@@ -13,13 +13,7 @@ MonoBehaviour:
   m_Name: Block
   m_EditorClassIdentifier: 
   Chance: 0.6
-  TargetDistance: 0
+  ManaCost: 1
   AbilityTypeId: 3
-  AnimationEventSetups:
-  - TargetAnimation: {fileID: 0}
-    EffectSetups: []
-    StatusSetups:
-    - TypeId: 3
-      Value: -1
-      Lifetime: 1
-    Delay: 0
+  EffectSetups: []
+  StatusSetups: []

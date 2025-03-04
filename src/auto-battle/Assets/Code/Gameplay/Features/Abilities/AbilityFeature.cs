@@ -8,10 +8,6 @@ namespace Code.Gameplay.Features.Abilities
         public AbilityFeature(ISystemFactory systems)
         {
             Add(systems.Create<DefaultAttackAbilitySystem>());
-            Add(systems.Create<BlockAbilitySystem>());
-            Add(systems.Create<CounterattackAbilitySystem>());
-            Add(systems.Create<DodgeAbilitySystem>());
-            Add(systems.Create<DoubleStrikeAbilitySystem>());
             
             //Add(systems.Create<CleanupAbilitySystem>());
         }

@@ -1,22 +1,28 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Effect.Configs;
+using Code.Gameplay.Features.Effect.Factory;
 using Entitas;
 
 namespace Code.Gameplay.Features.Abilities.Systems
 {
     public class DefaultAttackAbilitySystem : IExecuteSystem
     {
+        private readonly IEffectFactory _effectFactory;
         private readonly IGroup<GameEntity> _abilities;
         private readonly IGroup<GameEntity> _producers;
         private readonly List<GameEntity> _buffer = new(16);
 
-        public DefaultAttackAbilitySystem(GameContext game)
+        public DefaultAttackAbilitySystem(GameContext game, IEffectFactory effectFactory)
         {
+            _effectFactory = effectFactory;
+            
             _abilities = game.GetGroup(
                 GameMatcher
                     .AllOf(
                         GameMatcher.DefaultAttackAbility,
                         GameMatcher.ProducerId,
-                        GameMatcher.TargetId
+                        GameMatcher.TargetId,
+                        GameMatcher.CooldownUp
                     )
                     .NoneOf(GameMatcher.Active));
 
@@ -24,7 +30,8 @@ namespace Code.Gameplay.Features.Abilities.Systems
                 GameMatcher
                     .AllOf(
                         GameMatcher.FighterAnimator,
-                        GameMatcher.Id
+                        GameMatcher.Id,
+                        GameMatcher.Damage
                     ));
         }
 
@@ -38,6 +45,9 @@ namespace Code.Gameplay.Features.Abilities.Systems
                         continue;
 
                     producer.FighterAnimator.PlayDefaultAttack();
+
+                    foreach (var effectSetup in ability.EffectSetups)
+                        _effectFactory.CreateEffect(effectSetup, ability.ProducerId, ability.TargetId);
 
                     ability.isActive = true;
                 }

@@ -15,12 +15,12 @@ namespace Code.Gameplay.Features.Effect.Factory
             _identifiers = identifiers;
         }
 
-        public GameEntity CreateEffect(EffectSetup setup, float fighterDamage, int producerId, int targetId)
+        public GameEntity CreateEffect(EffectSetup setup, int producerId, int targetId)
         {
             var effect = CreateEntity.Empty($"{setup.EffectTypeId.ToString()} effect")
                 .AddId(_identifiers.Next())
                 .With(x => x.isEffect = true)
-                .AddEffectValue(fighterDamage * setup.Percent)
+                .AddEffectValue(setup.EffectValue)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId);
 

@@ -10,10 +10,18 @@ namespace Code.Gameplay.Features.Abilities.Configs
     {
         [Range(0f, 1f)] public float Chance;
 
-        public int StepsToTarget;
-        public float TargetDistance;
+        public float BaseDuration = 1f;
+        
+        public int ManaCost;
         public AbilityTypeId AbilityTypeId;
         public List<EffectSetup> EffectSetups;
         public List<StatusSetup> StatusSetups;
+        public AnimationClip AnimationClip;
+
+        private void OnValidate()
+        {
+            if (AnimationClip != null)
+                BaseDuration = 1f + AnimationClip.length;
+        }
     }
 }

@@ -32,6 +32,7 @@ namespace Code.Gameplay.Features.Fighter.Factory
                     .AddDamage(statByType[Stats.Damage])
                     .AddCurrentHealth(statByType[Stats.MaxHealth])
                     .AddMaxHealth(statByType[Stats.MaxHealth])
+                    .AddMana(0)
                     .AddBaseStats(statByType)
                     .AddStatsModifiers(new Dictionary<Stats, float>())
                     .AddStartPointPosition(at)

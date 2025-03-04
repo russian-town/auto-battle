@@ -2,6 +2,7 @@
 using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.Buffs;
 using Code.Gameplay.Features.CharacterStats;
+using Code.Gameplay.Features.Cooldown;
 using Code.Gameplay.Features.Effect;
 using Code.Gameplay.Features.Fighter;
 using Code.Gameplay.Features.HealthBar;
@@ -17,6 +18,7 @@ namespace Code.Gameplay
     {
         public BattleFeature(ISystemFactory systems)
         { 
+            Add(systems.Create<CooldownFeature>());
             Add(systems.Create<BindViewFeature>());
             
             Add(systems.Create<MovementFeature>());
