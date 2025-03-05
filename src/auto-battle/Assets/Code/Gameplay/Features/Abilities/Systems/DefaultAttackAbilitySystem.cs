@@ -26,8 +26,7 @@ namespace Code.Gameplay.Features.Abilities.Systems
                         GameMatcher.DefaultAttackAbility,
                         GameMatcher.Id,
                         GameMatcher.ProducerId,
-                        GameMatcher.TargetId,
-                        GameMatcher.CurrentAnimationIndex
+                        GameMatcher.TargetId
                     )
                     .NoneOf(GameMatcher.Active));
         }

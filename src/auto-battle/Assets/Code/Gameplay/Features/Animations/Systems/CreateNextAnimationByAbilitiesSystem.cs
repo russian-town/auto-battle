@@ -1,16 +1,20 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Animations.Factory;
 using Entitas;
 
 namespace Code.Gameplay.Features.Animations.Systems
 {
     public class CreateNextAnimationByAbilitiesSystem : IExecuteSystem
     {
+        private readonly IAnimationFactory _animationFactory;
         private readonly IGroup<GameEntity> _animations;
         private readonly IGroup<GameEntity> _abilities;
         private readonly List<GameEntity> _buffer = new(16);
 
-        public CreateNextAnimationByAbilitiesSystem(GameContext game)
+        public CreateNextAnimationByAbilitiesSystem(GameContext game, IAnimationFactory animationFactory)
         {
+            _animationFactory = animationFactory;
+            
             _animations = game.GetGroup(GameMatcher
                     .AllOf(
                         GameMatcher.Animation,
@@ -21,9 +25,8 @@ namespace Code.Gameplay.Features.Animations.Systems
             _abilities = game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Id,
-                    GameMatcher.CurrentAnimationIndex,
-                    GameMatcher.LastAnimationIndex,
-                    GameMatcher.Active
+                    GameMatcher.Active,
+                    GameMatcher.AnimationQueue
                     ));
         }
 
@@ -34,11 +37,15 @@ namespace Code.Gameplay.Features.Animations.Systems
             {
                 if(animation.ParentAbilityId != ability.Id)
                     continue;
-                
-                if(ability.CurrentAnimationIndex == ability.LastAnimationIndex - 1)
-                    continue;
 
-                ability.ReplaceCurrentAnimationIndex(ability.CurrentAnimationIndex + 1);
+                if (animation.AnimationQueue.Count == 0)
+                {
+                    ability.RemoveAnimationQueue();
+                    continue;
+                }
+                
+                var setup = ability.AnimationQueue.Dequeue();
+                _animationFactory.CreateAnimation(setup, ability.ProducerId, ability.TargetId);
                 ability.isActive = false;
             }
         }

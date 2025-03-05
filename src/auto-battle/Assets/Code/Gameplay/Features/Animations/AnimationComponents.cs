@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Animations.Configs;
 using Entitas;
 using Entitas.CodeGeneration.Attributes;
 using AnimationEvent = Code.Gameplay.Features.Animations.Configs.AnimationEvent;
@@ -14,6 +15,7 @@ namespace Code.Gameplay.Features.Animations
     [Game] public class AnimationEvents : IComponent { public List<AnimationEvent> Value; }
     [Game] public class AnimationLinkedId : IComponent { [EntityIndex] public int Value; }
     [Game] public class Animation : IComponent { }
+    [Game] public class AnimationQueue : IComponent { public Queue<AnimationSetup> Value; }
     [Game] public class Started : IComponent { }
     [Game] public class AnimationEventsCreated : IComponent { }
     [Game] public class Completed : IComponent { }

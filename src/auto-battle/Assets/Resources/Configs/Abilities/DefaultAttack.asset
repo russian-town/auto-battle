@@ -18,11 +18,21 @@ MonoBehaviour:
   AbilityTypeId: 1
   MovementSetup:
     TargetPositions:
-    - {x: -5, y: 0, z: 0}
-    - {x: -1, y: 1, z: 0}
-    - {x: 0.5, y: 0, z: 0}
-    Speed: 3.17
+    - {x: 0, y: 0, z: 0}
+    Speed: 1.01
   AnimationSetups:
+  - StateName: DefaultAttack
+    HashCode: -1878205590
+    DurationTime: 0.1
+    TransitionTime: 1
+    AnimationClip: {fileID: 7400000, guid: 58e0d0f58c6dafd40aa0501200fd2626, type: 2}
+    AllFrames: 24.000002
+    AnimationEvents:
+    - TargetFrame: 0
+      EffectSetups:
+      - EffectValue: 1
+        EffectTypeId: 1
+      StatusSetups: []
   - StateName: DefaultAttack
     HashCode: -1878205590
     DurationTime: 0.1

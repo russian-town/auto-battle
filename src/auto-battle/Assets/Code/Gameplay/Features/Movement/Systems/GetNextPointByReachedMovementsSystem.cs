@@ -1,17 +1,21 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Animations.Factory;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Movement.Systems
 {
     public class GetNextPointByReachedMovementsSystem : IExecuteSystem
     {
+        private readonly GameContext _game;
         private readonly IAnimationFactory _animationFactory;
         private readonly IGroup<GameEntity> _movements;
         private readonly List<GameEntity> _buffer = new(8);
 
         public GetNextPointByReachedMovementsSystem(GameContext game)
         {
+            _game = game;
+            
             _movements = game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Movement,
@@ -31,6 +35,8 @@ namespace Code.Gameplay.Features.Movement.Systems
                     movement.isActive = true;
                 else
                 {
+                    var animator = _game.GetEntityWithId(movement.ProducerId);
+                    animator.FighterAnimator.Play(Animator.StringToHash("MoveForward"), 0f, 0f);
                     movement.ReplaceProgress(0f);
                     movement.ReplaceTargetPosition(movement.TargetPositions.Dequeue());
                     movement.isReached = false;

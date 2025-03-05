@@ -10,8 +10,6 @@ namespace Code.Gameplay.Features.Abilities
     [Game] public class Ability : IComponent { }
     [Game] public class AbilityTypeIdComponent : IComponent { public AbilityTypeId Value; }
     [Game] public class ParentAbilityId : IComponent { [EntityIndex] public int Value; }
-    [Game] public class CurrentAnimationIndex : IComponent { public int Value; }
-    [Game] public class LastAnimationIndex : IComponent { public int Value; }
     [Game] public class ManaCost : IComponent { public int Value; }
 
     [Game] public class StatusSetups : IComponent { public List<StatusSetup> Value; }

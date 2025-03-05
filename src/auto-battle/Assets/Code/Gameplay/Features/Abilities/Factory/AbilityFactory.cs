@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using Code.Common.Entity;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.Animations.Configs;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 
@@ -27,8 +29,7 @@ namespace Code.Gameplay.Features.Abilities.Factory
                 .With(x => x.isAbility = true)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
-                .AddCurrentAnimationIndex(0)
-                .With(x => x.AddLastAnimationIndex(config.AnimationSetups.Count), when: config.AnimationSetups.Count > 1)
+                .AddAnimationQueue(new Queue<AnimationSetup>(config.AnimationSetups))
                 .AddManaCost(config.ManaCost)
                 ;
             
