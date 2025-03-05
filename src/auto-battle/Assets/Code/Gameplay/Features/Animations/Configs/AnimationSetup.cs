@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.Movement.Configs;
 using UnityEditor.Animations;
 using UnityEngine;
 

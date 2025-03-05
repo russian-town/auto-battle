@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Animations.Configs;
+using Code.Gameplay.Features.Movement.Configs;
 using UnityEditor.Animations;
 using UnityEngine;
 
@@ -14,6 +15,7 @@ namespace Code.Gameplay.Features.Abilities.Configs
         
         public int ManaCost;
         public AbilityTypeId AbilityTypeId;
+        public MovementSetup MovementSetup;
         public List<AnimationSetup> AnimationSetups;
 
         private void OnValidate()

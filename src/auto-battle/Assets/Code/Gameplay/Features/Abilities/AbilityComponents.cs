@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Animations;
 using Code.Gameplay.Features.Animations.Configs;
 using Code.Gameplay.Features.Effect.Configs;
 using Code.Gameplay.Features.Statuses.Configs;

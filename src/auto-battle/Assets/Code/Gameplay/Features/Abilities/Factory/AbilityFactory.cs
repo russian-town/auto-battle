@@ -30,7 +30,6 @@ namespace Code.Gameplay.Features.Abilities.Factory
                 .AddCurrentAnimationIndex(0)
                 .With(x => x.AddLastAnimationIndex(config.AnimationSetups.Count), when: config.AnimationSetups.Count > 1)
                 .AddManaCost(config.ManaCost)
-                .With(x => x.AddAnimationSetups(config.AnimationSetups), when: !config.AnimationSetups.IsNullOrEmpty())
                 ;
             
             switch (config.AbilityTypeId)

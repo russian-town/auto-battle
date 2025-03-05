@@ -11,6 +11,13 @@ namespace Code.Gameplay.Features.Movement
             
             Add(systems.Create<UpdatePositionByEntitiesSystem>());
             Add(systems.Create<UpdateRotationByEntitiesSystem>());
+            
+            Add(systems.Create<IncreaseProgressByMovements>());
+            Add(systems.Create<MoveEntitiesToTargetPositionSystem>());
+            Add(systems.Create<GetNextPointByReachedMovementsSystem>());
+            Add(systems.Create<CreateAnimationByActiveMovementsSystem>());
+            
+            Add(systems.Create<CleanupProcessedMovementsSystem>());
         }
     }
 }

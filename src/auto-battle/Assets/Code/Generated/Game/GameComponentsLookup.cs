@@ -82,18 +82,24 @@ public static class GameComponentsLookup {
     public const int MaxHealth = 71;
     public const int ProcessingDeath = 72;
     public const int HasContainer = 73;
-    public const int Affected = 74;
-    public const int Applied = 75;
-    public const int ApplierStatusLink = 76;
-    public const int BlockStatus = 77;
-    public const int DodgeStatus = 78;
-    public const int PoisonStatus = 79;
-    public const int Status = 80;
-    public const int StatusEffectValue = 81;
-    public const int StunStatus = 82;
-    public const int Unapplied = 83;
+    public const int Movement = 74;
+    public const int Progress = 75;
+    public const int Reached = 76;
+    public const int Speed = 77;
+    public const int TargetPosition = 78;
+    public const int TargetPositions = 79;
+    public const int Affected = 80;
+    public const int Applied = 81;
+    public const int ApplierStatusLink = 82;
+    public const int BlockStatus = 83;
+    public const int DodgeStatus = 84;
+    public const int PoisonStatus = 85;
+    public const int Status = 86;
+    public const int StatusEffectValue = 87;
+    public const int StunStatus = 88;
+    public const int Unapplied = 89;
 
-    public const int TotalComponents = 84;
+    public const int TotalComponents = 90;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -170,6 +176,12 @@ public static class GameComponentsLookup {
         "MaxHealth",
         "ProcessingDeath",
         "HasContainer",
+        "Movement",
+        "Progress",
+        "Reached",
+        "Speed",
+        "TargetPosition",
+        "TargetPositions",
         "Affected",
         "Applied",
         "ApplierStatusLink",
@@ -257,6 +269,12 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Lifetime.MaxHealth),
         typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
         typeof(Code.Gameplay.Features.Movement.HasContainer),
+        typeof(Code.Gameplay.Features.Movement.Movement),
+        typeof(Code.Gameplay.Features.Movement.Progress),
+        typeof(Code.Gameplay.Features.Movement.Reached),
+        typeof(Code.Gameplay.Features.Movement.Speed),
+        typeof(Code.Gameplay.Features.Movement.TargetPosition),
+        typeof(Code.Gameplay.Features.Movement.TargetPositions),
         typeof(Code.Gameplay.Features.Statuses.Affected),
         typeof(Code.Gameplay.Features.Statuses.Applied),
         typeof(Code.Gameplay.Features.Statuses.ApplierStatusLink),
