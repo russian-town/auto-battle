@@ -48,7 +48,6 @@ namespace Code.Gameplay.Features.Effect.System
                     if(target.Id != effect.TargetId)
                         continue;
                     
-                    //TODO: CreateHitEventByTarget
                     target.ReplaceCurrentHealth(target.CurrentHealth - AffectedDamage(producer, effect));
                 }
                 

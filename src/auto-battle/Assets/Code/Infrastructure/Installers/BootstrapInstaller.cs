@@ -8,6 +8,7 @@ using Code.Gameplay.Features.Buffs.Factory;
 using Code.Gameplay.Features.Effect.Factory;
 using Code.Gameplay.Features.Fighter.Factory;
 using Code.Gameplay.Features.HealthBar.Factory;
+using Code.Gameplay.Features.Progress.Factory;
 using Code.Gameplay.Features.Statuses.Factory;
 using Code.Gameplay.Levels;
 using Code.Gameplay.StaticData;
@@ -41,6 +42,7 @@ namespace Code.Infrastructure.Installers
             Container.Bind<ITimeService>().To<TimeService>().AsSingle();
             Container.Bind<IRandomService>().To<RandomService>().AsSingle();
             Container.Bind<IAbilityRandomService>().To<AbilityRandomService>().AsSingle();
+            Container.Bind<IProgressFactory>().To<ProgressFactory>().AsSingle();
         }
 
         private void BindGameplayServices() { }

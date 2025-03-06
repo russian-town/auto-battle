@@ -6,16 +6,8 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
     {
         public Animator Animator;
 
-        public void Play(int hashCode, float durationTime, float transitionTime)
-        {
-            Animator.Rebind();
-            Animator.CrossFade(
-                hashCode,
-                durationTime,
-                GetLayerIndex(hashCode),
-                normalizedTimeOffset: 0,
-                transitionTime);
-        }
+        public void Play(int hashCode, float normalizedTime) =>
+            Animator.Play(hashCode, GetLayerIndex(hashCode), normalizedTime);
 
         public void InterruptAnimation() => Animator.StopPlayback();
 

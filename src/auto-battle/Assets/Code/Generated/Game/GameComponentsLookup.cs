@@ -33,50 +33,59 @@ public static class GameComponentsLookup {
     public const int ManaCost = 22;
     public const int ParentAbilityId = 23;
     public const int StatusSetups = 24;
-    public const int HashCode = 25;
-    public const int Analgesic = 26;
-    public const int Buff = 27;
-    public const int Vitamins = 28;
-    public const int BaseStats = 29;
-    public const int StatChange = 30;
-    public const int StatsModifiers = 31;
-    public const int Cooldown = 32;
-    public const int Cooldownable = 33;
-    public const int CooldownLeft = 34;
-    public const int CooldownUp = 35;
-    public const int DamageEffect = 36;
-    public const int Effect = 37;
-    public const int EffectValue = 38;
-    public const int EffectWindow = 39;
-    public const int HealEffect = 40;
-    public const int Processed = 41;
-    public const int ProducerId = 42;
-    public const int PushEffect = 43;
-    public const int TargetId = 44;
-    public const int BaseAbilities = 45;
-    public const int Damage = 46;
-    public const int FighterAnimator = 47;
-    public const int Fighter = 48;
-    public const int Mana = 49;
-    public const int StartPointPosition = 50;
-    public const int FighterHealthBar = 51;
-    public const int CurrentHealth = 52;
-    public const int Dead = 53;
-    public const int MaxHealth = 54;
-    public const int ProcessingDeath = 55;
-    public const int HasContainer = 56;
-    public const int Affected = 57;
-    public const int Applied = 58;
-    public const int ApplierStatusLink = 59;
-    public const int BlockStatus = 60;
-    public const int DodgeStatus = 61;
-    public const int PoisonStatus = 62;
-    public const int Status = 63;
-    public const int StatusEffectValue = 64;
-    public const int StunStatus = 65;
-    public const int Unapplied = 66;
+    public const int Completed = 25;
+    public const int CurrentFrame = 26;
+    public const int EventFrame = 27;
+    public const int HashCode = 28;
+    public const int Invoke = 29;
+    public const int MaxFrame = 30;
+    public const int NormalizedTime = 31;
+    public const int Analgesic = 32;
+    public const int Buff = 33;
+    public const int Vitamins = 34;
+    public const int BaseStats = 35;
+    public const int StatChange = 36;
+    public const int StatsModifiers = 37;
+    public const int Cooldown = 38;
+    public const int Cooldownable = 39;
+    public const int CooldownLeft = 40;
+    public const int CooldownUp = 41;
+    public const int DamageEffect = 42;
+    public const int Effect = 43;
+    public const int EffectValue = 44;
+    public const int EffectWindow = 45;
+    public const int HealEffect = 46;
+    public const int Processed = 47;
+    public const int ProducerId = 48;
+    public const int PushEffect = 49;
+    public const int TargetId = 50;
+    public const int BaseAbilities = 51;
+    public const int Damage = 52;
+    public const int FighterAnimator = 53;
+    public const int Fighter = 54;
+    public const int Mana = 55;
+    public const int StartPointPosition = 56;
+    public const int FighterHealthBar = 57;
+    public const int CurrentHealth = 58;
+    public const int Dead = 59;
+    public const int MaxHealth = 60;
+    public const int ProcessingDeath = 61;
+    public const int HasContainer = 62;
+    public const int ProgressFilled = 63;
+    public const int ProgressQueue = 64;
+    public const int Speed = 65;
+    public const int Affected = 66;
+    public const int Applied = 67;
+    public const int ApplierStatusLink = 68;
+    public const int BlockStatus = 69;
+    public const int DodgeStatus = 70;
+    public const int PoisonStatus = 71;
+    public const int Status = 72;
+    public const int StatusEffectValue = 73;
+    public const int StunStatus = 74;
+    public const int Unapplied = 75;
 
-    public const int TotalComponents = 67;
+    public const int TotalComponents = 76;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -104,7 +113,13 @@ public static class GameComponentsLookup {
         "ManaCost",
         "ParentAbilityId",
         "StatusSetups",
+        "Completed",
+        "CurrentFrame",
+        "EventFrame",
         "HashCode",
+        "Invoke",
+        "MaxFrame",
+        "NormalizedTime",
         "Analgesic",
         "Buff",
         "Vitamins",
@@ -136,6 +151,9 @@ public static class GameComponentsLookup {
         "MaxHealth",
         "ProcessingDeath",
         "HasContainer",
+        "ProgressFilled",
+        "ProgressQueue",
+        "Speed",
         "Affected",
         "Applied",
         "ApplierStatusLink",
@@ -174,7 +192,13 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Abilities.ManaCost),
         typeof(Code.Gameplay.Features.Abilities.ParentAbilityId),
         typeof(Code.Gameplay.Features.Abilities.StatusSetups),
+        typeof(Code.Gameplay.Features.Animations.Completed),
+        typeof(Code.Gameplay.Features.Animations.CurrentFrame),
+        typeof(Code.Gameplay.Features.Animations.EventFrame),
         typeof(Code.Gameplay.Features.Animations.HashCode),
+        typeof(Code.Gameplay.Features.Animations.Invoke),
+        typeof(Code.Gameplay.Features.Animations.MaxFrame),
+        typeof(Code.Gameplay.Features.Animations.NormalizedTime),
         typeof(Code.Gameplay.Features.Buffs.AnalgesicComponent),
         typeof(Code.Gameplay.Features.Buffs.BuffComponent),
         typeof(Code.Gameplay.Features.Buffs.VitaminsComponent),
@@ -206,6 +230,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Lifetime.MaxHealth),
         typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
         typeof(Code.Gameplay.Features.Movement.HasContainer),
+        typeof(Code.Gameplay.Features.Progress.ProgressFilled),
+        typeof(Code.Gameplay.Features.Progress.ProgressQueue),
+        typeof(Code.Gameplay.Features.Progress.Speed),
         typeof(Code.Gameplay.Features.Statuses.Affected),
         typeof(Code.Gameplay.Features.Statuses.Applied),
         typeof(Code.Gameplay.Features.Statuses.ApplierStatusLink),

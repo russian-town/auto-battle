@@ -1,4 +1,6 @@
-﻿using UnityEditor.Animations;
+﻿using System.Collections.Generic;
+using Code.Gameplay.Features.Progress.Config;
+using UnityEditor.Animations;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Abilities.Configs
@@ -11,5 +13,6 @@ namespace Code.Gameplay.Features.Abilities.Configs
         
         public int ManaCost;
         public AbilityTypeId AbilityTypeId;
+        public List<ProgressSetup> ProgressSetups;
     }
 }

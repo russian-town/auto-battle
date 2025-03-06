@@ -2,7 +2,9 @@
 using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Effect.Configs;
+using Code.Gameplay.Features.Motions;
 using Code.Infrastructure.Identifiers;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Effect.Factory
 {
@@ -22,7 +24,8 @@ namespace Code.Gameplay.Features.Effect.Factory
                 .With(x => x.isEffect = true)
                 .AddEffectValue(setup.EffectValue)
                 .AddProducerId(producerId)
-                .AddTargetId(targetId);
+                .AddTargetId(targetId)
+                ;
 
             switch (setup.EffectTypeId)
             {

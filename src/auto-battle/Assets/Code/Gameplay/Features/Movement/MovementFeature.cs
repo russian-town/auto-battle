@@ -8,7 +8,7 @@ namespace Code.Gameplay.Features.Movement
         public MovementFeature(ISystemFactory systems)
         {
             Add(systems.Create<SetContainerForChildEntitiesSystem>());
-            
+
             Add(systems.Create<UpdatePositionByEntitiesSystem>());
             Add(systems.Create<UpdateRotationByEntitiesSystem>());
         }
