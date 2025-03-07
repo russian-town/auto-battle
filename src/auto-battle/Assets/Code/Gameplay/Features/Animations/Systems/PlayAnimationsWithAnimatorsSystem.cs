@@ -12,8 +12,7 @@ namespace Code.Gameplay.Features.Animations.Systems
             _animations = game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.AnimationHash,
-                    GameMatcher.AnimatorId,
-                    GameMatcher.Progress
+                    GameMatcher.AnimatorId
                 ));
             
             _animators = game.GetGroup(GameMatcher
@@ -29,7 +28,7 @@ namespace Code.Gameplay.Features.Animations.Systems
             foreach (var animator in _animators)
             {
                 if (animation.AnimatorId == animator.Id)
-                    animator.FighterAnimator.Play(animation.AnimationHash, animation.Progress);
+                    animator.FighterAnimator.Play(animation.AnimationHash, 0f);
             }
         }
     }

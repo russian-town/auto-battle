@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Motions.Configs;
-using UnityEditor.Animations;
+﻿using UnityEditor.Animations;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Abilities.Configs
@@ -13,6 +11,5 @@ namespace Code.Gameplay.Features.Abilities.Configs
         
         public int ManaCost;
         public AbilityTypeId AbilityTypeId;
-        public List<MotionConfig> MotionConfigs;
     }
 }

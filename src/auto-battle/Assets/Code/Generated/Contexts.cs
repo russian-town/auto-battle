@@ -59,8 +59,6 @@ public partial class Contexts {
     public const string AnimationLinkedId = "AnimationLinkedId";
     public const string ApplierStatusLink = "ApplierStatusLink";
     public const string Id = "Id";
-    public const string MotionLinkedId = "MotionLinkedId";
-    public const string MotionLinkedQueueId = "MotionLinkedQueueId";
     public const string ParentAbilityId = "ParentAbilityId";
 
     [Entitas.CodeGeneration.Attributes.PostConstructor]
@@ -81,16 +79,6 @@ public partial class Contexts {
             (e, c) => ((Code.Gameplay.Common.CommonComponents.Id)c).Value));
 
         game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
-            MotionLinkedId,
-            game.GetGroup(GameMatcher.MotionLinkedId),
-            (e, c) => ((Code.Gameplay.Features.Motions.MotionLinkedId)c).Value));
-
-        game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
-            MotionLinkedQueueId,
-            game.GetGroup(GameMatcher.MotionLinkedQueueId),
-            (e, c) => ((Code.Gameplay.Features.Motions.MotionLinkedQueueId)c).Value));
-
-        game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
             ParentAbilityId,
             game.GetGroup(GameMatcher.ParentAbilityId),
             (e, c) => ((Code.Gameplay.Features.Abilities.ParentAbilityId)c).Value));
@@ -109,14 +97,6 @@ public static class ContextsExtensions {
 
     public static GameEntity GetEntityWithId(this GameContext context, int Value) {
         return ((Entitas.PrimaryEntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.Id)).GetEntity(Value);
-    }
-
-    public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithMotionLinkedId(this GameContext context, int Value) {
-        return ((Entitas.EntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.MotionLinkedId)).GetEntities(Value);
-    }
-
-    public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithMotionLinkedQueueId(this GameContext context, int Value) {
-        return ((Entitas.EntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.MotionLinkedQueueId)).GetEntities(Value);
     }
 
     public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithParentAbilityId(this GameContext context, int Value) {

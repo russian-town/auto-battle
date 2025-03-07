@@ -16,8 +16,7 @@ namespace Code.Gameplay.Features.Animations.Systems
             _animations = game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Animation,
-                    GameMatcher.Speed,
-                    GameMatcher.Progress
+                    GameMatcher.Speed
                     ));
         }
 
@@ -25,7 +24,6 @@ namespace Code.Gameplay.Features.Animations.Systems
         {
             foreach (var animation in _animations)
             {
-                animation.ReplaceProgress(Mathf.Clamp01(animation.Progress + _time.DeltaTime * animation.Speed));
             }
         }
     }

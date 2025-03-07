@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Effect.Configs;
-using Code.Gameplay.Features.Motions.Configs;
 using Code.Gameplay.Features.Statuses.Configs;
 using Entitas;
 using Entitas.CodeGeneration.Attributes;

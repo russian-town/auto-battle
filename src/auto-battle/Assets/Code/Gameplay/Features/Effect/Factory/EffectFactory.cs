@@ -23,7 +23,6 @@ namespace Code.Gameplay.Features.Effect.Factory
                 .AddEffectValue(setup.EffectValue)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
-                .With(x => x.AddMotionConfigs(setup.MotionConfigs), when: !setup.MotionConfigs.IsNullOrEmpty())
                 ;
 
             switch (setup.EffectTypeId)

@@ -8,7 +8,6 @@ using Code.Gameplay.Features.Cooldown;
 using Code.Gameplay.Features.Effect;
 using Code.Gameplay.Features.Fighter;
 using Code.Gameplay.Features.HealthBar;
-using Code.Gameplay.Features.Motions;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Rotation;
 using Code.Gameplay.Features.Statuses;
@@ -31,7 +30,6 @@ namespace Code.Gameplay
             Add(systems.Create<AbilityFeature>());
             Add(systems.Create<BuffFeature>());
             
-            Add(systems.Create<MotionFeature>());
             Add(systems.Create<AnimationsFeature>());
             Add(systems.Create<AnimationEventsFeature>());
             
