@@ -19,7 +19,7 @@ namespace Code.Gameplay.Features.Motions.Systems
             
             _motions = game.GetGroup(GameMatcher
                 .AllOf(
-                GameMatcher.MotionQueue,
+                GameMatcher.Motion,
                 GameMatcher.Progress
                 )
                 .NoneOf(GameMatcher.ProgressFilled));
@@ -29,7 +29,7 @@ namespace Code.Gameplay.Features.Motions.Systems
         {
             foreach (var motion in _motions.GetEntities(_buffer))
             {
-                motion.ReplaceProgress(Mathf.Clamp01(motion.Progress + _time.DeltaTime));
+                motion.ReplaceProgress(Mathf.Clamp01(motion.Progress + _time.DeltaTime * motion.Speed));
 
                 if (motion.Progress >= MaxProgress)
                     motion.isProgressFilled = true;

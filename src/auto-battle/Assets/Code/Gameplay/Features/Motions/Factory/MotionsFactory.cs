@@ -12,16 +12,16 @@ namespace Code.Gameplay.Features.Motions.Factory
 
         public MotionsFactory(IIdentifierService identifiers) => _identifiers = identifiers;
 
-        public GameEntity CreateMotionQueue(IEnumerable<MotionConfig> motions, int animatorId, int producerId, int targetId)
+        public GameEntity CreateMotion(MotionConfig config, int animatorId, int producerId, int targetId)
         {
-            return CreateEntity.Empty("MotionQueue")
-                .AddId(_identifiers.Next())
-                .AddMotionQueue(new Queue<MotionConfig>(motions))
-                .AddProgress(0f)
-                .With(x => x.isProgressFilled = true)
+            return CreateEntity.Empty("Motion")
+                .With(x => x.isMotion = true)
+                .AddSpeed(config.Speed)
                 .AddAnimatorId(animatorId)
                 .AddProducerId(producerId)
-                .AddTargetId(targetId);
+                .AddTargetId(targetId)
+                .AddProgress(0f)
+                .AddAnimationSetup(config.AnimationSetup);
         }
     }
 }

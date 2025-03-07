@@ -1,25 +1,28 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Motions.Factory;
+using Code.Common.Entity;
+using Code.Common.Extensions;
+using Code.Gameplay.Features.Motions.Configs;
+using Code.Infrastructure.Identifiers;
 using Entitas;
 
 namespace Code.Gameplay.Features.Abilities.Systems
 {
     public class DefaultAttackAbilitySystem : IExecuteSystem
     {
-        private readonly IMotionsFactory _motionsFactory;
         private readonly IGroup<GameEntity> _abilities;
         private readonly List<GameEntity> _buffer = new(16);
+        private readonly IIdentifierService _identifiers;
 
-        public DefaultAttackAbilitySystem(GameContext game, IMotionsFactory motionsFactory)
+        public DefaultAttackAbilitySystem(GameContext game, IIdentifierService identifiers)
         {
-            _motionsFactory = motionsFactory;
-            
+            _identifiers = identifiers;
+
             _abilities = game.GetGroup(GameMatcher
                     .AllOf(
                         GameMatcher.DefaultAttackAbility,
                         GameMatcher.Id,
-                        GameMatcher.MotionConfigs,
                         GameMatcher.ProducerId,
+                        GameMatcher.MotionConfigs,
                         GameMatcher.TargetId
                     )
                     .NoneOf(GameMatcher.Active));
@@ -29,11 +32,13 @@ namespace Code.Gameplay.Features.Abilities.Systems
         {
             foreach (var ability in _abilities.GetEntities(_buffer))
             {
-                _motionsFactory.CreateMotionQueue(
-                    ability.MotionConfigs,
-                    ability.ProducerId,
-                    ability.ProducerId,
-                    ability.TargetId);
+                CreateEntity.Empty("MotionQueue")
+                    .AddId(_identifiers.Next())
+                    .AddMotionQueue(new Queue<MotionConfig>(ability.MotionConfigs))
+                    .AddAnimatorId(ability.ProducerId)
+                    .AddProducerId(ability.ProducerId)
+                    .AddTargetId(ability.TargetId)
+                    .With(x => x.isMoveNext = true);
                 
                 ability.isActive = true;
             }

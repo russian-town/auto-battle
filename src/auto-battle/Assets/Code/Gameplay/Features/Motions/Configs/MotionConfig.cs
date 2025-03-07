@@ -11,5 +11,6 @@ namespace Code.Gameplay.Features.Motions.Configs
         public AnimationSetup AnimationSetup;
         public DirectionType DirectionType;
         public MovementSetup MovementSetup;
+        public float Speed;
     }
 }

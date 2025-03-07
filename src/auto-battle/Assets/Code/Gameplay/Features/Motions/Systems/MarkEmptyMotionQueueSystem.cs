@@ -5,25 +5,22 @@ namespace Code.Gameplay.Features.Motions.Systems
 {
     public class MarkEmptyMotionQueueSystem : IExecuteSystem
     {
-        private readonly IGroup<GameEntity> _motions;
+        private readonly IGroup<GameEntity> _motionQueue;
         private readonly List<GameEntity> _buffer = new(4);
 
         public MarkEmptyMotionQueueSystem(GameContext game)
         {
-            _motions = game.GetGroup(GameMatcher
-                .AllOf(
-                    GameMatcher.MotionQueue,
-                    GameMatcher.ProgressFilled
-                    )
+            _motionQueue = game.GetGroup(GameMatcher
+                .AllOf(GameMatcher.MotionQueue)
                 .NoneOf(GameMatcher.Empty));
         }
 
         public void Execute()
         {
-            foreach (var motion in _motions.GetEntities(_buffer))
+            foreach (var motionQueue in _motionQueue.GetEntities(_buffer))
             {
-                if (motion.MotionQueue.Count == 0)
-                    motion.isEmpty = true;
+                if (motionQueue.MotionQueue.Count == 0)
+                    motionQueue.isEmpty = true;
             }
         }
     }

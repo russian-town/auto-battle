@@ -17,8 +17,9 @@ namespace Code.Gameplay.Features.Motions.Systems
             
             _motions = game.GetGroup(GameMatcher
                 .AllOf(
+                    GameMatcher.Motion,
                     GameMatcher.Progress,
-                    GameMatcher.Id
+                    GameMatcher.MotionQueueLinkedId
                     ));
         }
 
@@ -27,7 +28,7 @@ namespace Code.Gameplay.Features.Motions.Systems
             foreach (var entity in _entities)
             foreach (var motion in _motions)
             {
-                if (entity.MotionQueueLinkedId == motion.Id)
+                if (entity.MotionQueueLinkedId == motion.MotionQueueLinkedId)
                     entity.ReplaceProgress(motion.Progress);
             }
         }

@@ -6,45 +6,42 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Motions.Systems
 {
-    public class GetNextMotionConfigSystem : IExecuteSystem
+    public class MarkMoveNextMotionQueueSystem : IExecuteSystem
     {
-        private readonly IMotionsFactory _motionsFactory;
         private readonly IAnimationFactory _animationFactory;
         private readonly IMovementFactory _movementFactory;
         private readonly IGroup<GameEntity> _motionQueue;
         private readonly IGroup<GameEntity> _motions;
         private readonly List<GameEntity> _buffer = new(16);
 
-        public GetNextMotionConfigSystem(GameContext game, IMotionsFactory motionsFactory)
+        public MarkMoveNextMotionQueueSystem(GameContext game)
         {
-            _motionsFactory = motionsFactory;
-
             _motionQueue = game.GetGroup(GameMatcher
                     .AllOf(
+                        GameMatcher.Id,
                         GameMatcher.AnimatorId,
                         GameMatcher.ProducerId,
-                        GameMatcher.TargetId,
-                        GameMatcher.MotionQueue,
-                        GameMatcher.MoveNext
+                        GameMatcher.TargetId
                     )
-                    .NoneOf(GameMatcher.Empty));
+                    .NoneOf(GameMatcher.MoveNext));
+            
+            _motions = game.GetGroup(GameMatcher
+                    .AllOf(
+                        GameMatcher.Progress,
+                        GameMatcher.ProgressFilled,
+                        GameMatcher.MotionQueueLinkedId
+                    ));
         }
 
         public void Execute()
         {
             foreach (var motionQueue in _motionQueue.GetEntities(_buffer))
+            foreach (var motion in _motions)
             {
-                var config = motionQueue.MotionQueue.Dequeue();
-                
-                _motionsFactory
-                    .CreateMotion(
-                        config,
-                        motionQueue.AnimatorId,
-                        motionQueue.ProducerId,
-                        motionQueue.TargetId)
-                    .AddMotionQueueLinkedId(motionQueue.Id);
+                if(motion.MotionQueueLinkedId != motionQueue.Id)
+                    continue;
 
-                motionQueue.isMoveNext = false;
+                motionQueue.isMoveNext = true;
             }
         }
     }
