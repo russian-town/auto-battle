@@ -1,4 +1,5 @@
-﻿using Code.Common.Entity;
+﻿using System;
+using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Movement.Config;
 
@@ -8,13 +9,29 @@ namespace Code.Gameplay.Features.Movement.Factory
     {
         public GameEntity CreateMovement(MovementConfig config, int animatorId, int producerId, int targetId)
         {
-            return CreateEntity.Empty("Movement")
-                .AddProgress(0)
+            var movement = CreateEntity.Empty("Movement")
                 .With(x => x.isMovement = true)
-                .AddTargetPosition(config.TargetPosition)
                 .AddAnimatorId(animatorId)
                 .AddProducerId(producerId)
+                .AddSpeed(config.Speed)
                 .AddTargetId(targetId);
+                
+
+            switch (config.MovementTypeId)
+            {
+                case MovementTypeId.MoveToTarget:
+                    return CreateMoveToTarget(movement);
+                case MovementTypeId.MoveToStartPoint:
+                  return CreateMoveToStartPoint(movement);
+            }
+
+            return movement;
         }
+
+        private GameEntity CreateMoveToTarget(GameEntity movement) =>
+            movement.With(x => x.isMoveToTarget = true);
+
+        private GameEntity CreateMoveToStartPoint(GameEntity movement) =>
+            movement.With(x => x.isMoveToStartPoint = true);
     }
 }

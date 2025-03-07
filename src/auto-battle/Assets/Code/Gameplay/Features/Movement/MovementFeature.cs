@@ -12,7 +12,8 @@ namespace Code.Gameplay.Features.Movement
             Add(systems.Create<SetEntitiesPositionTransformSystem>());
             Add(systems.Create<SetEntitiesRotationToTransformSystem>());
             
-            Add(systems.Create<UpdateEntitiesPositionByMovementSystem>());
+            Add(systems.Create<MoveToTargetSystem>());
+            Add(systems.Create<MoveToStartPointSystem>());
         }
     }
 }

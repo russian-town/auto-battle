@@ -17,4 +17,5 @@ MonoBehaviour:
   ManaCost: 3
   AbilityTypeId: 1
   MotionConfigs:
+  - {fileID: 11400000, guid: 116aa5083c390994c9f049ca3aeea9de, type: 2}
   - {fileID: 11400000, guid: 5bd1b5a7bb829a04e9cffea5e0959321, type: 2}

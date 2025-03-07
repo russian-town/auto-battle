@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62830e6607ff4156810c5b5dc1d07bfa, type: 3}
-  m_Name: Knockout
+  m_Script: {fileID: 11500000, guid: 1531f79418ee4904b706a92a075c8641, type: 3}
+  m_Name: MovementConfig
   m_EditorClassIdentifier: 
-  AnimationSetup:
-    Name: Hit
-    LastFrame: 24
-    Speed: 0
-    AnimationEventSetups: []
-  MovementConfig: {fileID: 0}
+  Speed: 0.01
+  MovementTypeId: 1

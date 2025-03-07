@@ -15,13 +15,14 @@ namespace Code.Gameplay.Features.Motions.Factory
         public GameEntity CreateMotion(MotionConfig config, int animatorId, int producerId, int targetId)
         {
             return CreateEntity.Empty("Motion")
+                .AddId(_identifiers.Next())
                 .With(x => x.isMotion = true)
-                .AddSpeed(config.Speed)
                 .AddAnimatorId(animatorId)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
                 .AddProgress(0f)
-                .AddAnimationSetup(config.AnimationSetup);
+                .AddAnimationSetup(config.AnimationSetup)
+                .With(x => x.AddMovementConfig(config.MovementConfig), when: config.MovementConfig != null);
         }
     }
 }

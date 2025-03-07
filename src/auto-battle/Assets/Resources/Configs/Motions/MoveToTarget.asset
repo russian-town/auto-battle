@@ -15,15 +15,6 @@ MonoBehaviour:
   AnimationSetup:
     Name: MoveForward
     LastFrame: 24
-    AnimationEventSetups:
-    - TargetFrame: 7
-      EffectSetups:
-      - EffectValue: 1
-        EffectTypeId: 1
-        MotionConfigs:
-        - {fileID: 11400000, guid: f0d70400f7a1c4d4d867bc610ce62b9b, type: 2}
-      StatusSetups: []
-  DirectionType: 2
-  MovementSetup:
-    TargetPosition: {x: -3, y: 0, z: 0}
-  Speed: 0
+    Speed: 3
+    AnimationEventSetups: []
+  MovementConfig: {fileID: 11400000, guid: 2f3a6e48cb3668d45ad6f1de5101b64c, type: 2}

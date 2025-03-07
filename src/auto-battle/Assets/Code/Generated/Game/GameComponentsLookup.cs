@@ -81,26 +81,30 @@ public static class GameComponentsLookup {
     public const int Empty = 70;
     public const int Motion = 71;
     public const int MotionConfigs = 72;
-    public const int MotionQueue = 73;
-    public const int MotionQueueLinkedId = 74;
-    public const int MoveNext = 75;
-    public const int Progress = 76;
-    public const int ProgressFilled = 77;
-    public const int HasContainer = 78;
-    public const int Movement = 79;
-    public const int TargetPosition = 80;
-    public const int Affected = 81;
-    public const int Applied = 82;
-    public const int ApplierStatusLink = 83;
-    public const int BlockStatus = 84;
-    public const int DodgeStatus = 85;
-    public const int PoisonStatus = 86;
-    public const int Status = 87;
-    public const int StatusEffectValue = 88;
-    public const int StunStatus = 89;
-    public const int Unapplied = 90;
+    public const int MotionLinkedId = 73;
+    public const int MotionLinkedQueueId = 74;
+    public const int MotionQueue = 75;
+    public const int MovementConfig = 76;
+    public const int MoveNext = 77;
+    public const int Progress = 78;
+    public const int ProgressFilled = 79;
+    public const int HasContainer = 80;
+    public const int Movement = 81;
+    public const int MoveToStartPoint = 82;
+    public const int MoveToTarget = 83;
+    public const int TargetPosition = 84;
+    public const int Affected = 85;
+    public const int Applied = 86;
+    public const int ApplierStatusLink = 87;
+    public const int BlockStatus = 88;
+    public const int DodgeStatus = 89;
+    public const int PoisonStatus = 90;
+    public const int Status = 91;
+    public const int StatusEffectValue = 92;
+    public const int StunStatus = 93;
+    public const int Unapplied = 94;
 
-    public const int TotalComponents = 91;
+    public const int TotalComponents = 95;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -176,13 +180,17 @@ public static class GameComponentsLookup {
         "Empty",
         "Motion",
         "MotionConfigs",
+        "MotionLinkedId",
+        "MotionLinkedQueueId",
         "MotionQueue",
-        "MotionQueueLinkedId",
+        "MovementConfig",
         "MoveNext",
         "Progress",
         "ProgressFilled",
         "HasContainer",
         "Movement",
+        "MoveToStartPoint",
+        "MoveToTarget",
         "TargetPosition",
         "Affected",
         "Applied",
@@ -270,13 +278,17 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Motions.Empty),
         typeof(Code.Gameplay.Features.Motions.Motion),
         typeof(Code.Gameplay.Features.Motions.MotionConfigs),
+        typeof(Code.Gameplay.Features.Motions.MotionLinkedId),
+        typeof(Code.Gameplay.Features.Motions.MotionLinkedQueueId),
         typeof(Code.Gameplay.Features.Motions.MotionQueue),
-        typeof(Code.Gameplay.Features.Motions.MotionQueueLinkedId),
+        typeof(Code.Gameplay.Features.Motions.MovementConfigComponent),
         typeof(Code.Gameplay.Features.Motions.MoveNext),
         typeof(Code.Gameplay.Features.Motions.Progress),
         typeof(Code.Gameplay.Features.Motions.ProgressFilled),
         typeof(Code.Gameplay.Features.Movement.HasContainer),
         typeof(Code.Gameplay.Features.Movement.Movement),
+        typeof(Code.Gameplay.Features.Movement.MoveToStartPoint),
+        typeof(Code.Gameplay.Features.Movement.MoveToTarget),
         typeof(Code.Gameplay.Features.Movement.TargetPosition),
         typeof(Code.Gameplay.Features.Statuses.Affected),
         typeof(Code.Gameplay.Features.Statuses.Applied),

@@ -1,5 +1,4 @@
 ﻿using Code.Gameplay.Features.Animations.Configs;
-using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Movement.Config;
 using UnityEngine;
 
@@ -10,6 +9,5 @@ namespace Code.Gameplay.Features.Motions.Configs
     {
         public AnimationSetup AnimationSetup;
         public MovementConfig MovementConfig;
-        public float Speed;
     }
 }

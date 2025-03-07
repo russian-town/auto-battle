@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Animations.Factory;
-using Code.Gameplay.Features.Motions.Factory;
 using Code.Gameplay.Features.Movement.Factory;
 using Entitas;
 
@@ -8,8 +7,6 @@ namespace Code.Gameplay.Features.Motions.Systems
 {
     public class MarkMoveNextMotionQueueSystem : IExecuteSystem
     {
-        private readonly IAnimationFactory _animationFactory;
-        private readonly IMovementFactory _movementFactory;
         private readonly IGroup<GameEntity> _motionQueue;
         private readonly IGroup<GameEntity> _motions;
         private readonly List<GameEntity> _buffer = new(16);
@@ -19,9 +16,7 @@ namespace Code.Gameplay.Features.Motions.Systems
             _motionQueue = game.GetGroup(GameMatcher
                     .AllOf(
                         GameMatcher.Id,
-                        GameMatcher.AnimatorId,
-                        GameMatcher.ProducerId,
-                        GameMatcher.TargetId
+                        GameMatcher.MotionQueue
                     )
                     .NoneOf(GameMatcher.MoveNext));
             
@@ -29,7 +24,7 @@ namespace Code.Gameplay.Features.Motions.Systems
                     .AllOf(
                         GameMatcher.Progress,
                         GameMatcher.ProgressFilled,
-                        GameMatcher.MotionQueueLinkedId
+                        GameMatcher.MotionLinkedQueueId
                     ));
         }
 
@@ -38,7 +33,7 @@ namespace Code.Gameplay.Features.Motions.Systems
             foreach (var motionQueue in _motionQueue.GetEntities(_buffer))
             foreach (var motion in _motions)
             {
-                if(motion.MotionQueueLinkedId != motionQueue.Id)
+                if(motion.MotionLinkedQueueId != motionQueue.Id)
                     continue;
 
                 motionQueue.isMoveNext = true;

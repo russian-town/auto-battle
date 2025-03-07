@@ -15,8 +15,6 @@ MonoBehaviour:
   AnimationSetup:
     Name: Hit
     LastFrame: 24
+    Speed: 1
     AnimationEventSetups: []
-  DirectionType: 2
-  MovementSetup:
-    TargetPosition: {x: 3, y: 0, z: 0}
-  Speed: 0
+  MovementConfig: {fileID: 0}

@@ -21,6 +21,7 @@ namespace Code.Gameplay.Features.Motions.Systems
 
             _motionQueue = game.GetGroup(GameMatcher
                     .AllOf(
+                        GameMatcher.Id,
                         GameMatcher.AnimatorId,
                         GameMatcher.ProducerId,
                         GameMatcher.TargetId,
@@ -42,7 +43,7 @@ namespace Code.Gameplay.Features.Motions.Systems
                         motionQueue.AnimatorId,
                         motionQueue.ProducerId,
                         motionQueue.TargetId)
-                    .AddMotionQueueLinkedId(motionQueue.Id);
+                    .AddMotionLinkedQueueId(motionQueue.Id);
 
                 motionQueue.isMoveNext = false;
             }

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationSetup:
     Name: DefaultAttack
-    Speed: 2
     LastFrame: 24
+    Speed: 2
     AnimationEventSetups:
     - TargetFrame: 7
       EffectSetups:
@@ -24,7 +24,4 @@ MonoBehaviour:
         MotionConfigs:
         - {fileID: 11400000, guid: f0d70400f7a1c4d4d867bc610ce62b9b, type: 2}
       StatusSetups: []
-  DirectionType: 1
-  MovementSetup:
-    TargetPosition: {x: 0, y: 0, z: 0}
-    Speed: 0
+  MovementConfig: {fileID: 0}
