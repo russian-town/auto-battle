@@ -9,8 +9,10 @@ namespace Code.Gameplay.Features.Movement
         {
             Add(systems.Create<SetContainerForChildEntitiesSystem>());
 
-            Add(systems.Create<UpdatePositionByEntitiesSystem>());
-            Add(systems.Create<UpdateRotationByEntitiesSystem>());
+            Add(systems.Create<SetEntitiesPositionTransformSystem>());
+            Add(systems.Create<SetEntitiesRotationToTransformSystem>());
+            
+            Add(systems.Create<UpdateEntitiesPositionByMovementSystem>());
         }
     }
 }

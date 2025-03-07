@@ -1,5 +1,6 @@
 ﻿using System;
-using Code.Gameplay.Features.Animations.Configs;
+using System.Collections.Generic;
+using Code.Gameplay.Features.Motions.Configs;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Effect.Configs
@@ -9,6 +10,6 @@ namespace Code.Gameplay.Features.Effect.Configs
     {
         [Range(0f, 1f)] public float EffectValue;
         public EffectTypeId EffectTypeId;
-        public HitAnimationSetup HitAnimationSetup;
+        public List<MotionConfig> MotionConfigs;
     }
 }

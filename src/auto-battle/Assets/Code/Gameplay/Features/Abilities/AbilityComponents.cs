@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Effect.Configs;
+using Code.Gameplay.Features.Motions.Configs;
 using Code.Gameplay.Features.Statuses.Configs;
 using Entitas;
 using Entitas.CodeGeneration.Attributes;
@@ -13,6 +14,7 @@ namespace Code.Gameplay.Features.Abilities
 
     [Game] public class StatusSetups : IComponent { public List<StatusSetup> Value; }
     [Game] public class EffectSetups : IComponent { public List<EffectSetup> Value; }
+    [Game] public class MotionConfigs : IComponent { public List<MotionConfig> Value; }
     
     [Game] public class DefaultAttackAbility : IComponent { }
     [Game] public class BlockAbility : IComponent { }

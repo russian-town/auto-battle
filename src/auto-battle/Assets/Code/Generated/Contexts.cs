@@ -56,12 +56,18 @@ public partial class Contexts : Entitas.IContexts {
 //------------------------------------------------------------------------------
 public partial class Contexts {
 
+    public const string AnimationLinkedId = "AnimationLinkedId";
     public const string ApplierStatusLink = "ApplierStatusLink";
     public const string Id = "Id";
     public const string ParentAbilityId = "ParentAbilityId";
 
     [Entitas.CodeGeneration.Attributes.PostConstructor]
     public void InitializeEntityIndices() {
+        game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
+            AnimationLinkedId,
+            game.GetGroup(GameMatcher.AnimationLinkedId),
+            (e, c) => ((Code.Gameplay.Features.Animations.AnimationLinkedId)c).Value));
+
         game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, int>(
             ApplierStatusLink,
             game.GetGroup(GameMatcher.ApplierStatusLink),
@@ -80,6 +86,10 @@ public partial class Contexts {
 }
 
 public static class ContextsExtensions {
+
+    public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithAnimationLinkedId(this GameContext context, int Value) {
+        return ((Entitas.EntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.AnimationLinkedId)).GetEntities(Value);
+    }
 
     public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithApplierStatusLink(this GameContext context, int Value) {
         return ((Entitas.EntityIndex<GameEntity, int>)context.GetEntityIndex(Contexts.ApplierStatusLink)).GetEntities(Value);

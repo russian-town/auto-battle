@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using Code.Common.Entity;
 using Code.Common.Extensions;
-using Code.Gameplay.Features.Progress.Config;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 
@@ -30,7 +28,7 @@ namespace Code.Gameplay.Features.Abilities.Factory
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
                 .AddManaCost(config.ManaCost)
-                .AddProgressQueue(new Queue<ProgressSetup>(config.ProgressSetups))
+                .With(x => x.AddMotionConfigs(config.MotionConfigs), when: !config.MotionConfigs.IsNullOrEmpty())
                 ;
             
             switch (config.AbilityTypeId)

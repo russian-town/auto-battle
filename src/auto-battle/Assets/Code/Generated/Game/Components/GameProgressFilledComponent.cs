@@ -33,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Progress.ProgressFilled progressFilledComponent = new Code.Gameplay.Features.Progress.ProgressFilled();
+    static readonly Code.Gameplay.Features.Motions.ProgressFilled progressFilledComponent = new Code.Gameplay.Features.Motions.ProgressFilled();
 
     public bool isProgressFilled {
         get { return HasComponent(GameComponentsLookup.ProgressFilled); }

@@ -1,5 +1,6 @@
 ﻿using Code.Common.Destruct;
 using Code.Gameplay.Features.Abilities;
+using Code.Gameplay.Features.AnimationEvents;
 using Code.Gameplay.Features.Animations;
 using Code.Gameplay.Features.Buffs;
 using Code.Gameplay.Features.CharacterStats;
@@ -7,8 +8,8 @@ using Code.Gameplay.Features.Cooldown;
 using Code.Gameplay.Features.Effect;
 using Code.Gameplay.Features.Fighter;
 using Code.Gameplay.Features.HealthBar;
+using Code.Gameplay.Features.Motions;
 using Code.Gameplay.Features.Movement;
-using Code.Gameplay.Features.Progress;
 using Code.Gameplay.Features.Rotation;
 using Code.Gameplay.Features.Statuses;
 using Code.Infrastructure.Systems;
@@ -30,8 +31,9 @@ namespace Code.Gameplay
             Add(systems.Create<AbilityFeature>());
             Add(systems.Create<BuffFeature>());
             
-            Add(systems.Create<ProgressFeature>());
-            Add(systems.Create<AnimationFeature>());
+            Add(systems.Create<MotionFeature>());
+            Add(systems.Create<AnimationsFeature>());
+            Add(systems.Create<AnimationEventsFeature>());
             
             Add(systems.Create<StatusFeature>());
             Add(systems.Create<EffectFeature>());
