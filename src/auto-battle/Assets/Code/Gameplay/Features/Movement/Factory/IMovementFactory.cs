@@ -4,6 +4,6 @@ namespace Code.Gameplay.Features.Movement.Factory
 {
     public interface IMovementFactory
     {
-        GameEntity CreateMovement(MovementSetup setup, int animatorId, int producerId, int targetId);
+        GameEntity CreateMovement(MovementConfig config, int animatorId, int producerId, int targetId);
     }
 }

@@ -9,8 +9,7 @@ namespace Code.Gameplay.Features.Motions.Configs
     public class MotionConfig : ScriptableObject
     {
         public AnimationSetup AnimationSetup;
-        public DirectionType DirectionType;
-        public MovementSetup MovementSetup;
+        public MovementConfig MovementConfig;
         public float Speed;
     }
 }

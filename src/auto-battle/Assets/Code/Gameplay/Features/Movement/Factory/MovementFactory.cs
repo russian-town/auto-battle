@@ -6,12 +6,12 @@ namespace Code.Gameplay.Features.Movement.Factory
 {
     public class MovementFactory : IMovementFactory
     {
-        public GameEntity CreateMovement(MovementSetup setup, int animatorId, int producerId, int targetId)
+        public GameEntity CreateMovement(MovementConfig config, int animatorId, int producerId, int targetId)
         {
             return CreateEntity.Empty("Movement")
                 .AddProgress(0)
                 .With(x => x.isMovement = true)
-                .AddTargetPosition(setup.TargetPosition)
+                .AddTargetPosition(config.TargetPosition)
                 .AddAnimatorId(animatorId)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId);
