@@ -12,19 +12,19 @@ namespace Code.Gameplay.Features.Animations.Factory
 
         public AnimationFactory(IIdentifierService identifiers) => _identifiers = identifiers;
 
-        public GameEntity CreateAnimation(AnimationSetup setup, int animatorId, int producerId, int targetId)
+        public GameEntity CreateAnimation(AnimationSetup setup, int producerId, int targetId)
         {
             return CreateEntity.Empty("Animation")
                 .AddId(_identifiers.Next())
                 .AddAnimationHash(Animator.StringToHash(setup.Name))
                 .AddCurrentFrame(0)
+                .AddNormalizeTime(0)
                 .AddSpeed(setup.Speed)
                 .AddLastFrame(setup.LastFrame)
                 .With(x => x.isAnimation = true)
-                .AddAnimatorId(animatorId)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
-                .AddAnimationEventSetups(setup.AnimationEventSetups);
+                .With(x => x.AddAnimationEventConfigs(setup.AnimationEventConfigs), when: !setup.AnimationEventConfigs.IsNullOrEmpty());
         }
     }
 }

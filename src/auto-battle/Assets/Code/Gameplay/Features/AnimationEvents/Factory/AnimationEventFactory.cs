@@ -6,16 +6,16 @@ namespace Code.Gameplay.Features.AnimationEvents.Factory
 {
     public class AnimationEventFactory : IAnimationEventFactory
     {
-        public GameEntity CreateAnimationEvent(AnimationEventSetup setup, int animationLinkedId, int producerId, int targetId)
+        public GameEntity CreateAnimationEvent(AnimationEventConfig config, int animationLinkedId, int producerId, int targetId)
         {
             return CreateEntity.Empty("AnimationEvent")
                 .AddAnimationLinkedId(animationLinkedId)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
                 .With(x => x.isAnimationEvent = true)
-                .AddTargetFrame(setup.TargetFrame)
-                .With(x => x.AddEffectSetups(setup.EffectSetups), when: !setup.EffectSetups.IsNullOrEmpty())
-                .With(x => x.AddStatusSetups(setup.StatusSetups), when: !setup.StatusSetups.IsNullOrEmpty())
+                .AddTargetFrame(config.TargetFrame)
+                .With(x => x.AddEffectSetups(config.EffectSetups), when: !config.EffectSetups.IsNullOrEmpty())
+                .With(x => x.AddStatusSetups(config.StatusSetups), when: !config.StatusSetups.IsNullOrEmpty())
                 ;
         }
     }

@@ -10,6 +10,6 @@ namespace Code.Gameplay.Features.Animations.Configs
         public string Name;
         public float LastFrame;
         public float Speed;
-        public List<AnimationEventSetup> AnimationEventSetups;
+        public List<AnimationEventConfig> AnimationEventConfigs;
     }
 }

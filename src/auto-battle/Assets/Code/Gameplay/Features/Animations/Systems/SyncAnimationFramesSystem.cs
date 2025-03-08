@@ -12,8 +12,8 @@ namespace Code.Gameplay.Features.Animations.Systems
             _animations = game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.AnimationHash,
-                    GameMatcher.AnimatorId,
-                    GameMatcher.CurrentFrame
+                    GameMatcher.CurrentFrame,
+                    GameMatcher.NormalizeTime
                     ));
             
             _animators = game.GetGroup(GameMatcher
@@ -28,10 +28,10 @@ namespace Code.Gameplay.Features.Animations.Systems
             foreach (var animation in _animations)
             foreach (var animator in _animators)
             {
-                if (animation.AnimatorId == animator.Id)
+                if (animation.ProducerId == animator.Id)
                     animation.ReplaceCurrentFrame(animator
                             .FighterAnimator
-                            .GetCurrentFrame(animation.AnimationHash));
+                            .GetCurrentFrame(animation.AnimationHash, animation.NormalizeTime));
             }
         }
     }

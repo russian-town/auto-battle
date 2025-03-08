@@ -28,6 +28,7 @@ namespace Code.Gameplay.Features.Abilities.Factory
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
                 .AddManaCost(config.ManaCost)
+                .With(x => x.AddAnimationSetups(config.AnimationSetups), when: !config.AnimationSetups.IsNullOrEmpty())
                 ;
             
             switch (config.AbilityTypeId)

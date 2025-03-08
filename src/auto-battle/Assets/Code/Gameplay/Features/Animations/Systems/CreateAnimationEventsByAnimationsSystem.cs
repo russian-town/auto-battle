@@ -20,7 +20,7 @@ namespace Code.Gameplay.Features.Animations.Systems
                 GameMatcher.Animation,
                 GameMatcher.ProducerId,
                 GameMatcher.TargetId,
-                GameMatcher.AnimationEventSetups
+                GameMatcher.AnimationEventConfigs
                 )
                 .NoneOf(GameMatcher.Active));
         }
@@ -29,7 +29,7 @@ namespace Code.Gameplay.Features.Animations.Systems
         {
             foreach (var animation in _animations.GetEntities(_buffer))
             {
-                foreach (var animationEventSetup in animation.AnimationEventSetups)
+                foreach (var animationEventSetup in animation.AnimationEventConfigs)
                 {
                     _animationEventFactory.CreateAnimationEvent(
                         animationEventSetup,

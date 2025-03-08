@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Effect.Configs;
 using Code.Gameplay.Features.Statuses.Configs;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.AnimationEvents.Configs
 {
-    [Serializable]
-    public class AnimationEventSetup
+    [CreateAssetMenu(fileName = "AnimationEventConfig", menuName = "auto-battle/AnimationEvents", order = 59)]
+    public class AnimationEventConfig : ScriptableObject
     {
         public float TargetFrame;
         public List<EffectSetup> EffectSetups;

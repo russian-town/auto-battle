@@ -11,7 +11,7 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
 
         public void InterruptAnimation() => Animator.StopPlayback();
 
-        public float GetCurrentFrame(int hashCode)
+        public float GetCurrentFrame(int hashCode, float normalizeTime)
         {
             var layerIndex = GetLayerIndex(hashCode);
             var clips = Animator.GetCurrentAnimatorClipInfo(layerIndex);
@@ -26,8 +26,7 @@ namespace Code.Gameplay.Features.Fighter.Behaviours
                 return 0f;
 
             var frame = clip.length * clip.frameRate;
-
-            return frame * Mathf.Clamp01(state.normalizedTime);
+            return frame * Mathf.Clamp01(normalizeTime);
         }
 
         private int GetLayerIndex(int hashCode)

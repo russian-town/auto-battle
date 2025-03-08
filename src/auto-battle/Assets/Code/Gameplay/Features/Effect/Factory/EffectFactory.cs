@@ -10,10 +10,7 @@ namespace Code.Gameplay.Features.Effect.Factory
     {
         private readonly IIdentifierService _identifiers;
 
-        public EffectFactory(IIdentifierService identifiers)
-        {
-            _identifiers = identifiers;
-        }
+        public EffectFactory(IIdentifierService identifiers) => _identifiers = identifiers;
 
         public GameEntity CreateEffect(EffectSetup setup, int producerId, int targetId)
         {
@@ -23,6 +20,7 @@ namespace Code.Gameplay.Features.Effect.Factory
                 .AddEffectValue(setup.EffectValue)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
+                .AddAnimationSetup(setup.AnimationSetup)
                 ;
 
             switch (setup.EffectTypeId)
