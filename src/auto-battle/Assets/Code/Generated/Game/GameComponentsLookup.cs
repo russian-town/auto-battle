@@ -46,52 +46,56 @@ public static class GameComponentsLookup {
     public const int CurrentFrame = 35;
     public const int LastFrame = 36;
     public const int NormalizeTime = 37;
-    public const int Analgesic = 38;
-    public const int Buff = 39;
-    public const int Vitamins = 40;
-    public const int BaseStats = 41;
-    public const int StatChange = 42;
-    public const int StatsModifiers = 43;
-    public const int Cooldown = 44;
-    public const int Cooldownable = 45;
-    public const int CooldownLeft = 46;
-    public const int CooldownUp = 47;
-    public const int AnimationSetup = 48;
-    public const int DamageEffect = 49;
-    public const int Effect = 50;
-    public const int EffectValue = 51;
-    public const int EffectWindow = 52;
-    public const int HealEffect = 53;
-    public const int Processed = 54;
-    public const int ProducerId = 55;
-    public const int PushEffect = 56;
-    public const int TargetId = 57;
-    public const int BaseAbilities = 58;
-    public const int Damage = 59;
-    public const int Defence = 60;
-    public const int FighterAnimator = 61;
-    public const int Fighter = 62;
-    public const int Mana = 63;
-    public const int Offensive = 64;
-    public const int StartPointPosition = 65;
-    public const int FighterHealthBar = 66;
-    public const int CurrentHealth = 67;
-    public const int Dead = 68;
-    public const int MaxHealth = 69;
-    public const int ProcessingDeath = 70;
-    public const int HasContainer = 71;
-    public const int Affected = 72;
-    public const int Applied = 73;
-    public const int ApplierStatusLink = 74;
-    public const int BlockStatus = 75;
-    public const int DodgeStatus = 76;
-    public const int PoisonStatus = 77;
-    public const int Status = 78;
-    public const int StatusEffectValue = 79;
-    public const int StunStatus = 80;
-    public const int Unapplied = 81;
+    public const int AnimationsQueue = 38;
+    public const int Empty = 39;
+    public const int MoveNext = 40;
+    public const int QueueLinkedAnimationId = 41;
+    public const int Analgesic = 42;
+    public const int Buff = 43;
+    public const int Vitamins = 44;
+    public const int BaseStats = 45;
+    public const int StatChange = 46;
+    public const int StatsModifiers = 47;
+    public const int Cooldown = 48;
+    public const int Cooldownable = 49;
+    public const int CooldownLeft = 50;
+    public const int CooldownUp = 51;
+    public const int AnimationSetup = 52;
+    public const int DamageEffect = 53;
+    public const int Effect = 54;
+    public const int EffectValue = 55;
+    public const int EffectWindow = 56;
+    public const int HealEffect = 57;
+    public const int Processed = 58;
+    public const int ProducerId = 59;
+    public const int PushEffect = 60;
+    public const int TargetId = 61;
+    public const int BaseAbilities = 62;
+    public const int Damage = 63;
+    public const int Defence = 64;
+    public const int FighterAnimator = 65;
+    public const int Fighter = 66;
+    public const int Mana = 67;
+    public const int Offensive = 68;
+    public const int StartPointPosition = 69;
+    public const int FighterHealthBar = 70;
+    public const int CurrentHealth = 71;
+    public const int Dead = 72;
+    public const int MaxHealth = 73;
+    public const int ProcessingDeath = 74;
+    public const int HasContainer = 75;
+    public const int Affected = 76;
+    public const int Applied = 77;
+    public const int ApplierStatusLink = 78;
+    public const int BlockStatus = 79;
+    public const int DodgeStatus = 80;
+    public const int PoisonStatus = 81;
+    public const int Status = 82;
+    public const int StatusEffectValue = 83;
+    public const int StunStatus = 84;
+    public const int Unapplied = 85;
 
-    public const int TotalComponents = 82;
+    public const int TotalComponents = 86;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -132,6 +136,10 @@ public static class GameComponentsLookup {
         "CurrentFrame",
         "LastFrame",
         "NormalizeTime",
+        "AnimationsQueue",
+        "Empty",
+        "MoveNext",
+        "QueueLinkedAnimationId",
         "Analgesic",
         "Buff",
         "Vitamins",
@@ -217,6 +225,10 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Animations.CurrentFrame),
         typeof(Code.Gameplay.Features.Animations.LastFrame),
         typeof(Code.Gameplay.Features.Animations.NormalizeTime),
+        typeof(Code.Gameplay.Features.AnimationsQueue.AnimationsQueue),
+        typeof(Code.Gameplay.Features.AnimationsQueue.Empty),
+        typeof(Code.Gameplay.Features.AnimationsQueue.MoveNext),
+        typeof(Code.Gameplay.Features.AnimationsQueue.QueueLinkedAnimationId),
         typeof(Code.Gameplay.Features.Buffs.AnalgesicComponent),
         typeof(Code.Gameplay.Features.Buffs.BuffComponent),
         typeof(Code.Gameplay.Features.Buffs.VitaminsComponent),

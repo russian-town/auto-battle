@@ -10,9 +10,10 @@ namespace Code.Gameplay.Features.Animations
             Add(systems.Create<PlayAnimationsWithAnimatorsSystem>());
             
             Add(systems.Create<CreateAnimationEventsByAnimationsSystem>());
-            Add(systems.Create<SetAnimationsProgressSystem>());
+            Add(systems.Create<SetAnimationsNormalizeTimeSystem>());
             Add(systems.Create<SyncAnimationFramesSystem>());
             Add(systems.Create<CompleteAnimationSystem>());
+            Add(systems.Create<MarkMoveNextParentQueueSystem>());
             
             Add(systems.Create<CleanupCompletedAnimationsSystem>());
             

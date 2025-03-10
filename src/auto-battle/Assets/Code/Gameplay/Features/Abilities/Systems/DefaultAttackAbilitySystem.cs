@@ -1,18 +1,19 @@
 ﻿using System.Collections.Generic;
 using Code.Gameplay.Features.Animations.Factory;
+using Code.Gameplay.Features.AnimationsQueue.Factory;
 using Entitas;
 
 namespace Code.Gameplay.Features.Abilities.Systems
 {
     public class DefaultAttackAbilitySystem : IExecuteSystem
     {
-        private readonly IAnimationFactory _animationFactory;
+        private readonly IAnimationsQueueFactory _animationsQueueFactory;
         private readonly IGroup<GameEntity> _abilities;
         private readonly List<GameEntity> _buffer = new(16);
 
-        public DefaultAttackAbilitySystem(GameContext game, IAnimationFactory animationFactory)
+        public DefaultAttackAbilitySystem(GameContext game, IAnimationsQueueFactory animationsQueueFactory)
         {
-            _animationFactory = animationFactory;
+            _animationsQueueFactory = animationsQueueFactory;
             
             _abilities = game.GetGroup(GameMatcher
                     .AllOf(
@@ -29,8 +30,10 @@ namespace Code.Gameplay.Features.Abilities.Systems
         {
             foreach (var ability in _abilities.GetEntities(_buffer))
             {
-                foreach (var animationSetup in ability.AnimationSetups)
-                    _animationFactory.CreateAnimation(animationSetup, ability.ProducerId, ability.TargetId);
+                _animationsQueueFactory.CreateAnimationQueue(
+                    ability.AnimationSetups,
+                    ability.ProducerId,
+                    ability.TargetId);
                 
                 ability.isActive = true;
             }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.Animations.Systems
 {
-    public class SetAnimationsProgressSystem : IExecuteSystem
+    public class SetAnimationsNormalizeTimeSystem : IExecuteSystem
     {
         private readonly ITimeService _time;
         private readonly IGroup<GameEntity> _animations;
 
-        public SetAnimationsProgressSystem(GameContext game, ITimeService time)
+        public SetAnimationsNormalizeTimeSystem(GameContext game, ITimeService time)
         {
             _time = time;
             

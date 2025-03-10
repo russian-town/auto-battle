@@ -2,6 +2,7 @@
 using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.AnimationEvents;
 using Code.Gameplay.Features.Animations;
+using Code.Gameplay.Features.AnimationsQueue;
 using Code.Gameplay.Features.Buffs;
 using Code.Gameplay.Features.CharacterStats;
 using Code.Gameplay.Features.Cooldown;
@@ -30,6 +31,7 @@ namespace Code.Gameplay
             Add(systems.Create<AbilityFeature>());
             Add(systems.Create<BuffFeature>());
             
+            Add(systems.Create<AnimationsQueueFeature>());
             Add(systems.Create<AnimationsFeature>());
             Add(systems.Create<AnimationEventsFeature>());
             
