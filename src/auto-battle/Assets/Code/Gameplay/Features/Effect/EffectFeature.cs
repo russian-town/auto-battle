@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Features.Effect.System;
+﻿using Code.Gameplay.Features.AnimationEvents.Systems;
+using Code.Gameplay.Features.Effect.System;
 using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Effect
@@ -18,7 +19,7 @@ namespace Code.Gameplay.Features.Effect
             
             Add(systems.Create<InterruptAbilitiesByCounterattackSystem>());
             
-            Add(systems.Create<CleanupProcessedEffectsSystem>());
+            //Add(systems.Create<CleanupProcessedEffectsSystem>());
         }
     }
 }
