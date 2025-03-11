@@ -12,8 +12,10 @@ namespace Code.Gameplay.Features.Abilities
             Add(systems.Create<BlockAbilitySystem>());
             Add(systems.Create<DodgeAbilitySystem>());
             Add(systems.Create<CounterAttackAbilitySystem>());
-
-            //Add(systems.Create<CleanupAbilitySystem>());
+            
+            Add(systems.Create<DecreaseLifetimeByCompletedAbilitySystem>());
+            
+            Add(systems.Create<CleanupDeadAbilitySystem>());
         }
     }
 }

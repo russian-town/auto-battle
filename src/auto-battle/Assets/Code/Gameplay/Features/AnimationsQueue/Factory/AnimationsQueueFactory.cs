@@ -12,13 +12,14 @@ namespace Code.Gameplay.Features.AnimationsQueue.Factory
 
         public AnimationsQueueFactory(IIdentifierService identifiers) => _identifiers = identifiers;
 
-        public GameEntity CreateAnimationQueue(IEnumerable<AnimationSetup> animationSetups, int producerId, int targetId)
+        public GameEntity CreateAnimationQueue(IEnumerable<AnimationSetup> animationSetups, int producerId, int targetId, int parentAbilityId)
         {
             return CreateEntity.Empty("AnimationQueue")
                 .AddId(_identifiers.Next())
                 .AddAnimationsQueue(new Queue<AnimationSetup>(animationSetups))
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
+                .AddParentAbilityId(parentAbilityId)
                 .With(x => x.isMoveNext = true)
                 ;
         }

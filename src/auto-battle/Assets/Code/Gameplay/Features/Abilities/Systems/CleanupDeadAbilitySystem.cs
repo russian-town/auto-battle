@@ -3,17 +3,17 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Abilities.Systems
 {
-    public class CleanupAbilitySystem : ICleanupSystem
+    public class CleanupDeadAbilitySystem : ICleanupSystem
     {
         private readonly IGroup<GameEntity> _abilities;
-        private readonly List<GameEntity> _buffer = new(24);
+        private readonly List<GameEntity> _buffer = new(16);
 
-        public CleanupAbilitySystem(GameContext game)
+        public CleanupDeadAbilitySystem(GameContext game)
         {
             _abilities = game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Ability,
-                    GameMatcher.Active
+                    GameMatcher.Dead
                     ));
         }
 
