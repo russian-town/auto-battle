@@ -17,10 +17,8 @@ MonoBehaviour:
   ManaCost: 1
   AbilityTypeId: 3
   AnimationSetups:
-  - StateName: 
-    HashCode: 0
-    DurationTime: 0
-    TransitionTime: 0
-    AnimationClip: {fileID: 7400000, guid: 920c49a804ceb31409d9733b4f4fc94b, type: 2}
-    AllFrames: 48.000004
-    AnimationEvents: []
+  - Name: Block
+    LastFrame: 48
+    AnimationSpeed: 3
+    AnimationEventConfigs:
+    - {fileID: 11400000, guid: 85c71b771401a8146858e864d01abd05, type: 2}

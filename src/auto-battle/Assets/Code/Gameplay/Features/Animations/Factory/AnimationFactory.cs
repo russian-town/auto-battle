@@ -19,7 +19,7 @@ namespace Code.Gameplay.Features.Animations.Factory
                 .AddAnimationHash(Animator.StringToHash(setup.Name))
                 .AddCurrentFrame(0)
                 .AddNormalizeTime(0)
-                .AddSpeed(setup.Speed)
+                .AddAnimationSpeed(setup.AnimationSpeed)
                 .AddLastFrame(setup.LastFrame)
                 .With(x => x.isAnimation = true)
                 .AddProducerId(producerId)

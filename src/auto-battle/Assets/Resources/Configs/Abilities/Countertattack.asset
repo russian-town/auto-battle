@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: Countertattack
   m_EditorClassIdentifier: 
   Chance: 0.3
+  AnimatorController: {fileID: 0}
   ManaCost: 1
   AbilityTypeId: 2
-  EffectSetups: []
-  StatusSetups: []
+  AnimationSetups:
+  - Name: Conterattack
+    LastFrame: 0
+    AnimationSpeed: 0
+    AnimationEventConfigs:
+    - {fileID: 11400000, guid: 85c71b771401a8146858e864d01abd05, type: 2}

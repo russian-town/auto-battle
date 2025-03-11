@@ -8,7 +8,9 @@ namespace Code.Gameplay.Features.CharacterStats
         public StatsFeature(ISystemFactory systems)
         {
             Add(systems.Create<StatChangeSystem>());
+            
             Add(systems.Create<ApplyDamageFromStats>());
+            Add(systems.Create<ApplyAgilityFromStats>());
         }
     }
 }

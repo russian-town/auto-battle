@@ -16,7 +16,7 @@ namespace Code.Gameplay.Features.Cooldown.Systems
             
             _cooldawnables = game.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.Cooldownable,
+                    GameMatcher.Cooldown,
                     GameMatcher.CooldownLeft
                     )
                 .NoneOf(GameMatcher.CooldownUp));

@@ -16,7 +16,14 @@ MonoBehaviour:
   AnimatorController: {fileID: 9100000, guid: 22243e5b2a352b44ea5b84bbc88cac08, type: 2}
   ManaCost: 1
   AbilityTypeId: 5
-  MotionConfigs:
-  - {fileID: 11400000, guid: 116aa5083c390994c9f049ca3aeea9de, type: 2}
-  - {fileID: 11400000, guid: 5bd1b5a7bb829a04e9cffea5e0959321, type: 2}
-  - {fileID: 11400000, guid: 5bd1b5a7bb829a04e9cffea5e0959321, type: 2}
+  AnimationSetups:
+  - Name: DoubleStrike_1
+    LastFrame: 36
+    AnimationSpeed: 2
+    AnimationEventConfigs:
+    - {fileID: 11400000, guid: 3726342b14b672d4a8e850d8e731f1d1, type: 2}
+  - Name: DoubleStrike_2
+    LastFrame: 36
+    AnimationSpeed: 2
+    AnimationEventConfigs:
+    - {fileID: 11400000, guid: 3726342b14b672d4a8e850d8e731f1d1, type: 2}

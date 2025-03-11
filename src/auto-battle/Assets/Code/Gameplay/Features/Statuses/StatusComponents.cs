@@ -10,7 +10,6 @@ namespace Code.Gameplay.Features.Statuses
     [Game] public class BlockStatus : IComponent { }
     [Game] public class DodgeStatus : IComponent { }
     
-    [Game] public class StatusEffectValue : IComponent { public int Value; }
     [Game] public class ApplierStatusLink : IComponent { [EntityIndex] public int Value; }
     
     [Game] public class Applied : IComponent { }

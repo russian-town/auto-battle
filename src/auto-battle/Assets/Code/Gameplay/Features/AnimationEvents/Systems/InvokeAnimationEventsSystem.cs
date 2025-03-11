@@ -13,14 +13,14 @@ namespace Code.Gameplay.Features.AnimationEvents.Systems
         {
             _animationEvents = game.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.AnimationLinkedId,
+                    GameMatcher.ProducerId,
                     GameMatcher.TargetFrame
                     )
                 .NoneOf(GameMatcher.Invoked));
             
             _linkedAnimations = game.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.Id,
+                    GameMatcher.ProducerId,
                     GameMatcher.CurrentFrame
                     ));
         }
@@ -30,7 +30,7 @@ namespace Code.Gameplay.Features.AnimationEvents.Systems
             foreach (var animationEvent in _animationEvents.GetEntities(_buffer))
             foreach (var linkedAnimation in _linkedAnimations)
             {
-                if(linkedAnimation.Id != animationEvent.AnimationLinkedId)
+                if(linkedAnimation.ProducerId != animationEvent.ProducerId)
                     continue;
 
                 if (linkedAnimation.CurrentFrame >= animationEvent.TargetFrame)

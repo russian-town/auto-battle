@@ -13,7 +13,6 @@ namespace Code.Gameplay.Features.Fighter.Configs
         public EntityBehaviour View;
         public List<StatsSetup> StatsSetups;
         public List<AbilityConfig> BaseAbilities;
-        public float Speed = 3f;
 
         public Dictionary<Stats, float> GetStats()
         {

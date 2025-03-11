@@ -13,5 +13,6 @@ namespace Code.Gameplay.Features.Abilities.Configs
         public int ManaCost;
         public AbilityTypeId AbilityTypeId;
         public List<AnimationSetup> AnimationSetups;
+        public float Cooldown;
     }
 }

@@ -19,6 +19,6 @@ MonoBehaviour:
     AnimationSetup:
       Name: Hit
       LastFrame: 24
-      Speed: 2
+      AnimationSpeed: 2
       AnimationEventConfigs: []
   StatusSetups: []

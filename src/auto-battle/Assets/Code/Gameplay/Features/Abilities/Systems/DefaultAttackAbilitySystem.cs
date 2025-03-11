@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Animations.Factory;
 using Code.Gameplay.Features.AnimationsQueue.Factory;
 using Entitas;
 
@@ -21,9 +20,13 @@ namespace Code.Gameplay.Features.Abilities.Systems
                         GameMatcher.AnimationSetups,
                         GameMatcher.Id,
                         GameMatcher.ProducerId,
-                        GameMatcher.TargetId
+                        GameMatcher.TargetId,
+                        GameMatcher.CooldownUp
                     )
-                    .NoneOf(GameMatcher.Active));
+                    .NoneOf(
+                        GameMatcher.Active,
+                        GameMatcher.Completed
+                        ));
         }
 
         public void Execute()
@@ -33,7 +36,7 @@ namespace Code.Gameplay.Features.Abilities.Systems
                 _animationsQueueFactory.CreateAnimationQueue(
                     ability.AnimationSetups,
                     ability.ProducerId,
-                    ability.TargetId);
+                    ability.TargetId).AddParentAbilityId(ability.Id);
                 
                 ability.isActive = true;
             }

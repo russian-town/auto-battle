@@ -6,6 +6,7 @@ namespace Code.Gameplay.Features.Effect.System
     public class ProcessPushEffectSystem : IExecuteSystem
     {
         private readonly IGroup<GameEntity> _effects;
+        private readonly IGroup<GameEntity> _producers;
         private readonly IGroup<GameEntity> _targets;
         private readonly List<GameEntity> _buffer = new(64);
 
@@ -19,7 +20,13 @@ namespace Code.Gameplay.Features.Effect.System
                         GameMatcher.ProducerId
                     )
                     .NoneOf(GameMatcher.Processed));
-            
+
+            _producers = game.GetGroup(GameMatcher
+                    .AllOf(
+                        GameMatcher.Id,
+                        GameMatcher.Damage
+                    ));
+
             _targets = game.GetGroup(GameMatcher
                     .AllOf(
                         GameMatcher.Fighter,
@@ -32,15 +39,25 @@ namespace Code.Gameplay.Features.Effect.System
         public void Execute()
         {
             foreach (var effect in _effects.GetEntities(_buffer))
-            foreach (var target in _targets)
+            foreach (var producer in _producers)
             {
-                if(target.Id != effect.TargetId)
+                if (effect.ProducerId != producer.Id)
                     continue;
-                
-                //TODO: CreateDamageEventByTarget
-                target.ReplaceCurrentHealth(target.CurrentHealth - effect.EffectValue);
+
+                foreach (var target in _targets)
+                {
+                    if (target.Id != effect.TargetId)
+                        continue;
+
+                    target.ReplaceCurrentHealth(
+                        target.CurrentHealth - AffectedDamage(producer, effect) * (1 - target.Agility));
+                }
+
                 effect.isProcessed = true;
             }
         }
+
+        private static float AffectedDamage(GameEntity producer, GameEntity effect) =>
+            producer.Damage * effect.EffectValue;
     }
 }

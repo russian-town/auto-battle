@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherCooldownable;
+    static Entitas.IMatcher<GameEntity> _matcherMovementSpeed;
 
-    public static Entitas.IMatcher<GameEntity> Cooldownable {
+    public static Entitas.IMatcher<GameEntity> MovementSpeed {
         get {
-            if (_matcherCooldownable == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Cooldownable);
+            if (_matcherMovementSpeed == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.MovementSpeed);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherCooldownable = matcher;
+                _matcherMovementSpeed = matcher;
             }
 
-            return _matcherCooldownable;
+            return _matcherMovementSpeed;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Cooldown.Cooldownable cooldownableComponent = new Code.Gameplay.Features.Cooldown.Cooldownable();
+    static readonly Code.Gameplay.Features.Movement.MovementSpeed movementSpeedComponent = new Code.Gameplay.Features.Movement.MovementSpeed();
 
-    public bool isCooldownable {
-        get { return HasComponent(GameComponentsLookup.Cooldownable); }
+    public bool isMovementSpeed {
+        get { return HasComponent(GameComponentsLookup.MovementSpeed); }
         set {
-            if (value != isCooldownable) {
-                var index = GameComponentsLookup.Cooldownable;
+            if (value != isMovementSpeed) {
+                var index = GameComponentsLookup.MovementSpeed;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : cooldownableComponent;
+                            : movementSpeedComponent;
 
                     AddComponent(index, component);
                 } else {

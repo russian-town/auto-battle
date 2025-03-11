@@ -28,6 +28,9 @@ namespace Code.Gameplay.Features.Abilities.Factory
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
                 .AddManaCost(config.ManaCost)
+                .With(x => x.AddCooldown(config.Cooldown), when: config.Cooldown > 0)
+                .With(x => x.AddCooldownLeft(0), when: config.Cooldown > 0)
+                .With(x => x.isCooldownUp = true, when: config.Cooldown == 0)
                 .With(x => x.AddAnimationSetups(config.AnimationSetups), when: !config.AnimationSetups.IsNullOrEmpty())
                 ;
             

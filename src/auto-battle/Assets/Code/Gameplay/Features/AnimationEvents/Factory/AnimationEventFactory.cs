@@ -6,10 +6,9 @@ namespace Code.Gameplay.Features.AnimationEvents.Factory
 {
     public class AnimationEventFactory : IAnimationEventFactory
     {
-        public GameEntity CreateAnimationEvent(AnimationEventConfig config, int animationLinkedId, int producerId, int targetId)
+        public GameEntity CreateAnimationEvent(AnimationEventConfig config, int producerId, int targetId)
         {
             return CreateEntity.Empty("AnimationEvent")
-                .AddAnimationLinkedId(animationLinkedId)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
                 .With(x => x.isAnimationEvent = true)

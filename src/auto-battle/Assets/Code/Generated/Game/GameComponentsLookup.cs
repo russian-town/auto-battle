@@ -19,71 +19,71 @@ public static class GameComponentsLookup {
     public const int Id = 8;
     public const int Name = 9;
     public const int Parent = 10;
-    public const int Speed = 11;
-    public const int Transform = 12;
-    public const int WorldPosition = 13;
-    public const int WorldRotation = 14;
-    public const int Ability = 15;
-    public const int AbilityTypeId = 16;
-    public const int AnimationSetups = 17;
-    public const int BlockAbility = 18;
-    public const int CounterattackAbility = 19;
-    public const int DefaultAttackAbility = 20;
-    public const int DodgeAbility = 21;
-    public const int DoubleStrikeAbility = 22;
-    public const int EffectSetups = 23;
-    public const int ManaCost = 24;
-    public const int ParentAbilityId = 25;
-    public const int StatusSetups = 26;
-    public const int AnimationEvent = 27;
-    public const int Invoked = 28;
-    public const int TargetFrame = 29;
-    public const int Animation = 30;
-    public const int AnimationEventConfigs = 31;
-    public const int AnimationHash = 32;
-    public const int AnimationLinkedId = 33;
-    public const int Completed = 34;
-    public const int CurrentFrame = 35;
-    public const int LastFrame = 36;
-    public const int NormalizeTime = 37;
-    public const int AnimationsQueue = 38;
-    public const int Empty = 39;
-    public const int MoveNext = 40;
-    public const int QueueLinkedAnimationId = 41;
-    public const int Analgesic = 42;
-    public const int Buff = 43;
-    public const int Vitamins = 44;
-    public const int BaseStats = 45;
-    public const int StatChange = 46;
-    public const int StatsModifiers = 47;
-    public const int Cooldown = 48;
-    public const int Cooldownable = 49;
-    public const int CooldownLeft = 50;
-    public const int CooldownUp = 51;
-    public const int AnimationSetup = 52;
-    public const int DamageEffect = 53;
-    public const int Effect = 54;
-    public const int EffectValue = 55;
-    public const int EffectWindow = 56;
-    public const int HealEffect = 57;
-    public const int Processed = 58;
-    public const int ProducerId = 59;
-    public const int PushEffect = 60;
-    public const int TargetId = 61;
-    public const int BaseAbilities = 62;
-    public const int Damage = 63;
-    public const int Defence = 64;
-    public const int FighterAnimator = 65;
-    public const int Fighter = 66;
-    public const int Mana = 67;
-    public const int Offensive = 68;
-    public const int StartPointPosition = 69;
-    public const int FighterHealthBar = 70;
-    public const int CurrentHealth = 71;
-    public const int Dead = 72;
-    public const int MaxHealth = 73;
-    public const int ProcessingDeath = 74;
-    public const int HasContainer = 75;
+    public const int Transform = 11;
+    public const int WorldPosition = 12;
+    public const int WorldRotation = 13;
+    public const int Ability = 14;
+    public const int AbilityTypeId = 15;
+    public const int AnimationSetups = 16;
+    public const int BlockAbility = 17;
+    public const int CounterattackAbility = 18;
+    public const int DefaultAttackAbility = 19;
+    public const int DodgeAbility = 20;
+    public const int DoubleStrikeAbility = 21;
+    public const int EffectSetups = 22;
+    public const int ManaCost = 23;
+    public const int ParentAbilityId = 24;
+    public const int StatusSetups = 25;
+    public const int AnimationEvent = 26;
+    public const int Invoked = 27;
+    public const int TargetFrame = 28;
+    public const int Animation = 29;
+    public const int AnimationEventConfigs = 30;
+    public const int AnimationHash = 31;
+    public const int AnimationSpeed = 32;
+    public const int Completed = 33;
+    public const int CurrentFrame = 34;
+    public const int LastFrame = 35;
+    public const int NormalizeTime = 36;
+    public const int AnimationsQueue = 37;
+    public const int Empty = 38;
+    public const int MoveNext = 39;
+    public const int QueueLinkedAnimationId = 40;
+    public const int Analgesic = 41;
+    public const int Buff = 42;
+    public const int Vitamins = 43;
+    public const int BaseStats = 44;
+    public const int StatChange = 45;
+    public const int StatsModifiers = 46;
+    public const int Cooldown = 47;
+    public const int CooldownLeft = 48;
+    public const int CooldownUp = 49;
+    public const int AnimationSetup = 50;
+    public const int DamageEffect = 51;
+    public const int Effect = 52;
+    public const int EffectValue = 53;
+    public const int EffectWindow = 54;
+    public const int HealEffect = 55;
+    public const int Processed = 56;
+    public const int ProducerId = 57;
+    public const int PushEffect = 58;
+    public const int TargetId = 59;
+    public const int Agility = 60;
+    public const int BaseAbilities = 61;
+    public const int Damage = 62;
+    public const int Defence = 63;
+    public const int FighterAnimator = 64;
+    public const int Fighter = 65;
+    public const int Mana = 66;
+    public const int Offensive = 67;
+    public const int StartPointPosition = 68;
+    public const int FighterHealthBar = 69;
+    public const int CurrentHealth = 70;
+    public const int Dead = 71;
+    public const int MaxHealth = 72;
+    public const int ProcessingDeath = 73;
+    public const int HasContainer = 74;
+    public const int MovementSpeed = 75;
     public const int Affected = 76;
     public const int Applied = 77;
     public const int ApplierStatusLink = 78;
@@ -91,11 +91,10 @@ public static class GameComponentsLookup {
     public const int DodgeStatus = 80;
     public const int PoisonStatus = 81;
     public const int Status = 82;
-    public const int StatusEffectValue = 83;
-    public const int StunStatus = 84;
-    public const int Unapplied = 85;
+    public const int StunStatus = 83;
+    public const int Unapplied = 84;
 
-    public const int TotalComponents = 86;
+    public const int TotalComponents = 85;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -109,7 +108,6 @@ public static class GameComponentsLookup {
         "Id",
         "Name",
         "Parent",
-        "Speed",
         "Transform",
         "WorldPosition",
         "WorldRotation",
@@ -131,7 +129,7 @@ public static class GameComponentsLookup {
         "Animation",
         "AnimationEventConfigs",
         "AnimationHash",
-        "AnimationLinkedId",
+        "AnimationSpeed",
         "Completed",
         "CurrentFrame",
         "LastFrame",
@@ -147,7 +145,6 @@ public static class GameComponentsLookup {
         "StatChange",
         "StatsModifiers",
         "Cooldown",
-        "Cooldownable",
         "CooldownLeft",
         "CooldownUp",
         "AnimationSetup",
@@ -160,6 +157,7 @@ public static class GameComponentsLookup {
         "ProducerId",
         "PushEffect",
         "TargetId",
+        "Agility",
         "BaseAbilities",
         "Damage",
         "Defence",
@@ -174,6 +172,7 @@ public static class GameComponentsLookup {
         "MaxHealth",
         "ProcessingDeath",
         "HasContainer",
+        "MovementSpeed",
         "Affected",
         "Applied",
         "ApplierStatusLink",
@@ -181,7 +180,6 @@ public static class GameComponentsLookup {
         "DodgeStatus",
         "PoisonStatus",
         "Status",
-        "StatusEffectValue",
         "StunStatus",
         "Unapplied"
     };
@@ -198,7 +196,6 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.CommonComponents.Id),
         typeof(Code.Gameplay.Common.CommonComponents.Name),
         typeof(Code.Gameplay.Common.CommonComponents.Parent),
-        typeof(Code.Gameplay.Common.CommonComponents.Speed),
         typeof(Code.Gameplay.Common.CommonComponents.TransformComponent),
         typeof(Code.Gameplay.Common.CommonComponents.WorldPosition),
         typeof(Code.Gameplay.Common.CommonComponents.WorldRotation),
@@ -220,7 +217,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Animations.Animation),
         typeof(Code.Gameplay.Features.Animations.AnimationEventConfigs),
         typeof(Code.Gameplay.Features.Animations.AnimationHash),
-        typeof(Code.Gameplay.Features.Animations.AnimationLinkedId),
+        typeof(Code.Gameplay.Features.Animations.AnimationSpeed),
         typeof(Code.Gameplay.Features.Animations.Completed),
         typeof(Code.Gameplay.Features.Animations.CurrentFrame),
         typeof(Code.Gameplay.Features.Animations.LastFrame),
@@ -236,7 +233,6 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.CharacterStats.StatChange),
         typeof(Code.Gameplay.Features.CharacterStats.StatsModifiers),
         typeof(Code.Gameplay.Features.Cooldown.Cooldown),
-        typeof(Code.Gameplay.Features.Cooldown.Cooldownable),
         typeof(Code.Gameplay.Features.Cooldown.CooldownLeft),
         typeof(Code.Gameplay.Features.Cooldown.CooldownUp),
         typeof(Code.Gameplay.Features.Effect.AnimationSetupComponent),
@@ -249,6 +245,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Effect.ProducerId),
         typeof(Code.Gameplay.Features.Effect.PushEffect),
         typeof(Code.Gameplay.Features.Effect.TargetId),
+        typeof(Code.Gameplay.Features.Fighter.Agility),
         typeof(Code.Gameplay.Features.Fighter.BaseAbilities),
         typeof(Code.Gameplay.Features.Fighter.Damage),
         typeof(Code.Gameplay.Features.Fighter.Defence),
@@ -263,6 +260,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Lifetime.MaxHealth),
         typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
         typeof(Code.Gameplay.Features.Movement.HasContainer),
+        typeof(Code.Gameplay.Features.Movement.MovementSpeed),
         typeof(Code.Gameplay.Features.Statuses.Affected),
         typeof(Code.Gameplay.Features.Statuses.Applied),
         typeof(Code.Gameplay.Features.Statuses.ApplierStatusLink),
@@ -270,7 +268,6 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Statuses.DodgeStatus),
         typeof(Code.Gameplay.Features.Statuses.PoisonStatus),
         typeof(Code.Gameplay.Features.Statuses.Status),
-        typeof(Code.Gameplay.Features.Statuses.StatusEffectValue),
         typeof(Code.Gameplay.Features.Statuses.StunStatus),
         typeof(Code.Gameplay.Features.Statuses.Unapplied)
     };

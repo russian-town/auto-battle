@@ -31,7 +31,8 @@ namespace Code.Gameplay.Features.Effect.System
                     .AllOf(
                         GameMatcher.Id,
                         GameMatcher.CurrentHealth,
-                        GameMatcher.FighterAnimator
+                        GameMatcher.FighterAnimator,
+                        GameMatcher.Agility
                     ));
         }
 
@@ -48,7 +49,7 @@ namespace Code.Gameplay.Features.Effect.System
                     if(target.Id != effect.TargetId)
                         continue;
                     
-                    target.ReplaceCurrentHealth(target.CurrentHealth - AffectedDamage(producer, effect));
+                    target.ReplaceCurrentHealth(target.CurrentHealth - AffectedDamage(producer, effect)  * (1 - target.Agility));
                 }
                 
                 effect.isProcessed = true;

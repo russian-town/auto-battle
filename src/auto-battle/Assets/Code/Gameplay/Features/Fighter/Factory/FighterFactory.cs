@@ -30,6 +30,7 @@ namespace Code.Gameplay.Features.Fighter.Factory
                     .AddWorldPosition(at)
                     .AddWorldRotation(rotation)
                     .AddDamage(statByType[Stats.Damage])
+                    .AddAgility(statByType[Stats.Agility])
                     .AddCurrentHealth(statByType[Stats.MaxHealth])
                     .AddMaxHealth(statByType[Stats.MaxHealth])
                     .AddMana(0)

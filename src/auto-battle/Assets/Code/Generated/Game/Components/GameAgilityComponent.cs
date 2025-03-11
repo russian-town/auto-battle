@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherSpeed;
+    static Entitas.IMatcher<GameEntity> _matcherAgility;
 
-    public static Entitas.IMatcher<GameEntity> Speed {
+    public static Entitas.IMatcher<GameEntity> Agility {
         get {
-            if (_matcherSpeed == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Speed);
+            if (_matcherAgility == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Agility);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherSpeed = matcher;
+                _matcherAgility = matcher;
             }
 
-            return _matcherSpeed;
+            return _matcherAgility;
         }
     }
 }
@@ -33,28 +33,28 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Common.CommonComponents.Speed speed { get { return (Code.Gameplay.Common.CommonComponents.Speed)GetComponent(GameComponentsLookup.Speed); } }
-    public float Speed { get { return speed.Value; } }
-    public bool hasSpeed { get { return HasComponent(GameComponentsLookup.Speed); } }
+    public Code.Gameplay.Features.Fighter.Agility agility { get { return (Code.Gameplay.Features.Fighter.Agility)GetComponent(GameComponentsLookup.Agility); } }
+    public float Agility { get { return agility.Value; } }
+    public bool hasAgility { get { return HasComponent(GameComponentsLookup.Agility); } }
 
-    public GameEntity AddSpeed(float newValue) {
-        var index = GameComponentsLookup.Speed;
-        var component = (Code.Gameplay.Common.CommonComponents.Speed)CreateComponent(index, typeof(Code.Gameplay.Common.CommonComponents.Speed));
+    public GameEntity AddAgility(float newValue) {
+        var index = GameComponentsLookup.Agility;
+        var component = (Code.Gameplay.Features.Fighter.Agility)CreateComponent(index, typeof(Code.Gameplay.Features.Fighter.Agility));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceSpeed(float newValue) {
-        var index = GameComponentsLookup.Speed;
-        var component = (Code.Gameplay.Common.CommonComponents.Speed)CreateComponent(index, typeof(Code.Gameplay.Common.CommonComponents.Speed));
+    public GameEntity ReplaceAgility(float newValue) {
+        var index = GameComponentsLookup.Agility;
+        var component = (Code.Gameplay.Features.Fighter.Agility)CreateComponent(index, typeof(Code.Gameplay.Features.Fighter.Agility));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
     }
 
-    public GameEntity RemoveSpeed() {
-        RemoveComponent(GameComponentsLookup.Speed);
+    public GameEntity RemoveAgility() {
+        RemoveComponent(GameComponentsLookup.Agility);
         return this;
     }
 }

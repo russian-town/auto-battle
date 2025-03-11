@@ -16,7 +16,7 @@ namespace Code.Gameplay.Features.Statuses.Factory
         {
             var status = CreateEntity.Empty($"{setup.TypeId.ToString()} status")
                 .AddId(_identifiers.Next())
-                .AddStatusEffectValue(setup.Value)
+                .AddEffectValue(setup.Value)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
                 .With(x => x.isStatus = true)

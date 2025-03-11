@@ -33,8 +33,7 @@ namespace Code.Gameplay.Features.Animations.Systems
                 {
                     _animationEventFactory.CreateAnimationEvent(
                         animationEventSetup,
-                        animation.Id,
-                        animation.ProducerId, 
+                        animation.ProducerId,
                         animation.TargetId);
                 }
 

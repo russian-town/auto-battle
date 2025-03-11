@@ -16,7 +16,7 @@ namespace Code.Gameplay.Features.Animations.Systems
             _animations = game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Animation,
-                    GameMatcher.Speed,
+                    GameMatcher.AnimationSpeed,
                     GameMatcher.NormalizeTime
                     ));
         }
@@ -28,6 +28,6 @@ namespace Code.Gameplay.Features.Animations.Systems
         }
 
         private float GetClampedNormalizeTime(GameEntity animation) =>
-            Mathf.Clamp01(animation.NormalizeTime + _time.DeltaTime * animation.Speed);
+            Mathf.Clamp01(animation.NormalizeTime + _time.DeltaTime * animation.AnimationSpeed);
     }
 }
