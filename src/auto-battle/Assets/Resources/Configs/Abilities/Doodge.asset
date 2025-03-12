@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab6c6ff62cf47fa8138d44e0c9cbef0, type: 3}
   m_Name: Doodge
   m_EditorClassIdentifier: 
-  Chance: 0.5
+  Chance: 0.434
   AnimatorController: {fileID: 0}
   ManaCost: 1
   AbilityTypeId: 4
@@ -22,3 +22,6 @@ MonoBehaviour:
     AnimationSpeed: 2
     AnimationEventConfigs:
     - {fileID: 11400000, guid: 0faeeabfeef642a4baf08afc797dac6e, type: 2}
+  Cooldown: 0
+  Lifetime: 1
+  AttackTypeId: 0

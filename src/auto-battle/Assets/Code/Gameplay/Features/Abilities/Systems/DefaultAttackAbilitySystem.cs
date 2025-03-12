@@ -18,7 +18,6 @@ namespace Code.Gameplay.Features.Abilities.Systems
                     .AllOf(
                         GameMatcher.DefaultAttackAbility,
                         GameMatcher.AnimationSetups,
-                        GameMatcher.Id,
                         GameMatcher.ProducerId,
                         GameMatcher.TargetId,
                         GameMatcher.CooldownUp
@@ -36,9 +35,7 @@ namespace Code.Gameplay.Features.Abilities.Systems
                 _animationsQueueFactory.CreateAnimationQueue(
                     ability.AnimationSetups,
                     ability.ProducerId,
-                    ability.TargetId,
-                    ability.Id
-                    );
+                    ability.TargetId);
                 
                 ability.isActive = true;
             }

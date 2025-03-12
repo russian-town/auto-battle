@@ -5,6 +5,7 @@ namespace Code.Gameplay.Features.Abilities.Services
 {
     public interface IAbilityRandomService
     {
-        AbilityConfig GetRandomAbility(IEnumerable<AbilityConfig> configs);
+        AbilityConfig GetOffensiveAbility(IEnumerable<AbilityConfig> configs);
+        bool TryGetDefenceAbility(IEnumerable<AbilityConfig> configs, out AbilityConfig ability);
     }
 }

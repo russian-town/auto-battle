@@ -19,7 +19,6 @@ namespace Code.Gameplay.Features.Abilities.Systems
                 .AllOf(
                     GameMatcher.Ability,
                     GameMatcher.DodgeAbility,
-                    GameMatcher.Id,
                     GameMatcher.ProducerId,
                     GameMatcher.TargetId
                 )
@@ -44,8 +43,7 @@ namespace Code.Gameplay.Features.Abilities.Systems
                 _animationsQueueFactory.CreateAnimationQueue(
                     ability.AnimationSetups,
                     ability.ProducerId,
-                    ability.TargetId,
-                    ability.Id);
+                    ability.TargetId);
                 
                 ability.isActive = true;
             }

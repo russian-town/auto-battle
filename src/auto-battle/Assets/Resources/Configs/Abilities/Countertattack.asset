@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab6c6ff62cf47fa8138d44e0c9cbef0, type: 3}
   m_Name: Countertattack
   m_EditorClassIdentifier: 
-  Chance: 0.3
+  Chance: 0.586
   AnimatorController: {fileID: 0}
   ManaCost: 1
   AbilityTypeId: 2
   AnimationSetups:
   - Name: Conterattack
-    LastFrame: 0
-    AnimationSpeed: 0
+    LastFrame: 30
+    AnimationSpeed: 2
     AnimationEventConfigs:
-    - {fileID: 11400000, guid: 85c71b771401a8146858e864d01abd05, type: 2}
+    - {fileID: 11400000, guid: 218f81b5bc0ace2459968beae843b42c, type: 2}
+  Cooldown: 0
+  Lifetime: 1
+  AttackTypeId: 0

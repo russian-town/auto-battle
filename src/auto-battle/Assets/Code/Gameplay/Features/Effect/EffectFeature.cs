@@ -19,7 +19,7 @@ namespace Code.Gameplay.Features.Effect
             
             Add(systems.Create<InterruptAbilitiesByCounterattackSystem>());
             
-            //Add(systems.Create<CleanupProcessedEffectsSystem>());
+            Add(systems.Create<CleanupProcessedEffectsSystem>());
         }
     }
 }

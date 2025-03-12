@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: Counterattack
   m_EditorClassIdentifier: 
   TargetFrame: 7
-  EffectSetups: []
-  StatusSetups:
-  - TypeId: 3
-    Value: 0
-    Lifetime: 1
+  EffectSetups:
+  - EffectValue: 0.15
+    EffectTypeId: 3
+    AnimationSetup:
+      Name: Knockdown
+      LastFrame: 49
+      AnimationSpeed: 2
+      AnimationEventConfigs: []
+  StatusSetups: []

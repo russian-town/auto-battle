@@ -5,6 +5,6 @@ namespace Code.Gameplay.Features.AnimationsQueue.Factory
 {
     public interface IAnimationsQueueFactory
     {
-        GameEntity CreateAnimationQueue(IEnumerable<AnimationSetup> animationSetups, int producerId, int targetId, int parentAbilityId);
+        GameEntity CreateAnimationQueue(IEnumerable<AnimationSetup> animationSetups, int producerId, int targetId);
     }
 }

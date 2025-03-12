@@ -45,9 +45,7 @@ namespace Code.Gameplay.Features.Abilities.Systems
                 _animationsQueueFactory.CreateAnimationQueue(
                     ability.AnimationSetups,
                     ability.ProducerId,
-                    ability.TargetId,
-                    ability.Id
-                    );
+                    ability.TargetId);
                 
                 ability.isActive = true;
             }

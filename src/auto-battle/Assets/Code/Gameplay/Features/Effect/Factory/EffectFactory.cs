@@ -20,7 +20,7 @@ namespace Code.Gameplay.Features.Effect.Factory
                 .AddEffectValue(setup.EffectValue)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
-                .AddAnimationSetup(setup.AnimationSetup)
+                .AddAnimationSetups(setup.AnimationSetups)
                 ;
 
             switch (setup.EffectTypeId)

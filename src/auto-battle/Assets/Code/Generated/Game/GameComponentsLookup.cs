@@ -59,25 +59,25 @@ public static class GameComponentsLookup {
     public const int Cooldown = 48;
     public const int CooldownLeft = 49;
     public const int CooldownUp = 50;
-    public const int AnimationSetup = 51;
-    public const int DamageEffect = 52;
-    public const int Effect = 53;
-    public const int EffectValue = 54;
-    public const int EffectWindow = 55;
-    public const int HealEffect = 56;
-    public const int Processed = 57;
-    public const int ProducerId = 58;
-    public const int PushEffect = 59;
-    public const int TargetId = 60;
-    public const int Agility = 61;
-    public const int BaseAbilities = 62;
-    public const int Damage = 63;
-    public const int Defence = 64;
-    public const int FighterAnimator = 65;
-    public const int Fighter = 66;
-    public const int Mana = 67;
-    public const int Offensive = 68;
-    public const int StartPointPosition = 69;
+    public const int DamageEffect = 51;
+    public const int Effect = 52;
+    public const int EffectValue = 53;
+    public const int EffectWindow = 54;
+    public const int HealEffect = 55;
+    public const int Processed = 56;
+    public const int ProducerId = 57;
+    public const int PushEffect = 58;
+    public const int TargetId = 59;
+    public const int Agility = 60;
+    public const int BaseAbilities = 61;
+    public const int Damage = 62;
+    public const int Defence = 63;
+    public const int FighterAnimator = 64;
+    public const int Fighter = 65;
+    public const int Mana = 66;
+    public const int Offensive = 67;
+    public const int StartPointPosition = 68;
+    public const int TurnCompleted = 69;
     public const int FighterHealthBar = 70;
     public const int CurrentHealth = 71;
     public const int Dead = 72;
@@ -149,7 +149,6 @@ public static class GameComponentsLookup {
         "Cooldown",
         "CooldownLeft",
         "CooldownUp",
-        "AnimationSetup",
         "DamageEffect",
         "Effect",
         "EffectValue",
@@ -168,6 +167,7 @@ public static class GameComponentsLookup {
         "Mana",
         "Offensive",
         "StartPointPosition",
+        "TurnCompleted",
         "FighterHealthBar",
         "CurrentHealth",
         "Dead",
@@ -238,7 +238,6 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Cooldown.Cooldown),
         typeof(Code.Gameplay.Features.Cooldown.CooldownLeft),
         typeof(Code.Gameplay.Features.Cooldown.CooldownUp),
-        typeof(Code.Gameplay.Features.Effect.AnimationSetupComponent),
         typeof(Code.Gameplay.Features.Effect.DamageEffect),
         typeof(Code.Gameplay.Features.Effect.Effect),
         typeof(Code.Gameplay.Features.Effect.EffectValue),
@@ -257,6 +256,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Fighter.Mana),
         typeof(Code.Gameplay.Features.Fighter.Offensive),
         typeof(Code.Gameplay.Features.Fighter.StartPointPosition),
+        typeof(Code.Gameplay.Features.Fighter.TurnCompleted),
         typeof(Code.Gameplay.Features.HealthBar.FighterHealthBarComponent),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHealth),
         typeof(Code.Gameplay.Features.Lifetime.Dead),

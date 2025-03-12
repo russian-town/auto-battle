@@ -15,4 +15,5 @@ namespace Code.Gameplay.Features.Fighter
     [Game] public class Mana : IComponent { public int Value; }
     [Game] public class Offensive : IComponent { }
     [Game] public class Defence : IComponent { }
+    [Game] public class TurnCompleted : IComponent { }
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Chance: 1
   AnimatorController: {fileID: 9100000, guid: 22243e5b2a352b44ea5b84bbc88cac08, type: 2}
-  ManaCost: 3
+  ManaCost: 1
   AbilityTypeId: 1
   AnimationSetups:
   - Name: DefaultAttack
@@ -22,13 +22,6 @@ MonoBehaviour:
     AnimationSpeed: 2
     AnimationEventConfigs:
     - {fileID: 11400000, guid: ee306ca40d774064e8a71bf1df6b8b14, type: 2}
-  - Name: DefaultAttack
-    LastFrame: 24
-    AnimationSpeed: 2
-    AnimationEventConfigs:
-    - {fileID: 11400000, guid: ee306ca40d774064e8a71bf1df6b8b14, type: 2}
-  - Name: DefaultAttack
-    LastFrame: 24
-    AnimationSpeed: 2
-    AnimationEventConfigs:
-    - {fileID: 11400000, guid: ee306ca40d774064e8a71bf1df6b8b14, type: 2}
+  Cooldown: 0
+  Lifetime: 1
+  AttackTypeId: 0

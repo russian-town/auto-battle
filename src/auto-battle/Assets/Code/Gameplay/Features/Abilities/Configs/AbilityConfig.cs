@@ -15,5 +15,6 @@ namespace Code.Gameplay.Features.Abilities.Configs
         public List<AnimationSetup> AnimationSetups;
         public float Cooldown;
         public int Lifetime;
+        public AttackTypeId AttackTypeId;
     }
 }

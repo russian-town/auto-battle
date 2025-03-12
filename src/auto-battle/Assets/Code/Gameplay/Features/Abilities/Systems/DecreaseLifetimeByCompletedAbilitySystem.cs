@@ -6,6 +6,7 @@ namespace Code.Gameplay.Features.Abilities.Systems
     public class DecreaseLifetimeByCompletedAbilitySystem : IExecuteSystem
     {
         private readonly IGroup<GameEntity> _abilities;
+        private readonly IGroup<GameEntity> _animations;
         private readonly List<GameEntity> _buffer = new(16);
 
         public DecreaseLifetimeByCompletedAbilitySystem(GameContext game)
@@ -15,12 +16,17 @@ namespace Code.Gameplay.Features.Abilities.Systems
                 GameMatcher.Lifetime,
                 GameMatcher.Completed
                 ));
+            
+            _animations = game.GetGroup(GameMatcher.Animation);
         }
 
         public void Execute()
         {
             foreach (var ability in _abilities.GetEntities(_buffer))
             {
+                if(_animations.count > 0)
+                    continue;
+                
                 ability.ReplaceLifetime(ability.Lifetime - 1);
 
                 if (ability.Lifetime <= 0)

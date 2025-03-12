@@ -48,7 +48,7 @@ namespace Code.Gameplay.Features.Fighter.Systems
 
             hero.ReplaceMana(1);
             _abilityFactory.CreateAbility(AbilityTypeId.DefaultAttack, hero.Id, enemy.Id);
-            _abilityFactory.CreateAbility(AbilityTypeId.Dodge, enemy.Id, hero.Id);
+            _abilityFactory.CreateAbility(AbilityTypeId.Counterattack, enemy.Id, hero.Id);
         }
     }
 }
