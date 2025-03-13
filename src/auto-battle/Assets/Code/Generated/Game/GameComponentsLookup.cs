@@ -71,31 +71,28 @@ public static class GameComponentsLookup {
     public const int Agility = 60;
     public const int BaseAbilities = 61;
     public const int Damage = 62;
-    public const int Defence = 63;
-    public const int FighterAnimator = 64;
-    public const int Fighter = 65;
-    public const int Mana = 66;
-    public const int Offensive = 67;
-    public const int StartPointPosition = 68;
-    public const int TurnCompleted = 69;
-    public const int FighterHealthBar = 70;
-    public const int CurrentHealth = 71;
-    public const int Dead = 72;
-    public const int MaxHealth = 73;
-    public const int ProcessingDeath = 74;
-    public const int HasContainer = 75;
-    public const int MovementSpeed = 76;
-    public const int Affected = 77;
-    public const int Applied = 78;
-    public const int ApplierStatusLink = 79;
-    public const int BlockStatus = 80;
-    public const int DodgeStatus = 81;
-    public const int PoisonStatus = 82;
-    public const int Status = 83;
-    public const int StunStatus = 84;
-    public const int Unapplied = 85;
+    public const int FighterAnimator = 63;
+    public const int Fighter = 64;
+    public const int Mana = 65;
+    public const int StartPointPosition = 66;
+    public const int FighterHealthBar = 67;
+    public const int CurrentHealth = 68;
+    public const int Dead = 69;
+    public const int MaxHealth = 70;
+    public const int ProcessingDeath = 71;
+    public const int HasContainer = 72;
+    public const int MovementSpeed = 73;
+    public const int Affected = 74;
+    public const int Applied = 75;
+    public const int ApplierStatusLink = 76;
+    public const int BlockStatus = 77;
+    public const int DodgeStatus = 78;
+    public const int PoisonStatus = 79;
+    public const int Status = 80;
+    public const int StunStatus = 81;
+    public const int Unapplied = 82;
 
-    public const int TotalComponents = 86;
+    public const int TotalComponents = 83;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -161,13 +158,10 @@ public static class GameComponentsLookup {
         "Agility",
         "BaseAbilities",
         "Damage",
-        "Defence",
         "FighterAnimator",
         "Fighter",
         "Mana",
-        "Offensive",
         "StartPointPosition",
-        "TurnCompleted",
         "FighterHealthBar",
         "CurrentHealth",
         "Dead",
@@ -250,13 +244,10 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Fighter.Agility),
         typeof(Code.Gameplay.Features.Fighter.BaseAbilities),
         typeof(Code.Gameplay.Features.Fighter.Damage),
-        typeof(Code.Gameplay.Features.Fighter.Defence),
         typeof(Code.Gameplay.Features.Fighter.FighterAnimatorComponent),
         typeof(Code.Gameplay.Features.Fighter.FighterComponent),
         typeof(Code.Gameplay.Features.Fighter.Mana),
-        typeof(Code.Gameplay.Features.Fighter.Offensive),
         typeof(Code.Gameplay.Features.Fighter.StartPointPosition),
-        typeof(Code.Gameplay.Features.Fighter.TurnCompleted),
         typeof(Code.Gameplay.Features.HealthBar.FighterHealthBarComponent),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHealth),
         typeof(Code.Gameplay.Features.Lifetime.Dead),

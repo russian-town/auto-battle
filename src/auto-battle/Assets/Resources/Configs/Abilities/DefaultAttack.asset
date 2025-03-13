@@ -22,6 +22,6 @@ MonoBehaviour:
     AnimationSpeed: 2
     AnimationEventConfigs:
     - {fileID: 11400000, guid: ee306ca40d774064e8a71bf1df6b8b14, type: 2}
-  Cooldown: 0
+  Cooldown: 1
   Lifetime: 1
-  AttackTypeId: 0
+  AttackTypeId: 1

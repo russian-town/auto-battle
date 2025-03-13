@@ -24,4 +24,4 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 218f81b5bc0ace2459968beae843b42c, type: 2}
   Cooldown: 0
   Lifetime: 1
-  AttackTypeId: 0
+  AttackTypeId: 2

@@ -13,7 +13,8 @@ namespace Code.Gameplay.Features.Abilities
             Add(systems.Create<DodgeAbilitySystem>());
             Add(systems.Create<CounterAttackAbilitySystem>());
             
-            Add(systems.Create<DecreaseLifetimeByCompletedAbilitySystem>());
+            Add(systems.Create<MarkCompletedAbilitiesWithoutAnimationSystem>());
+            Add(systems.Create<TakeLifeWithLifetimeEntitiesSystem>());
             
             Add(systems.Create<CleanupDeadAbilitySystem>());
         }

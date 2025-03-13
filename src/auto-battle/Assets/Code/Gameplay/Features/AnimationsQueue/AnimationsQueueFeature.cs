@@ -8,7 +8,6 @@ namespace Code.Gameplay.Features.AnimationsQueue
         public AnimationsQueueFeature(ISystemFactory systems)
         {
             Add(systems.Create<MarkEmptyAnimationsQueueSystem>());
-            Add(systems.Create<MarkProducerTurnCompletedSystem>());
             
             Add(systems.Create<MoveNextAnimationsQueueSystem>());
             Add(systems.Create<CleanupEmptyAnimationsSystem>());

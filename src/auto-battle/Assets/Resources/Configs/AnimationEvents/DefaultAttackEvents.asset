@@ -16,9 +16,9 @@ MonoBehaviour:
   EffectSetups:
   - EffectValue: 1
     EffectTypeId: 1
-    AnimationSetup:
-      Name: Hit
-      LastFrame: 24
-      AnimationSpeed: 0.1
+    AnimationSetups:
+    - Name: Hit
+      LastFrame: 36
+      AnimationSpeed: 2
       AnimationEventConfigs: []
   StatusSetups: []

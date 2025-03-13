@@ -16,9 +16,13 @@ MonoBehaviour:
   EffectSetups:
   - EffectValue: 0.15
     EffectTypeId: 3
-    AnimationSetup:
-      Name: Knockdown
+    AnimationSetups:
+    - Name: Knockdown
       LastFrame: 49
       AnimationSpeed: 2
+      AnimationEventConfigs: []
+    - Name: Getup
+      LastFrame: 60
+      AnimationSpeed: 1
       AnimationEventConfigs: []
   StatusSetups: []

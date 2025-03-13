@@ -9,6 +9,8 @@ namespace Code.Gameplay.Features.Statuses
         {
             Add(systems.Create<ApplyBlockStatusSystem>());
             
+            Add(systems.Create<UnappliedStatusesWithoutLifetimeSystem>());
+            
             Add(systems.Create<CleanupUnappliedStatusLinkedChangesSystem>());
             Add(systems.Create<CleanupUnappliedStatusesSystem>());
         }

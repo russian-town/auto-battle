@@ -19,6 +19,7 @@ namespace Code.Gameplay.Features.Statuses.Factory
                 .AddEffectValue(setup.Value)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
+                .AddLifetime(setup.Lifetime)
                 .With(x => x.isStatus = true)
                 .With(x => x.isApplied = true);
 

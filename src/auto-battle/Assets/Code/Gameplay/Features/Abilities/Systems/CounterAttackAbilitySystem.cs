@@ -8,7 +8,6 @@ namespace Code.Gameplay.Features.Abilities.Systems
     {
         private readonly IAnimationsQueueFactory _animationsQueueFactory;
         private readonly IGroup<GameEntity> _abilities;
-        private readonly IGroup<GameEntity> _targetAbilities;
         private readonly List<GameEntity> _buffer = new(16);
 
         public CounterAttackAbilitySystem(GameContext game, IAnimationsQueueFactory animationsQueueFactory)
@@ -24,24 +23,12 @@ namespace Code.Gameplay.Features.Abilities.Systems
                     GameMatcher.TargetId
                 )
                 .NoneOf(GameMatcher.Active));
-            
-            _targetAbilities = game.GetGroup(GameMatcher
-                .AllOf(
-                    GameMatcher.DefaultAttackAbility,
-                    GameMatcher.Id,
-                    GameMatcher.ProducerId,
-                    GameMatcher.TargetId
-                ));
         }
 
         public void Execute()
         {
             foreach (var ability in _abilities.GetEntities(_buffer))
-            foreach (var targetAbility in _targetAbilities)
             {
-                if(targetAbility.ProducerId != ability.TargetId)
-                    continue;
-                
                 _animationsQueueFactory.CreateAnimationQueue(
                     ability.AnimationSetups,
                     ability.ProducerId,

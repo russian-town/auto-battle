@@ -19,9 +19,9 @@ MonoBehaviour:
   AnimationSetups:
   - Name: Block
     LastFrame: 18
-    AnimationSpeed: 3
+    AnimationSpeed: 2
     AnimationEventConfigs:
     - {fileID: 11400000, guid: 85c71b771401a8146858e864d01abd05, type: 2}
   Cooldown: 0
   Lifetime: 1
-  AttackTypeId: 0
+  AttackTypeId: 2

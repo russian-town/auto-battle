@@ -29,8 +29,7 @@ namespace Code.Gameplay.Features.Abilities.Systems
             _animationEvents = game.GetGroup(GameMatcher
                     .AllOf(
                         GameMatcher.AnimationEvent,
-                        GameMatcher.TargetId,
-                        GameMatcher.EffectSetups
+                        GameMatcher.TargetId
                     ));
         }
 
@@ -39,14 +38,14 @@ namespace Code.Gameplay.Features.Abilities.Systems
             foreach (var ability in _abilities.GetEntities(_buffer))
             foreach (var animationEvent in _animationEvents)
             {
-                if (ability.ProducerId != animationEvent.TargetId)
+                if(ability.ProducerId != animationEvent.TargetId)
                     continue;
-
+                
                 _animationsQueueFactory.CreateAnimationQueue(
                     ability.AnimationSetups,
                     ability.ProducerId,
                     ability.TargetId);
-                
+
                 ability.isActive = true;
             }
         }
