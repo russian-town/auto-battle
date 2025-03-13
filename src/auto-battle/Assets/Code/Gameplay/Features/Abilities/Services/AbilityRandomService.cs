@@ -15,7 +15,6 @@ namespace Code.Gameplay.Features.Abilities.Services
 
         public AbilityConfig GetOffensiveAbility(IEnumerable<AbilityConfig> configs)
         {
-            Cleanup();
             var chance = _random.Range(0f, 1f);
 
             _currentAbility = configs
@@ -37,7 +36,7 @@ namespace Code.Gameplay.Features.Abilities.Services
             var chance = _random.Range(0f, 1f);
             
             var config = configs
-                .Where(x => x.AttackTypeId == AttackTypeId.Offensive)
+                .Where(x => x.AttackTypeId == AttackTypeId.Defence)
                 .OrderBy(x => x.Chance)
                 .FirstOrDefault(x => x.Chance >= chance);
 
@@ -51,7 +50,7 @@ namespace Code.Gameplay.Features.Abilities.Services
             return true;
         }
 
-        private void Cleanup() => _currentAbility = null;
+        public void Cleanup() => _currentAbility = null;
         
         private bool IsNullOrNotDefault()
         {

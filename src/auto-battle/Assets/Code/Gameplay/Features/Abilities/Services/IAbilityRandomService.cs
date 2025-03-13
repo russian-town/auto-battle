@@ -7,5 +7,6 @@ namespace Code.Gameplay.Features.Abilities.Services
     {
         AbilityConfig GetOffensiveAbility(IEnumerable<AbilityConfig> configs);
         bool TryGetDefenceAbility(IEnumerable<AbilityConfig> configs, out AbilityConfig ability);
+        void Cleanup();
     }
 }

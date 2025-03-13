@@ -8,6 +8,9 @@ namespace Code.Gameplay.Features.Fighter
         public FighterFeature(ISystemFactory systems)
         {
             Add(systems.Create<InitializeFightersSystem>());
+            
+            Add(systems.Create<CreateOffensiveAbilityByFightersSystem>());
+            Add(systems.Create<CreateDefenceAbilityByFightersSystem>());
         }
     }
 }

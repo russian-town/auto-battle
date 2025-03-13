@@ -16,5 +16,6 @@ namespace Code.Gameplay.Features.Abilities.Configs
         public float Cooldown;
         public int Lifetime;
         public AttackTypeId AttackTypeId;
+        public List<Stage> Stages;
     }
 }

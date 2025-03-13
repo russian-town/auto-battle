@@ -6,34 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="53a9f07f-eb11-46c2-941e-ed334edf4097" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.auto-battle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.auto-battle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/AbilityComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/AbilityComponents.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/AbilityFeature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/AbilityFeature.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Configs/AbilityConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Configs/AbilityConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Factory/AbilityFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Factory/AbilityFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Services/AbilityRandomService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Services/AbilityRandomService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Services/IAbilityRandomService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Services/IAbilityRandomService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/BlockAbilitySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/BlockAbilitySystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/CounterAttackAbilitySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/CounterAttackAbilitySystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/DecreaseLifetimeByCompletedAbilitySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/TakeLifeWithLifetimeEntitiesSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/DecreaseLifetimeByCompletedAbilitySystem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/TakeLifeWithLifetimeEntitiesSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/CleanupDeadAbilitySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/CleanupCompletedAbilitiesSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/CleanupDeadAbilitySystem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/CleanupCompletedAbilitiesSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/DefaultAttackAbilitySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/DefaultAttackAbilitySystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/DodgeAbilitySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/DodgeAbilitySystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/AnimationsQueue/AnimationsQueueFeature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/AnimationsQueue/AnimationsQueueFeature.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/AnimationsQueue/Systems/MarkProducerTurnCompletedSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/AnimationsQueue/Systems/MarkProducerTurnCompletedSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/TakeLifeWithLifetimeEntitiesSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/TakeLifeWithLifetimeEntitiesSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Fighter/FighterComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Fighter/FighterComponents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Statuses/Factory/StatusFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Statuses/Factory/StatusFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Statuses/StatusFeature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Statuses/StatusFeature.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameDefenceComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameDefenceComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameOffensiveComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameOffensiveComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameTurnCompletedComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/Components/GameTurnCompletedComponent.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Fighter/FighterFeature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Fighter/FighterFeature.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Fighter/Systems/InitializeFightersSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Gameplay/Features/Fighter/Systems/InitializeFightersSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Code/Generated/Game/GameComponentsLookup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Generated/Game/GameComponentsLookup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/Abilities/Block.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Configs/Abilities/Block.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/Abilities/Countertattack.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Configs/Abilities/Countertattack.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/Abilities/DefaultAttack.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Configs/Abilities/DefaultAttack.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/Abilities/Doodge.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Configs/Abilities/Doodge.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/Abilities/DoubleStrike.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Configs/Abilities/DoubleStrike.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/AnimationEvents/Counterattack.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Configs/AnimationEvents/Counterattack.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/AnimationEvents/DefaultAttackEvents.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Configs/AnimationEvents/DefaultAttackEvents.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Configs/AnimationEvents/DoubleStrikekEvents 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Configs/AnimationEvents/DoubleStrikekEvents 1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ResourcesRaw/Hero/Animation/Hero.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ResourcesRaw/Hero/Animation/Hero.controller" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,15 +41,12 @@
     <setting file="file://$PROJECT_DIR$/Assets/Code/Common/Entity/ToString/GameEntity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Common/Extensions/NumericExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Configs/AbilityConfig.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Features/Abilities/Systems/CleanupCompletedAbilitiesSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Features/AnimationEvents/AnimationEventsFeature.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Features/Animations/Factory/AnimationFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Features/Cooldown/CooldownComponents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Features/Lifetime/LifeCycleComponents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Features/Lifetime/Systems/MarkDeadSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Features/Motions/MotionComponents.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Features/Motions/MotionFeature.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Features/Motions/Systems/MarkMoveNextMotionQueueSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Features/Motions/Systems/SyncProgressByMotionLinkedEntitiesSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/Levels/LevelDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Gameplay/StaticData/StaticDataService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Code/Infrastructure/Installers/UIInitializer.cs" root0="FORCE_HIGHLIGHTING" />
@@ -232,7 +217,7 @@
       <workItem from="1741627212560" duration="599000" />
       <workItem from="1741661921720" duration="7908000" />
       <workItem from="1741792536259" duration="2987000" />
-      <workItem from="1741860934658" duration="2097000" />
+      <workItem from="1741860934658" duration="9239000" />
     </task>
     <servers />
   </component>

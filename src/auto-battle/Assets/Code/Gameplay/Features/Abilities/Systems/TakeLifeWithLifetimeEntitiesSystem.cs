@@ -27,11 +27,6 @@ namespace Code.Gameplay.Features.Abilities.Systems
             {
                 if (ability.ProducerId == lifetime.ProducerId)
                     lifetime.ReplaceLifetime(lifetime.Lifetime - 1);
-
-                if (ability.Lifetime <= 0)
-                    ability.isDead = true;
-                
-                ability.isCompleted = false;
             }
         }
     }

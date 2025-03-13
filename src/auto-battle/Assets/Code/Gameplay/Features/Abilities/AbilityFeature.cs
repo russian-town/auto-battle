@@ -16,7 +16,7 @@ namespace Code.Gameplay.Features.Abilities
             Add(systems.Create<MarkCompletedAbilitiesWithoutAnimationSystem>());
             Add(systems.Create<TakeLifeWithLifetimeEntitiesSystem>());
             
-            Add(systems.Create<CleanupDeadAbilitySystem>());
+            Add(systems.Create<CleanupCompletedAbilitiesSystem>());
         }
     }
 }

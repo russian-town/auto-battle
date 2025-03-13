@@ -8,7 +8,6 @@ namespace Code.Gameplay.Features.Abilities.Systems
     {
         private readonly IAnimationsQueueFactory _animationsQueueFactory;
         private readonly IGroup<GameEntity> _abilities;
-        private readonly IGroup<GameEntity> _animationEvents;
         private readonly List<GameEntity> _buffer = new(16);
 
         public DodgeAbilitySystem(GameContext game, IAnimationsQueueFactory animationsQueueFactory)
@@ -23,22 +22,12 @@ namespace Code.Gameplay.Features.Abilities.Systems
                     GameMatcher.TargetId
                 )
                 .NoneOf(GameMatcher.Active));
-            
-            _animationEvents = game.GetGroup(GameMatcher
-                .AllOf(
-                    GameMatcher.AnimationEvent,
-                    GameMatcher.TargetId
-                ));
         }
 
         public void Execute()
         {
             foreach (var ability in _abilities.GetEntities(_buffer))
-            foreach (var animationEvent in _animationEvents)
             {
-                if(animationEvent.TargetId != ability.ProducerId)
-                    continue;
-                
                 _animationsQueueFactory.CreateAnimationQueue(
                     ability.AnimationSetups,
                     ability.ProducerId,

@@ -22,10 +22,7 @@ namespace Code.Gameplay.Features.Abilities.Systems
                         GameMatcher.TargetId,
                         GameMatcher.CooldownUp
                     )
-                    .NoneOf(
-                        GameMatcher.Active,
-                        GameMatcher.Completed
-                        ));
+                    .NoneOf(GameMatcher.Active));
         }
 
         public void Execute()

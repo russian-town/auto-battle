@@ -25,3 +25,4 @@ MonoBehaviour:
   Cooldown: 0
   Lifetime: 1
   AttackTypeId: 2
+  Stages: []

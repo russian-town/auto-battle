@@ -32,7 +32,6 @@ namespace Code.Gameplay.Features.Abilities.Factory
                 .With(x => x.AddCooldownLeft(0), when: config.Cooldown > 0)
                 .With(x => x.isCooldownUp = true, when: config.Cooldown == 0)
                 .With(x => x.AddAnimationSetups(config.AnimationSetups), when: !config.AnimationSetups.IsNullOrEmpty())
-                .AddLifetime(config.Lifetime)
                 ;
             
             switch (config.AbilityTypeId)
