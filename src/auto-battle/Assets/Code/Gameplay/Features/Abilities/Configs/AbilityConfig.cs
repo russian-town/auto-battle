@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using Code.Common.Extensions;
 using Code.Gameplay.Features.Animations.Configs;
-using UnityEditor.Animations;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Abilities.Configs
@@ -9,7 +9,6 @@ namespace Code.Gameplay.Features.Abilities.Configs
     public class AbilityConfig : ScriptableObject
     {
         [Range(0f, 1f)] public float Chance;
-        public AnimatorController AnimatorController;
         public int ManaCost;
         public AbilityTypeId AbilityTypeId;
         public List<AnimationSetup> AnimationSetups;
@@ -17,5 +16,14 @@ namespace Code.Gameplay.Features.Abilities.Configs
         public int Lifetime;
         public AttackTypeId AttackTypeId;
         public List<Stage> Stages;
+
+        private void OnValidate()
+        {
+            if(AnimationSetups.IsNullOrEmpty())
+                return;
+            
+            foreach (var animationSetup in AnimationSetups)
+                animationSetup.Initialize();
+        }
     }
 }

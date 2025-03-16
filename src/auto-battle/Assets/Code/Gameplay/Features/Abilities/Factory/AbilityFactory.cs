@@ -32,6 +32,8 @@ namespace Code.Gameplay.Features.Abilities.Factory
                 .With(x => x.AddCooldownLeft(0), when: config.Cooldown > 0)
                 .With(x => x.isCooldownUp = true, when: config.Cooldown == 0)
                 .With(x => x.AddAnimationSetups(config.AnimationSetups), when: !config.AnimationSetups.IsNullOrEmpty())
+                .With(x => x.isOffensive = true, config.AttackTypeId == AttackTypeId.Offensive)
+                .With(x => x.isDefence = true, config.AttackTypeId == AttackTypeId.Defence)
                 ;
             
             switch (config.AbilityTypeId)
@@ -52,18 +54,18 @@ namespace Code.Gameplay.Features.Abilities.Factory
         }
 
         private GameEntity CreateDefaultAttack(GameEntity entity) =>
-            entity.With(x => x.isDefaultAttackAbility = true);
+            entity.With(x => x.isDefaultAttack = true);
 
         private GameEntity CreateCounterattack(GameEntity entity) =>
-            entity.With(x => x.isCounterattackAbility = true);
+            entity.With(x => x.isCounterattack = true);
 
         private GameEntity CreateBlock(GameEntity entity) =>
-            entity.With(x => x.isBlockAbility = true);
+            entity.With(x => x.isBlock = true);
 
         private GameEntity CreateDodge(GameEntity entity) =>
-            entity.With(x => x.isDodgeAbility = true);
+            entity.With(x => x.isDodge = true);
 
         private GameEntity CreateDoubleStrike(GameEntity entity) =>
-            entity.With(x => x.isDoubleStrikeAbility = true);
+            entity.With(x => x.isDoubleStrike = true);
     }
 }

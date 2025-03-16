@@ -13,15 +13,31 @@ MonoBehaviour:
   m_Name: Countertattack
   m_EditorClassIdentifier: 
   Chance: 0.586
-  AnimatorController: {fileID: 0}
   ManaCost: 1
   AbilityTypeId: 2
   AnimationSetups:
-  - Name: Conterattack
+  - AnimatorController: {fileID: 9100000, guid: 22243e5b2a352b44ea5b84bbc88cac08, type: 2}
+    Name: Conterattack
+    AnimationTypeId: 4
     LastFrame: 30
     AnimationSpeed: 2
+    MovementSpeed: 0
     AnimationEventConfigs:
     - {fileID: 11400000, guid: 218f81b5bc0ace2459968beae843b42c, type: 2}
+    StateNames:
+    - Idle
+    - DefaultAttack
+    - Hit
+    - DoubleStrike_1
+    - DoubleStrike_2
+    - MoveForward
+    - MoveBackward
+    - Block
+    - Conterattack
+    - Knockdown
+    - Getup
+    - Dodge
   Cooldown: 0
   Lifetime: 1
   AttackTypeId: 2
+  Stages: []

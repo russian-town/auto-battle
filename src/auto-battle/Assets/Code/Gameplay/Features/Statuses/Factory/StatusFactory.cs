@@ -39,10 +39,10 @@ namespace Code.Gameplay.Features.Statuses.Factory
         }
 
         private GameEntity CreateBlockStatus(GameEntity status) =>
-            status.With(x => x.isBlockStatus = true);
+            status.With(x => x.isBlock = true);
 
         private GameEntity CreateDodgeStatus(GameEntity status) =>
-            status.With(x => x.isDodgeStatus = true);
+            status.With(x => x.isDodge = true);
 
         private GameEntity CreateStanStatus(GameEntity status) =>
             status.With(x => x.isStunStatus = true);

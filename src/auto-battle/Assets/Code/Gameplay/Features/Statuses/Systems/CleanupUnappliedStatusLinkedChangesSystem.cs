@@ -18,7 +18,8 @@ namespace Code.Gameplay.Features.Statuses.Systems
                 .AllOf(
                     GameMatcher.Id,
                     GameMatcher.Status,
-                    GameMatcher.Unapplied));
+                    GameMatcher.Unapplied
+                    ));
         }
 
         public void Cleanup()

@@ -31,7 +31,9 @@ namespace Code.Gameplay.Features.Animations.Systems
                 if (animation.ProducerId == animator.Id)
                     animation.ReplaceCurrentFrame(animator
                             .FighterAnimator
-                            .GetCurrentFrame(animation.AnimationHash, animation.NormalizeTime));
+                            .GetCurrentFrame(
+                                animation.AnimationHash,
+                                animation.NormalizeTime));
             }
         }
     }

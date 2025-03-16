@@ -16,7 +16,8 @@ namespace Code.Gameplay.Features.Abilities.Systems
             
             _abilities = game.GetGroup(GameMatcher
                     .AllOf(
-                        GameMatcher.DefaultAttackAbility,
+                        GameMatcher.DefaultAttack,
+                        GameMatcher.Id,
                         GameMatcher.AnimationSetups,
                         GameMatcher.ProducerId,
                         GameMatcher.TargetId,
@@ -32,7 +33,8 @@ namespace Code.Gameplay.Features.Abilities.Systems
                 _animationsQueueFactory.CreateAnimationQueue(
                     ability.AnimationSetups,
                     ability.ProducerId,
-                    ability.TargetId);
+                    ability.TargetId)
+                    .AddParentAbilityId(ability.Id);
                 
                 ability.isActive = true;
             }

@@ -16,7 +16,7 @@ namespace Code.Gameplay.Features.Statuses.Systems
             _statuses = game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Status,
-                    GameMatcher.BlockStatus,
+                    GameMatcher.Block,
                     GameMatcher.Id,
                     GameMatcher.ProducerId
                     )

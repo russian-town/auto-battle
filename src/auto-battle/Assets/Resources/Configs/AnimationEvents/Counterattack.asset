@@ -17,12 +17,44 @@ MonoBehaviour:
   - EffectValue: 0.15
     EffectTypeId: 3
     AnimationSetups:
-    - Name: Knockdown
+    - AnimatorController: {fileID: 9100000, guid: 22243e5b2a352b44ea5b84bbc88cac08, type: 2}
+      Name: Knockdown
+      AnimationTypeId: 7
       LastFrame: 49
-      AnimationSpeed: 2
+      AnimationSpeed: 3
+      MovementSpeed: 2
       AnimationEventConfigs: []
-    - Name: Getup
+      StateNames:
+      - Idle
+      - DefaultAttack
+      - Hit
+      - DoubleStrike_1
+      - DoubleStrike_2
+      - MoveForward
+      - MoveBackward
+      - Block
+      - Conterattack
+      - Knockdown
+      - Getup
+      - Dodge
+    - AnimatorController: {fileID: 9100000, guid: 22243e5b2a352b44ea5b84bbc88cac08, type: 2}
+      Name: Getup
+      AnimationTypeId: 8
       LastFrame: 60
-      AnimationSpeed: 1
+      AnimationSpeed: 0.5
+      MovementSpeed: 0
       AnimationEventConfigs: []
+      StateNames:
+      - Idle
+      - DefaultAttack
+      - Hit
+      - DoubleStrike_1
+      - DoubleStrike_2
+      - MoveForward
+      - MoveBackward
+      - Block
+      - Conterattack
+      - Knockdown
+      - Getup
+      - Dodge
   StatusSetups: []

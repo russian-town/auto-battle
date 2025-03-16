@@ -17,7 +17,8 @@ namespace Code.Gameplay.Features.Abilities.Systems
             _abilities = game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.Ability,
-                    GameMatcher.DodgeAbility,
+                    GameMatcher.Id,
+                    GameMatcher.Dodge,
                     GameMatcher.ProducerId,
                     GameMatcher.TargetId
                 )
@@ -31,7 +32,8 @@ namespace Code.Gameplay.Features.Abilities.Systems
                 _animationsQueueFactory.CreateAnimationQueue(
                     ability.AnimationSetups,
                     ability.ProducerId,
-                    ability.TargetId);
+                    ability.TargetId)
+                    .AddParentAbilityId(ability.Id);
 
                 ability.isActive = true;
             }

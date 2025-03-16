@@ -11,5 +11,7 @@ namespace Code.Gameplay.Features.Effect.Configs
         [Range(0f, 1f)] public float EffectValue;
         public EffectTypeId EffectTypeId;
         public List<AnimationSetup> AnimationSetups;
+
+        public void Initialize() => AnimationSetups.ForEach(x => x.Initialize());
     }
 }

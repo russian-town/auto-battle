@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Entitas;
+﻿using Entitas;
 
 namespace Code.Gameplay.Features.Effect.System
 {
@@ -7,7 +6,6 @@ namespace Code.Gameplay.Features.Effect.System
     {
         private readonly IGroup<GameEntity> _abilities;
         private readonly IGroup<GameEntity> _effects;
-        private readonly List<GameEntity> _buffer = new(16);
 
         public InterruptAbilitiesByCounterattackSystem(GameContext game)
         {
@@ -15,8 +13,7 @@ namespace Code.Gameplay.Features.Effect.System
                 .AllOf(
                     GameMatcher.Ability,
                     GameMatcher.ProducerId
-                    )
-                .NoneOf(GameMatcher.Completed));
+                    ));
             
             _effects = game.GetGroup(GameMatcher
                 .AllOf(
@@ -28,11 +25,11 @@ namespace Code.Gameplay.Features.Effect.System
 
         public void Execute()
         {
-            foreach (var ability in _abilities.GetEntities(_buffer))
             foreach (var effect in _effects)
+            foreach (var ability in _abilities)
             {
                 if (ability.ProducerId == effect.TargetId)
-                    ability.isCompleted = true;
+                    ability.isInterrupted = true;
             }
         }
     }

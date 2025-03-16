@@ -33,24 +33,28 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Movement.MovementSpeed movementSpeedComponent = new Code.Gameplay.Features.Movement.MovementSpeed();
+    public Code.Gameplay.Features.Movement.MovementSpeed movementSpeed { get { return (Code.Gameplay.Features.Movement.MovementSpeed)GetComponent(GameComponentsLookup.MovementSpeed); } }
+    public float MovementSpeed { get { return movementSpeed.Value; } }
+    public bool hasMovementSpeed { get { return HasComponent(GameComponentsLookup.MovementSpeed); } }
 
-    public bool isMovementSpeed {
-        get { return HasComponent(GameComponentsLookup.MovementSpeed); }
-        set {
-            if (value != isMovementSpeed) {
-                var index = GameComponentsLookup.MovementSpeed;
-                if (value) {
-                    var componentPool = GetComponentPool(index);
-                    var component = componentPool.Count > 0
-                            ? componentPool.Pop()
-                            : movementSpeedComponent;
+    public GameEntity AddMovementSpeed(float newValue) {
+        var index = GameComponentsLookup.MovementSpeed;
+        var component = (Code.Gameplay.Features.Movement.MovementSpeed)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.MovementSpeed));
+        component.Value = newValue;
+        AddComponent(index, component);
+        return this;
+    }
 
-                    AddComponent(index, component);
-                } else {
-                    RemoveComponent(index);
-                }
-            }
-        }
+    public GameEntity ReplaceMovementSpeed(float newValue) {
+        var index = GameComponentsLookup.MovementSpeed;
+        var component = (Code.Gameplay.Features.Movement.MovementSpeed)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.MovementSpeed));
+        component.Value = newValue;
+        ReplaceComponent(index, component);
+        return this;
+    }
+
+    public GameEntity RemoveMovementSpeed() {
+        RemoveComponent(GameComponentsLookup.MovementSpeed);
+        return this;
     }
 }

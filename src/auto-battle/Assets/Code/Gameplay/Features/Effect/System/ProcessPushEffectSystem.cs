@@ -31,7 +31,6 @@ namespace Code.Gameplay.Features.Effect.System
                     .AllOf(
                         GameMatcher.Fighter,
                         GameMatcher.Id,
-                        GameMatcher.FighterAnimator,
                         GameMatcher.CurrentHealth
                     ));
         }

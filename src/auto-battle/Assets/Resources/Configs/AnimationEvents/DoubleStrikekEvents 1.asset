@@ -17,8 +17,12 @@ MonoBehaviour:
   - EffectValue: 1
     EffectTypeId: 1
     AnimationSetups:
-    - Name: Hit
+    - AnimatorController: {fileID: 0}
+      Name: Hit
+      AnimationTypeId: 9
       LastFrame: 36
       AnimationSpeed: 2
+      MovementSpeed: 0
       AnimationEventConfigs: []
+      StateNames: []
   StatusSetups: []

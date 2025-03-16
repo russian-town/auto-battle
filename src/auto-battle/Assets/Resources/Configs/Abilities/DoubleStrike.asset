@@ -13,20 +13,51 @@ MonoBehaviour:
   m_Name: DoubleStrike
   m_EditorClassIdentifier: 
   Chance: 0.457
-  AnimatorController: {fileID: 9100000, guid: 22243e5b2a352b44ea5b84bbc88cac08, type: 2}
   ManaCost: 1
   AbilityTypeId: 5
   AnimationSetups:
-  - Name: DoubleStrike_1
+  - AnimatorController: {fileID: 9100000, guid: 22243e5b2a352b44ea5b84bbc88cac08, type: 2}
+    Name: DoubleStrike_1
+    AnimationTypeId: 5
     LastFrame: 36
     AnimationSpeed: 2
+    MovementSpeed: 0
     AnimationEventConfigs:
     - {fileID: 11400000, guid: 3726342b14b672d4a8e850d8e731f1d1, type: 2}
-  - Name: DoubleStrike_2
+    StateNames:
+    - Idle
+    - DefaultAttack
+    - Hit
+    - DoubleStrike_1
+    - DoubleStrike_2
+    - MoveForward
+    - MoveBackward
+    - Block
+    - Conterattack
+    - Knockdown
+    - Getup
+    - Dodge
+  - AnimatorController: {fileID: 9100000, guid: 22243e5b2a352b44ea5b84bbc88cac08, type: 2}
+    Name: DoubleStrike_2
+    AnimationTypeId: 6
     LastFrame: 36
     AnimationSpeed: 2
+    MovementSpeed: 0
     AnimationEventConfigs:
     - {fileID: 11400000, guid: 3726342b14b672d4a8e850d8e731f1d1, type: 2}
+    StateNames:
+    - Idle
+    - DefaultAttack
+    - Hit
+    - DoubleStrike_1
+    - DoubleStrike_2
+    - MoveForward
+    - MoveBackward
+    - Block
+    - Conterattack
+    - Knockdown
+    - Getup
+    - Dodge
   Cooldown: 0
   Lifetime: 1
   AttackTypeId: 1
