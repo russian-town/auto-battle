@@ -18,7 +18,6 @@ namespace Code.Gameplay.Features.AnimationsQueue.Systems
                 .AllOf(
                 GameMatcher.Id,
                 GameMatcher.AnimationsQueue,
-                GameMatcher.ParentAbilityId,
                 GameMatcher.ProducerId,
                 GameMatcher.TargetId,
                 GameMatcher.MoveNext
@@ -34,8 +33,7 @@ namespace Code.Gameplay.Features.AnimationsQueue.Systems
                 
                 _animationFactory
                     .CreateAnimation(setup, animationsQueue.ProducerId, animationsQueue.TargetId)
-                    .AddQueueLinkedAnimationId(animationsQueue.Id)
-                    .AddParentAbilityId(animationsQueue.ParentAbilityId);
+                    .AddQueueLinkedAnimationId(animationsQueue.Id);
                 
                 animationsQueue.isMoveNext = false;
             }
