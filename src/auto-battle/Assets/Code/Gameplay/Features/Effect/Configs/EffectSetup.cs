@@ -1,14 +1,17 @@
 ﻿using System;
-using Code.Gameplay.Features.Animations.Configs;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Effect.Configs
 {
     [Serializable]
     public class EffectSetup
     {
-        [Range(0f, 1f)] public float EffectValue;
-        public EffectTypeId EffectTypeId;
-        public AnimationSetup AnimationSetup;
+        public EffectTypeId TypeId;
+        public float Value;
+
+        public EffectSetup(EffectTypeId typeId, float value)
+        {
+            TypeId = typeId;
+            Value = value;
+        }
     }
 }

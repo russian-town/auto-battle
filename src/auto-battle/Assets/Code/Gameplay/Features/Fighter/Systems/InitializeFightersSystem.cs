@@ -47,8 +47,8 @@ namespace Code.Gameplay.Features.Fighter.Systems
             _healthBarFactory.CreateHealthBar(enemy.Id, _levelDataProvider.EnemyHealthBarPoint.position, _levelDataProvider.UIRoot);
 
             hero.ReplaceMana(1);
-            _abilityFactory.CreateAbility(AbilityTypeId.DefaultAttack, hero.Id, enemy.Id);
-            _abilityFactory.CreateAbility(AbilityTypeId.Counterattack, enemy.Id, hero.Id);
+            _abilityFactory.CreateAbility(AbilityTypeId.DefaultAttack, hero.Id, enemy.Id, 10);
+            _abilityFactory.CreateAbility(AbilityTypeId.Block, enemy.Id, hero.Id, 3);
         }
     }
 }

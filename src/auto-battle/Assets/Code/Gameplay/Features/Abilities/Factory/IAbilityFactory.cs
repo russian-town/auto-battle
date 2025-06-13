@@ -2,6 +2,6 @@
 {
     public interface IAbilityFactory
     {
-        GameEntity CreateAbility(AbilityTypeId typeId, int producerId, int targetId);
+        GameEntity CreateAbility(AbilityTypeId typeId, int producerId, int targetId, float value);
     }
 }

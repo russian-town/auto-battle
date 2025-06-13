@@ -17,7 +17,7 @@ namespace Code.Gameplay.Features.Abilities.Factory
             _staticDataService = staticDataService;
         }
 
-        public GameEntity CreateAbility(AbilityTypeId typeId, int producerId, int targetId)
+        public GameEntity CreateAbility(AbilityTypeId typeId, int producerId, int targetId, float value)
         {
             var config = _staticDataService.GetAbilityConfig(typeId);
 
@@ -27,12 +27,7 @@ namespace Code.Gameplay.Features.Abilities.Factory
                 .With(x => x.isAbility = true)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
-                .AddManaCost(config.ManaCost)
-                .With(x => x.AddCooldown(config.Cooldown), when: config.Cooldown > 0)
-                .With(x => x.AddCooldownLeft(0), when: config.Cooldown > 0)
-                .With(x => x.isCooldownUp = true, when: config.Cooldown == 0)
-                .With(x => x.AddAnimationSetups(config.AnimationSetups), when: !config.AnimationSetups.IsNullOrEmpty())
-                .AddLifetime(config.Lifetime)
+                .AddEffectValue(value)
                 ;
             
             switch (config.AbilityTypeId)

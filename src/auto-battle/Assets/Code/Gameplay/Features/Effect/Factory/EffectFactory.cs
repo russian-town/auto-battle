@@ -14,16 +14,15 @@ namespace Code.Gameplay.Features.Effect.Factory
 
         public GameEntity CreateEffect(EffectSetup setup, int producerId, int targetId)
         {
-            var effect = CreateEntity.Empty($"{setup.EffectTypeId.ToString()} effect")
+            var effect = CreateEntity.Empty($"{setup.TypeId.ToString()} effect")
                 .AddId(_identifiers.Next())
                 .With(x => x.isEffect = true)
-                .AddEffectValue(setup.EffectValue)
+                .AddEffectValue(setup.Value)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
-                .AddAnimationSetup(setup.AnimationSetup)
                 ;
 
-            switch (setup.EffectTypeId)
+            switch (setup.TypeId)
             {
                 case EffectTypeId.Damage:
                     return CreateDamage(effect);
@@ -33,7 +32,7 @@ namespace Code.Gameplay.Features.Effect.Factory
                     return CreatePush(effect);
             }
 
-            throw new Exception($"Effect with type id {setup.EffectTypeId} does not exist.");
+            throw new Exception($"Effect with type id {setup.TypeId} does not exist.");
         }
 
         private GameEntity CreateDamage(GameEntity effect) => effect.With(x => x.isDamageEffect = true);

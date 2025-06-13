@@ -1,48 +1,45 @@
 ﻿using System.Collections.Generic;
-using Code.Gameplay.Features.Animations.Factory;
 using Entitas;
 
 namespace Code.Gameplay.Features.Abilities.Systems
 {
     public class BlockAbilitySystem : IExecuteSystem
     {
-        private readonly IAnimationFactory _animationFactory;
-        private readonly IGroup<GameEntity> _abilities;
-        private readonly IGroup<GameEntity> _animationEvents;
+        private readonly IGroup<GameEntity> _blockAbilities;
+        private readonly IGroup<GameEntity> _attackAbilities;
         private readonly List<GameEntity> _buffer = new(16);
 
-        public BlockAbilitySystem(GameContext game, IAnimationFactory animationFactory)
+        public BlockAbilitySystem(GameContext game)
         {
-            _animationFactory = animationFactory;
-
-            _abilities = game.GetGroup(GameMatcher
+            _blockAbilities = game.GetGroup(GameMatcher
                     .AllOf(
                         GameMatcher.Ability,
                         GameMatcher.BlockAbility,
                         GameMatcher.Id,
-                        GameMatcher.CooldownUp
+                        GameMatcher.ProducerId
                     )
                     .NoneOf(GameMatcher.Active));
             
-            _animationEvents = game.GetGroup(GameMatcher
+            _attackAbilities = game.GetGroup(GameMatcher
                     .AllOf(
-                        GameMatcher.AnimationEvent,
+                        GameMatcher.Ability,
+                        GameMatcher.DefaultAttackAbility,
+                        GameMatcher.Id,
                         GameMatcher.TargetId,
-                        GameMatcher.EffectSetups
+                        GameMatcher.EffectValue
                     ));
         }
 
         public void Execute()
         {
-            foreach (var ability in _abilities.GetEntities(_buffer))
-            foreach (var animationEvent in _animationEvents)
-            foreach (var animationSetup in ability.AnimationSetups)
+            foreach (var blockAbility in _blockAbilities.GetEntities(_buffer))
+            foreach (var attackAbility in _attackAbilities)
             {
-                if (ability.ProducerId != animationEvent.TargetId)
+                if(blockAbility.ProducerId != attackAbility.TargetId)
                     continue;
 
-                _animationFactory.CreateAnimation(animationSetup, ability.ProducerId, ability.TargetId);
-                ability.isActive = true;
+                attackAbility.ReplaceEffectValue(0);
+                blockAbility.isActive = true;
             }
         }
     }
